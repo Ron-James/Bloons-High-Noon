@@ -8,7 +8,6 @@ public class Turret : MonoBehaviour
     [SerializeField] Transform target;
     [SerializeField] int range = 2;
     [SerializeField] float RotationSpeed = 100f;
-
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] Transform firePoint;
     [SerializeField] float fireRate = 3f;
@@ -16,10 +15,16 @@ public class Turret : MonoBehaviour
     [SerializeField] Island island;
     List<Transform> rangeOfEnemies = new List<Transform>();
     Quaternion defaultRot;
+    float time;
+
+    public Transform Target { get => target; set => target = value; }
+
     // Start is called before the first frame update
     void Start()
     {
+        time = 0;
         defaultRot = barrel.transform.rotation;
+        
     }
 
     void UpdateEnemiesInRange(){
@@ -56,14 +61,28 @@ public class Turret : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.T)){
             Fire();
         }
+        if(target != null){
+            time += Time.deltaTime;
+            if(time >= fireRate){
+                Fire();
+                time = 0;
+            }
+
+            
+        }
+        if(Input.GetKeyDown(KeyCode.P)){
+            Fire();
+        }
+
+        
     }
     void Aim(){
 
         if(target != null){
             //Turning
-            float targetPlaneAngle = vector3AngleOnPlane(target.position, transform.position, -transform.up, transform.forward);
-            Vector3 newRot = new Vector3(0, targetPlaneAngle, 0);
-            transform.Rotate(newRot, Space.Self);
+            //float targetPlaneAngle = vector3AngleOnPlane(target.position, transform.position, -transform.up, transform.forward);
+            //Vector3 newRot = new Vector3(0, targetPlaneAngle, 0);
+            //transform.Rotate(newRot, Space.Self);
 
             //up/down
             Quaternion targetRot = Quaternion.LookRotation(target.position - barrel.transform.position);
@@ -93,9 +112,7 @@ public class Turret : MonoBehaviour
     private void OnTriggerStay(Collider other) {
         switch(other.tag){
             case "Enemy":
-                if(target == null){
-                    target = other.transform;
-                }
+                target = other.transform;
             break;
         }
     }
@@ -128,7 +145,8 @@ public class Turret : MonoBehaviour
     
 
     void Fire(){
-        Instantiate(bulletPrefab, firePoint.position, barrel.rotation, this.transform);
+        GameObject proj = Instantiate(bulletPrefab, firePoint.position, barrel.rotation, this.transform);
+        proj.GetComponent<Projectile>().Turret = GetComponent<Turret>();
     }
 
     

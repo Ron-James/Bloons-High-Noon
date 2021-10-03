@@ -13,7 +13,7 @@ public class Enemy : MonoBehaviour
     GameObject deadEnemies;
     NavMeshAgent navMeshAgent;
     bool isAlive;
-    [SerializeField] float health;
+    [SerializeField] float health = 1;
     [SerializeField] float speed;
     [SerializeField] Vector3 mainTowerPos;
     [SerializeField] LayerMask laneMask;
@@ -21,7 +21,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] Lane currentLane;
     [SerializeField] Type type = (Type) 0;
 
-    List<Turret> turrets;
+
     RaycastHit laneHit;
     bool pulled;
 
@@ -62,8 +62,7 @@ public class Enemy : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         switch(other.tag){
             case "Tower":
-                this.transform.SetParent(deadEnemies.transform);
-                this.gameObject.SetActive(false);
+                Kill();
                 GameManager.instance.DamageTower(towerDamage);
             break;
             case "Island":
@@ -71,6 +70,27 @@ public class Enemy : MonoBehaviour
                 this.transform.SetParent(island.Enemies.transform);
                 //Debug.Log("On a new Island");
             break;
+            case "Projectile":
+                Projectile proj = other.GetComponent<Projectile>();
+                DealDamage(proj.Damage);
+                proj.Turret.Target = null;
+                Destroy(other.gameObject);
+            break;
+        }
+    }
+
+    void Kill(){
+        this.transform.SetParent(deadEnemies.transform);
+        this.gameObject.SetActive(false);
+        transform.position = deadEnemies.transform.position;
+        isAlive = false;
+    }
+
+    void DealDamage(float amount){
+        health -= amount;
+        Debug.Log(health + " health");
+        if(health <= 0){
+            Kill();
         }
     }
 

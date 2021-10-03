@@ -1,21 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : Singleton<GameManager>
 {
     [SerializeField] Lane [] lanes;
     [SerializeField] GameObject basicEnemy;
     [SerializeField] float towerHealth = 10f;
+    [SerializeField] Image healthBar;
 
     List<GameObject> basicDeadEnemies = new List<GameObject>();
 
     public List<GameObject> BasicDeadEnemies { get => basicDeadEnemies; set => basicDeadEnemies = value; }
-
+    float totalHealth;
     // Start is called before the first frame update
     void Start()
     {
-        
+        totalHealth = towerHealth;
     }
 
     // Update is called once per frame
@@ -33,6 +35,10 @@ public class GameManager : Singleton<GameManager>
 
     public void DamageTower(float amount){
         towerHealth -= amount;
+        healthBar.fillAmount = towerHealth/totalHealth;
+        if(towerHealth <= 0){
+            //GameOver
+        }
     }
 
 

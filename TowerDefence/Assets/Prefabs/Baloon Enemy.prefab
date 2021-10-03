@@ -111,13 +111,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd1d7e50a3ca3e744ae674414ee066fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 1
   speed: 3
   mainTowerPos: {x: -28.41, y: 12, z: -31.01}
   laneMask:
     serializedVersion: 2
     m_Bits: 256
+  towerDamage: 1
   currentLane: {fileID: 0}
+  type: 0
 --- !u!195 &5688238511567662679
 NavMeshAgent:
   m_ObjectHideFlags: 0

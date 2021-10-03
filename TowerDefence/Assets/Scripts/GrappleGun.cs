@@ -66,16 +66,22 @@ public class GrappleGun : MonoBehaviour
         }
     }
 
-    IEnumerator PullIn(){
+    IEnumerator PullIn(float rate){
         if(!joint){
-            yield return new WaitForFixedUpdate();
+            
         }
         else{
-            float time = 0;
+
 
             while(true){
-                time += Time.fixedDeltaTime;
-                
+                joint.maxDistance -= rate;
+                if(joint.maxDistance <= joint.minDistance || !Input.GetKey(KeyCode.LeftShift)){
+                    joint.maxDistance = joint.minDistance;
+                    break;
+                }
+                else{
+                    yield return new WaitForFixedUpdate();
+                }
             }   
         }
     }
