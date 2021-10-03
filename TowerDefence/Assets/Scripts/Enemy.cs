@@ -1,0 +1,78 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.AI;
+
+
+
+public enum Type{
+    basic = 0
+}
+public class Enemy : MonoBehaviour
+{
+    GameObject deadEnemies;
+    NavMeshAgent navMeshAgent;
+    bool isAlive;
+    [SerializeField] float health;
+    [SerializeField] float speed;
+    [SerializeField] Vector3 mainTowerPos;
+    [SerializeField] LayerMask laneMask;
+    [SerializeField] float towerDamage = 1;
+    [SerializeField] Lane currentLane;
+    [SerializeField] Type type = (Type) 0;
+
+    List<Turret> turrets;
+    RaycastHit laneHit;
+    bool pulled;
+
+
+
+    public Lane CurrentLane { get => currentLane; set => currentLane = value; }
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        pulled = false;
+        isAlive = true;
+        Physics.Raycast(transform.position, -Vector3.up, out laneHit, 15, laneMask);
+        deadEnemies = GameObject.Find("Dead Enemies");
+        
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+        if(Physics.Raycast(transform.position, -Vector3.up, out laneHit, 15, laneMask) && laneHit.collider.gameObject.GetComponentInParent<Lane>() != currentLane){
+            currentLane = laneHit.collider.gameObject.GetComponentInParent<Lane>();
+            //navMeshAgent.destination = currentLane.EndPoint.position;
+        }
+    }
+
+     private void OnEnable() {
+        
+    }
+
+    private void Awake() {
+        navMeshAgent = GetComponent<NavMeshAgent>();
+        navMeshAgent.destination = mainTowerPos;
+    }
+    
+    private void OnTriggerEnter(Collider other) {
+        switch(other.tag){
+            case "Tower":
+                this.transform.SetParent(deadEnemies.transform);
+                this.gameObject.SetActive(false);
+                GameManager.instance.DamageTower(towerDamage);
+            break;
+            case "Island":
+                Island island = other.GetComponentInParent<Island>();
+                this.transform.SetParent(island.Enemies.transform);
+                //Debug.Log("On a new Island");
+            break;
+        }
+    }
+
+    
+}
