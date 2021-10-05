@@ -472,6 +472,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6852448060431236041, guid: 844c929efc109da4d9d55f47193464bc, type: 3}
+      propertyPath: m_Mass
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6852448060431236044, guid: 844c929efc109da4d9d55f47193464bc, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -522,7 +526,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6852448060431236046, guid: 844c929efc109da4d9d55f47193464bc, type: 3}
       propertyPath: jumpForce
-      value: 14
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 6852448060431236046, guid: 844c929efc109da4d9d55f47193464bc, type: 3}
       propertyPath: groundDistance
@@ -5997,10 +6001,22 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2778297511633600040, guid: 4e47f58927bdde44a8fd41f65a49f454, type: 3}
+      propertyPath: m_Positions.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7088067146971334427, guid: 4e47f58927bdde44a8fd41f65a49f454, type: 3}
+      propertyPath: range
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 7088067146971334427, guid: 4e47f58927bdde44a8fd41f65a49f454, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 2144490762}
+    - target: {fileID: 7088067146971334427, guid: 4e47f58927bdde44a8fd41f65a49f454, type: 3}
+      propertyPath: pullInRate
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7513789930664141320, guid: 4e47f58927bdde44a8fd41f65a49f454, type: 3}
       propertyPath: m_Name
       value: Camera Holder

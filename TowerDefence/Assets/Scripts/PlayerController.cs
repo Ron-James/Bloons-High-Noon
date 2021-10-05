@@ -31,10 +31,12 @@ public class PlayerController : MonoBehaviour
     bool isGrounded;
     RaycastHit slopeHit;
     Vector3 lastVelocity;
-
+    GrappleGun grappleGun;
     Rigidbody rb;
 
-    
+    public bool IsGrounded { get => isGrounded; set => isGrounded = value; }
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -43,6 +45,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation= true;
         //rb.useGravity = false;
+        //grappleGun = GameObject.Find("Grapple Gun").GetComponent<GrappleGun>();
     }
 
     
@@ -54,9 +57,11 @@ public class PlayerController : MonoBehaviour
            lastVelocity = rb.velocity;
         }
        
-       if(Input.GetKeyDown(KeyCode.Space) && isGrounded || Input.GetKeyDown(KeyCode.Space) && OnSlope()){
+        if(Input.GetKeyDown(KeyCode.Space) && isGrounded || Input.GetKeyDown(KeyCode.Space) && OnSlope()){
            Jump();
+           
         }
+        
 
        myInput();
        ControlDrag();

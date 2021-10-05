@@ -19,10 +19,14 @@ public class GrappleGun : MonoBehaviour
     [SerializeField] float springConst = 5f;
     [SerializeField] float damper = 7f;
     [SerializeField] float massScale = 4.5f;
+    [SerializeField] float pullInRate = 0.1f;
 
     LineRenderer lineRenderer;
     SpringJoint joint;
     Vector3 grapplePoint;
+
+    public SpringJoint Joint { get => joint; set => joint = value; }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,9 +39,11 @@ public class GrappleGun : MonoBehaviour
         if(Input.GetMouseButtonDown(0)){
             Grapple();
         }
-        else if(Input.GetMouseButtonUp(0)){
-            StropGrappling();
+        if(Input.GetMouseButtonDown(1) && joint != null){
+            StartCoroutine(PullIn(pullInRate));
         }
+        
+        
     }
 
     private void LateUpdate() {
@@ -54,29 +60,29 @@ public class GrappleGun : MonoBehaviour
 
             float distance = Vector3.Distance(player.transform.position, grapplePoint);
 
-            joint.maxDistance = distance * 0.8f;
-            joint.minDistance = distance * 0.25f;
+            joint.maxDistance = distance * 0.95f;
+            joint.minDistance = distance * 0.01f;
 
             joint.spring = springConst;
             joint.damper = damper;
             joint.massScale = massScale;
 
             lineRenderer.positionCount = 2;
+            
 
         }
     }
 
     IEnumerator PullIn(float rate){
         if(!joint){
-            
+            yield return new WaitForFixedUpdate();   
         }
         else{
-
-
             while(true){
                 joint.maxDistance -= rate;
-                if(joint.maxDistance <= joint.minDistance || !Input.GetKey(KeyCode.LeftShift)){
+                if(joint.maxDistance <= joint.minDistance){
                     joint.maxDistance = joint.minDistance;
+                    StropGrappling();
                     break;
                 }
                 else{
@@ -85,7 +91,7 @@ public class GrappleGun : MonoBehaviour
             }   
         }
     }
-    void StropGrappling(){
+    public void StropGrappling(){
         lineRenderer.positionCount = 0;
         Destroy(joint);
     }
@@ -96,32 +102,5 @@ public class GrappleGun : MonoBehaviour
         lineRenderer.SetPosition(0, firePt.position);
         lineRenderer.SetPosition(1, grapplePoint);
     }
-    IEnumerator Extend(float freq, float range){
-        //lineRenderer.enabled = true;
-        lineRenderer.positionCount = 2;
-
-        Vector3 startPos = firePt.position;
-        Vector3 direction = ((cameraPos.position + range*Vector3.forward) - firePt.position).normalized;
-        lineRenderer.SetPosition(0, startPos);
-        float period = 1/freq;
-        float time = 0;
-        float w = freq * 2 * Mathf.PI;
-        float distance = 0;
-        while(true){
-            time += Time.fixedDeltaTime;
-            startPos = firePt.position;
-            distance = Mathf.Abs(range * Mathf.Sin(w * time));
-
-            if(time >= period /4){
-
-                break;
-            }
-            else{
-                endPt.localPosition = startPos + (direction * distance);
-                lineRenderer.SetPosition(1, endPt.position);
-                yield return new WaitForFixedUpdate();
-            }
-
-        }
-    }
+    
 }
