@@ -9,10 +9,13 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] GameObject basicEnemy;
     [SerializeField] float towerHealth = 10f;
     [SerializeField] Image healthBar;
+    [SerializeField] int balance;
 
     List<GameObject> basicDeadEnemies = new List<GameObject>();
 
     public List<GameObject> BasicDeadEnemies { get => basicDeadEnemies; set => basicDeadEnemies = value; }
+    public int Balance { get => balance; set => balance = value; }
+
     float totalHealth;
     // Start is called before the first frame update
     void Start()
@@ -39,6 +42,10 @@ public class GameManager : Singleton<GameManager>
         if(towerHealth <= 0){
             //GameOver
         }
+    }
+
+    public void Purchase(int cost){
+        balance -= cost;
     }
 
 

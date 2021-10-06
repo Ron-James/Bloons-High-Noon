@@ -44,7 +44,7 @@ public class GrapplingHook : MonoBehaviour
             float distanceToHook = Vector3.Distance(transform.position, hook.transform.position);
             
             this.GetComponent<Rigidbody>().useGravity = false;
-
+            /*
             if(distanceToHook < 2){
                 if(!this.GetComponent<PlayerController>().IsGrounded){
                     this.transform.Translate(Vector3.forward * Time.fixedDeltaTime * 7f);
@@ -52,6 +52,7 @@ public class GrapplingHook : MonoBehaviour
                     StartCoroutine(Climb());
                 }
             }
+            */
         }
         else{
             hook.transform.SetParent(hookHolder.transform);
