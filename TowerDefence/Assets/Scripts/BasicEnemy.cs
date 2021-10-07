@@ -38,8 +38,8 @@ public class BasicEnemy : MonoBehaviour
         isAlive = true;
         Physics.Raycast(transform.position, -Vector3.up, out laneHit, 15, laneMask);
         deadEnemies = GameObject.Find("Dead Enemies");
-        
-        
+
+        Physics.IgnoreLayerCollision(9, 10, true);
     }
 
     // Update is called once per frame
