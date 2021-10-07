@@ -29,6 +29,7 @@ public class BasicEnemy : MonoBehaviour
 
 
     public Lane CurrentLane { get => currentLane; set => currentLane = value; }
+    public Enemy Enemy { get => enemy; set => enemy = value; }
 
     // Start is called before the first frame update
     void Start()

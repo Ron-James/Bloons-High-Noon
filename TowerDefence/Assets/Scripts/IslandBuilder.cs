@@ -47,10 +47,10 @@ public class IslandBuilder : MonoBehaviour
         }
         else{
             Destroy(structure);
-            structure = null;
-            built = null;
             hasStructure = false;
             GameManager.instance.AddBalance(built.CalculateSellValue());
+            structure = null;
+            built = null;
             UpdateButtons();
         }
     }
