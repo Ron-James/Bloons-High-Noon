@@ -26,13 +26,13 @@ public class GrapplingHook : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         if(Input.GetMouseButtonDown(0) && !fired){
             fired = true;
         }
         if(fired && !hooked){
-            hook.transform.Translate(Vector3.forward * Time.fixedDeltaTime * hookTravelSpd);
+            hook.transform.Translate(Vector3.forward * Time.deltaTime * hookTravelSpd);
             currentDistance = Vector3.Distance(transform.position, hook.transform.position);
             if(currentDistance >= maxDistance){
                 ReturnHook();
@@ -40,19 +40,19 @@ public class GrapplingHook : MonoBehaviour
         }
         if(hooked && fired){
             hook.transform.SetParent(hookedObject.transform);
-            transform.position = Vector3.MoveTowards(transform.position, hook.transform.position, playerTravelSpd * Time.fixedDeltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, hook.transform.position, playerTravelSpd * Time.deltaTime);
             float distanceToHook = Vector3.Distance(transform.position, hook.transform.position);
             
             this.GetComponent<Rigidbody>().useGravity = false;
-            /*
+            
             if(distanceToHook < 2){
                 if(!this.GetComponent<PlayerController>().IsGrounded){
                     this.transform.Translate(Vector3.forward * Time.fixedDeltaTime * 7f);
-                    this.transform.Translate(Vector3.up *Time.fixedDeltaTime * 10f);
+                    this.transform.Translate(Vector3.up *Time.deltaTime * 10f);
                     StartCoroutine(Climb());
                 }
             }
-            */
+            
         }
         else{
             hook.transform.SetParent(hookHolder.transform);

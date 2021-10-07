@@ -10,7 +10,10 @@ public class IslandBuilder : MonoBehaviour
 
     [SerializeField] Tower [] towers;
     [SerializeField] Button [] buttons;
+    [SerializeField] Button demolish;
     bool hasStructure;
+    Tower built;
+    GameObject structure;
     Island island;
 
     
@@ -32,9 +35,24 @@ public class IslandBuilder : MonoBehaviour
 
 
     public void Build(Tower tower){
-        Instantiate(tower.tower, buildPos.position, Quaternion.identity);
+        structure = Instantiate(tower.tower, buildPos.position, Quaternion.identity);
         hasStructure = true;
+        built = tower;
         GameManager.instance.Purchase(tower.cost);
+        UpdateButtons();
+    }
+    public void Demolish(){
+        if(!hasStructure){
+            Debug.Log("Has no structure");
+        }
+        else{
+            Destroy(structure);
+            structure = null;
+            built = null;
+            hasStructure = false;
+            GameManager.instance.AddBalance(built.CalculateSellValue());
+            UpdateButtons();
+        }
     }
 
     public void OpenBuildMenu(){
@@ -42,11 +60,13 @@ public class IslandBuilder : MonoBehaviour
         UpdateButtons();
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+        GameObject.Find("Player").GetComponent<CameraController>().DisableCameraControl();
     }
     public void CloseBuildMenu(){
         buildMenu.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        GameObject.Find("Player").GetComponent<CameraController>().EnableCameraControl();
     }
     void UpdateButtons(){
         if(towers.Length != buttons.Length){
@@ -57,10 +77,15 @@ public class IslandBuilder : MonoBehaviour
             for(int loop = 0; loop < buttons.Length; loop++){
                 if(GameManager.instance.Balance < towers[loop].cost || hasStructure){
                     buttons[loop].gameObject.SetActive(false);
+                    if(hasStructure){
+                        demolish.gameObject.SetActive(true);
+                    }
+                    else{
+                        demolish.gameObject.SetActive(false);
+                    }
                 }
                 else{
                     buttons[loop].gameObject.SetActive(true);
-                    buttons[loop].onClick.AddListener(delegate{Build(towers[loop]);});
                 }
             }
         }

@@ -8,5 +8,9 @@ public class Tower : ScriptableObject
     public string towerName;
     public int cost;
     public GameObject tower;
+
     
+    public int CalculateSellValue(){
+        return (int) GameManager.instance.SellPercentage * cost;
+    }
 }

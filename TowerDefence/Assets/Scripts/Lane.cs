@@ -46,9 +46,7 @@ public class Lane : MonoBehaviour
         position.z = Random.Range(spawnPointMin.position.z, spawnPointMax.position.z);
 
         GameObject go = Instantiate(enemy, position, Quaternion.identity);
-        Enemy e = go.GetComponent<Enemy>();
-        e.CurrentLane = GetComponent<Lane>();
-        go.transform.SetParent(this.transform);
+        
 
     }
     

@@ -6,15 +6,13 @@ using UnityEngine.UI;
 public class GameManager : Singleton<GameManager>
 {
     [SerializeField] Lane [] lanes;
-    [SerializeField] GameObject basicEnemy;
     [SerializeField] float towerHealth = 10f;
     [SerializeField] Image healthBar;
     [SerializeField] int balance;
-
-    List<GameObject> basicDeadEnemies = new List<GameObject>();
-
-    public List<GameObject> BasicDeadEnemies { get => basicDeadEnemies; set => basicDeadEnemies = value; }
+    [SerializeField] Enemy [] enemies;
+    [Range(0, 1)][SerializeField] float sellPercentage = 0.8f;
     public int Balance { get => balance; set => balance = value; }
+    public float SellPercentage { get => sellPercentage; set => sellPercentage = value; }
 
     float totalHealth;
     // Start is called before the first frame update
@@ -27,7 +25,7 @@ public class GameManager : Singleton<GameManager>
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.M)){
-            SpawnEnemy(basicEnemy);
+            SpawnEnemy(enemies[0].prefab);
         }
     }
 
@@ -46,6 +44,10 @@ public class GameManager : Singleton<GameManager>
 
     public void Purchase(int cost){
         balance -= cost;
+    }
+
+    public void AddBalance(int amount){
+        balance += amount;
     }
 
 

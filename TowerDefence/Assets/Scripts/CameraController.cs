@@ -29,9 +29,13 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        myInput();
-        cam.transform.localRotation = Quaternion.Euler(xRot, yRot, 0);
-        orientation.transform.rotation = Quaternion.Euler(0, yRot, 0);
+        if(_CameraEnabled){
+            myInput();
+            cam.transform.localRotation = Quaternion.Euler(xRot, yRot, 0);
+            orientation.transform.rotation = Quaternion.Euler(0, yRot, 0);
+            CheckIslandMenu();
+        }
+        
     }
 
     private void myInput(){
@@ -56,5 +60,17 @@ public class CameraController : MonoBehaviour
         _CameraEnabled = true;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+    }
+    public void CheckIslandMenu(){
+        RaycastHit hit;
+        //Debug.DrawRay(cam.transform.position, cam.transform.forward, Color.red, 0.1f);
+
+        if(Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, 50f) && hit.collider.tag == "MenuTrigger"){
+            Debug.Log("menu thing");
+            if(Input.GetKeyDown(KeyCode.X)){
+                IslandBuilder builder = hit.collider.gameObject.GetComponentInParent<IslandBuilder>();
+                builder.OpenBuildMenu();
+            }
+        }
     }
 }

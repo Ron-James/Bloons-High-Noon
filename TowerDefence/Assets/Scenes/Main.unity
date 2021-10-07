@@ -4693,10 +4693,12 @@ MonoBehaviour:
   - {fileID: 1267317945}
   - {fileID: 1138125869}
   - {fileID: 1609851627}
-  basicEnemy: {fileID: 8501894365921418112, guid: 2f510185c7de384499bbfa137b52cd5d, type: 3}
   towerHealth: 10
   healthBar: {fileID: 977066431}
   balance: 20
+  enemies:
+  - {fileID: 11400000, guid: ea37699812fd0ae41996b122ffab05d9, type: 2}
+  sellPercentage: 0.8
 --- !u!4 &1577887157
 Transform:
   m_ObjectHideFlags: 0

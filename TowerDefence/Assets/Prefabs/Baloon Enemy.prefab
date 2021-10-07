@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 6110103971784624690}
   - component: {fileID: 1154185642595268644}
   - component: {fileID: 27751743852687028}
-  - component: {fileID: -2644466336275596981}
   - component: {fileID: 5688238511567662679}
   - component: {fileID: 3077591539324712417}
+  - component: {fileID: 6310847948129402290}
   m_Layer: 0
   m_Name: Baloon Enemy
   m_TagString: Enemy
@@ -99,27 +99,6 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-2644466336275596981
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8501894365921418112}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd1d7e50a3ca3e744ae674414ee066fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 1
-  speed: 3
-  mainTowerPos: {x: -28.41, y: 12, z: -31.01}
-  laneMask:
-    serializedVersion: 2
-    m_Bits: 256
-  towerDamage: 1
-  currentLane: {fileID: 0}
-  type: 0
 --- !u!195 &5688238511567662679
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -158,3 +137,25 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &6310847948129402290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8501894365921418112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 324446e2fc613f441b304e48fd21dbe8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1
+  enemy: {fileID: 11400000, guid: ea37699812fd0ae41996b122ffab05d9, type: 2}
+  speed: 0
+  mainTowerPos: {x: -28.41, y: 12, z: -31.01}
+  laneMask:
+    serializedVersion: 2
+    m_Bits: 0
+  towerDamage: 1
+  currentLane: {fileID: 0}
+  type: 0
