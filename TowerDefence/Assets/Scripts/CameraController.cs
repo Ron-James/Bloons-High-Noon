@@ -13,12 +13,13 @@ public class CameraController : MonoBehaviour
     float mouseX;
     float mouseY;
     float multiplier = 0.1f;
-
+    
     float xRot;
     float yRot;
     [SerializeField] GameObject buildPrompt;
     private bool _CameraEnabled = true;
 
+    bool isHitIsland = false;
     // Start is called before the first frame update
     private void Start()
     {
@@ -36,7 +37,14 @@ public class CameraController : MonoBehaviour
             orientation.transform.rotation = Quaternion.Euler(0, yRot, 0);
             CheckIslandMenu();
         }
-        
+        if (isHitIsland)
+        {
+            buildPrompt.SetActive(true);
+        }
+        else
+        {
+            buildPrompt.SetActive(false);
+        }
     }
 
     private void myInput(){
@@ -66,9 +74,9 @@ public class CameraController : MonoBehaviour
         RaycastHit hit;
         //Debug.DrawRay(cam.transform.position, cam.transform.forward, Color.red, 0.1f);
 
-        if(Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, 50f) && hit.collider.tag == "MenuTrigger"){
+        if(Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, 5f) && hit.collider.tag == "MenuTrigger"){
             //Debug.Log("menu thing");
-            buildPrompt.SetActive(true);
+            isHitIsland = true;
             if(Input.GetKeyDown(KeyCode.B)){
                 IslandBuilder builder = hit.collider.gameObject.GetComponentInParent<IslandBuilder>();
                 builder.OpenBuildMenu();
@@ -76,7 +84,7 @@ public class CameraController : MonoBehaviour
             }
         }
         else{
-            buildPrompt.SetActive(false);
+            isHitIsland = false;
         }
     }
 }
