@@ -14,6 +14,10 @@ public class TowerDisplay : MonoBehaviour
     {
         towerName.text = tower.towerName;
         cost.text = "Cost: " + tower.cost.ToString();
+        
+    }
+    private void OnEnable() {
+        GetComponentInParent<IslandBuilder>().UpdateButtons();
     }
 
 }

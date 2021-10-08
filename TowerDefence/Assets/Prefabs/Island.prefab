@@ -1045,7 +1045,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7999037265656368481}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -1192,7 +1192,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9166007910620832483}
-  - component: {fileID: 3306933186480709203}
   - component: {fileID: 9078368227816448892}
   m_Layer: 6
   m_Name: Island
@@ -1217,20 +1216,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3306933186480709203
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9166007910620832415}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b604366a110c4046904ecf38404d0f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemies: {fileID: 2646032788693113223}
-  turretPosition: {fileID: 1735316875158153879}
 --- !u!114 &9078368227816448892
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -14,13 +14,12 @@ public class IslandBuilder : MonoBehaviour
     bool hasStructure;
     Tower built;
     GameObject structure;
-    Island island;
+
 
     
     // Start is called before the first frame update
     void Start()
     {
-        island = GetComponent<Island>();
         UpdateButtons();
     }
 
@@ -64,11 +63,9 @@ public class IslandBuilder : MonoBehaviour
     }
     public void CloseBuildMenu(){
         buildMenu.SetActive(false);
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
         GameObject.Find("Player").GetComponent<CameraController>().EnableCameraControl();
     }
-    void UpdateButtons(){
+    public void UpdateButtons(){
         if(towers.Length != buttons.Length){
             Debug.Log("not enough towers or buttons");
             return;

@@ -27,9 +27,7 @@ public class Lane : MonoBehaviour
     void Start()
     {
         length = islands.Length;
-        for(int loop = 0; loop < islands.Length; loop++){
-            islands[loop].Index = loop;
-        }
+        
     }
 
     

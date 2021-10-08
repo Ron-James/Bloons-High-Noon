@@ -53,7 +53,12 @@ public class BasicEnemy : MonoBehaviour
     }
 
      private void OnEnable() {
-        
+        isAlive = true;
+        navMeshAgent = GetComponent<NavMeshAgent>();
+        navMeshAgent.destination = mainTowerPos;
+    }
+    private void OnDisable() {
+        isAlive = false;
     }
 
     private void Awake() {
@@ -82,10 +87,12 @@ public class BasicEnemy : MonoBehaviour
     }
 
     void Kill(){
-        this.transform.SetParent(deadEnemies.transform);
-        this.gameObject.SetActive(false);
-        transform.position = deadEnemies.transform.position;
+        //this.transform.SetParent(deadEnemies.transform);
+        //this.gameObject.SetActive(false);
+        //transform.position = deadEnemies.transform.position;
         isAlive = false;
+        GameManager.instance.AddBalance(enemy.value);
+        Destroy(this.gameObject);
     }
 
     void DealDamage(float amount){

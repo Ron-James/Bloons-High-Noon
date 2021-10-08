@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour
     [Header("Ground Detection")]
     [SerializeField] LayerMask groundMask;
     [SerializeField] float groundDistance = 0.4f;
-    bool isGrounded;
+    public bool isGrounded;
     RaycastHit slopeHit;
     Vector3 lastVelocity;
     GrappleGun grappleGun;
@@ -52,6 +52,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        isGrounded = Physics.CheckSphere(transform.position - new Vector3(0, 1, 0), groundDistance, groundMask);
        //isGrounded = Physics.CheckSphere(transform.position - new Vector3(0, 1, 0), groundDistance, groundMask);
        if(rb.velocity.magnitude > 0){
            lastVelocity = rb.velocity;
@@ -91,6 +92,7 @@ public class PlayerController : MonoBehaviour
     bool OnSlope(){
         if(Physics.Raycast(transform.position, Vector3.down, out slopeHit, playerHeight / 2 + 0.5f)){
             if(slopeHit.normal != Vector3.up){
+                Debug.Log("on slope");
                 return true;
             }
             else{
@@ -115,7 +117,7 @@ public class PlayerController : MonoBehaviour
     }
     private void FixedUpdate() {
         
-        isGrounded = Physics.CheckSphere(transform.position - new Vector3(0, 1, 0), groundDistance, groundMask);
+        
         Move();
         
         if(Input.GetAxisRaw("Horizontal") == 0 && Input.GetAxisRaw("Vertical") == 0 && isGrounded){

@@ -16,7 +16,7 @@ public class CameraController : MonoBehaviour
 
     float xRot;
     float yRot;
-
+    [SerializeField] GameObject buildPrompt;
     private bool _CameraEnabled = true;
 
     // Start is called before the first frame update
@@ -24,6 +24,7 @@ public class CameraController : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        
     }
 
     // Update is called once per frame
@@ -66,11 +67,16 @@ public class CameraController : MonoBehaviour
         //Debug.DrawRay(cam.transform.position, cam.transform.forward, Color.red, 0.1f);
 
         if(Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, 50f) && hit.collider.tag == "MenuTrigger"){
-            Debug.Log("menu thing");
-            if(Input.GetKeyDown(KeyCode.X)){
+            //Debug.Log("menu thing");
+            buildPrompt.SetActive(true);
+            if(Input.GetKeyDown(KeyCode.B)){
                 IslandBuilder builder = hit.collider.gameObject.GetComponentInParent<IslandBuilder>();
                 builder.OpenBuildMenu();
+                
             }
+        }
+        else{
+            buildPrompt.SetActive(false);
         }
     }
 }

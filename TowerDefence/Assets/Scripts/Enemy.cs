@@ -9,4 +9,6 @@ public class Enemy : ScriptableObject
     public GameObject prefab;
     public int difficultyRating;
 
+    public int value = 10;
+
 }

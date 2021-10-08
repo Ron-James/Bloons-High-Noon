@@ -5,12 +5,16 @@ using UnityEngine.UI;
 
 public class GameManager : Singleton<GameManager>
 {
-    [SerializeField] Lane [] lanes;
     [SerializeField] float towerHealth = 10f;
+    [SerializeField] Transform spawnPointMin;
+    [SerializeField] Transform spawnPointMax;
     [SerializeField] Image healthBar;
     [SerializeField] int balance;
     [SerializeField] Enemy [] enemies;
     [Range(0, 1)][SerializeField] float sellPercentage = 0.8f;
+    [SerializeField] GameObject deadEnemies;
+    [SerializeField] GameObject aliveEnemies;
+    [SerializeField] Text balanceTxt;
     public int Balance { get => balance; set => balance = value; }
     public float SellPercentage { get => sellPercentage; set => sellPercentage = value; }
 
@@ -19,19 +23,34 @@ public class GameManager : Singleton<GameManager>
     void Start()
     {
         totalHealth = towerHealth;
+        UpdateBalanceText();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.M)){
-            SpawnEnemy(enemies[0].prefab);
+            SpawnEnemy(enemies[0]);
         }
     }
 
-    void SpawnEnemy(GameObject enemy){
-        int random = Random.Range(0, lanes.Length);
-        lanes[random].SpawnEnemy(enemy);
+    public void SpawnEnemy(Enemy enemy){
+        Vector3 position;
+        position.x = spawnPointMin.position.x;
+        position.y = spawnPointMin.position.y;
+        position.z = Random.Range(spawnPointMin.position.z, spawnPointMax.position.z);
+        Transform [] dead = deadEnemies.GetComponentsInChildren<Transform>();
+        if(dead.Length == 0 || true){
+            Instantiate(enemy.prefab, position, Quaternion.identity, aliveEnemies.transform);
+        }
+        /*
+        else{
+            dead[0].SetParent(aliveEnemies.transform);
+            dead[0].position = position;
+            dead[0].gameObject.SetActive(true);
+        }
+        */
     }
 
     public void DamageTower(float amount){
@@ -44,12 +63,17 @@ public class GameManager : Singleton<GameManager>
 
     public void Purchase(int cost){
         balance -= cost;
+        UpdateBalanceText();
     }
 
     public void AddBalance(int amount){
         balance += amount;
+        UpdateBalanceText();
     }
 
+    void UpdateBalanceText(){
+        balanceTxt.text = "Balance: " + Balance.ToString();
+    }
 
 
 }
