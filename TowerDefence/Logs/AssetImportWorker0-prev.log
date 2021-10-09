@@ -15,11 +15,11 @@ C:/Users/myfut/Documents/Final-Assignment-Group-2-Github/Final-Assignment-Group-
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-50289
+51793
 Successfully changed project path to: C:/Users/myfut/Documents/Final-Assignment-Group-2-Github/Final-Assignment-Group-2/TowerDefence
 C:/Users/myfut/Documents/Final-Assignment-Group-2-Github/Final-Assignment-Group-2/TowerDefence
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 25.72 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 25.27 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.2.7f1 (c53830e277f1)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.2.7f1/Editor/Data/Resources/UnitySubsystems
@@ -35,303 +35,182 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.2.7f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.2.7f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.2.7f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56252
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56904
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.2.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001990 seconds.
+Registered in 0.001709 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 26.04 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 24.58 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.922 seconds
+- Completed reload, in  0.871 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.000767 seconds.
+Registered in 0.000719 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.23 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 0.24 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.717 seconds
+- Completed reload, in  0.726 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
-Refreshing native plugins compatible for Editor in 0.24 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 0.27 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 1520 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 74.8 MB.
+System memory in use before: 74.9 MB.
 System memory in use after: 74.9 MB.
 
 Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 1967.
-Total: 1.620100 ms (FindLiveObjects: 0.146400 ms CreateObjectMapping: 0.049600 ms MarkObjects: 1.350000 ms  DeleteObjects: 0.073300 ms)
+Total: 1.607800 ms (FindLiveObjects: 0.170600 ms CreateObjectMapping: 0.068600 ms MarkObjects: 1.292600 ms  DeleteObjects: 0.075100 ms)
 
 ========================================================================
 Received Import Request.
-  path: Assets/Art_Assets/Meshes(.fbx, .obj)/Environment_Mesh/Island_Mesh/Island_01.fbx
-  artifactKey: Guid(42d3bf66c19d6224f8c585a46483530a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art_Assets/Meshes(.fbx, .obj)/Environment_Mesh/Island_Mesh/Island_01.fbx using Guid(42d3bf66c19d6224f8c585a46483530a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2798c387be3bb4517c59ace14207cbef') in 0.133024 seconds
-  Import took 0.135486 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 25.779968 seconds.
-  path: Assets/Art_Assets/PNGS/Environment_Textures/Island_Textures/Island01_Albedo.png
-  artifactKey: Guid(81063b9f8502dfd4ab85358eac56eb0d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art_Assets/PNGS/Environment_Textures/Island_Textures/Island01_Albedo.png using Guid(81063b9f8502dfd4ab85358eac56eb0d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5da4941f91ac96456c4f100a6e489a3c') in 0.040550 seconds
-  Import took 0.043028 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000238 seconds.
-  path: Assets/Art_Assets/PNGS/Environment_Textures/Island_Textures/Island01_AO.001.png
-  artifactKey: Guid(64a1cf9fa1b01f64ab43ad353e02c6e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art_Assets/PNGS/Environment_Textures/Island_Textures/Island01_AO.001.png using Guid(64a1cf9fa1b01f64ab43ad353e02c6e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e6624d4b30a3be8893247009e822ae14') in 0.015679 seconds
-  Import took 0.017711 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.005183 seconds.
-  path: Assets/Art_Assets/PNGS/Environment_Textures/Island_Textures/Island01_AO.001.png
-  artifactKey: Guid(64a1cf9fa1b01f64ab43ad353e02c6e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art_Assets/PNGS/Environment_Textures/Island_Textures/Island01_AO.001.png using Guid(64a1cf9fa1b01f64ab43ad353e02c6e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e6624d4b30a3be8893247009e822ae14') in 0.009369 seconds
-  Import took 0.011702 seconds .
+  path: Assets/Art_Assets/PNGS/Environment_Textures/Island_Textures/Island_01_Albedo_Test.png
+  artifactKey: Guid(e0a4a341eab38ed4a934142962ea6b61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art_Assets/PNGS/Environment_Textures/Island_Textures/Island_01_Albedo_Test.png using Guid(e0a4a341eab38ed4a934142962ea6b61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '25f79535539d75bc52d335771307cfe3') in 0.094495 seconds
+  Import took 0.096686 seconds .
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.000682 seconds.
+Registered in 0.000628 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.30 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 0.25 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.728 seconds
+- Completed reload, in  0.687 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.28 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1491 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 73.0 MB.
+System memory in use after: 73.1 MB.
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1972.
+Total: 1.518000 ms (FindLiveObjects: 0.130900 ms CreateObjectMapping: 0.039900 ms MarkObjects: 1.330700 ms  DeleteObjects: 0.015700 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 38.879569 seconds.
+  path: Assets/Art_Assets/PNGS/Environment_Textures/Island_Textures/Test.mat
+  artifactKey: Guid(e481d5cd0e13e0741af9bf77d24bff62) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art_Assets/PNGS/Environment_Textures/Island_Textures/Test.mat using Guid(e481d5cd0e13e0741af9bf77d24bff62) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e8df991a91e04188869f9544ef21db17') in 0.078707 seconds
+  Import took 0.081011 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 133.354859 seconds.
+  path: Assets/Art_Assets/PNGS/Environment_Textures/Island_Textures/Island_01_Albedo_Test 1.png
+  artifactKey: Guid(0707cda8812f1e54baeb8a7bad91db18) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art_Assets/PNGS/Environment_Textures/Island_Textures/Island_01_Albedo_Test 1.png using Guid(0707cda8812f1e54baeb8a7bad91db18) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd3b208a6024868733ef4c69b7fc310a5') in 0.016236 seconds
+  Import took 0.019781 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 73.800559 seconds.
+  path: Assets/Art_Assets/PNGS/Environment_Textures/Island_Textures/Materials/Island_01_Albedo 1.mat
+  artifactKey: Guid(f4f9859fd7e1b384a8aa0cb81c3fa6f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art_Assets/PNGS/Environment_Textures/Island_Textures/Materials/Island_01_Albedo 1.mat using Guid(f4f9859fd7e1b384a8aa0cb81c3fa6f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b797a4ca3c5428d3e9b66472b78f9a01') in 0.012557 seconds
+  Import took 0.015211 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.141649 seconds.
+  path: Assets/Art_Assets/Materials/Environment_Props/Prop_Material/Container&Storage_Material/Container&Storage_Material/Crate_01_Material.mat
+  artifactKey: Guid(63721bfec8aa432439a49051021503b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art_Assets/Materials/Environment_Props/Prop_Material/Container&Storage_Material/Container&Storage_Material/Crate_01_Material.mat using Guid(63721bfec8aa432439a49051021503b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1763d88ed397d78156ec16a55fd6b47a') in 0.012019 seconds
+  Import took 0.014346 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 31.983492 seconds.
+  path: Assets/Art_Assets/syferfontein_18d_clear_4k.exr
+  artifactKey: Guid(1f2398afe499c1748acb1a2156ff0b48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art_Assets/syferfontein_18d_clear_4k.exr using Guid(1f2398afe499c1748acb1a2156ff0b48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8f325ec109d2b670086e1ddbd0d79919') in 0.029961 seconds
+  Import took 0.032251 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 19.362724 seconds.
+  path: Assets/Art_Assets/syferfontein_18d_clear_4k.exr
+  artifactKey: Guid(1f2398afe499c1748acb1a2156ff0b48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art_Assets/syferfontein_18d_clear_4k.exr using Guid(1f2398afe499c1748acb1a2156ff0b48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0efd612bd92ecc92006564e48a30ffb3') in 0.064917 seconds
+  Import took 0.068785 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 15.307949 seconds.
+  path: Assets/Art_Assets/Skybox_01.mat
+  artifactKey: Guid(fc55a3b68ca4109479058a45ad0f3b27) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art_Assets/Skybox_01.mat using Guid(fc55a3b68ca4109479058a45ad0f3b27) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f9b832787fdd4e92d97ddfdf7d19e26e') in 0.008686 seconds
+  Import took 0.010920 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001049 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.24 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.725 seconds
 Platform modules already initialized, skipping
 Refreshing native plugins compatible for Editor in 0.25 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 1491 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 76.3 MB.
+System memory in use before: 76.4 MB.
 System memory in use after: 76.5 MB.
 
-Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 1981.
-Total: 1.370500 ms (FindLiveObjects: 0.129200 ms CreateObjectMapping: 0.042400 ms MarkObjects: 1.182500 ms  DeleteObjects: 0.015400 ms)
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 2017.
+Total: 1.530400 ms (FindLiveObjects: 0.163900 ms CreateObjectMapping: 0.046100 ms MarkObjects: 1.305900 ms  DeleteObjects: 0.013500 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 1013.801844 seconds.
-  path: Assets/Art_Assets/PNGS/Environment_Textures/Island_Textures/Island_01_Albedo 1.png
-  artifactKey: Guid(c46516cf054a6f546aad89c9a090f787) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art_Assets/PNGS/Environment_Textures/Island_Textures/Island_01_Albedo 1.png using Guid(c46516cf054a6f546aad89c9a090f787) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3d92811591504535249b66e48a171d43') in 0.038250 seconds
-  Import took 0.041293 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000260 seconds.
-  path: Assets/Art_Assets/PNGS/Environment_Textures/Island_Textures/Island_01_AO.png
-  artifactKey: Guid(67e1f2baa0d2087428be39838ab70e21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art_Assets/PNGS/Environment_Textures/Island_Textures/Island_01_AO.png using Guid(67e1f2baa0d2087428be39838ab70e21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a7a303c92890e023b06aa5e84a05038f') in 0.009883 seconds
-  Import took 0.011887 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.016350 seconds.
-  path: Assets/Art_Assets/PNGS/Environment_Textures/Island_Textures/Island_01_AO.png
-  artifactKey: Guid(67e1f2baa0d2087428be39838ab70e21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art_Assets/PNGS/Environment_Textures/Island_Textures/Island_01_AO.png using Guid(67e1f2baa0d2087428be39838ab70e21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a7a303c92890e023b06aa5e84a05038f') in 0.009114 seconds
-  Import took 0.011331 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 13.550209 seconds.
-  path: Assets/Art_Assets/Meshes(.fbx, .obj)/Environment_Mesh/Island_Mesh/Island_01.fbx
-  artifactKey: Guid(42d3bf66c19d6224f8c585a46483530a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art_Assets/Meshes(.fbx, .obj)/Environment_Mesh/Island_Mesh/Island_01.fbx using Guid(42d3bf66c19d6224f8c585a46483530a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b4033db04725451a0b436945558f1e2b') in 0.046369 seconds
-  Import took 0.048793 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.003300 seconds.
-  path: Assets/Art_Assets/Meshes(.fbx, .obj)/Environment_Mesh/Island_Mesh/Island_01.fbx
-  artifactKey: Guid(42d3bf66c19d6224f8c585a46483530a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art_Assets/Meshes(.fbx, .obj)/Environment_Mesh/Island_Mesh/Island_01.fbx using Guid(42d3bf66c19d6224f8c585a46483530a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b4033db04725451a0b436945558f1e2b') in 0.013471 seconds
-  Import took 0.015910 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 28.828919 seconds.
-  path: Assets/Art_Assets/Meshes(.fbx, .obj)/Environment_Mesh/Island_Mesh/Island_01.fbx
-  artifactKey: Guid(42d3bf66c19d6224f8c585a46483530a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art_Assets/Meshes(.fbx, .obj)/Environment_Mesh/Island_Mesh/Island_01.fbx using Guid(42d3bf66c19d6224f8c585a46483530a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0f1ce5d315928890ba2402fbffa0cda3') in 0.012335 seconds
-  Import took 0.014845 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.004859 seconds.
-  path: Assets/Art_Assets/Meshes(.fbx, .obj)/Environment_Mesh/Island_Mesh/Island_01.fbx
-  artifactKey: Guid(42d3bf66c19d6224f8c585a46483530a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art_Assets/Meshes(.fbx, .obj)/Environment_Mesh/Island_Mesh/Island_01.fbx using Guid(42d3bf66c19d6224f8c585a46483530a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0f1ce5d315928890ba2402fbffa0cda3') in 0.011754 seconds
-  Import took 0.013959 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 66.862875 seconds.
-  path: Assets/Art_Assets/Meshes(.fbx, .obj)/Environment_Mesh/Island_Mesh/Island_01.fbx
-  artifactKey: Guid(42d3bf66c19d6224f8c585a46483530a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art_Assets/Meshes(.fbx, .obj)/Environment_Mesh/Island_Mesh/Island_01.fbx using Guid(42d3bf66c19d6224f8c585a46483530a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0c211e9338d8650f0d026a41edfa033e') in 0.012205 seconds
-  Import took 0.014567 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.005927 seconds.
-  path: Assets/Art_Assets/Meshes(.fbx, .obj)/Environment_Mesh/Island_Mesh/Island_01.fbx
-  artifactKey: Guid(42d3bf66c19d6224f8c585a46483530a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art_Assets/Meshes(.fbx, .obj)/Environment_Mesh/Island_Mesh/Island_01.fbx using Guid(42d3bf66c19d6224f8c585a46483530a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0c211e9338d8650f0d026a41edfa033e') in 0.011738 seconds
-  Import took 0.014063 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 33.200635 seconds.
-  path: Assets/Prefabs/Environment/Islands/Base_Island/Med_Island_01.prefab
-  artifactKey: Guid(3e605b9e862475d449c4cf4fa80d1494) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Environment/Islands/Base_Island/Med_Island_01.prefab using Guid(3e605b9e862475d449c4cf4fa80d1494) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1ec929364d5264f700f1adfa0d0b54b7') in 0.010434 seconds
-  Import took 0.012720 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.832242 seconds.
-  path: Assets/Prefabs/Environment/Islands/Base_Island/Med_Island_01.prefab
-  artifactKey: Guid(3e605b9e862475d449c4cf4fa80d1494) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Environment/Islands/Base_Island/Med_Island_01.prefab using Guid(3e605b9e862475d449c4cf4fa80d1494) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '01c56cbd4ed786e36c824a801337b6ac') in 0.008906 seconds
-  Import took 0.011123 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.015549 seconds.
-  path: Assets/Prefabs/Environment/Islands/Base_Island/Med_Island_01.prefab
-  artifactKey: Guid(3e605b9e862475d449c4cf4fa80d1494) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Environment/Islands/Base_Island/Med_Island_01.prefab using Guid(3e605b9e862475d449c4cf4fa80d1494) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '01c56cbd4ed786e36c824a801337b6ac') in 0.007419 seconds
-  Import took 0.009660 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 664.944453 seconds.
-  path: Assets/Art_Assets/PNGS/Environment_Textures/Island_Textures/Island_02.fbx
-  artifactKey: Guid(5263bce71f77551468ad7ad8d5f94578) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art_Assets/PNGS/Environment_Textures/Island_Textures/Island_02.fbx using Guid(5263bce71f77551468ad7ad8d5f94578) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '03c6bc27fdbc01da5a2d7b5e6bdf38b8') in 0.028709 seconds
-  Import took 0.031663 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.005172 seconds.
-  path: Assets/Art_Assets/PNGS/Environment_Textures/Island_Textures/Island_02.fbx
-  artifactKey: Guid(5263bce71f77551468ad7ad8d5f94578) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art_Assets/PNGS/Environment_Textures/Island_Textures/Island_02.fbx using Guid(5263bce71f77551468ad7ad8d5f94578) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '03c6bc27fdbc01da5a2d7b5e6bdf38b8') in 0.016580 seconds
-  Import took 0.018925 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 7.908815 seconds.
-  path: Assets/Art_Assets/PNGS/Environment_Textures/Island_Textures/Island_02.fbx
-  artifactKey: Guid(5263bce71f77551468ad7ad8d5f94578) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art_Assets/PNGS/Environment_Textures/Island_Textures/Island_02.fbx using Guid(5263bce71f77551468ad7ad8d5f94578) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3949c0ec0c70e1ae39ab4f447a168a09') in 0.054666 seconds
-  Import took 0.057165 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000200 seconds.
-  path: Assets/Art_Assets/PNGS/Environment_Textures/Island_Textures/Island_02_Albedo.png
-  artifactKey: Guid(03cc42926fe0c7641915450c3c216e38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art_Assets/PNGS/Environment_Textures/Island_Textures/Island_02_Albedo.png using Guid(03cc42926fe0c7641915450c3c216e38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f304dc290455438a7251707fbcdf52e5') in 0.013244 seconds
-  Import took 0.015883 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000208 seconds.
-  path: Assets/Art_Assets/PNGS/Environment_Textures/Island_Textures/Island_02_AO.png
-  artifactKey: Guid(361bc0b08a539274c8d0359fd50f05d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art_Assets/PNGS/Environment_Textures/Island_Textures/Island_02_AO.png using Guid(361bc0b08a539274c8d0359fd50f05d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c5e614bb8dfabd114080c4f8ebb9f445') in 0.023484 seconds
-  Import took 0.026216 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 39.043547 seconds.
-  path: Assets/Art_Assets/Materials/Environment_Props/Island_Material/Island_02_Material.mat
-  artifactKey: Guid(72abb2200b01d184fa7ebe187624c1b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art_Assets/Materials/Environment_Props/Island_Material/Island_02_Material.mat using Guid(72abb2200b01d184fa7ebe187624c1b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4e64ad7aad52232f4b5347237969a8e2') in 0.011901 seconds
-  Import took 0.014104 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 32.831571 seconds.
-  path: Assets/Art_Assets/Materials/Environment_Props/Prop_Material/Container&Storage_Material/Barrier_Material/Fence_01_Material.mat
-  artifactKey: Guid(c72c71d0e54a1c244b489da2152bd63f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art_Assets/Materials/Environment_Props/Prop_Material/Container&Storage_Material/Barrier_Material/Fence_01_Material.mat using Guid(c72c71d0e54a1c244b489da2152bd63f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fafe38450b205ba9be85d70b0e34f9e0') in 0.011654 seconds
-  Import took 0.013938 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 108.386986 seconds.
-  path: Assets/Art_Assets/PNGS/Environment_Textures/Island_Textures/Island_02_Albedo.png
-  artifactKey: Guid(03cc42926fe0c7641915450c3c216e38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art_Assets/PNGS/Environment_Textures/Island_Textures/Island_02_Albedo.png using Guid(03cc42926fe0c7641915450c3c216e38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fa11193cb558ed6f11803485cb5c5e2a') in 0.008532 seconds
-  Import took 0.010978 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.001851 seconds.
-  path: Assets/Art_Assets/PNGS/Environment_Textures/Island_Textures/Island_02_Albedo.png
-  artifactKey: Guid(03cc42926fe0c7641915450c3c216e38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art_Assets/PNGS/Environment_Textures/Island_Textures/Island_02_Albedo.png using Guid(03cc42926fe0c7641915450c3c216e38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fa11193cb558ed6f11803485cb5c5e2a') in 0.007404 seconds
-  Import took 0.009677 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 82.082359 seconds.
-  path: Assets/Prefabs/Environment/Islands/Base_Island/Med_Island_02.prefab
-  artifactKey: Guid(8188db74b1fd8db4e8b2ccafda33222d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Environment/Islands/Base_Island/Med_Island_02.prefab using Guid(8188db74b1fd8db4e8b2ccafda33222d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e72a13b337f9a1402b6afd9271a013ea') in 0.010375 seconds
-  Import took 0.013011 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.005921 seconds.
-  path: Assets/Prefabs/Environment/Islands/Base_Island/Med_Island_02.prefab
-  artifactKey: Guid(8188db74b1fd8db4e8b2ccafda33222d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Environment/Islands/Base_Island/Med_Island_02.prefab using Guid(8188db74b1fd8db4e8b2ccafda33222d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e72a13b337f9a1402b6afd9271a013ea') in 0.006503 seconds
-  Import took 0.008915 seconds .
+  Time since last request: 353.048581 seconds.
+  path: Assets/Art_Assets/Meshes(.fbx, .obj)/Environment_Mesh/Prop_Mesh/Barrier_Mesh/Fence_01.fbx
+  artifactKey: Guid(bd834cf3b85a1e14f9214c9bab24dab4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art_Assets/Meshes(.fbx, .obj)/Environment_Mesh/Prop_Mesh/Barrier_Mesh/Fence_01.fbx using Guid(bd834cf3b85a1e14f9214c9bab24dab4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ba28aedb08a4171db2bdd458fae2237a') in 0.077099 seconds
+  Import took 0.079437 seconds .
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.000723 seconds.
+Registered in 0.000716 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.41 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 0.25 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.714 seconds
+- Completed reload, in  0.683 seconds
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.26 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 0.25 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 1491 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 76.6 MB.
 System memory in use after: 76.7 MB.
 
-Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 2018.
-Total: 1.523700 ms (FindLiveObjects: 0.132500 ms CreateObjectMapping: 0.041700 ms MarkObjects: 1.331200 ms  DeleteObjects: 0.017400 ms)
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 2024.
+Total: 1.514300 ms (FindLiveObjects: 0.152600 ms CreateObjectMapping: 0.042000 ms MarkObjects: 1.305000 ms  DeleteObjects: 0.014100 ms)
 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file
