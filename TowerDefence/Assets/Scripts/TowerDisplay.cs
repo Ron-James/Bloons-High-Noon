@@ -17,7 +17,7 @@ public class TowerDisplay : MonoBehaviour
         
     }
     private void OnEnable() {
-        GetComponentInParent<IslandBuilder>().UpdateButtons();
+        //GetComponentInParent<IslandBuilder>().UpdateButtons();
     }
 
 }

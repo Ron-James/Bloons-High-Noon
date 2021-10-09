@@ -10,6 +10,7 @@ public class CameraController : MonoBehaviour
     [SerializeField] float sensY;
     [SerializeField] Transform orientation;
     [SerializeField] Camera cam;
+    [SerializeField] BuildMenu buildMenu;
     float mouseX;
     float mouseY;
     float multiplier = 0.1f;
@@ -78,8 +79,8 @@ public class CameraController : MonoBehaviour
             //Debug.Log("menu thing");
             isHitIsland = true;
             if(Input.GetKeyDown(KeyCode.B)){
-                IslandBuilder builder = hit.collider.gameObject.GetComponentInParent<IslandBuilder>();
-                builder.OpenBuildMenu();
+                BuildPlate buildPlate = hit.collider.gameObject.GetComponentInParent<BuildPlate>();
+                buildMenu.OpenMenu(buildPlate);
                 
             }
         }

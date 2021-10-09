@@ -8,6 +8,7 @@ public class Tower : ScriptableObject
     public string towerName;
     public int cost;
     public GameObject tower;
+    public int health = 3;
 
     
     public int CalculateSellValue(){

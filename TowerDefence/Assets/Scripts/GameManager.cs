@@ -15,6 +15,7 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] GameObject deadEnemies;
     [SerializeField] GameObject aliveEnemies;
     [SerializeField] Text balanceTxt;
+    [SerializeField] BuildPlate [] buildPlates;
     public int Balance { get => balance; set => balance = value; }
     public float SellPercentage { get => sellPercentage; set => sellPercentage = value; }
 
@@ -31,7 +32,7 @@ public class GameManager : Singleton<GameManager>
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.M)){
-            SpawnEnemy(enemies[0]);
+            SpawnEnemy(enemies[1]);
         }
     }
 
@@ -73,6 +74,15 @@ public class GameManager : Singleton<GameManager>
 
     void UpdateBalanceText(){
         balanceTxt.text = "Balance: " + Balance.ToString();
+    }
+
+    public BuildPlate NearestTower(){
+        for(int loop = buildPlates.Length - 1; loop >= 0; loop--){
+            if(buildPlates[loop].BuildIndex > 0){
+                return buildPlates[loop];
+            }
+        }
+        return null;
     }
 
 
