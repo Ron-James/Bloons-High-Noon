@@ -14,10 +14,11 @@ public class BuildPlate : MonoBehaviour
     [SerializeField] Transform buildPosition;
     List<Transform> builds = new List<Transform>();
 
-    int health;
-    int maxHealth;
+    float health;
+    float maxHealth;
     public Build Build { get => build; set => build = value; }
     public int BuildIndex { get => (int) build; }
+    public float Health { get => health; set => health = value; }
 
     // Start is called before the first frame update
     void Start()
@@ -92,7 +93,7 @@ public class BuildPlate : MonoBehaviour
 
     }
 
-    public void TakeDamage(int damage){
+    public void TakeDamage(float damage){
         if(BuildIndex > 0){
             health -= damage;
             if(health <= 0){

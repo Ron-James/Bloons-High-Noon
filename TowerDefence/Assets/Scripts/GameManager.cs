@@ -32,7 +32,7 @@ public class GameManager : Singleton<GameManager>
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.M)){
-            SpawnEnemy(enemies[1]);
+            SpawnEnemy(enemies[2]);
         }
     }
 
