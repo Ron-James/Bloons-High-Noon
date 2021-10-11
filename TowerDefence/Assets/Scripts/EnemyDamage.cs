@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyDamage : MonoBehaviour
 {
-    [SerializeField] int damage = 1;
+    [SerializeField] float damage = 1;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,9 +21,11 @@ public class EnemyDamage : MonoBehaviour
             case "Build Plate":
                 other.gameObject.GetComponent<BuildPlate>().TakeDamage(damage);
                 GetComponent<EnemyHealth>().Kill();
+                Debug.Log(other.gameObject.name + "killed by");
             break;
             case "Tower":
                 GameManager.instance.DamageTower(damage);
+                GetComponent<EnemyHealth>().Kill();
             break;
         }
     }

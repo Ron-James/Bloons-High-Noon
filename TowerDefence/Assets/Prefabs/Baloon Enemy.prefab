@@ -17,7 +17,6 @@ GameObject:
   - component: {fileID: 6728229834842569182}
   - component: {fileID: 9153738902010155777}
   - component: {fileID: 8623991235429522863}
-  - component: {fileID: 5876878676228132238}
   - component: {fileID: 578884621266749924}
   m_Layer: 0
   m_Name: Baloon Enemy
@@ -67,7 +66,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9ca80467a033e954a8b9ad8601d6f4c7, type: 2}
+  - {fileID: 2100000, guid: bb07ad3d6e48ef342b7b848007c35121, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -168,7 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c58d69c1ab8e1df4dbe3e10833e0d294, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1
+  enemy: {fileID: 11400000, guid: ea37699812fd0ae41996b122ffab05d9, type: 2}
 --- !u!114 &8623991235429522863
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,23 +180,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e8e31c8da50bd94f9386b25728d65cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
---- !u!114 &5876878676228132238
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8501894365921418112}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41e9cbc1ee0277c49b055bc4651c1ca1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  rotationSpeed: 25
-  range: 25
-  fireRate: 0.5
   damage: 1
 --- !u!135 &578884621266749924
 SphereCollider:

@@ -16,6 +16,7 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] GameObject aliveEnemies;
     [SerializeField] Text balanceTxt;
     [SerializeField] BuildPlate [] buildPlates;
+
     public int Balance { get => balance; set => balance = value; }
     public float SellPercentage { get => sellPercentage; set => sellPercentage = value; }
 
@@ -25,6 +26,7 @@ public class GameManager : Singleton<GameManager>
     {
         totalHealth = towerHealth;
         UpdateBalanceText();
+        Debug.Log("Dead enemies " + deadEnemies.GetComponentsInChildren<Transform>().Length + deadEnemies.GetComponentsInChildren<Transform>()[0].gameObject.name);
         
     }
 
@@ -42,16 +44,18 @@ public class GameManager : Singleton<GameManager>
         position.y = spawnPointMin.position.y;
         position.z = Random.Range(spawnPointMin.position.z, spawnPointMax.position.z);
         Transform [] dead = deadEnemies.GetComponentsInChildren<Transform>();
-        if(dead.Length == 0 || true){
+        if(dead.Length > 1){
             Instantiate(enemy.prefab, position, Quaternion.identity, aliveEnemies.transform);
         }
-        /*
         else{
-            dead[0].SetParent(aliveEnemies.transform);
-            dead[0].position = position;
-            dead[0].gameObject.SetActive(true);
+            for(int loop = 1; loop < dead.Length; loop++){
+                if(dead[loop].gameObject.GetComponent<EnemyHealth>().Enemy.enemyName == enemy.enemyName){
+                    dead[loop].gameObject.GetComponent<EnemyHealth>().Revive(position);
+                    break;
+                }
+            }
         }
-        */
+
     }
 
     public void DamageTower(float amount){
