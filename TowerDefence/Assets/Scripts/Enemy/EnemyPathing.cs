@@ -24,6 +24,7 @@ public class EnemyPathing : MonoBehaviour
         navMeshAgent = GetComponent<NavMeshAgent>();
     }
     private void OnEnable() {
+        navMeshAgent = GetComponent<NavMeshAgent>();
         Physics.IgnoreLayerCollision(9, 10, true);
         nearestTower = NearestTowerPosition();
         if(!attacksTowers){

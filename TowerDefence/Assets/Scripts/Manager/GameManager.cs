@@ -34,7 +34,7 @@ public class GameManager : Singleton<GameManager>
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.M)){
-            SpawnEnemy(enemies[2]);
+            SpawnEnemy(enemies[1]);
         }
     }
 
@@ -44,7 +44,7 @@ public class GameManager : Singleton<GameManager>
         position.y = spawnPointMin.position.y;
         position.z = Random.Range(spawnPointMin.position.z, spawnPointMax.position.z);
         Transform [] dead = deadEnemies.GetComponentsInChildren<Transform>();
-        if(dead.Length > 1){
+        if(dead.Length == 1 || true){
             Instantiate(enemy.prefab, position, Quaternion.identity, aliveEnemies.transform);
         }
         else{

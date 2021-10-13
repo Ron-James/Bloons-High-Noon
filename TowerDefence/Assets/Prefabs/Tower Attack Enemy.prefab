@@ -154,6 +154,8 @@ MonoBehaviour:
   towerPosition: {x: -72.09, y: 9.3, z: -5.85}
   attacksTowers: 1
   floatHeight: 9
+  regularSpeed: 8
+  slowedSpeed: 4
 --- !u!114 &1706724357291119919
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,4 +181,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c58d69c1ab8e1df4dbe3e10833e0d294, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1
+  enemy: {fileID: 11400000, guid: 2a7869619b229dc40bad773c6cd98554, type: 2}
