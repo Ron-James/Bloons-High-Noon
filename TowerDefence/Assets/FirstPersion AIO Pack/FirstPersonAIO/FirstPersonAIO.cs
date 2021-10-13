@@ -91,7 +91,10 @@ public class FirstPersonAIO : MonoBehaviour {
     public bool enableCameraShake=false;
     internal Vector3 cameraStartingPosition;
     float baseCamFOV;
-    
+    public BuildMenu buildMenu;
+    bool isHitIsland = false;
+    public GameObject buildPrompt;
+    private bool _CameraEnabled = true;
 
     public bool autoCrosshair = false;
     public bool drawStaminaMeter = true;
@@ -243,6 +246,8 @@ public class FirstPersonAIO : MonoBehaviour {
 
     #endregion
 
+    
+    
     #endregion
 
     private void Awake(){
@@ -305,7 +310,7 @@ public class FirstPersonAIO : MonoBehaviour {
             }
         }
         cameraStartingPosition = playerCamera.transform.localPosition;
-        if(lockAndHideCursor) { Cursor.lockState = CursorLockMode.Locked; Cursor.visible = false; }
+        
         baseCamFOV = playerCamera.fieldOfView;
         #endregion
 
@@ -332,13 +337,15 @@ public class FirstPersonAIO : MonoBehaviour {
         previousPosition = fps_Rigidbody.position;
         audioSource = GetComponent<AudioSource>();
         #endregion
+      
     }
 
     private void Update(){
 
         #region Look Settings - Update
-
-            if(enableCameraMovement && !controllerPauseState){
+        if (!lockAndHideCursor) { Cursor.lockState = CursorLockMode.Confined; Cursor.visible = true; }
+        if (lockAndHideCursor) { Cursor.lockState = CursorLockMode.Locked; Cursor.visible = false; }
+        if (enableCameraMovement && !controllerPauseState){
             float mouseYInput = 0;
             float mouseXInput = 0;
             float camFOV = playerCamera.fieldOfView;
@@ -377,13 +384,24 @@ public class FirstPersonAIO : MonoBehaviour {
         #endregion
 
         #region Movement Settings - Update
-        
+
         #endregion
 
         #region Headbobbing Settings - Update
 
         #endregion
-
+        if (enableCameraMovement)
+        {
+            CheckIslandMenu();
+        }
+        if (isHitIsland)
+        {
+            buildPrompt.SetActive(true);
+        }
+        else
+        {
+            buildPrompt.SetActive(false);
+        }
     }
 
     private void FixedUpdate(){
@@ -806,9 +824,41 @@ public class FirstPersonAIO : MonoBehaviour {
         if(advanced.maxSlopeAngle>0){advanced.curntGroundNormal = Vector3.up; advanced.lastKnownSlopeAngle = 0; advanced.isTouchingWalkable = false; advanced.isTouchingUpright = false;}
 
     }
+    public void CheckIslandMenu()
+    {
+        RaycastHit hit;
+        Debug.DrawRay(playerCamera.transform.position, Camera.main.transform.forward, Color.red, .1f);
 
+        if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, 5f) && hit.collider.tag == "MenuTrigger")
+        {
+            //Debug.Log("menu thing");
+            isHitIsland = true;
+            if (Input.GetKeyDown(KeyCode.B))
+            {
+                BuildPlate buildPlate = hit.collider.gameObject.GetComponentInParent<BuildPlate>();
+                buildMenu.OpenMenu(buildPlate);
 
+            }
+        }
+        else
+        {
+            isHitIsland = false;
+        }
+    }
+
+    public void DisableCamera()
+    {
+        enableCameraMovement = false;
+        lockAndHideCursor = false;
+    }
+    public void EnableCamera()
+    {
+        enableCameraMovement = true;
+        lockAndHideCursor = true;
+    }
 }
+
+
 
 #if UNITY_EDITOR
     [CustomEditor(typeof(FirstPersonAIO)),InitializeOnLoadAttribute]
@@ -934,7 +984,10 @@ public class FirstPersonAIO : MonoBehaviour {
                 t.mouseSensitivity = EditorGUILayout.Slider(new GUIContent("Rotation Speed","Determines how fast the camera spins when turning the camera."),t.mouseSensitivity, 1,15);
             }            t.cameraSmoothing = EditorGUILayout.Slider(new GUIContent("Camera Smoothing","Determines how smooth the camera movement is."),t.cameraSmoothing,1,25);
             t.playerCamera = (Camera)EditorGUILayout.ObjectField(new GUIContent("Player Camera", "Camera attached to this controller"),t.playerCamera,typeof(Camera),true);
-            if(!t.playerCamera){EditorGUILayout.HelpBox("A Camera is required for operation.",MessageType.Error);}
+        t.buildPrompt = (GameObject)EditorGUILayout.ObjectField(new GUIContent("Build Prompt"), t.buildPrompt, typeof(GameObject), true);
+        t.buildMenu = (BuildMenu)EditorGUILayout.ObjectField(new GUIContent("Build Menu"), t.buildMenu, typeof(BuildMenu), true);
+
+        if (!t.playerCamera){EditorGUILayout.HelpBox("A Camera is required for operation.",MessageType.Error);}
             t.enableCameraShake = EditorGUILayout.ToggleLeft(new GUIContent("Enable Camera Shake?", "Call this Coroutine externally with duration ranging from 0.01 to 1, and a magnitude of 0.01 to 0.5."), t.enableCameraShake);
             t.lockAndHideCursor = EditorGUILayout.ToggleLeft(new GUIContent("Lock and Hide Cursor","For debuging or if You don't plan on having a pause menu or quit button."),t.lockAndHideCursor);
             t.autoCrosshair = EditorGUILayout.ToggleLeft(new GUIContent("Auto Crosshair","Determines if a basic crosshair will be generated."),t.autoCrosshair);
@@ -1548,5 +1601,6 @@ public class FirstPersonAIO : MonoBehaviour {
                  adTex1 = tex;
              }
          }
-    }
+   
+}
 #endif

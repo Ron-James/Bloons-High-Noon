@@ -59,11 +59,11 @@ public class IslandBuilder : MonoBehaviour
         UpdateButtons();
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-        GameObject.Find("Player").GetComponent<CameraController>().DisableCameraControl();
+        GameObject.Find("Player").GetComponent<FirstPersonAIO>().DisableCamera();
     }
     public void CloseBuildMenu(){
         buildMenu.SetActive(false);
-        GameObject.Find("Player").GetComponent<CameraController>().EnableCameraControl();
+        GameObject.Find("Player").GetComponent<FirstPersonAIO>().EnableCamera();
     }
     public void UpdateButtons(){
         if(towers.Length != buttons.Length){
