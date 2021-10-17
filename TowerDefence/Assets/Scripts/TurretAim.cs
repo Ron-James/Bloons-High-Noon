@@ -43,15 +43,6 @@ public class TurretAim : MonoBehaviour
        
     }
 
-    private void OnTriggerStay(Collider other) {
-        switch(other.tag){
-            case "Enemy":
-                if(target == null){
-                    target = other.transform;
-                }
-            break;
-        }
-    }
     private void OnTriggerExit(Collider other) {
         switch(other.tag){
             case "Enemy":

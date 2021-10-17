@@ -17,6 +17,7 @@ public class EnemyPathing : MonoBehaviour
     Coroutine slowCo;
 
     public bool Slowed { get => slowed; set => slowed = value; }
+    public Vector3 TowerPosition { get => towerPosition; set => towerPosition = value; }
 
     // Start is called before the first frame update
     void Start()
@@ -38,7 +39,7 @@ public class EnemyPathing : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ControlSpeed();
+        
         if(nearestTower != NearestTowerPosition() && attacksTowers){
             nearestTower = NearestTowerPosition();
             navMeshAgent.destination = nearestTower;
@@ -76,15 +77,19 @@ public class EnemyPathing : MonoBehaviour
         }
         
     }
+    
     IEnumerator SlowEnemy(float duration){
+        Rigidbody rigidbody = GetComponent<Rigidbody>();
         float time = 0;
         slowed = true;
-
+        navMeshAgent.speed = slowedSpeed;
+        rigidbody.velocity = slowedSpeed * rigidbody.velocity.normalized; 
         while(true){
             time += Time.deltaTime;
 
             if(time >= duration){
                 slowed = false;
+                navMeshAgent.speed = regularSpeed;
                 slowCo = null;
                 break;
             }

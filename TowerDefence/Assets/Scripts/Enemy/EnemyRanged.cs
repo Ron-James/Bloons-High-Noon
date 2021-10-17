@@ -8,14 +8,20 @@ public class EnemyRanged : MonoBehaviour
     Transform tempDestination;
     [SerializeField] Transform target;
     [SerializeField] float rotationSpeed = 25f;
-    [SerializeField] float range = 25f;
     [SerializeField] float fireRate = 0.5f;
     [SerializeField] float damage = 1;
+    [SerializeField] LineRenderer lineRenderer;
+    [SerializeField] LayerMask layerMask;
+
 
     float fireCount;
+
+    public Transform Target { get => target; set => target = value; }
+
     // Start is called before the first frame update
     void Start()
     {
+        
         fireCount = 0;
         //GetComponent<SphereCollider>().radius = range;
     }
@@ -24,6 +30,7 @@ public class EnemyRanged : MonoBehaviour
     void Update()
     {
         if(target != null && target.gameObject.GetComponentInParent<BuildPlate>().Health > 0){
+            Aim();
             fireCount += Time.deltaTime;
             if(fireCount >= fireRate){
                 Fire();
@@ -46,28 +53,41 @@ public class EnemyRanged : MonoBehaviour
         }
         else{
             RaycastHit hit;
-            Vector3 direction = (target.position - transform.position).normalized; 
-            Physics.Raycast(transform.position, direction, out hit, range);
-            if(hit.collider.tag == "Tower"){
+            Vector3 direction = (target.position - transform.position).normalized;
+            float range = (target.position - transform.position).magnitude;
+            if(Physics.Raycast(transform.position, direction, out hit, range, layerMask) && hit.collider.tag == "Build Plate"){
                 //deal damage top tower
+                //Debug.Log(hit.collider.name + "shot this");
+                StartCoroutine(ShowProjectileLine(hit.point));
                 hit.collider.gameObject.GetComponentInParent<BuildPlate>().TakeDamage(damage);
                 if(target.gameObject.GetComponentInParent<BuildPlate>().Health <= 0 ){
                     target = null;
-                    GetComponent<NavMeshAgent>().destination = tempDestination.position;
+                    GetComponent<NavMeshAgent>().isStopped = false;
                 }
             }
         }
+
         
     }
-    private void OnTriggerEnter(Collider other) {
-        switch(other.tag){
-            case "Tower":
-                if(target == null){
-                    target = other.transform;
-                    tempDestination.position = GetComponent<NavMeshAgent>().destination;
-                    GetComponent<NavMeshAgent>().destination = transform.position;
-                }
-            break;
+
+    IEnumerator ShowProjectileLine(Vector3 point){
+        float time = 0;
+        lineRenderer.SetPosition(0, transform.position);
+        lineRenderer.SetPosition(1, point);
+
+        while(true){
+            time += Time.deltaTime;
+            if(time >= fireRate/5){
+                lineRenderer.SetPosition(0, Vector3.zero);
+                lineRenderer.SetPosition(1, Vector3.zero);
+                break; 
+            }
+            else{
+                yield return null;
+            }
         }
+        yield break;
     }
+    
+    
 }

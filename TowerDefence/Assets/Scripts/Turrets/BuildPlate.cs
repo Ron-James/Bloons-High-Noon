@@ -4,17 +4,19 @@ using UnityEngine;
 
 public enum Build{
     empty = 0,
-    basic = 1
+    basic = 1,
+    expo = 2,
+    ice = 3
 }
 
 public class BuildPlate : MonoBehaviour
 {
     [SerializeField] Build build = Build.empty;
     [SerializeField] Tower [] towers;
+    [SerializeField] GameObject [] towerBuilds;
     [SerializeField] Transform buildPosition;
-    List<Transform> builds = new List<Transform>();
 
-    float health;
+    [SerializeField] float health;
     float maxHealth;
     public Build Build { get => build; set => build = value; }
     public int BuildIndex { get => (int) build; }
@@ -23,7 +25,6 @@ public class BuildPlate : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SetUpTowers();
         EnableCurrentBuild();
         if(BuildIndex > 0){
             health = towers[BuildIndex-1].health;
@@ -35,29 +36,21 @@ public class BuildPlate : MonoBehaviour
     {
         
     }
-    void SetUpTowers(){
-        builds.Clear();
-        for(int loop = 0; loop < towers.Length; loop++){
-            GameObject go = Instantiate(towers[loop].tower, buildPosition.position, Quaternion.identity, this.transform);
-            builds.Add(go.transform);
-            go.SetActive(false);
-        }
-    }
 
     void EnableCurrentBuild(){
         
         if((int) build == 0){
-            for(int loop = 0; loop < builds.Count; loop++){
-                builds[loop].gameObject.SetActive(false);
+            for(int loop = 0; loop < towerBuilds.Length; loop++){
+                towerBuilds[loop].SetActive(false);
             }
         }
         else{
-            for(int loop = 0; loop < builds.Count; loop++){
+            for(int loop = 0; loop < towerBuilds.Length; loop++){
                 if(((int) build - 1) == loop){
-                    builds[loop].gameObject.SetActive(true);
+                    towerBuilds[loop].SetActive(true);
                 }
                 else{
-                    builds[loop].gameObject.SetActive(false);
+                    towerBuilds[loop].SetActive(false);
                 }
                 
             }
@@ -73,7 +66,7 @@ public class BuildPlate : MonoBehaviour
 
     public void BuildTower(int index){
         
-        if(index > builds.Count || index < 0){
+        if(index > towerBuilds.Length || index < 0){
             return;
         }
         else{

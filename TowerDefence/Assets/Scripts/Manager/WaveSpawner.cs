@@ -12,7 +12,8 @@ public class WaveSpawner : MonoBehaviour
     [System.Serializable]
     public class Wave{
         public string name;
-        public Enemy enemy;
+        public Enemy [] enemies;
+        public int [] enemyCounts;
         public int count;
         public float rate;
     }
@@ -88,15 +89,45 @@ public class WaveSpawner : MonoBehaviour
     IEnumerator SpawnWave(Wave wave){
         Debug.Log("Spawning Wave " + wave.name);
         state = SpawnState.spawning;
+        int total = TotalEnemies(wave);
 
         //spawn
-        for(int loop = 0; loop < wave.count; loop++){
-            GameManager.instance.SpawnEnemy(wave.enemy);
+        for(int loop = 0; loop < total; loop++){
+            SpawnEnemy(wave);
             yield return new WaitForSeconds(1f/wave.rate);
         }
 
         state = SpawnState.waiting;
 
         yield break;
+    }
+
+    void SpawnEnemy(Wave wave){
+        
+        int zeroCount = 0;
+        for(int loop = 0; loop < wave.enemyCounts.Length; loop++){
+            if(wave.enemyCounts[loop] == 0){
+                zeroCount++;
+            }
+        }
+        if(zeroCount == wave.enemyCounts.Length){
+            return;
+        }
+        while(true){
+            int randomEnemy = Random.Range(0, wave.enemies.Length);
+            if(wave.enemyCounts[randomEnemy]>0){
+                GameManager.instance.SpawnEnemy(wave.enemies[randomEnemy]);
+                wave.enemyCounts[randomEnemy]--;
+                return;
+            }
+        }
+        
+    }
+    int TotalEnemies(Wave wave){
+        int total = 0;
+        for(int loop = 0; loop < wave.enemyCounts.Length; loop++){
+            total += wave.enemyCounts[loop];
+        }
+        return total;
     }
 }

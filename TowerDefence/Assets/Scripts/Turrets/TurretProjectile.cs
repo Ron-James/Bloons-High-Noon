@@ -38,8 +38,8 @@ public class TurretProjectile : MonoBehaviour
             if(Physics.Raycast(firePoint.position, barrel.transform.forward, out hit, range) && fireTime >= fireRate){
                 fireTime = 0;
                 if(hit.collider.tag == "Enemy"){
-                    DrawRayLine(firePoint.position, hit.transform.position);
-                    Debug.Log("Enemy Hit");
+                    StartCoroutine(ShowProjectileLine(hit.point));
+                    //Debug.Log("Enemy Hit");
                     
                     if(iceShot){
                         hit.collider.gameObject.GetComponent<EnemyHealth>().TakeDamage(damage);
@@ -75,12 +75,32 @@ public class TurretProjectile : MonoBehaviour
     }
 
     void HideLine(){
-        lineRenderer.positionCount = 0;
+        lineRenderer.SetPosition(0, Vector3.zero);
+        lineRenderer.SetPosition(1, Vector3.zero);
+
     }
 
     IEnumerator HideLineDelayed(){
         HideLine();
         yield return new WaitForSeconds(fireRate/2);
+    }
+
+    IEnumerator ShowProjectileLine(Vector3 hitPoint){
+        lineRenderer.SetPosition(0, firePoint.position);
+        lineRenderer.SetPosition(1, hitPoint);
+
+        float time = 0;
+        while(true){
+            time += Time.deltaTime;
+            if(time>= fireRate/4){
+                HideLine();
+                break;
+            }
+            else{
+                yield return null;
+            }
+        }
+        yield break;
     }
 
 

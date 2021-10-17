@@ -44,6 +44,7 @@ public class EnemyHealth : MonoBehaviour
             return;
         }
         else{
+            health = maxHealth;
             this.transform.SetParent(GameObject.Find("Alive Enemies").transform);
             this.transform.position = position;
             this.gameObject.SetActive(true);

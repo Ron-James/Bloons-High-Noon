@@ -23,11 +23,13 @@ public class BuildMenu : MonoBehaviour
         currentPlate = buildPlate;
         UpdateButtons();
         GameObject.Find("FirstPerson-AIO").GetComponent<FirstPersonAIO>().DisableCamera();
+        GameObject.Find("FirstPerson-AIO").GetComponent<FirstPersonAIO>().playerCanMove = false;
     }
 
     public void CloseMenu(){
         meunu.SetActive(false);
         GameObject.Find("FirstPerson-AIO").GetComponent<FirstPersonAIO>().EnableCamera();
+        GameObject.Find("FirstPerson-AIO").GetComponent<FirstPersonAIO>().playerCanMove = true;
     }
 
     public void Demolish(){

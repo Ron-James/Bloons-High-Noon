@@ -396,11 +396,11 @@ public class FirstPersonAIO : MonoBehaviour {
         }
         if (isHitIsland)
         {
-            buildPrompt.SetActive(true);
+            //buildPrompt.SetActive(true);
         }
         else
         {
-            buildPrompt.SetActive(false);
+            //buildPrompt.SetActive(false);
         }
     }
 
@@ -827,9 +827,9 @@ public class FirstPersonAIO : MonoBehaviour {
     public void CheckIslandMenu()
     {
         RaycastHit hit;
-        Debug.DrawRay(playerCamera.transform.position, Camera.main.transform.forward, Color.red, .1f);
-
-        if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, 5f) && hit.collider.tag == "MenuTrigger")
+        //Debug.DrawRay(playerCamera.transform.position, Camera.main.transform.forward, Color.red, .1f);
+        
+        if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, 10f) && hit.collider.tag == "MenuTrigger")
         {
             //Debug.Log("menu thing");
             isHitIsland = true;

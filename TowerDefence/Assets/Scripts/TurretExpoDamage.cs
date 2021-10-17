@@ -6,6 +6,9 @@ public class TurretExpoDamage : MonoBehaviour
 {
     [SerializeField] float damageConstant = 0.5f;
     [SerializeField] float coolDownTime = 0.2f;
+    [SerializeField] Transform firePoint;
+    [SerializeField] LineRenderer lineRenderer;
+
 
     bool coolingDown;
     // Start is called before the first frame update
@@ -35,6 +38,7 @@ public class TurretExpoDamage : MonoBehaviour
             }
         }
     }
+    
     IEnumerator ExponentialDamage(){
         if(GetComponent<TurretAim>().Target == null || GetComponent<TurretAim>().Target.GetComponent<EnemyHealth>() == null || coolingDown){
             yield break;
@@ -42,14 +46,21 @@ public class TurretExpoDamage : MonoBehaviour
         else{
             float time = 0;
             while(true){
+                float damage = damageConstant * Mathf.Exp(time);
                 time += Time.deltaTime;
                 if(GetComponent<TurretAim>().Target == null || GetComponent<TurretAim>().Stunned){
                     StartCoroutine(CoolDown(coolDownTime));
+                    lineRenderer.SetPosition(0, Vector3.zero);
+                    lineRenderer.SetPosition(1, Vector3.zero);
                     break;
                 }
                 else{
-                    float damage = damageConstant * Mathf.Exp(time);
+                    lineRenderer.SetPosition(0, firePoint.position);
+                    lineRenderer.SetPosition(1, GetComponent<TurretAim>().Target.position);
                     GetComponent<TurretAim>().Target.GetComponent<EnemyHealth>().TakeDamage(damage);
+                    if(GetComponent<TurretAim>().Target.GetComponent<EnemyHealth>().Health <= 0){
+                        GetComponent<TurretAim>().Target = null;
+                    }
                     yield return null;
                 }
 
