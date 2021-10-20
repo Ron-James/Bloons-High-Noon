@@ -48,12 +48,13 @@ public class TurretProjectile : MonoBehaviour
                     }
                     else{
                         hit.collider.gameObject.GetComponent<EnemyHealth>().TakeDamage(damage);
+                        if(hit.collider.gameObject.GetComponent<EnemyHealth>().Health <= 0 && GetComponent<TurretAim>().Target.gameObject.GetComponent<EnemyHealth>().Health <=0){
+                            GetComponent<TurretAim>().Target = null;
+                            //GetComponentInChildren<TurretTargetTrigger>().RemoveDeadEnemy(hit.collider.gameObject.transform);
+                            GameManager.instance.AddBalance(hit.collider.gameObject.GetComponent<EnemyHealth>().Enemy.value);
+                        }
                     }
-                    if(hit.collider.gameObject.GetComponent<EnemyHealth>().Health <= 0 && GetComponent<TurretAim>().Target.gameObject.GetComponent<EnemyHealth>().Health <=0){
-                        GetComponent<TurretAim>().Target = null;
-                        //GetComponentInChildren<TurretTargetTrigger>().RemoveDeadEnemy(hit.collider.gameObject.transform);
-                        GameManager.instance.AddBalance(hit.collider.gameObject.GetComponent<EnemyHealth>().Enemy.value);
-                    }
+                    
                     
                 }
             }

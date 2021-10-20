@@ -34,6 +34,7 @@ public class EnemyHealth : MonoBehaviour
     }
 
     public void Kill(){
+        health = 0;
         this.transform.SetParent(GameObject.Find("Dead Enemies").transform);
         this.transform.position = GameObject.Find("Dead Enemies").transform.position;
         this.gameObject.SetActive(false);
