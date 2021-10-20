@@ -18,7 +18,7 @@ public class MenuTrigger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(buildPlate != null){
+        if(buildPlate != null && GameManager.instance.FirstPerson){
             buildPrompt.SetActive(true);
             if(Input.GetKeyDown(KeyCode.B)){
                 buildMenu.OpenMenu(buildPlate);

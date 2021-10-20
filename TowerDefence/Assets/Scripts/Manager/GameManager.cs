@@ -26,6 +26,7 @@ public class GameManager : Singleton<GameManager>
     public int Balance { get => balance; set => balance = value; }
     public float SellPercentage { get => sellPercentage; set => sellPercentage = value; }
     public GameObject BuildPrompt { get => buildPrompt; set => buildPrompt = value; }
+    public bool FirstPerson { get => firstPerson; set => firstPerson = value; }
 
     float totalHealth;
     bool firstPerson;

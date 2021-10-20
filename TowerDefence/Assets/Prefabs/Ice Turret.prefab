@@ -104,7 +104,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2720109291678084979}
-  - component: {fileID: 1285535984203670374}
   - component: {fileID: 8438606067858987249}
   - component: {fileID: 6259254700608344333}
   - component: {fileID: 3493735534750735011}
@@ -131,19 +130,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &1285535984203670374
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2720109291678084977}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 25
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &8438606067858987249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -448,7 +434,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 25
+  m_Radius: 45
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &2227596884079305800
 MonoBehaviour:
@@ -462,6 +448,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de74ff1d55127d74a92ba607f4c131a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemiesInRange: []
 --- !u!1 &4795639706397841264
 GameObject:
   m_ObjectHideFlags: 0

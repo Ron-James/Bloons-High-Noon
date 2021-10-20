@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WaveSpawner : MonoBehaviour
 {
@@ -14,19 +15,25 @@ public class WaveSpawner : MonoBehaviour
         public string name;
         public Enemy [] enemies;
         public int [] enemyCounts;
-        public int count;
         public float rate;
+        public float timeBeforeWave;
     }
     [SerializeField] Wave [] waves;
     int nextWave = 0;
-    [SerializeField] float timeBetweenWaves = 5f;
     [SerializeField] float waveCountDown = 0;
     [SerializeField] SpawnState state = SpawnState.counting;
+    [SerializeField] Text countDownText;
 
     float searchCountDown = 1;
 
     private void Start() {
-        waveCountDown = timeBetweenWaves;    
+        if(waves.Length == 0){
+            Debug.Log("No waves set in inspector");
+        }
+        else{
+            waveCountDown = waves[0].timeBeforeWave; 
+        }
+           
     }
 
     private void Update() {
@@ -45,11 +52,14 @@ public class WaveSpawner : MonoBehaviour
         if(waveCountDown <= 0){
             if(state != SpawnState.spawning){
                 //start spawning wave
+                countDownText.gameObject.SetActive(false);
                 StartCoroutine(SpawnWave(waves[nextWave]));
             }
         }
         else{
+            countDownText.gameObject.SetActive(true);
             waveCountDown -= Time.deltaTime;
+            countDownText.text = SecondsToMinutes(waveCountDown);
         }    
     }
 
@@ -58,16 +68,18 @@ public class WaveSpawner : MonoBehaviour
 		Debug.Log("Wave Completed!");
 
 		state = SpawnState.counting;
-		waveCountDown = timeBetweenWaves;
+
 
 		if (nextWave + 1 > waves.Length - 1)
 		{
 			nextWave = 0;
+            waveCountDown = waves[0].timeBeforeWave;
 			Debug.Log("ALL WAVES COMPLETE! Looping...");
 		}
 		else
 		{
 			nextWave++;
+            waveCountDown = waves[nextWave].timeBeforeWave;
 		}
 	}
     bool EnemyIsAlive(){
@@ -94,7 +106,7 @@ public class WaveSpawner : MonoBehaviour
         //spawn
         for(int loop = 0; loop < total; loop++){
             SpawnEnemy(wave);
-            yield return new WaitForSeconds(1f/wave.rate);
+            yield return new WaitForSeconds(wave.rate);
         }
 
         state = SpawnState.waiting;
@@ -129,5 +141,32 @@ public class WaveSpawner : MonoBehaviour
             total += wave.enemyCounts[loop];
         }
         return total;
+    }
+
+    string SecondsToMinutes(float time){
+        int minutes = (int) (time / 60f);
+        int seconds = (int) (time % 60);
+        string min = "";
+        string sec = "";
+        if(minutes == 0){
+            min = "00";
+        }
+        else if(minutes < 10){
+            min = "0" + minutes.ToString();
+        }
+        else
+        {
+            min = minutes.ToString();
+        }
+        if(seconds == 0){
+            sec = "00";
+        }
+        else if(seconds < 10){
+            sec = "0" + seconds.ToString();
+        }
+        else{
+            sec = seconds.ToString();
+        }
+        return min + ":" + sec;
     }
 }

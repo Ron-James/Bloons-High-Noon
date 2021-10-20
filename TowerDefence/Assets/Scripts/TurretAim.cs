@@ -8,6 +8,7 @@ public class TurretAim : MonoBehaviour
     [SerializeField] float rotationSpeed;
     [SerializeField] float restoreRotationSpeed;
     [SerializeField] Transform target;
+    
 
     Quaternion defaultRotation;
     bool stunned;
@@ -18,7 +19,7 @@ public class TurretAim : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        defaultRotation = Quaternion.Euler(0,0,0);
+        defaultRotation = transform.rotation;
     }
     private void OnEnable() {
         
@@ -37,21 +38,12 @@ public class TurretAim : MonoBehaviour
         else if(stunned){
             return;
         }
-        else{
+        else if(target == null){
             barrel.transform.rotation = Quaternion.RotateTowards(barrel.transform.rotation, defaultRotation, restoreRotationSpeed * Time.deltaTime);
         }
        
     }
 
-    private void OnTriggerExit(Collider other) {
-        switch(other.tag){
-            case "Enemy":
-                if(other.transform == target){
-                    target = null;
-                }
-            break;
-        }
-    }
 
     IEnumerator StunTurret(float duration){
         stunned = true;

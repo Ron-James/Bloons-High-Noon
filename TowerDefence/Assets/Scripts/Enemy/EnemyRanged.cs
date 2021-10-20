@@ -62,7 +62,7 @@ public class EnemyRanged : MonoBehaviour
                 hit.collider.gameObject.GetComponentInParent<BuildPlate>().TakeDamage(damage);
                 if(target.gameObject.GetComponentInParent<BuildPlate>().Health <= 0 ){
                     target = null;
-                    GetComponent<NavMeshAgent>().isStopped = false;
+                    //GetComponent<NavMeshAgent>().isStopped = false;
                 }
             }
         }

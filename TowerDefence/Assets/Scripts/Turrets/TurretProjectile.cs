@@ -35,7 +35,8 @@ public class TurretProjectile : MonoBehaviour
         if(target != null && !GetComponent<TurretAim>().Stunned){
             fireTime += Time.deltaTime;
             RaycastHit hit;
-            if(Physics.Raycast(firePoint.position, barrel.transform.forward, out hit, range) && fireTime >= fireRate){
+            float Range = (target.position - firePoint.position).magnitude;
+            if(Physics.Raycast(firePoint.position, barrel.transform.forward, out hit, Range) && fireTime >= fireRate){
                 fireTime = 0;
                 if(hit.collider.tag == "Enemy"){
                     StartCoroutine(ShowProjectileLine(hit.point));
@@ -48,8 +49,9 @@ public class TurretProjectile : MonoBehaviour
                     else{
                         hit.collider.gameObject.GetComponent<EnemyHealth>().TakeDamage(damage);
                     }
-                    if(hit.collider.gameObject.GetComponent<EnemyHealth>().Health <= 0){
+                    if(hit.collider.gameObject.GetComponent<EnemyHealth>().Health <= 0 && GetComponent<TurretAim>().Target.gameObject.GetComponent<EnemyHealth>().Health <=0){
                         GetComponent<TurretAim>().Target = null;
+                        //GetComponentInChildren<TurretTargetTrigger>().RemoveDeadEnemy(hit.collider.gameObject.transform);
                         GameManager.instance.AddBalance(hit.collider.gameObject.GetComponent<EnemyHealth>().Enemy.value);
                     }
                     
