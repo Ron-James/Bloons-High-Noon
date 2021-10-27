@@ -20,8 +20,8 @@ public class HookTrigger : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         switch(other.tag){
             case "Hookable":
-                player.GetComponent<GrapplingHook>().hooked = true;
-                player.GetComponent<GrapplingHook>().HookedObject = other.gameObject;
+               GetComponentInParent<GrapplingHook>().hooked = true;
+               GetComponentInParent<GrapplingHook>().HookedObject = other.gameObject;
             break;
         }
     }
