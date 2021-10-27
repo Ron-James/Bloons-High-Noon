@@ -90,14 +90,7 @@ public class GameManager : Singleton<GameManager>
         balanceTxt.text = "Balance: " + Balance.ToString();
     }
 
-    public BuildPlate NearestTower(){
-        for(int loop = buildPlates.Length - 1; loop >= 0; loop--){
-            if(buildPlates[loop].BuildIndex > 0){
-                return buildPlates[loop];
-            }
-        }
-        return null;
-    }
+  
 
     bool DeadEnemyOfType(Enemy enemy){
         EnemyHealth [] enemies = deadEnemies.GetComponentsInChildren<EnemyHealth>(); 

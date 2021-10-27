@@ -10,7 +10,7 @@ public class EnemyPathing : MonoBehaviour
     [SerializeField] float floatHeight = 9;
     [SerializeField] float regularSpeed = 8;
     [SerializeField] float slowedSpeed = 4;
-
+    GameObject Tower;
     NavMeshAgent navMeshAgent;
     Vector3 nearestTower;
     bool slowed;
@@ -22,12 +22,13 @@ public class EnemyPathing : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Tower = GameObject.FindGameObjectWithTag("Tower");
         navMeshAgent = GetComponent<NavMeshAgent>();
     }
     private void OnEnable() {
         navMeshAgent = GetComponent<NavMeshAgent>();
         Physics.IgnoreLayerCollision(9, 10, true);
-        nearestTower = NearestTowerPosition();
+        
         if(!attacksTowers){
             navMeshAgent.destination = towerPosition;
         }
@@ -40,10 +41,7 @@ public class EnemyPathing : MonoBehaviour
     void Update()
     {
         
-        if(nearestTower != NearestTowerPosition() && attacksTowers){
-            nearestTower = NearestTowerPosition();
-            navMeshAgent.destination = nearestTower;
-        }
+        
     }
     void ControlSpeed(){
         if(slowed){
@@ -53,18 +51,7 @@ public class EnemyPathing : MonoBehaviour
             navMeshAgent.speed = regularSpeed;
         }
     }
-    Vector3 NearestTowerPosition(){
-        if(GameManager.instance.NearestTower() != null){
-            BuildPlate buildPlate = GameManager.instance.NearestTower();
-            Vector3 towerPos = buildPlate.gameObject.transform.position;
-            towerPos.y = floatHeight;
-            return towerPos;
-        }
-        else{
-            return towerPosition;
-        }
-        
-    }
+    
 
     public void SlowDownEnemy(float time){
         if(slowCo != null){
