@@ -15,6 +15,11 @@ public class EnemyTargetTrigger : MonoBehaviour
                 //GetComponentInParent<NavMeshAgent>().isStopped = true;
             }
             break;
+            case "Tower":
+                Debug.Log("entered the main tower");
+                GetComponentInParent<EnemyRanged>().Target = other.transform;
+                GetComponentInParent<NavMeshAgent>().isStopped = true;
+            break;
         }
     }
     private void OnTriggerExit(Collider other) {

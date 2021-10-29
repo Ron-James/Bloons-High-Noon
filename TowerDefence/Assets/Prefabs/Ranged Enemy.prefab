@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6332404838836077167}
   - component: {fileID: 8163903991022523251}
   - component: {fileID: 3690028764463054580}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Target Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 9153738902010155777}
   - component: {fileID: 5397639777093108753}
   - component: {fileID: 1634781411495679934}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Ranged Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -90,8 +90,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8501894365921418112}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5212, y: 2.6069763, z: 1.5212}
+  m_LocalPosition: {x: -0.8736, y: 0, z: -0.9122}
+  m_LocalScale: {x: 4.152361, y: 7.3728, z: 4.010066}
   m_Children:
   - {fileID: 6332404838836077167}
   m_Father: {fileID: 0}
@@ -124,7 +124,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9ca80467a033e954a8b9ad8601d6f4c7, type: 2}
+  - {fileID: 2100000, guid: 445cc97066017de4e873b0a206300ec2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -170,7 +170,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 8
+  m_Speed: 6
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -340,9 +340,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   rotationSpeed: 25
-  fireRate: 0.7
+  fireRate: 0.8
   damage: 1
   lineRenderer: {fileID: 5397639777093108753}
   layerMask:
     serializedVersion: 2
-    m_Bits: 2048
+    m_Bits: 6144

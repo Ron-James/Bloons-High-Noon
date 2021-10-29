@@ -147,11 +147,12 @@ MonoBehaviour:
   firePoint: {fileID: 2720109292842610152}
   fireRate: 0.77
   damage: 1
-  range: 25
-  projectileSpeed: 0
+  enemyMask:
+    serializedVersion: 2
+    m_Bits: 1024
   lineRenderer: {fileID: 3493735534750735011}
   iceShot: 0
-  iceDuration: 0
+  fireTime: 0
 --- !u!114 &6259254700608344333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -449,3 +450,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de74ff1d55127d74a92ba607f4c131a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemiesInRange: []

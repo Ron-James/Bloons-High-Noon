@@ -43,6 +43,9 @@ public class EnemyPathing : MonoBehaviour
         
         
     }
+    private void OnDisable() {
+        StopAllCoroutines();
+    }
     void ControlSpeed(){
         if(slowed){
             navMeshAgent.speed = slowedSpeed;
@@ -54,14 +57,13 @@ public class EnemyPathing : MonoBehaviour
     
 
     public void SlowDownEnemy(float time){
-        if(slowCo != null){
-            StopCoroutine(slowCo);
-            slowCo = null;
-            slowCo = StartCoroutine(SlowEnemy(time));
+        if(this.gameObject.activeInHierarchy){
+            StartCoroutine(SlowEnemy(time));
         }
         else{
-            slowCo = StartCoroutine(SlowEnemy(time));
+            return;
         }
+       
         
     }
     
@@ -69,14 +71,16 @@ public class EnemyPathing : MonoBehaviour
         Rigidbody rigidbody = GetComponent<Rigidbody>();
         float time = 0;
         slowed = true;
-        navMeshAgent.speed = slowedSpeed;
-        rigidbody.velocity = slowedSpeed * rigidbody.velocity.normalized; 
+        float regSpd = navMeshAgent.speed;
+        float slowSpd = navMeshAgent.speed * GameManager.instance.EnemySlowSpeed;
+        rigidbody.velocity = slowSpd * rigidbody.velocity.normalized; 
+        navMeshAgent.speed = slowSpd;
         while(true){
             time += Time.deltaTime;
 
             if(time >= duration){
                 slowed = false;
-                navMeshAgent.speed = regularSpeed;
+                navMeshAgent.speed = regSpd;
                 slowCo = null;
                 break;
             }

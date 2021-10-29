@@ -91,7 +91,7 @@ public class WaveSpawner : MonoBehaviour
                 return false;
             }
             else{
-                Debug.Log("still some enemies");
+                //Debug.Log("still some enemies");
             }
         }
         

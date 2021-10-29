@@ -54,7 +54,7 @@ public class TurretTargetTrigger : MonoBehaviour
     }
     Transform FurthestEnemy(){
         if(FirstEnemy() == null){
-            Debug.Log("No enemies in range");
+            //Debug.Log("No enemies in range");
             return null;
         }
         else

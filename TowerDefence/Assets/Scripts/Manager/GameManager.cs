@@ -13,6 +13,8 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] int balance;
     [SerializeField] Enemy [] enemies;
     [Range(0, 1)][SerializeField] float sellPercentage = 0.8f;
+    [Range(0, 1)][SerializeField] float enemySlowSpeed = 0.5f;
+    [SerializeField] float enemyIceDuration = 3f;
     [SerializeField] GameObject deadEnemies;
     [SerializeField] GameObject aliveEnemies;
     [SerializeField] Text balanceTxt;
@@ -21,12 +23,17 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] Transform firstPersonCamPosition;
     [SerializeField] Transform playerCamera;
     [SerializeField] Transform player;
+    [SerializeField] float repairCost = 50;
     
 
     public int Balance { get => balance; set => balance = value; }
     public float SellPercentage { get => sellPercentage; set => sellPercentage = value; }
     public GameObject BuildPrompt { get => buildPrompt; set => buildPrompt = value; }
     public bool FirstPerson { get => firstPerson; set => firstPerson = value; }
+    public float RepairCost { get => repairCost; set => repairCost = value; }
+    public float EnemySlowSpeed { get => enemySlowSpeed; set => enemySlowSpeed = value; }
+    public float EnemyIceDuration { get => enemyIceDuration; set => enemyIceDuration = value; }
+    public Transform PlayerCamera { get => playerCamera; set => playerCamera = value; }
 
     float totalHealth;
     bool firstPerson;
@@ -49,6 +56,14 @@ public class GameManager : Singleton<GameManager>
 
         if(Input.GetKeyDown(KeyCode.E)){
             SwitchCamera();
+        }
+        if(Input.GetKeyDown(KeyCode.L)){
+            for(int i = 0; i < buildPlates.Length; i++){
+                if(buildPlates[i].BuildIndex > 0){
+                    buildPlates[i].TakeDamage(1);
+                    Debug.Log("damage taken");
+                }
+            }
         }
     }
 

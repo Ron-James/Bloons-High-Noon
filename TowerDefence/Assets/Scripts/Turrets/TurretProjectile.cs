@@ -8,16 +8,13 @@ public class TurretProjectile : MonoBehaviour
     [SerializeField] Transform firePoint;
     [SerializeField] float fireRate = 0.75f;
     [SerializeField] float damage = 1;
-    [SerializeField] float range = 25f;
-    [SerializeField] float projectileSpeed;
+    [SerializeField] LayerMask enemyMask;
 
 
     [SerializeField] LineRenderer lineRenderer;
-
     [SerializeField] bool iceShot = false;
-    [SerializeField] float iceDuration;
     Transform target;
-    float fireTime;
+    [SerializeField] float fireTime;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,7 +33,7 @@ public class TurretProjectile : MonoBehaviour
             fireTime += Time.deltaTime;
             RaycastHit hit;
             float Range = (target.position - firePoint.position).magnitude;
-            if(Physics.Raycast(firePoint.position, barrel.transform.forward, out hit, Range) && fireTime >= fireRate){
+            if(Physics.Raycast(firePoint.position, barrel.transform.forward, out hit, Mathf.Infinity, enemyMask) && fireTime >= fireRate){
                 fireTime = 0;
                 if(hit.collider.tag == "Enemy"){
                     StartCoroutine(ShowProjectileLine(hit.point));
@@ -44,7 +41,12 @@ public class TurretProjectile : MonoBehaviour
                     
                     if(iceShot){
                         hit.collider.gameObject.GetComponent<EnemyHealth>().TakeDamage(damage);
-                        hit.collider.gameObject.GetComponent<EnemyPathing>().SlowDownEnemy(iceDuration);
+                        hit.collider.gameObject.GetComponent<EnemyPathing>().SlowDownEnemy(GameManager.instance.EnemyIceDuration);
+                        if(hit.collider.gameObject.GetComponent<EnemyHealth>().Health <= 0 && GetComponent<TurretAim>().Target.gameObject.GetComponent<EnemyHealth>().Health <=0){
+                            GetComponent<TurretAim>().Target = null;
+                            //GetComponentInChildren<TurretTargetTrigger>().RemoveDeadEnemy(hit.collider.gameObject.transform);
+                            GameManager.instance.AddBalance(hit.collider.gameObject.GetComponent<EnemyHealth>().Enemy.value);
+                        }
                     }
                     else{
                         hit.collider.gameObject.GetComponent<EnemyHealth>().TakeDamage(damage);

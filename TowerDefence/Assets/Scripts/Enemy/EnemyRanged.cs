@@ -9,12 +9,15 @@ public class EnemyRanged : MonoBehaviour
     [SerializeField] Transform target;
     [SerializeField] float rotationSpeed = 25f;
     [SerializeField] float fireRate = 0.5f;
+    [SerializeField] float towerFireRate = 1f;
     [SerializeField] float damage = 1;
     [SerializeField] LineRenderer lineRenderer;
     [SerializeField] LayerMask layerMask;
+    
 
 
     float fireCount;
+    float towerFireCount;
 
     public Transform Target { get => target; set => target = value; }
 
@@ -29,13 +32,27 @@ public class EnemyRanged : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(target != null && target.gameObject.GetComponentInParent<BuildPlate>().Health > 0){
-            Aim();
-            fireCount += Time.deltaTime;
-            if(fireCount >= fireRate){
-                Fire();
-                fireCount = 0;
+        if(target != null){
+            if(target.gameObject.tag == "Build Plate" && target.gameObject.GetComponentInParent<BuildPlate>().BuildIndex > 0){
+                Aim();
+                fireCount += Time.deltaTime;
+                if(fireCount >= fireRate){
+                    Debug.Log("Fired enemy");
+                    Fire();
+                    fireCount = 0;
+                }
             }
+            else if(target.gameObject.tag == "Tower")
+            {
+                towerFireCount += Time.deltaTime;
+                Aim();
+                if(towerFireCount >= towerFireRate){
+                    //Debug.Log("Fired enemy");
+                    Fire();
+                    towerFireCount = 0;
+                }
+            }
+            
         }
     }
     void Aim(){
@@ -55,15 +72,28 @@ public class EnemyRanged : MonoBehaviour
             RaycastHit hit;
             Vector3 direction = (target.position - transform.position).normalized;
             float range = (target.position - transform.position).magnitude;
-            if(Physics.Raycast(transform.position, direction, out hit, range, layerMask) && hit.collider.tag == "Build Plate"){
+            if(target.tag == "Build Plate"){
+                if(Physics.Raycast(transform.position, direction, out hit, range, layerMask) && hit.collider.tag == "Build Plate"){
                 //deal damage top tower
-                //Debug.Log(hit.collider.name + "shot this");
+                Debug.Log(hit.collider.name + "shot this");
                 StartCoroutine(ShowProjectileLine(hit.point));
                 hit.collider.gameObject.GetComponentInParent<BuildPlate>().TakeDamage(damage);
                 if(target.gameObject.GetComponentInParent<BuildPlate>().Health <= 0 ){
                     target = null;
                     //GetComponent<NavMeshAgent>().isStopped = false;
                 }
+            }
+            }
+            
+            else if(target.tag == "Tower"){
+                //Debug.Log("hit main tower");
+                
+                if(Physics.Raycast(transform.position, direction, out hit, range, layerMask) && hit.collider.tag == "Tower"){
+                    StartCoroutine(ShowProjectileLine(hit.point));
+                    GameManager.instance.DamageTower(damage);
+                }
+                
+            
             }
         }
 

@@ -92,8 +92,8 @@ public class GrapplingHook : MonoBehaviour
         while(true){
             player.transform.position = Vector3.MoveTowards(player.transform.position, hook.transform.position, playerTravelSpd * Time.deltaTime);
             float distanceToHook = Vector3.Distance(transform.position, hook.transform.position);
-            if(distanceToHook < 2){
-                StartCoroutine(Climb());
+            if(distanceToHook < 1.5f){
+                player.GetComponent<Rigidbody>().useGravity = true;
                 break;
             }
             else{

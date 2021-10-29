@@ -9,7 +9,8 @@ public class BuildMenu : MonoBehaviour
     [SerializeField] Tower [] towers;
     [SerializeField] Button [] buttons;
     [SerializeField] Button demolish;
-    BuildPlate currentPlate;
+    [SerializeField] Button repair;
+    [SerializeField] BuildPlate currentPlate;
 
     public BuildPlate CurrentPlate { get => currentPlate; set => currentPlate = value; }
 
@@ -19,8 +20,8 @@ public class BuildMenu : MonoBehaviour
         
     }
     public void OpenMenu(BuildPlate buildPlate){
-        meunu.SetActive(true);
         currentPlate = buildPlate;
+        meunu.SetActive(true);
         UpdateButtons();
         GameObject.Find("Player").GetComponent<FirstPersonAIO>().DisableCamera();
         GameObject.Find("Player").GetComponent<FirstPersonAIO>().playerCanMove = false;
@@ -46,12 +47,31 @@ public class BuildMenu : MonoBehaviour
     {
         
     }
+    public void RepairBuildPlate(){
+        GameManager.instance.Purchase((int)GameManager.instance.RepairCost);
+        currentPlate.Repair();
+        UpdateButtons();
+    }
+    bool CanRepair(){
+        if(currentPlate.BuildIndex != 0 && GameManager.instance.Balance >= GameManager.instance.RepairCost && !currentPlate.HasFullHealth()){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
     public void UpdateButtons(){
         if(towers.Length != buttons.Length){
             Debug.Log("not enough towers or buttons");
             return;
         }
         else{
+            if(CanRepair()){
+                repair.gameObject.SetActive(true);
+            }
+            else{
+                repair.gameObject.SetActive(false);
+            }
             for(int loop = 0; loop < buttons.Length; loop++){
                 if(GameManager.instance.Balance < towers[loop].cost || currentPlate.BuildIndex > 0){
                     buttons[loop].gameObject.SetActive(false);

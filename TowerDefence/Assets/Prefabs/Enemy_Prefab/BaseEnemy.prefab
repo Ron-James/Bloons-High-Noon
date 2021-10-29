@@ -12,11 +12,11 @@ GameObject:
   - component: {fileID: 4150972097586092651}
   - component: {fileID: 5993833727160016810}
   - component: {fileID: 372440167650100464}
-  - component: {fileID: 6111793916488203408}
   - component: {fileID: 2934534593124890313}
   - component: {fileID: 8890825172085339427}
   - component: {fileID: 729411142328203173}
-  m_Layer: 0
+  - component: {fileID: 3529870401856988927}
+  m_Layer: 10
   m_Name: BaseEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -97,20 +97,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &6111793916488203408
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3844489620895014759}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!114 &2934534593124890313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,6 +140,19 @@ MonoBehaviour:
   floatHeight: 9.3
   regularSpeed: 10
   slowedSpeed: 5
+--- !u!65 &3529870401856988927
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3844489620895014759}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.7, y: 2.15, z: 5.44}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4225348094914627559
 GameObject:
   m_ObjectHideFlags: 0
@@ -165,7 +164,7 @@ GameObject:
   - component: {fileID: 8260367909745882054}
   - component: {fileID: 1417397216829319180}
   - component: {fileID: 2700531808936619286}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Exhaust
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4967,7 +4966,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1621324065091582389}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Propeller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4997,7 +4996,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1423769799977460308}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Enemy_01.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5029,7 +5028,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3195590886953847453}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Main
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5060,7 +5059,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6600988454678964602}
   - component: {fileID: 8846468297799084588}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Enemy_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}

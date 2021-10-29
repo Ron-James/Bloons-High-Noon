@@ -57,6 +57,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de74ff1d55127d74a92ba607f4c131a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemiesInRange: []
 --- !u!1 &2720109291031724525
 GameObject:
   m_ObjectHideFlags: 0
@@ -313,7 +314,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7851d1abf28fac54bb307a88fc9cf3c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageConstant: 0.0000001
+  damageConstant: 0.000001
   coolDownTime: 0.3
   firePoint: {fileID: 2720109292842610152}
   lineRenderer: {fileID: 3493735534750735011}

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1982152687574576656}
   - component: {fileID: 7726943071849307634}
+  - component: {fileID: 3125824526983383503}
   m_Layer: 0
   m_Name: TargetTrigger
   m_TagString: Untagged
@@ -42,8 +43,21 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 17
+  m_Radius: 21
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3125824526983383503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 58352396119543435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de74ff1d55127d74a92ba607f4c131a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemiesInRange: []
 --- !u!1 &830576164760824233
 GameObject:
   m_ObjectHideFlags: 0
@@ -177,13 +191,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   barrel: {fileID: 2949819040629406988}
   firePoint: {fileID: 6677489961951614631}
-  fireRate: 0.77
+  fireRate: 0.75
   damage: 1
-  range: 25
-  projectileSpeed: 0
+  enemyMask:
+    serializedVersion: 2
+    m_Bits: 1024
   lineRenderer: {fileID: 4508656377367025084}
   iceShot: 0
-  iceDuration: 0
+  fireTime: 0
 --- !u!114 &8417545412412067465
 MonoBehaviour:
   m_ObjectHideFlags: 0
