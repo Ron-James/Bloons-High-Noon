@@ -8,9 +8,11 @@ public class MenuTrigger : MonoBehaviour
     BuildPlate buildPlate;
     [SerializeField] GameObject buildPrompt;
     bool inRegion;
+    Vector3 startPos;
     // Start is called before the first frame update
     void Start()
     {
+        startPos = transform.position;
         //buildPrompt.SetActive(false);
         buildPrompt.SetActive(false);
     }
@@ -32,6 +34,9 @@ public class MenuTrigger : MonoBehaviour
         switch(other.tag){
             case "MenuTrigger":
                 buildPlate = other.gameObject.GetComponentInParent<BuildPlate>();
+            break;
+            case "Respawn":
+                transform.position = startPos;
             break;
         }
     }
