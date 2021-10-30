@@ -33,8 +33,8 @@ public class TurretProjectile : MonoBehaviour
         if(target != null && !GetComponent<TurretAim>().Stunned){
             fireTime += Time.deltaTime;
             RaycastHit hit;
-            float Range = (target.position - firePoint.position).magnitude;
-            if(Physics.Raycast(firePoint.position, barrel.transform.forward, out hit, Mathf.Infinity, enemyMask) && fireTime >= fireRate){
+            float Range = Vector3.Distance(target.position, firePoint.position);
+            if(Physics.Raycast(firePoint.position, barrel.transform.forward, out hit, Range, enemyMask) && fireTime >= fireRate){
                 fireTime = 0;
                 if(hit.collider.tag == "Enemy"){
                     StartCoroutine(ShowProjectileLine(hit.point));

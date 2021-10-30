@@ -15,7 +15,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2251925489356885193
 RectTransform:
   m_ObjectHideFlags: 0
@@ -159,7 +159,7 @@ GameObject:
   - component: {fileID: 2569994394849220181}
   - component: {fileID: 8807080074995763052}
   m_Layer: 11
-  m_Name: Image
+  m_Name: Healthbar Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -278,7 +278,7 @@ GameObject:
   - component: {fileID: 6675329940823780843}
   - component: {fileID: 2197770875818026667}
   m_Layer: 11
-  m_Name: healthBar Indicator
+  m_Name: Healthbar Filled
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -696,7 +696,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2128850194260130922, guid: a0cc0217860d1ca44b25c86b9e790588, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7045380414521969907, guid: a0cc0217860d1ca44b25c86b9e790588, type: 3}
       propertyPath: m_RootOrder

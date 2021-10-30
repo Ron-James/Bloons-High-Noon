@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class EnemyPathing : MonoBehaviour
 {
     [SerializeField] Vector3 towerPosition;
+    [SerializeField] Transform towerLocation;
     [SerializeField] bool attacksTowers = false;
     [SerializeField] float floatHeight = 9;
     [SerializeField] float regularSpeed = 8;
@@ -22,6 +23,7 @@ public class EnemyPathing : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        towerLocation = GameObject.FindGameObjectWithTag("Tower").transform;
         Tower = GameObject.FindGameObjectWithTag("Tower");
         navMeshAgent = GetComponent<NavMeshAgent>();
     }
@@ -30,7 +32,7 @@ public class EnemyPathing : MonoBehaviour
         Physics.IgnoreLayerCollision(9, 10, true);
         
         if(!attacksTowers){
-            navMeshAgent.destination = towerPosition;
+            navMeshAgent.destination = towerLocation.position;
         }
         else{
             navMeshAgent.destination = nearestTower;

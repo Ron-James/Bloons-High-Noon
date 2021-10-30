@@ -121,7 +121,6 @@ public class BuildPlate : MonoBehaviour
             health = towers[index-1].health;
             maxHealth = health;
             EnableCurrentBuild();
-            EnableHealthIndicator();
             UpdateHealthBar();
             
         }
@@ -139,6 +138,9 @@ public class BuildPlate : MonoBehaviour
     public void TakeDamage(float damage){
         if(BuildIndex > 0){
             health -= damage;
+            if(health <= maxHealth * GameManager.instance.HelthIndicatorThrsh1){
+                EnableHealthIndicator();
+            }
             UpdateHealthBar();
             if(health <= 0){
                 DestroyTower();

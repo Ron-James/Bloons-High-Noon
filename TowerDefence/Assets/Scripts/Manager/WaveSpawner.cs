@@ -20,6 +20,8 @@ public class WaveSpawner : MonoBehaviour
     }
     [SerializeField] Wave [] waves;
     int nextWave = 0;
+
+    [Header("Do Not Touch These Ones")]
     [SerializeField] float waveCountDown = 0;
     [SerializeField] SpawnState state = SpawnState.counting;
     [SerializeField] Text countDownText;

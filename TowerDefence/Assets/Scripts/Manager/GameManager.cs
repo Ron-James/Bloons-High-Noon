@@ -5,26 +5,48 @@ using UnityEngine.UI;
 
 public class GameManager : Singleton<GameManager>
 {
-    [SerializeField] float towerHealth = 10f;
+    
+    [Header("Enemy Spawn Points")]
     [SerializeField] Transform spawnPointMin;
     [SerializeField] Transform spawnPointMax;
-    [SerializeField] GameObject buildPrompt;
-    [SerializeField] Image healthBar;
-    [SerializeField] int balance;
+    
+    [Header("Enemy Types")]
     [SerializeField] Enemy [] enemies;
-    [Range(0, 1)][SerializeField] float sellPercentage = 0.8f;
-    [Range(0, 1)][SerializeField] float enemySlowSpeed = 0.5f;
-    [SerializeField] float enemyIceDuration = 3f;
+    
+    [Header("Enemy Parents")]
     [SerializeField] GameObject deadEnemies;
     [SerializeField] GameObject aliveEnemies;
+
+    [Header("UI Elements")]
+    [SerializeField] Image healthBar;
     [SerializeField] Text balanceTxt;
+    [SerializeField] GameObject buildPrompt;
+
+    [Header("Build Plate Objects and Menu")]
     [SerializeField] BuildPlate [] buildPlates;
     [SerializeField] BuildMenu buildMenu;
+    [Header("Camera Positions")]
     [SerializeField] Transform topDownCamPosition;
     [SerializeField] Transform firstPersonCamPosition;
     [SerializeField] Transform playerCamera;
+
+    [Header("Player Reference")]
     [SerializeField] Transform player;
+
+    [Header("Game Constants")]
     [SerializeField] float repairCost = 50;
+    [Range(0, 1)][SerializeField] float sellPercentage = 0.8f;
+    [Range(0, 1)][SerializeField] float enemySlowSpeed = 0.5f;
+    [Range(0, 1)][SerializeField] float HelthIndicatorThrsh = 0.9f;
+    [SerializeField] float enemyIceDuration = 3f;
+    [SerializeField] float towerHealth = 10f;
+    [SerializeField] int balance = 200;
+    
+    float totalHealth;
+    bool firstPerson;
+
+    [Header("Level number")]
+    [SerializeField] int stage = 0;
 
     
 
@@ -36,15 +58,16 @@ public class GameManager : Singleton<GameManager>
     public float EnemySlowSpeed { get => enemySlowSpeed; set => enemySlowSpeed = value; }
     public float EnemyIceDuration { get => enemyIceDuration; set => enemyIceDuration = value; }
     public Transform PlayerCamera { get => playerCamera; set => playerCamera = value; }
+    public float HelthIndicatorThrsh1 { get => HelthIndicatorThrsh; set => HelthIndicatorThrsh = value; }
 
-    float totalHealth;
-    bool firstPerson;
+
     // Start is called before the first frame update
     void Start()
     {
         firstPerson = true;
         totalHealth = towerHealth;
         UpdateBalanceText();
+        PlayerPrefs.SetInt("Balance", balance);
         //Debug.Log("Dead enemies " + deadEnemies.GetComponentsInChildren<Transform>().Length + deadEnemies.GetComponentsInChildren<Transform>()[0].gameObject.name);
         
     }
@@ -52,13 +75,18 @@ public class GameManager : Singleton<GameManager>
     // Update is called once per frame
     void Update()
     {
+        /*
         if(Input.GetKeyDown(KeyCode.M)){
             SpawnEnemy(enemies[2]);
         }
+        */
 
         if(Input.GetKeyDown(KeyCode.E)){
             SwitchCamera();
         }
+        
+
+        /*
         if(Input.GetKeyDown(KeyCode.L)){
             for(int i = 0; i < buildPlates.Length; i++){
                 if(buildPlates[i].BuildIndex > 0){
@@ -67,6 +95,7 @@ public class GameManager : Singleton<GameManager>
                 }
             }
         }
+        */
     }
 
     public void SpawnEnemy(Enemy enemy){
@@ -96,11 +125,13 @@ public class GameManager : Singleton<GameManager>
 
     public void Purchase(int cost){
         balance -= cost;
+        PlayerPrefs.SetInt("Balance", balance);
         UpdateBalanceText();
     }
 
     public void AddBalance(int amount){
         balance += amount;
+        PlayerPrefs.SetInt("Balance", balance);
         UpdateBalanceText();
         buildMenu.UpdateButtons();
     }

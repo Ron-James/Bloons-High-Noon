@@ -43,7 +43,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 21
+  m_Radius: 25
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &3125824526983383503
 MonoBehaviour:
@@ -191,13 +191,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   barrel: {fileID: 2949819040629406988}
   firePoint: {fileID: 6677489961951614631}
-  fireRate: 0.75
+  fireRate: 0.7
   damage: 1
   enemyMask:
     serializedVersion: 2
     m_Bits: 1024
   lineRenderer: {fileID: 4508656377367025084}
   iceShot: 0
+  alwaysSwitchToFurthestTarget: 0
   fireTime: 0
 --- !u!114 &8417545412412067465
 MonoBehaviour:
@@ -212,8 +213,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   barrel: {fileID: 2949819040629406988}
-  rotationSpeed: 300
-  restoreRotationSpeed: 300
+  basePiece: {fileID: 7285501308782476096}
+  rotationSpeed: 1000
+  restoreRotationSpeed: 1000
   target: {fileID: 0}
 --- !u!120 &4508656377367025084
 LineRenderer:
