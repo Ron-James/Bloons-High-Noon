@@ -13,6 +13,7 @@ public class TurretProjectile : MonoBehaviour
 
     [SerializeField] LineRenderer lineRenderer;
     [SerializeField] bool iceShot = false;
+    [SerializeField] bool alwaysSwitchToFurthestTarget = false;
     Transform target;
     [SerializeField] float fireTime;
     // Start is called before the first frame update
@@ -55,6 +56,9 @@ public class TurretProjectile : MonoBehaviour
                             //GetComponentInChildren<TurretTargetTrigger>().RemoveDeadEnemy(hit.collider.gameObject.transform);
                             GameManager.instance.AddBalance(hit.collider.gameObject.GetComponent<EnemyHealth>().Enemy.value);
                         }
+                    }
+                    if(alwaysSwitchToFurthestTarget){
+                        GetComponentInChildren<TurretTargetTrigger>().SwitchToFurthestTarget();
                     }
                     
                     

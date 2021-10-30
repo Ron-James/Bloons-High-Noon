@@ -61,8 +61,8 @@ public class BuildMenu : MonoBehaviour
         }
     }
     public void UpdateButtons(){
-        if(towers.Length != buttons.Length){
-            Debug.Log("not enough towers or buttons");
+        if(towers.Length != buttons.Length || currentPlate == null){
+            //Debug.Log("not enough towers or buttons");
             return;
         }
         else{
