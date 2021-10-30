@@ -134,4 +134,13 @@ public class TurretTargetTrigger : MonoBehaviour
         }
         return false;
     }
+
+    public void SwitchToFurthestTarget(){
+        if(GetComponentInParent<TurretAim>().Target != FurthestEnemy()){
+            GetComponentInParent<TurretAim>().Target = FurthestEnemy();
+        }
+        else{
+            return;
+        }
+    }
 }

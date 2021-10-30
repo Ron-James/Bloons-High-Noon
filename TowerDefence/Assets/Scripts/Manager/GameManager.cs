@@ -19,11 +19,13 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] GameObject aliveEnemies;
     [SerializeField] Text balanceTxt;
     [SerializeField] BuildPlate [] buildPlates;
+    [SerializeField] BuildMenu buildMenu;
     [SerializeField] Transform topDownCamPosition;
     [SerializeField] Transform firstPersonCamPosition;
     [SerializeField] Transform playerCamera;
     [SerializeField] Transform player;
     [SerializeField] float repairCost = 50;
+
     
 
     public int Balance { get => balance; set => balance = value; }
@@ -88,6 +90,7 @@ public class GameManager : Singleton<GameManager>
         healthBar.fillAmount = towerHealth/totalHealth;
         if(towerHealth <= 0){
             //GameOver
+            SceneController.instance.LoadGameOver();
         }
     }
 
@@ -99,6 +102,7 @@ public class GameManager : Singleton<GameManager>
     public void AddBalance(int amount){
         balance += amount;
         UpdateBalanceText();
+        buildMenu.UpdateButtons();
     }
 
     void UpdateBalanceText(){
