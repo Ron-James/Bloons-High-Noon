@@ -475,15 +475,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2720109291678084979, guid: 6bbca5bb6941a5142b0e54a77d9fafa0, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.4
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 2720109291678084979, guid: 6bbca5bb6941a5142b0e54a77d9fafa0, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.4
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 2720109291678084979, guid: 6bbca5bb6941a5142b0e54a77d9fafa0, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.4
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 2720109291678084979, guid: 6bbca5bb6941a5142b0e54a77d9fafa0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -627,6 +627,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2463482775770859986}
     m_Modifications:
+    - target: {fileID: 2962607022316213743, guid: d7df45960fd7e0f4092195da272105f5, type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3611243771952624698, guid: d7df45960fd7e0f4092195da272105f5, type: 3}
       propertyPath: m_Name
       value: Build_Plate
@@ -741,6 +745,10 @@ PrefabInstance:
     - target: {fileID: 7045380414521969907, guid: a0cc0217860d1ca44b25c86b9e790588, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7726943071849307634, guid: a0cc0217860d1ca44b25c86b9e790588, type: 3}
+      propertyPath: m_Radius
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0cc0217860d1ca44b25c86b9e790588, type: 3}
