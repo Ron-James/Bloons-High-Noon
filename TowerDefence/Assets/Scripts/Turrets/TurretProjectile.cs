@@ -16,6 +16,8 @@ public class TurretProjectile : MonoBehaviour
     [SerializeField] bool alwaysSwitchToFurthestTarget = false;
     Transform target;
     [SerializeField] float fireTime;
+
+    bool firstShot;
     // Start is called before the first frame update
     void Start()
     {
@@ -110,6 +112,19 @@ public class TurretProjectile : MonoBehaviour
             }
         }
         yield break;
+    }
+
+    public void ResetTarget(){
+        firstShot = false;
+    }
+
+    public void TakeFirstShot(){
+        if(target == null){
+            return;
+        }
+        else{
+            
+        }
     }
 
 

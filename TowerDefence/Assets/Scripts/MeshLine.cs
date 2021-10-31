@@ -8,7 +8,7 @@ public class MeshLine : MonoBehaviour
     
     [SerializeField] float width = 1f;
     [SerializeField] int pointCount = 2;
-    [SerializeField] Vector3 [] points = new Vector3[2];
+    [SerializeField] Transform [] points = new Transform[2];
 
 
     // Start is called before the first frame update
@@ -23,13 +23,7 @@ public class MeshLine : MonoBehaviour
         
     }
 
-    public Vector3[] GenerateTransforms(){
-        Vector3[] pointVec = new Vector3[pointCount];
-        for(int loop = 0; loop < pointCount; loop++){
-        
-        }
-        return points;
-    }
+    
 
     Vector3 Rotate90CW(Vector3 aDir){
         return new Vector3(aDir.z, 0, -aDir.x);
@@ -79,5 +73,11 @@ public class MeshLine : MonoBehaviour
         mesh.triangles = tris;
         mesh.RecalculateNormals();
         return mesh;
+    }
+
+    public void DrawLine(){
+        for(int loop = 0; loop < points.Length - 1; loop++){
+            Mesh mesh = GeneratePlane(points[loop].position, points[loop+1].position);
+        }
     }
 }
