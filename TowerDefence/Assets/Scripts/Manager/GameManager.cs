@@ -70,12 +70,7 @@ public class GameManager : Singleton<GameManager>
         firstPerson = true;
         totalHealth = towerHealth;
         UpdateBalanceText();
-        if(stage == 0){
-            PlayerPrefs.SetInt("Balance", balance);
-        }
-        else if(stage > 0){
-            balance = PlayerPrefs.GetInt("Balance");
-        }
+        
         
         //Debug.Log("Dead enemies " + deadEnemies.GetComponentsInChildren<Transform>().Length + deadEnemies.GetComponentsInChildren<Transform>()[0].gameObject.name);
         
