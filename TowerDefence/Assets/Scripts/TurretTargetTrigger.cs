@@ -20,6 +20,7 @@ public class TurretTargetTrigger : MonoBehaviour
         }
     }
     private void OnTriggerEnter(Collider other) {
+        Debug.Log(other.name);
         if(!enemiesInRange.Contains(other.transform) && other.tag == "Enemy"){
             AddEnemy(other.transform);
         }

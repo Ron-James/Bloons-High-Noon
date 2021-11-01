@@ -392,7 +392,7 @@ public class FirstPersonAIO : MonoBehaviour {
         #endregion
         if (enableCameraMovement)
         {
-            CheckIslandMenu();
+            //CheckIslandMenu();
         }
         if (isHitIsland)
         {

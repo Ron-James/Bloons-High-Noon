@@ -21,11 +21,17 @@ public class SceneController : Singleton<SceneController>
     }
 
     public void LoadLevel1(){
-        SceneManager.LoadScene("Level_01");
+        SceneManager.LoadScene("Level01");
+    }
+    public void LoadLevel2(){
+        SceneManager.LoadScene("Level02");
     }
 
     public void LoadGameOver(){
         SceneManager.LoadScene("GameOver");
+    }
+    public void LoadWinScene(){
+        SceneManager.LoadScene("Winner");
     }
     public void LoadMenu(){
         SceneManager.LoadScene("Main Menu");

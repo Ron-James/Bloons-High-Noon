@@ -43,7 +43,7 @@ public class TurretProjectile : MonoBehaviour
                     //Debug.Log("Enemy Hit");
                     
                     if(iceShot){
-                        hit.collider.gameObject.GetComponent<EnemyHealth>().TakeDamage(damage);
+                        hit.collider.gameObject.GetComponentInParent<EnemyHealth>().TakeDamage(damage);
                         hit.collider.gameObject.GetComponent<EnemyPathing>().SlowDownEnemy(GameManager.instance.EnemyIceDuration);
                         if(hit.collider.gameObject.GetComponent<EnemyHealth>().Health <= 0 && GetComponent<TurretAim>().Target.gameObject.GetComponent<EnemyHealth>().Health <=0){
                             GetComponent<TurretAim>().Target = null;
@@ -52,7 +52,7 @@ public class TurretProjectile : MonoBehaviour
                         }
                     }
                     else{
-                        hit.collider.gameObject.GetComponent<EnemyHealth>().TakeDamage(damage);
+                        hit.collider.gameObject.GetComponentInParent<EnemyHealth>().TakeDamage(damage);
                         if(hit.collider.gameObject.GetComponent<EnemyHealth>().Health <= 0 && GetComponent<TurretAim>().Target.gameObject.GetComponent<EnemyHealth>().Health <=0){
                             GetComponent<TurretAim>().Target = null;
                             //GetComponentInChildren<TurretTargetTrigger>().RemoveDeadEnemy(hit.collider.gameObject.transform);

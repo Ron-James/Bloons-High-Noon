@@ -76,6 +76,14 @@ public class WaveSpawner : MonoBehaviour
 		{
 			nextWave = 0;
             waveCountDown = waves[0].timeBeforeWave;
+            switch(GameManager.instance.Stage){
+                case 0:
+                    SceneController.instance.LoadLevel2();
+                break;
+                case 1:
+                    SceneController.instance.LoadWinScene();
+                break;
+            }
 			Debug.Log("ALL WAVES COMPLETE! Looping...");
 		}
 		else

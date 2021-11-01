@@ -7,6 +7,9 @@ public class EnemyRanged : MonoBehaviour
 {
     Transform tempDestination;
     [SerializeField] Transform target;
+    [SerializeField] Transform firePoint;
+    [SerializeField] Transform barrel;
+
     [SerializeField] float rotationSpeed = 25f;
     [SerializeField] float fireRate = 0.5f;
     [SerializeField] float towerFireRate = 1f;
@@ -16,8 +19,9 @@ public class EnemyRanged : MonoBehaviour
     
 
 
-    float fireCount;
+    [SerializeField] float fireCount;
     float towerFireCount;
+    Quaternion defaultBarrelRotation;
 
     public Transform Target { get => target; set => target = value; }
 
@@ -26,15 +30,16 @@ public class EnemyRanged : MonoBehaviour
     {
         
         fireCount = 0;
+        defaultBarrelRotation = barrel.rotation;
         //GetComponent<SphereCollider>().radius = range;
     }
 
     // Update is called once per frame
     void Update()
     {
+        Aim();
         if(target != null){
             if(target.gameObject.tag == "Build Plate" && target.gameObject.GetComponentInParent<BuildPlate>().BuildIndex > 0){
-                Aim();
                 fireCount += Time.deltaTime;
                 if(fireCount >= fireRate){
                     Debug.Log("Fired enemy");
@@ -45,7 +50,7 @@ public class EnemyRanged : MonoBehaviour
             else if(target.gameObject.tag == "Tower")
             {
                 towerFireCount += Time.deltaTime;
-                Aim();
+                
                 if(towerFireCount >= towerFireRate){
                     //Debug.Log("Fired enemy");
                     Fire();
@@ -56,12 +61,15 @@ public class EnemyRanged : MonoBehaviour
         }
     }
     void Aim(){
-        Quaternion targetRot = Quaternion.LookRotation(target.position - transform.position);
-        Vector3 angles = targetRot.eulerAngles;
-        angles.x = 0;
-        angles.z = 0;
-        targetRot = Quaternion.Euler(angles);
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRot,  rotationSpeed * Time.deltaTime);
+        if(target != null){
+            Quaternion targetRot = Quaternion.LookRotation(target.position - barrel.position);
+            barrel.rotation = Quaternion.RotateTowards(barrel.rotation, targetRot,  rotationSpeed * Time.deltaTime);
+        }
+        else{
+            barrel.rotation = Quaternion.RotateTowards(barrel.rotation, defaultBarrelRotation,  rotationSpeed * Time.deltaTime);
+        }
+        
+       
     }
     
     void Fire(){
@@ -102,7 +110,7 @@ public class EnemyRanged : MonoBehaviour
 
     IEnumerator ShowProjectileLine(Vector3 point){
         float time = 0;
-        lineRenderer.SetPosition(0, transform.position);
+        lineRenderer.SetPosition(0, firePoint.position);
         lineRenderer.SetPosition(1, point);
 
         while(true){

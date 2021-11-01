@@ -7,8 +7,8 @@ public class GameManager : Singleton<GameManager>
 {
     
     [Header("Enemy Spawn Points")]
-    [SerializeField] Transform spawnPointMin;
-    [SerializeField] Transform spawnPointMax;
+    [SerializeField] Transform spawnPoint;
+    
     
     [Header("Enemy Types")]
     [SerializeField] Enemy [] enemies;
@@ -32,6 +32,7 @@ public class GameManager : Singleton<GameManager>
 
     [Header("Player Reference")]
     [SerializeField] Transform player;
+    [SerializeField] Transform mainTower;
 
     [Header("Game Constants")]
     [SerializeField] float repairCost = 50;
@@ -59,6 +60,8 @@ public class GameManager : Singleton<GameManager>
     public float EnemyIceDuration { get => enemyIceDuration; set => enemyIceDuration = value; }
     public Transform PlayerCamera { get => playerCamera; set => playerCamera = value; }
     public float HelthIndicatorThrsh1 { get => HelthIndicatorThrsh; set => HelthIndicatorThrsh = value; }
+    public Transform MainTower { get => mainTower; set => mainTower = value; }
+    public int Stage { get => stage; set => stage = value; }
 
 
     // Start is called before the first frame update
@@ -67,7 +70,13 @@ public class GameManager : Singleton<GameManager>
         firstPerson = true;
         totalHealth = towerHealth;
         UpdateBalanceText();
-        PlayerPrefs.SetInt("Balance", balance);
+        if(stage == 0){
+            PlayerPrefs.SetInt("Balance", balance);
+        }
+        else if(stage > 0){
+            balance = PlayerPrefs.GetInt("Balance");
+        }
+        
         //Debug.Log("Dead enemies " + deadEnemies.GetComponentsInChildren<Transform>().Length + deadEnemies.GetComponentsInChildren<Transform>()[0].gameObject.name);
         
     }
@@ -75,11 +84,11 @@ public class GameManager : Singleton<GameManager>
     // Update is called once per frame
     void Update()
     {
-        /*
+        
         if(Input.GetKeyDown(KeyCode.M)){
             SpawnEnemy(enemies[2]);
         }
-        */
+        
 
         if(Input.GetKeyDown(KeyCode.E)){
             SwitchCamera();
@@ -99,10 +108,7 @@ public class GameManager : Singleton<GameManager>
     }
 
     public void SpawnEnemy(Enemy enemy){
-        Vector3 position;
-        position.x = spawnPointMin.position.x;
-        position.y = spawnPointMin.position.y;
-        position.z = Random.Range(spawnPointMin.position.z, spawnPointMax.position.z);
+        Vector3 position = spawnPoint.position;
         EnemyHealth [] dead = deadEnemies.GetComponentsInChildren<EnemyHealth>();
         if(DeadEnemyOfType(enemy)){
             ReviveEnemyOfType(enemy, position);
