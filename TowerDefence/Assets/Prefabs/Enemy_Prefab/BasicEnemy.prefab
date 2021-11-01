@@ -9,13 +9,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4472512432600761821}
-  - component: {fileID: 4150972097586092651}
   - component: {fileID: 5993833727160016810}
   - component: {fileID: 372440167650100464}
   - component: {fileID: 2934534593124890313}
   - component: {fileID: 8890825172085339427}
   - component: {fileID: 729411142328203173}
   - component: {fileID: 3529870401856988927}
+  - component: {fileID: 292546515297177006}
   m_Layer: 10
   m_Name: BasicEnemy
   m_TagString: Enemy
@@ -39,25 +39,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
---- !u!95 &4150972097586092651
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3844489620895014759}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8763d329cd053774f9aa8b4add29ac14, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!195 &5993833727160016810
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -79,7 +60,7 @@ NavMeshAgent:
   m_Height: 7.53
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 0
 --- !u!54 &372440167650100464
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -152,6 +133,25 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.7, y: 14.282248, z: 6.3889236}
   m_Center: {x: 0, y: 6.066123, z: -0.47446156}
+--- !u!95 &292546515297177006
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3844489620895014759}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8763d329cd053774f9aa8b4add29ac14, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4225348094914627559
 GameObject:
   m_ObjectHideFlags: 0

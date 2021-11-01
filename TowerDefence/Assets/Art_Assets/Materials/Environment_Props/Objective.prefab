@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3587916726838263062}
   m_Layer: 0
   m_Name: Objective
-  m_TagString: Tower
+  m_TagString: Objective
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44,9 +44,11 @@ GameObject:
   - component: {fileID: 7994870734982169731}
   - component: {fileID: 7790091800085511728}
   - component: {fileID: 8905723748643850734}
+  - component: {fileID: 1630494029}
+  - component: {fileID: 338582871507956007}
   m_Layer: 0
   m_Name: Tower_02
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -128,6 +130,36 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 1794725394559788014, guid: b8cce61664269b847b005f97272e2723, type: 3}
+--- !u!54 &1630494029
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5939586408491643474}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!136 &338582871507956007
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5939586408491643474}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 8.967547
+  m_Height: 22.789474
+  m_Direction: 1
+  m_Center: {x: 1.1016245, y: 15.5723, z: -0.09616566}
 --- !u!1 &6076236637208386306
 GameObject:
   m_ObjectHideFlags: 0
@@ -140,9 +172,10 @@ GameObject:
   - component: {fileID: 8162015458666189113}
   - component: {fileID: 8599616397666467484}
   - component: {fileID: 2258558549382882355}
+  - component: {fileID: 1630494031}
   m_Layer: 0
   m_Name: Tower_01
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -224,3 +257,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 8030659895135439392, guid: b8cce61664269b847b005f97272e2723, type: 3}
+--- !u!54 &1630494031
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6076236637208386306}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
