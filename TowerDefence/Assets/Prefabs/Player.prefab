@@ -110,7 +110,7 @@ GameObject:
   - component: {fileID: 4305396962134306569}
   - component: {fileID: 4309630812490360533}
   m_Layer: 0
-  m_Name: FirstPerson-AIO
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -296,8 +296,8 @@ MonoBehaviour:
   canJump: 1
   canHoldJump: 0
   useStamina: 1
-  staminaDepletionSpeed: 2
-  staminaLevel: 50
+  staminaDepletionSpeed: 1.01
+  staminaLevel: 66.5
   speed: 0
   staminaInternal: 0
   _crouchModifiers:
@@ -311,7 +311,7 @@ MonoBehaviour:
     gravityMultiplier: 1
     zeroFrictionMaterial: {fileID: 0}
     highFrictionMaterial: {fileID: 0}
-    maxSlopeAngle: 70
+    maxSlopeAngle: 55
     maxWallShear: 89
     maxStepHeight: 0.2
     curntGroundNormal: {x: 0, y: 0, z: 0}

@@ -3605,8 +3605,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 964c77099645785449308d63bf1a0471, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buildMenu: {fileID: 0}
-  buildPrompt: {fileID: 0}
+  buildMenu: {fileID: 1288507224}
+  buildPrompt: {fileID: 1288507228}
 --- !u!4 &1219822123 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 779937491236291881, guid: e5e157bd5c66f0443860d514c2cd9cfb, type: 3}
@@ -4001,6 +4001,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7940934248589480700, guid: 6d6ec4225c2203d4c948831df643eaaa, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7940934248589480700, guid: 6d6ec4225c2203d4c948831df643eaaa, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7940934248978484218, guid: 6d6ec4225c2203d4c948831df643eaaa, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 26.100002
+      objectReference: {fileID: 0}
+    - target: {fileID: 7940934248978484218, guid: 6d6ec4225c2203d4c948831df643eaaa, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -1.8518982
+      objectReference: {fileID: 0}
     - target: {fileID: 7940934249123124193, guid: 6d6ec4225c2203d4c948831df643eaaa, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -4350,8 +4366,8 @@ MonoBehaviour:
     enemies:
     - {fileID: 11400000, guid: ea37699812fd0ae41996b122ffab05d9, type: 2}
     enemyCounts: 0c000000
-    rate: 3
-    timeBeforeWave: 20
+    rate: 4.5
+    timeBeforeWave: 25
   - name: Wave 2
     enemies:
     - {fileID: 11400000, guid: ea37699812fd0ae41996b122ffab05d9, type: 2}
@@ -6919,7 +6935,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh114272
+  m_Name: pb_Mesh102884
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

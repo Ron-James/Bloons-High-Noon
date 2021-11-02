@@ -21,7 +21,7 @@ public class TurretProjectile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        firstShot = false;
     }
 
     // Update is called once per frame
@@ -30,14 +30,30 @@ public class TurretProjectile : MonoBehaviour
         target = GetComponent<TurretAim>().Target;
         DamageTarget();
     }
-
+    IEnumerator ShowProjectileDelayed(Vector3 endPoint, float time){
+        StartCoroutine(ShowProjectileLine(endPoint));
+        yield return new WaitForSeconds(time);
+    }
     public void DamageTarget(){
-        if(target != null && !GetComponent<TurretAim>().Stunned){
+        if(target != null && !GetComponent<TurretAim>().Stunned && target.GetComponentInParent<EnemyHealth>() != null){
             fireTime += Time.deltaTime;
             RaycastHit hit;
             float Range = Vector3.Distance(target.position, firePoint.position);
-            if(Physics.Raycast(firePoint.position, barrel.transform.forward, out hit, Range, enemyMask) && fireTime >= fireRate){
+            if(!firstShot && fireTime == 0){
+                firstShot = true;
+                target.GetComponentInParent<EnemyHealth>().TakeDamage(damage);
+                StartCoroutine(ShowProjectileDelayed(target.position, 0.2f));
+                if(target.gameObject.GetComponentInParent<EnemyHealth>().Health <= 0 && GetComponent<TurretAim>().Target.gameObject.GetComponent<EnemyHealth>().Health <=0){
+                    GetComponent<TurretAim>().Target = null;
+                    //GetComponentInChildren<TurretTargetTrigger>().RemoveDeadEnemy(hit.collider.gameObject.transform);
+                    GameManager.instance.AddBalance(target.gameObject.GetComponent<EnemyHealth>().Enemy.value);
+                    ResetTarget();
+                }
+
+            }
+            if((Physics.Raycast(firePoint.position, barrel.transform.forward, out hit, Range, enemyMask) && fireTime >= fireRate) || (fireTime == 0 &&  !firstShot)){
                 fireTime = 0;
+                
                 if(hit.collider.tag == "Enemy"){
                     StartCoroutine(ShowProjectileLine(hit.point));
                     //Debug.Log("Enemy Hit");
@@ -55,6 +71,7 @@ public class TurretProjectile : MonoBehaviour
                         hit.collider.gameObject.GetComponentInParent<EnemyHealth>().TakeDamage(damage);
                         if(hit.collider.gameObject.GetComponent<EnemyHealth>().Health <= 0 && GetComponent<TurretAim>().Target.gameObject.GetComponent<EnemyHealth>().Health <=0){
                             GetComponent<TurretAim>().Target = null;
+                            ResetTarget();
                             //GetComponentInChildren<TurretTargetTrigger>().RemoveDeadEnemy(hit.collider.gameObject.transform);
                             GameManager.instance.AddBalance(hit.collider.gameObject.GetComponent<EnemyHealth>().Enemy.value);
                         }
