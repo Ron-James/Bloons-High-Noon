@@ -33,6 +33,9 @@ public class SceneController : Singleton<SceneController>
     public void LoadWinScene(){
         SceneManager.LoadScene("Winner");
     }
+    public void LoadTutorial(){
+        SceneManager.LoadScene("Tutorial");
+    }
     public void LevelSelect(){
         SceneManager.LoadScene("Level Selector");
     }
