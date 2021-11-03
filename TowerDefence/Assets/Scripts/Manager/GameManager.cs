@@ -120,6 +120,7 @@ public class GameManager : Singleton<GameManager>
         healthBar.fillAmount = towerHealth/totalHealth;
         if(towerHealth <= 0){
             //GameOver
+            
             SceneController.instance.LoadGameOver();
         }
     }

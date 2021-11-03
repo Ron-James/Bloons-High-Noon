@@ -50,13 +50,5 @@ public class MenuTrigger : MonoBehaviour
             break;
         }
     }
-    private void OnCollisionStay(Collision other) {
-        collisionTime += Time.deltaTime;
-        if(collisionTime >= maxCollisionTime && GetComponentInChildren<GrapplingHook>() != null && GetComponentInChildren<GrapplingHook>().Hooked){
-            GetComponentInChildren<GrapplingHook>().Hooked = false;
-        }
-    }
-    private void OnCollisionExit(Collision other) {
-        collisionTime = 0;
-    }
+    
 }

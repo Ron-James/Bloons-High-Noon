@@ -17,6 +17,8 @@ public class EnemyPathing : MonoBehaviour
     bool slowed;
     Coroutine slowCo;
     Transform towerLocation;
+    Vector3 lastVelocity;
+    float lastAnimatorSpd;
 
     public bool Slowed { get => slowed; set => slowed = value; }
     public Vector3 TowerPosition { get => towerPosition; set => towerPosition = value; }
@@ -57,6 +59,17 @@ public class EnemyPathing : MonoBehaviour
         }
     }
     
+    public void PauseEnemy(){
+        lastVelocity = GetComponent<NavMeshAgent>().velocity;
+        GetComponent<NavMeshAgent>().isStopped = true;
+        lastAnimatorSpd = GetComponent<Animator>().speed;
+    }
+
+    public void ResumeEnemy(){
+        GetComponent<NavMeshAgent>().isStopped = false;
+        GetComponent<NavMeshAgent>().velocity = lastVelocity;
+        GetComponent<Animator>().speed = lastAnimatorSpd;
+    }
 
     public void SlowDownEnemy(float time){
         if(this.gameObject.activeInHierarchy){

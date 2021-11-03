@@ -20,6 +20,8 @@ public class GrapplingHook : MonoBehaviour
     float currentDistance;
     float velocity;
     [SerializeField]Vector3 startPosition;
+    [SerializeField] float climbUpTime = 0.5f;
+    [SerializeField] float climbForwardTime = 0.5f;
     Transform grappleGun;
     
 
@@ -82,20 +84,82 @@ public class GrapplingHook : MonoBehaviour
         hook.transform.SetParent(firePoint);
         hook.transform.localPosition = Vector3.zero;
         hookedObject = null;
+        player.GetComponent<Collider>().enabled = true;
         
     }
 
+    IEnumerator ClimbUpForward(float durationUp, float durationFor){
+        float time = 0;
+        while(true){
+            time += Time.deltaTime;
+            if(time >= durationUp || player.GetComponent<FirstPersonAIO>().IsGrounded){
+                StartCoroutine(ClimbForward(durationFor));
+                break;
+            }
+            else{
+                player.transform.Translate(Vector3.up * Time.fixedDeltaTime);
+                yield return null;
+            }
+        }
+    }
+
+IEnumerator ClimbUp(float durationUp){
+        float time = 0;
+        while(true){
+            time += Time.deltaTime;
+            if(time >= durationUp || player.GetComponent<FirstPersonAIO>().IsGrounded){
+                ReturnHook();
+                GetComponentInParent<FirstPersonAIO>().playerCanMove = true;
+                break;
+            }
+            else{
+                player.transform.Translate(Vector3.up * Time.fixedDeltaTime);
+                yield return null;
+            }
+        }
+    }
+    IEnumerator ClimbForward(float duration){
+        float time = 0;
+        while(true){
+            time += Time.deltaTime;
+            if(time >= duration || player.GetComponent<FirstPersonAIO>().IsGrounded){
+                ReturnHook();
+                GetComponentInParent<FirstPersonAIO>().playerCanMove = true;
+                break;
+            }
+            else{
+                player.transform.Translate(Vector3.forward * Time.fixedDeltaTime);
+                yield return null;
+            }
+        }
+    }
+    IEnumerator ClimbForwardUp(float durationFor, float durationUp){
+        float time = 0;
+        while(true){
+            time += Time.deltaTime;
+            if(time >= durationFor || player.GetComponent<FirstPersonAIO>().IsGrounded){
+                StartCoroutine(ClimbUp(durationUp));
+                GetComponentInParent<FirstPersonAIO>().playerCanMove = true;
+                break;
+            }
+            else{
+                player.transform.Translate(Vector3.forward * Time.fixedDeltaTime);
+                yield return null;
+            }
+        }
+    }
     IEnumerator Climb(float duration){
         float time = 0;
         while(true){
             time += Time.deltaTime;
-            if(time >= duration){
+            if(time >= duration || player.GetComponent<FirstPersonAIO>().IsGrounded){
                 ReturnHook();
+                GetComponentInParent<FirstPersonAIO>().playerCanMove = true;
                 break;
             }
             else{
-                player.transform.Translate(Vector3.forward * Time.fixedDeltaTime * 5f);
-                player.transform.Translate(Vector3.up *Time.deltaTime * 5f);
+                player.transform.Translate(Vector3.forward * Time.fixedDeltaTime * 10f);
+                player.transform.Translate(Vector3.up * Time.deltaTime * 1f);
                 yield return null;
             }
         }
@@ -109,14 +173,20 @@ public class GrapplingHook : MonoBehaviour
         GetComponentInParent<FirstPersonAIO>().playerCanMove = false;
         player.GetComponent<Rigidbody>().useGravity = false;
         hook.transform.SetParent(hookedObject.transform);
+        player.GetComponent<Collider>().enabled = false;
         while(true){
             //hook.transform.position = hookedPosition;
             player.transform.position = Vector3.MoveTowards(player.transform.position, hookedPosition, playerTravelSpd * Time.deltaTime);
             float distanceToHook = Vector3.Distance(player.transform.position, hookedPosition);
-            if(distanceToHook < 2f || !Hooked){
-                StartCoroutine(Climb(0.5f));
+            if(distanceToHook < 0.5f || !Hooked){
+                if(!GetComponentInParent<FirstPersonAIO>().IsGrounded){
+                    StartCoroutine(ClimbUpForward(climbUpTime, climbForwardTime));
+                }
+                else{
+                    ReturnHook();
+                    GetComponentInParent<FirstPersonAIO>().playerCanMove = true;
+                }
                 //GetComponentInParent<FirstPersonAIO>().EnableCamera();
-                GetComponentInParent<FirstPersonAIO>().playerCanMove = true;
                 break;
             }
             else{
