@@ -82,9 +82,10 @@ public class GrapplingHook : MonoBehaviour
         Hooked = false;
         player.GetComponent<Rigidbody>().useGravity = true;
         hook.transform.SetParent(firePoint);
-        hook.transform.localPosition = Vector3.zero;
+        
         hookedObject = null;
         player.GetComponent<Collider>().enabled = true;
+        hook.transform.localPosition = Vector3.zero;
         
     }
 
@@ -178,7 +179,7 @@ IEnumerator ClimbUp(float durationUp){
             //hook.transform.position = hookedPosition;
             player.transform.position = Vector3.MoveTowards(player.transform.position, hookedPosition, playerTravelSpd * Time.deltaTime);
             float distanceToHook = Vector3.Distance(player.transform.position, hookedPosition);
-            if(distanceToHook < 0.5f || !Hooked){
+            if(distanceToHook < 2f || !Hooked){
                 if(!GetComponentInParent<FirstPersonAIO>().IsGrounded){
                     StartCoroutine(ClimbUpForward(climbUpTime, climbForwardTime));
                 }

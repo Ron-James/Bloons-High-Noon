@@ -135,7 +135,6 @@ GameObject:
   - component: {fileID: 16016089}
   - component: {fileID: 16016088}
   - component: {fileID: 16016087}
-  - component: {fileID: 16016090}
   m_Layer: 7
   m_Name: Grapple point (1)
   m_TagString: Hookable
@@ -219,22 +218,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 16016085}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &16016090
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 16016085}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &50393390
 GameObject:
   m_ObjectHideFlags: 0
@@ -441,7 +424,6 @@ GameObject:
   - component: {fileID: 158944760}
   - component: {fileID: 158944759}
   - component: {fileID: 158944758}
-  - component: {fileID: 158944761}
   m_Layer: 7
   m_Name: Grapple point (2)
   m_TagString: Hookable
@@ -525,22 +507,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 158944756}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &158944761
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 158944756}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!114 &199782104 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7940934248037903373, guid: 6d6ec4225c2203d4c948831df643eaaa, type: 3}
@@ -614,7 +580,6 @@ GameObject:
   - component: {fileID: 608783066}
   - component: {fileID: 608783065}
   - component: {fileID: 608783064}
-  - component: {fileID: 608783067}
   m_Layer: 7
   m_Name: Grapple point (6)
   m_TagString: Hookable
@@ -698,22 +663,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 608783062}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &608783067
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 608783062}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!4 &843625235 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4203246782249169389, guid: 7cf5de6e4a25d4f45b4d89acc520a0e7, type: 3}
@@ -731,7 +680,6 @@ GameObject:
   - component: {fileID: 864480889}
   - component: {fileID: 864480888}
   - component: {fileID: 864480887}
-  - component: {fileID: 864480890}
   m_Layer: 7
   m_Name: Grapple point (5)
   m_TagString: Hookable
@@ -815,48 +763,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 864480885}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &864480890
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 864480885}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!4 &917104258 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4203246782249169389, guid: 7cf5de6e4a25d4f45b4d89acc520a0e7, type: 3}
   m_PrefabInstance: {fileID: 1673718033}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1003308397 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5502342357828277772, guid: 7054e029c52bf8348a156d125848a903, type: 3}
-  m_PrefabInstance: {fileID: 1886116931}
-  m_PrefabAsset: {fileID: 0}
---- !u!54 &1003308403
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1003308397}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &1094802471
 GameObject:
   m_ObjectHideFlags: 0
@@ -972,7 +883,6 @@ GameObject:
   - component: {fileID: 1170981073}
   - component: {fileID: 1170981072}
   - component: {fileID: 1170981071}
-  - component: {fileID: 1170981074}
   m_Layer: 7
   m_Name: Grapple point (11)
   m_TagString: Hookable
@@ -1056,22 +966,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1170981069}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &1170981074
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1170981069}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &1258436260
 GameObject:
   m_ObjectHideFlags: 0
@@ -1084,7 +978,6 @@ GameObject:
   - component: {fileID: 1258436264}
   - component: {fileID: 1258436263}
   - component: {fileID: 1258436262}
-  - component: {fileID: 1258436265}
   m_Layer: 7
   m_Name: Grapple point (7)
   m_TagString: Hookable
@@ -1168,22 +1061,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1258436260}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &1258436265
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1258436260}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &1281402681
 GameObject:
   m_ObjectHideFlags: 0
@@ -1316,7 +1193,6 @@ GameObject:
   - component: {fileID: 1607425146}
   - component: {fileID: 1607425145}
   - component: {fileID: 1607425144}
-  - component: {fileID: 1607425147}
   m_Layer: 7
   m_Name: Grapple point (4)
   m_TagString: Hookable
@@ -1400,22 +1276,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1607425142}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &1607425147
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1607425142}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &1660675980
 GameObject:
   m_ObjectHideFlags: 0
@@ -1428,7 +1288,6 @@ GameObject:
   - component: {fileID: 1660675984}
   - component: {fileID: 1660675983}
   - component: {fileID: 1660675982}
-  - component: {fileID: 1660675985}
   m_Layer: 7
   m_Name: Grapple point (10)
   m_TagString: Hookable
@@ -1512,22 +1371,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1660675980}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &1660675985
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1660675980}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &1664805555
 GameObject:
   m_ObjectHideFlags: 0
@@ -1540,7 +1383,6 @@ GameObject:
   - component: {fileID: 1664805559}
   - component: {fileID: 1664805558}
   - component: {fileID: 1664805557}
-  - component: {fileID: 1664805560}
   m_Layer: 7
   m_Name: Grapple point (8)
   m_TagString: Hookable
@@ -1624,22 +1466,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1664805555}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &1664805560
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1664805555}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1001 &1673718033
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1733,7 +1559,6 @@ GameObject:
   - component: {fileID: 1760626632}
   - component: {fileID: 1760626631}
   - component: {fileID: 1760626630}
-  - component: {fileID: 1760626633}
   m_Layer: 7
   m_Name: Grapple point (3)
   m_TagString: Hookable
@@ -1817,22 +1642,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1760626628}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &1760626633
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1760626628}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &1807627063
 GameObject:
   m_ObjectHideFlags: 0
@@ -1845,7 +1654,6 @@ GameObject:
   - component: {fileID: 1807627067}
   - component: {fileID: 1807627066}
   - component: {fileID: 1807627065}
-  - component: {fileID: 1807627068}
   m_Layer: 7
   m_Name: Grapple point
   m_TagString: Hookable
@@ -1929,22 +1737,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1807627063}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &1807627068
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1807627063}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &1863385684
 GameObject:
   m_ObjectHideFlags: 0
@@ -2106,6 +1898,21 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4205764503174547987, guid: 7cf5de6e4a25d4f45b4d89acc520a0e7, type: 3}
   m_PrefabInstance: {fileID: 1163020919}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1957267698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1957267697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 964c77099645785449308d63bf1a0471, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildMenu: {fileID: 199782104}
+  buildPrompt: {fileID: 96090401}
+  maxCollisionTime: 0.2
 --- !u!1 &1993332362
 GameObject:
   m_ObjectHideFlags: 0
@@ -2118,7 +1925,6 @@ GameObject:
   - component: {fileID: 1993332366}
   - component: {fileID: 1993332365}
   - component: {fileID: 1993332364}
-  - component: {fileID: 1993332367}
   m_Layer: 7
   m_Name: Grapple point (9)
   m_TagString: Hookable
@@ -2202,22 +2008,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1993332362}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &1993332367
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1993332362}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1001 &2011932414
 PrefabInstance:
   m_ObjectHideFlags: 0
