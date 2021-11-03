@@ -7,11 +7,14 @@ public class MenuTrigger : MonoBehaviour
     [SerializeField] BuildMenu buildMenu;
     BuildPlate buildPlate;
     [SerializeField] GameObject buildPrompt;
+    [SerializeField] float maxCollisionTime = 0.2f;
     bool inRegion;
     Vector3 startPos;
+    float collisionTime;
     // Start is called before the first frame update
     void Start()
     {
+        collisionTime = 0;
         startPos = transform.position;
         //buildPrompt.SetActive(false);
         buildPrompt.SetActive(false);
@@ -46,5 +49,14 @@ public class MenuTrigger : MonoBehaviour
                 buildPlate = null;
             break;
         }
+    }
+    private void OnCollisionStay(Collision other) {
+        collisionTime += Time.deltaTime;
+        if(collisionTime >= maxCollisionTime && GetComponentInChildren<GrapplingHook>() != null && GetComponentInChildren<GrapplingHook>().Hooked){
+            GetComponentInChildren<GrapplingHook>().Hooked = false;
+        }
+    }
+    private void OnCollisionExit(Collision other) {
+        collisionTime = 0;
     }
 }

@@ -2309,6 +2309,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 779937491236291881, guid: e5e157bd5c66f0443860d514c2cd9cfb, type: 3}
   m_PrefabInstance: {fileID: 690052276}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &696733009 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7125037105910810038, guid: 6d6ec4225c2203d4c948831df643eaaa, type: 3}
+  m_PrefabInstance: {fileID: 7940934248537220678}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &706672191
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2491,6 +2502,8 @@ MonoBehaviour:
   waveCountDown: 15
   state: 2
   countDownText: {fileID: 2126773455}
+  level: {fileID: 847799908}
+  wave: {fileID: 696733009}
 --- !u!114 &730817745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4135,6 +4148,17 @@ Transform:
   m_Father: {fileID: 544995088}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &847799908 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7976224304619750680, guid: 6d6ec4225c2203d4c948831df643eaaa, type: 3}
+  m_PrefabInstance: {fileID: 7940934248537220678}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &851590221 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2463482775770859986, guid: 012beba0df57bae44839883bb08ca0f2, type: 3}
@@ -5754,6 +5778,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildMenu: {fileID: 1673726539}
   buildPrompt: {fileID: 66362864}
+  maxCollisionTime: 0.2
 --- !u!4 &1301719590 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 407582129299446201, guid: aa20f7611c6cf60419b6e243a9c96cfb, type: 3}
@@ -8396,6 +8421,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3215647243647583962, guid: 6d6ec4225c2203d4c948831df643eaaa, type: 3}
+      propertyPath: m_Name
+      value: Wave Text
+      objectReference: {fileID: 0}
     - target: {fileID: 7940934249123124193, guid: 6d6ec4225c2203d4c948831df643eaaa, type: 3}
       propertyPath: m_Pivot.x
       value: 0

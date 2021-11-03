@@ -3607,6 +3607,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildMenu: {fileID: 1288507224}
   buildPrompt: {fileID: 1288507228}
+  maxCollisionTime: 0.2
 --- !u!4 &1219822123 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 779937491236291881, guid: e5e157bd5c66f0443860d514c2cd9cfb, type: 3}
@@ -4001,6 +4002,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3215647243647583962, guid: 6d6ec4225c2203d4c948831df643eaaa, type: 3}
+      propertyPath: m_Name
+      value: Wave Text
+      objectReference: {fileID: 0}
     - target: {fileID: 7940934248589480700, guid: 6d6ec4225c2203d4c948831df643eaaa, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -1.5
@@ -4156,6 +4161,28 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7940934248578415542, guid: 6d6ec4225c2203d4c948831df643eaaa, type: 3}
   m_PrefabInstance: {fileID: 1288507223}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1288507229 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7125037105910810038, guid: 6d6ec4225c2203d4c948831df643eaaa, type: 3}
+  m_PrefabInstance: {fileID: 1288507223}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1288507230 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7976224304619750680, guid: 6d6ec4225c2203d4c948831df643eaaa, type: 3}
+  m_PrefabInstance: {fileID: 1288507223}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1296552882
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4374,7 +4401,7 @@ MonoBehaviour:
     enemyCounts: 14000000
     rate: 2
     timeBeforeWave: 20
-  - name: Wave3
+  - name: Wave 3
     enemies:
     - {fileID: 11400000, guid: ea37699812fd0ae41996b122ffab05d9, type: 2}
     enemyCounts: 1e000000
@@ -4404,6 +4431,8 @@ MonoBehaviour:
   waveCountDown: 15
   state: 2
   countDownText: {fileID: 1288507227}
+  level: {fileID: 1288507230}
+  wave: {fileID: 1288507229}
 --- !u!114 &1324046170
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6935,7 +6964,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh102884
+  m_Name: pb_Mesh167244
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

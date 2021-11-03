@@ -8,7 +8,7 @@ public class HookTrigger : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        player = GetComponentInParent<FirstPersonAIO>().gameObject;
     }
 
     // Update is called once per frame
@@ -20,9 +20,12 @@ public class HookTrigger : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         switch(other.tag){
             case "Hookable":
-               GetComponentInParent<GrapplingHook>().hooked = true;
-               GetComponentInParent<GrapplingHook>().HookedObject = other.gameObject;
+                Debug.Log("Hooked");
+                player.GetComponentInChildren<GrapplingHook>().HookedPosition = transform.position;
+                player.GetComponentInChildren<GrapplingHook>().Hooked = true;
+                player.GetComponentInChildren<GrapplingHook>().HookedObject = other.gameObject;
             break;
         }
     }
+    
 }

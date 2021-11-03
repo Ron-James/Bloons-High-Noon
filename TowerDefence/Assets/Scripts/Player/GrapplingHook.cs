@@ -5,24 +5,33 @@ using UnityEngine;
 public class GrapplingHook : MonoBehaviour
 {
     [SerializeField] GameObject hook;
-    [SerializeField] GameObject hookHolder;
-    [SerializeField] GameObject player;
-    [SerializeField] float hookTravelSpd;
-    [SerializeField] float playerTravelSpd;
+    GameObject player;
+    [SerializeField] Transform firePoint;
+    [SerializeField] float hookTravelSpd = 2f;
+    [SerializeField] float playerTravelSpd = 5f;
+    [SerializeField] Vector3 hookedPosition;
+
 
     public static bool fired;
-    public bool hooked;
+    [SerializeField] bool hooked;
     GameObject hookedObject;
 
     [SerializeField] float maxDistance;
     float currentDistance;
     float velocity;
+    [SerializeField]Vector3 startPosition;
+    Transform grappleGun;
+    
 
     public GameObject HookedObject { get => hookedObject; set => hookedObject = value; }
+    public Vector3 HookedPosition { get => hookedPosition; set => hookedPosition = value; }
+    public bool Hooked { get => hooked; set => hooked = value; }
 
     // Start is called before the first frame update
     void Start()
     {
+        player = GetComponentInParent<FirstPersonAIO>().gameObject;
+        startPosition = hook.transform.localPosition;
         
     }
 
@@ -66,34 +75,48 @@ public class GrapplingHook : MonoBehaviour
         */
     }
     void ReturnHook(){
-        hook.transform.rotation= hookHolder.transform.rotation;
-        hook.transform.position = hookHolder.transform.position;
+        hook.transform.localPosition = startPosition;
         fired = false;
-        hooked = false;
+        Hooked = false;
+        player.GetComponent<Rigidbody>().useGravity = true;
+        hook.transform.SetParent(firePoint);
+        hook.transform.localPosition = Vector3.zero;
+        hookedObject = null;
+        
     }
 
-    IEnumerator Climb(){
+    IEnumerator Climb(float duration){
+        float time = 0;
         while(true){
-            if(Physics.Raycast(player.transform.position, Vector3.down, 3f)){
-                player.GetComponent<Rigidbody>().useGravity = true;
+            time += Time.deltaTime;
+            if(time >= duration){
+                ReturnHook();
                 break;
             }
             else{
-                player.transform.Translate(Vector3.forward * Time.fixedDeltaTime * 1.5f);
-                player.transform.Translate(Vector3.up *Time.deltaTime * 1.5f);
+                player.transform.Translate(Vector3.forward * Time.fixedDeltaTime * 5f);
+                player.transform.Translate(Vector3.up *Time.deltaTime * 5f);
                 yield return null;
             }
         }
+        
+        
     }
+    
 
     IEnumerator Reel(){
+        //GetComponentInParent<FirstPersonAIO>().DisableCamera();
+        GetComponentInParent<FirstPersonAIO>().playerCanMove = false;
         player.GetComponent<Rigidbody>().useGravity = false;
         hook.transform.SetParent(hookedObject.transform);
         while(true){
-            player.transform.position = Vector3.MoveTowards(player.transform.position, hook.transform.position, playerTravelSpd * Time.deltaTime);
-            float distanceToHook = Vector3.Distance(transform.position, hook.transform.position);
-            if(distanceToHook < 1.5f){
-                player.GetComponent<Rigidbody>().useGravity = true;
+            //hook.transform.position = hookedPosition;
+            player.transform.position = Vector3.MoveTowards(player.transform.position, hookedPosition, playerTravelSpd * Time.deltaTime);
+            float distanceToHook = Vector3.Distance(player.transform.position, hookedPosition);
+            if(distanceToHook < 2f || !Hooked){
+                StartCoroutine(Climb(0.5f));
+                //GetComponentInParent<FirstPersonAIO>().EnableCamera();
+                GetComponentInParent<FirstPersonAIO>().playerCanMove = true;
                 break;
             }
             else{
@@ -102,22 +125,25 @@ public class GrapplingHook : MonoBehaviour
             
         }
     }
+    public void HookObject(){
+        hooked = true;
+    }
     IEnumerator Extend(float period, float amplitude){
         fired = true;
         float w = (1/period) * 2 * Mathf.PI;
         float time = 0;
         Vector3 startPos = hook.transform.localPosition;
-        hooked = false;
+        Hooked = false;
         velocity = 0;
         while(true){
             time += Time.fixedDeltaTime;
             float d = Mathf.Abs(amplitude * Mathf.Sin(w * time));
             velocity = Mathf.Cos(w * time);
-            Debug.Log(amplitude);
-            if(time >= period/4 || hooked){
-                if(!hooked){
-                    hook.transform.localPosition = startPos;
-                    fired = false;
+            
+            if(time >= period/4 || Hooked || hookedObject != null){
+                if(!Hooked){
+                    ReturnHook();
+                    
                     velocity = 0;
                     break;
                 }

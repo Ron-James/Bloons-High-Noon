@@ -25,10 +25,13 @@ public class WaveSpawner : MonoBehaviour
     [SerializeField] float waveCountDown = 0;
     [SerializeField] SpawnState state = SpawnState.counting;
     [SerializeField] Text countDownText;
+    [SerializeField] Text level;
+    [SerializeField] Text wave;
 
     float searchCountDown = 1;
 
     private void Start() {
+        level.text = "Level " + (GameManager.instance.Stage + 1).ToString();
         if(waves.Length == 0){
             Debug.Log("No waves set in inspector");
         }
@@ -55,11 +58,14 @@ public class WaveSpawner : MonoBehaviour
             if(state != SpawnState.spawning){
                 //start spawning wave
                 countDownText.gameObject.SetActive(false);
+                wave.gameObject.SetActive(true);
+                wave.text = waves[nextWave].name;
                 StartCoroutine(SpawnWave(waves[nextWave]));
             }
         }
         else{
             countDownText.gameObject.SetActive(true);
+            wave.gameObject.SetActive(false);
             waveCountDown -= Time.deltaTime;
             countDownText.text = SecondsToMinutes(waveCountDown);
         }    
@@ -70,6 +76,7 @@ public class WaveSpawner : MonoBehaviour
 		Debug.Log("Wave Completed!");
 
 		state = SpawnState.counting;
+        
 
 
 		if (nextWave + 1 > waves.Length - 1)
