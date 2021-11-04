@@ -11,9 +11,11 @@ public class MenuTrigger : MonoBehaviour
     bool inRegion;
     Vector3 startPos;
     float collisionTime;
+    //Vector3 lastPosition;
     // Start is called before the first frame update
     void Start()
     {
+        //lastPosition = transform.position;
         collisionTime = 0;
         startPos = transform.position;
         //buildPrompt.SetActive(false);
@@ -23,6 +25,7 @@ public class MenuTrigger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if(buildPlate != null && GameManager.instance.FirstPerson){
             buildPrompt.SetActive(true);
             if(Input.GetKeyDown(KeyCode.B)){

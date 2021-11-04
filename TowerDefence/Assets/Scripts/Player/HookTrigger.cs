@@ -30,13 +30,16 @@ public class HookTrigger : MonoBehaviour
     }
     */
     private void OnCollisionEnter(Collision other) {
-        switch(other.collider.gameObject.layer){
-            case 7:
-                Debug.Log("Hooked");
-                player.GetComponentInChildren<GrapplingHook>().HookedPosition = transform.position;
-                player.GetComponentInChildren<GrapplingHook>().Hooked = true;
-                player.GetComponentInChildren<GrapplingHook>().HookedObject = other.gameObject;
-            break;
+        
+        if(other.collider.gameObject.layer == 7){
+            Debug.Log("Hooked");
+            player.GetComponentInChildren<GrapplingHook>().HookedPosition = transform.position;
+            player.GetComponentInChildren<GrapplingHook>().Hooked = true;
+            player.GetComponentInChildren<GrapplingHook>().HookCollision = other;
+            player.GetComponentInChildren<GrapplingHook>().HookedObject = other.gameObject;
+        }
+        else{
+            Physics.IgnoreCollision(GetComponent<Collider>(), other.collider, true);
         }
     }
     

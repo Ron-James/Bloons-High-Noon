@@ -10,6 +10,7 @@ public class GrapplingHook : MonoBehaviour
     [SerializeField] float hookTravelSpd = 2f;
     [SerializeField] float playerTravelSpd = 5f;
     [SerializeField] Vector3 hookedPosition;
+    [SerializeField] float maxPlatformdist = 1.5f;
 
 
     public static bool fired;
@@ -22,12 +23,21 @@ public class GrapplingHook : MonoBehaviour
     [SerializeField]Vector3 startPosition;
     [SerializeField] float climbUpTime = 0.5f;
     [SerializeField] float climbForwardTime = 0.5f;
+    [SerializeField] float maxClimbHeight = 15f;
+    [SerializeField] float climbSpeed = 1.5f;
+    [SerializeField] float playerHeight = 1f;
+    [SerializeField] LayerMask platformLayer;
+    [SerializeField] LayerMask grappleLayer;
     Transform grappleGun;
+    Collision hookCollision;
     
 
     public GameObject HookedObject { get => hookedObject; set => hookedObject = value; }
     public Vector3 HookedPosition { get => hookedPosition; set => hookedPosition = value; }
     public bool Hooked { get => hooked; set => hooked = value; }
+    public Collision HookCollision { get => hookCollision; set => hookCollision = value; }
+
+    RaycastHit platformHit;
 
     // Start is called before the first frame update
     void Start()
@@ -89,19 +99,39 @@ public class GrapplingHook : MonoBehaviour
         
     }
 
-    IEnumerator ClimbUpForward(float durationUp, float durationFor){
+    IEnumerator ClimbUpForward(float durationFor, float durationUp){
         float time = 0;
-        while(true){
-            time += Time.deltaTime;
-            if(time >= durationUp || player.GetComponent<FirstPersonAIO>().IsGrounded){
-                StartCoroutine(ClimbForward(durationFor));
-                break;
-            }
-            else{
-                player.transform.Translate(Vector3.up * Time.fixedDeltaTime);
-                yield return null;
-            }
+        Vector3 point = Vector3.zero;
+        float distance = 0;
+        if(time >= durationUp || Physics.Raycast(player.transform.position - (Vector3.up*(playerHeight*2)), Vector3.up, out platformHit, maxClimbHeight, platformLayer)){
+            distance = Vector3.Distance(player.transform.position , platformHit.point) + (playerHeight*maxPlatformdist);
+            point = distance * Vector3.up;
+            float pointHeight = point.y;
+            while(true){
+                time += Time.deltaTime;
+                float currentHeight = player.transform.position.y;
+                if(time >= durationUp){
+                    StartCoroutine(ClimbForward(durationFor));
+                    break;
+                }
+                else if(Input.GetKeyDown(KeyCode.Space)){
+                    ReturnHook();
+                    GetComponentInParent<FirstPersonAIO>().playerCanMove = true;
+                    break;
+                } 
+                else{
+                    player.transform.Translate(Vector3.up * Time.deltaTime * climbSpeed);
+                    yield return null;
+                }
         }
+        }
+        else{
+            ReturnHook();
+            GetComponentInParent<FirstPersonAIO>().playerCanMove = true;
+            Debug.Log("Falling");
+            yield break;
+        }
+        
     }
 
 IEnumerator ClimbUp(float durationUp){
@@ -123,11 +153,16 @@ IEnumerator ClimbUp(float durationUp){
         float time = 0;
         while(true){
             time += Time.deltaTime;
-            if(time >= duration || player.GetComponent<FirstPersonAIO>().IsGrounded){
+            if(time >= duration || Physics.Raycast(player.transform.position, -Vector3.up, maxClimbHeight, grappleLayer) || player.GetComponent<FirstPersonAIO>().IsGrounded){
                 ReturnHook();
                 GetComponentInParent<FirstPersonAIO>().playerCanMove = true;
                 break;
             }
+            else if(Input.GetKeyDown(KeyCode.Space)){
+                ReturnHook();
+                GetComponentInParent<FirstPersonAIO>().playerCanMove = true;
+                break;
+            } 
             else{
                 player.transform.Translate(Vector3.forward * Time.fixedDeltaTime);
                 yield return null;
@@ -139,7 +174,7 @@ IEnumerator ClimbUp(float durationUp){
         while(true){
             time += Time.deltaTime;
             if(time >= durationFor || player.GetComponent<FirstPersonAIO>().IsGrounded){
-                StartCoroutine(ClimbUp(durationUp));
+                //StartCoroutine(ClimbUp(durationUp));
                 GetComponentInParent<FirstPersonAIO>().playerCanMove = true;
                 break;
             }
@@ -158,6 +193,11 @@ IEnumerator ClimbUp(float durationUp){
                 GetComponentInParent<FirstPersonAIO>().playerCanMove = true;
                 break;
             }
+            else if(Input.GetKeyDown(KeyCode.Space)){
+                ReturnHook();
+                GetComponentInParent<FirstPersonAIO>().playerCanMove = true;
+                break;
+            } 
             else{
                 player.transform.Translate(Vector3.forward * Time.fixedDeltaTime * 10f);
                 player.transform.Translate(Vector3.up * Time.deltaTime * 1f);
@@ -179,9 +219,9 @@ IEnumerator ClimbUp(float durationUp){
             //hook.transform.position = hookedPosition;
             player.transform.position = Vector3.MoveTowards(player.transform.position, hookedPosition, playerTravelSpd * Time.deltaTime);
             float distanceToHook = Vector3.Distance(player.transform.position, hookedPosition);
-            if(distanceToHook < 2f || !Hooked){
+            if(distanceToHook < 1f){
                 if(!GetComponentInParent<FirstPersonAIO>().IsGrounded){
-                    StartCoroutine(ClimbUpForward(climbUpTime, climbForwardTime));
+                    StartCoroutine(ClimbUpForward(climbForwardTime, climbUpTime));
                 }
                 else{
                     ReturnHook();

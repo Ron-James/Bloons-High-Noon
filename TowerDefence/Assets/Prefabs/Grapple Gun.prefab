@@ -265,7 +265,16 @@ MonoBehaviour:
   maxDistance: 40
   startPosition: {x: 0, y: 0, z: 0}
   climbUpTime: 0.25
-  climbForwardTime: 0.2
+  climbForwardTime: 0.5
+  maxClimbHeight: 15
+  climbSpeed: 2
+  playerHeight: 1
+  platformLayer:
+    serializedVersion: 2
+    m_Bits: 8192
+  grappleLayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!1 &5502342357828277772
 GameObject:
   m_ObjectHideFlags: 0
@@ -389,7 +398,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 1
-  m_Interpolate: 2
+  m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 3
 --- !u!1 &6472644411118194391
