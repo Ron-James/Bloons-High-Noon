@@ -1449,6 +1449,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4222755486568340195, guid: 7cf5de6e4a25d4f45b4d89acc520a0e7, type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4222755486568340195, guid: 7cf5de6e4a25d4f45b4d89acc520a0e7, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4222755486568340195, guid: 7cf5de6e4a25d4f45b4d89acc520a0e7, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7cf5de6e4a25d4f45b4d89acc520a0e7, type: 3}
 --- !u!1 &1170981069
@@ -2938,20 +2950,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 843625235}
     m_Modifications:
     - target: {fileID: 780092888506727037, guid: 7054e029c52bf8348a156d125848a903, type: 3}
-      propertyPath: climbSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 780092888506727037, guid: 7054e029c52bf8348a156d125848a903, type: 3}
       propertyPath: climbUpTime
-      value: 0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 780092888506727037, guid: 7054e029c52bf8348a156d125848a903, type: 3}
-      propertyPath: maxPlatformdist
-      value: 3
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 780092888506727037, guid: 7054e029c52bf8348a156d125848a903, type: 3}
       propertyPath: climbForwardTime
-      value: 1
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 1122508783539841950, guid: 7054e029c52bf8348a156d125848a903, type: 3}
       propertyPath: m_CollisionDetection

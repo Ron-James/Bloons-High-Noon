@@ -87,15 +87,16 @@ public class GrapplingHook : MonoBehaviour
         */
     }
     void ReturnHook(){
-        hook.transform.localPosition = startPosition;
+        hook.gameObject.GetComponent<MeshRenderer>().enabled = false;
+        ResetLine();
         fired = false;
         Hooked = false;
         player.GetComponent<Rigidbody>().useGravity = true;
         hook.transform.SetParent(firePoint);
-        
         hookedObject = null;
         player.GetComponent<Collider>().enabled = true;
-        hook.transform.localPosition = Vector3.zero;
+        hook.transform.localPosition = startPosition;
+        hook.transform.rotation = firePoint.rotation;
         
     }
 
@@ -239,10 +240,22 @@ IEnumerator ClimbUp(float durationUp){
     public void HookObject(){
         hooked = true;
     }
+
+    void DrawLine(Vector3 from, Vector3 to){
+        GetComponent<LineRenderer>().SetPosition(0, from);
+        GetComponent<LineRenderer>().SetPosition(0, to);
+
+    }
+    void ResetLine(){
+        GetComponent<LineRenderer>().SetPosition(0, firePoint.position);
+        GetComponent<LineRenderer>().SetPosition(0, Vector3.zero);
+    }
     IEnumerator Extend(float period, float amplitude){
+        hook.gameObject.GetComponent<MeshRenderer>().enabled = true;
         fired = true;
         float w = (1/period) * 2 * Mathf.PI;
         float time = 0;
+        float speed = amplitude / period;
         Vector3 startPos = hook.transform.localPosition;
         Hooked = false;
         velocity = 0;
@@ -265,8 +278,12 @@ IEnumerator ClimbUp(float durationUp){
                 
             }
             else{
-                
-                hook.transform.localPosition = startPos + Vector3.forward * d;
+                Vector3 localPos = startPos + Vector3.forward * d;
+                Vector3 newPos = transform.TransformPoint(localPos);
+
+                hook.transform.Translate(Vector3.forward * Time.fixedDeltaTime * speed);
+                DrawLine(hook.transform.position, firePoint.position);
+                //hook.transform.localPosition = startPos + Vector3.forward * d;
                 yield return new WaitForFixedUpdate();
             }
         }
