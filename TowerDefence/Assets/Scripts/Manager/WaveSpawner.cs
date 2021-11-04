@@ -64,6 +64,9 @@ public class WaveSpawner : MonoBehaviour
             }
         }
         else{
+            if(waveCountDown > 5 && Input.GetKeyDown(KeyCode.G)){
+                waveCountDown = 5f;
+            }
             countDownText.gameObject.SetActive(true);
             wave.gameObject.SetActive(false);
             waveCountDown -= Time.deltaTime;

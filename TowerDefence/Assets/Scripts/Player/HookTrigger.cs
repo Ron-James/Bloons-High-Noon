@@ -31,7 +31,7 @@ public class HookTrigger : MonoBehaviour
     */
     private void OnCollisionEnter(Collision other) {
         
-        if(other.collider.gameObject.layer == 7){
+        if(other.collider.gameObject.layer == 7 && GrapplingHook.fired){
             Debug.Log("Hooked");
             player.GetComponentInChildren<GrapplingHook>().HookedPosition = transform.position;
             player.GetComponentInChildren<GrapplingHook>().Hooked = true;
