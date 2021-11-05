@@ -157,7 +157,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 213}
+  m_AnchoredPosition: {x: 0, y: 190.5}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &454128856
@@ -409,8 +409,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 6, y: -199.99129}
-  m_SizeDelta: {x: 160.2, y: 65.89}
+  m_AnchoredPosition: {x: -0.8859, y: -190.81006}
+  m_SizeDelta: {x: 219.6634, y: 47.0356}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1215297868
 MonoBehaviour:
@@ -433,10 +433,10 @@ MonoBehaviour:
   m_Spacing: 0
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
-  m_ChildControlWidth: 0
-  m_ChildControlHeight: 0
-  m_ChildScaleWidth: 0
-  m_ChildScaleHeight: 0
+  m_ChildControlWidth: 1
+  m_ChildControlHeight: 1
+  m_ChildScaleWidth: 1
+  m_ChildScaleHeight: 1
   m_ReverseArrangement: 0
 --- !u!1 &1296773413
 GameObject:
@@ -695,8 +695,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.3643, y: 46.4917}
-  m_SizeDelta: {x: 506.0602, y: 133.0364}
+  m_AnchoredPosition: {x: 1.3643, y: -1.0194}
+  m_SizeDelta: {x: 506.0602, y: 186.1867}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1668842440
 MonoBehaviour:
@@ -731,15 +731,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '- Move around the map with WASD
-
-    - Walk up to build plates and set
-    up your defenses!
-
-    - Switch to a tactical camera view with E
-
-    - Repair
-    your defenses before they are destroyed'
+  m_Text: "- Move around the map with WASD\n- Sprint with shift\n- if the grapple
+    hook gets stuck, press space\n- Press 'G' to speed up count down \n- Walk up
+    to build plates and set up your defenses!\n- Switch to a tactical camera view
+    with 'E'\n- Repair your defenses before they are destroyed"
 --- !u!222 &1668842441
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -776,7 +771,7 @@ RectTransform:
   m_GameObject: {fileID: 1687706968}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.78, y: 0.78, z: 0.78}
   m_Children:
   - {fileID: 489993216}
   m_Father: {fileID: 1215297867}
@@ -785,7 +780,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1687706970
 MonoBehaviour:
@@ -1136,7 +1131,7 @@ RectTransform:
   m_GameObject: {fileID: 2104979398}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.78, y: 0.78, z: 0.78}
   m_Children:
   - {fileID: 1595529570}
   m_Father: {fileID: 1215297867}
@@ -1145,7 +1140,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2104979400
 MonoBehaviour:

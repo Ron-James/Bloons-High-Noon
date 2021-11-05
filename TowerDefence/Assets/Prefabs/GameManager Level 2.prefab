@@ -1,0 +1,144 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3297998238931359106
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3297998238931359107}
+  - component: {fileID: 3297998238931359133}
+  - component: {fileID: 3297998238931359132}
+  m_Layer: 0
+  m_Name: GameManager Level 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3297998238931359107
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3297998238931359106}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 212.131, y: 25.937645, z: -77.595}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3297998238931359133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3297998238931359106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1effb2763d0cc44da2599ae507d8c87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keepAlive: 0
+  spawnPoint: {fileID: 0}
+  enemies:
+  - {fileID: 11400000, guid: ea37699812fd0ae41996b122ffab05d9, type: 2}
+  - {fileID: 11400000, guid: 2a7869619b229dc40bad773c6cd98554, type: 2}
+  - {fileID: 11400000, guid: 4d917f49a6cf0d547b65e84be124de14, type: 2}
+  deadEnemies: {fileID: 0}
+  aliveEnemies: {fileID: 0}
+  healthBar: {fileID: 0}
+  balanceTxt: {fileID: 0}
+  buildPrompt: {fileID: 0}
+  buildPlates:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  buildMenu: {fileID: 0}
+  topDownCamPosition: {fileID: 0}
+  firstPersonCamPosition: {fileID: 0}
+  playerCamera: {fileID: 0}
+  player: {fileID: 0}
+  mainTower: {fileID: 0}
+  repairCost: 50
+  sellPercentage: 0.8
+  enemySlowSpeed: 0.505
+  HelthIndicatorThrsh: 0.9
+  enemyIceDuration: 1.6
+  towerHealth: 10
+  balance: 200
+  stage: 1
+--- !u!114 &3297998238931359132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3297998238931359106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05aecc630fb90254fbd9ceb89bc689db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waves:
+  - name: Wave 1
+    enemies:
+    - {fileID: 11400000, guid: ea37699812fd0ae41996b122ffab05d9, type: 2}
+    - {fileID: 11400000, guid: 4d917f49a6cf0d547b65e84be124de14, type: 2}
+    enemyCounts: 0800000007000000
+    rate: 4.5
+    timeBeforeWave: 60
+  - name: Wave 2
+    enemies:
+    - {fileID: 11400000, guid: ea37699812fd0ae41996b122ffab05d9, type: 2}
+    - {fileID: 11400000, guid: 4d917f49a6cf0d547b65e84be124de14, type: 2}
+    enemyCounts: 0c00000008000000
+    rate: 2.5
+    timeBeforeWave: 60
+  - name: Wave 3
+    enemies:
+    - {fileID: 11400000, guid: ea37699812fd0ae41996b122ffab05d9, type: 2}
+    - {fileID: 11400000, guid: 4d917f49a6cf0d547b65e84be124de14, type: 2}
+    enemyCounts: 1600000008000000
+    rate: 2.5
+    timeBeforeWave: 60
+  - name: Wave 4
+    enemies:
+    - {fileID: 11400000, guid: ea37699812fd0ae41996b122ffab05d9, type: 2}
+    - {fileID: 11400000, guid: 4d917f49a6cf0d547b65e84be124de14, type: 2}
+    enemyCounts: 190000000a000000
+    rate: 4.5
+    timeBeforeWave: 60
+  - name: Wave 5
+    enemies:
+    - {fileID: 11400000, guid: ea37699812fd0ae41996b122ffab05d9, type: 2}
+    - {fileID: 11400000, guid: 4d917f49a6cf0d547b65e84be124de14, type: 2}
+    enemyCounts: 190000000c000000
+    rate: 2.5
+    timeBeforeWave: 60
+  - name: Wave 6
+    enemies:
+    - {fileID: 11400000, guid: ea37699812fd0ae41996b122ffab05d9, type: 2}
+    - {fileID: 11400000, guid: 4d917f49a6cf0d547b65e84be124de14, type: 2}
+    enemyCounts: 1e0000000a000000
+    rate: 1.5
+    timeBeforeWave: 60
+  waveCountDown: 15
+  state: 2
+  countDownText: {fileID: 0}
+  level: {fileID: 0}
+  wave: {fileID: 0}

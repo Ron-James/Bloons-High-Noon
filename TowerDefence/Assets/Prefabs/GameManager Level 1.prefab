@@ -1,0 +1,140 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8728122781584199473
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8728122781584199474}
+  - component: {fileID: 8728122781584199475}
+  - component: {fileID: 8728122781584199472}
+  m_Layer: 0
+  m_Name: GameManager Level 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8728122781584199474
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8728122781584199473}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 212.131, y: 25.937645, z: -77.595}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8728122781584199475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8728122781584199473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1effb2763d0cc44da2599ae507d8c87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keepAlive: 0
+  spawnPoint: {fileID: 0}
+  enemies:
+  - {fileID: 11400000, guid: ea37699812fd0ae41996b122ffab05d9, type: 2}
+  - {fileID: 11400000, guid: 2a7869619b229dc40bad773c6cd98554, type: 2}
+  - {fileID: 11400000, guid: 4d917f49a6cf0d547b65e84be124de14, type: 2}
+  deadEnemies: {fileID: 0}
+  aliveEnemies: {fileID: 0}
+  healthBar: {fileID: 0}
+  balanceTxt: {fileID: 0}
+  buildPrompt: {fileID: 0}
+  buildPlates:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  buildMenu: {fileID: 0}
+  topDownCamPosition: {fileID: 0}
+  firstPersonCamPosition: {fileID: 0}
+  playerCamera: {fileID: 0}
+  player: {fileID: 0}
+  mainTower: {fileID: 0}
+  towerHealth: 10
+  balance: 200
+  stage: 0
+--- !u!114 &8728122781584199472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8728122781584199473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05aecc630fb90254fbd9ceb89bc689db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waves:
+  - name: Wave 1
+    enemies:
+    - {fileID: 11400000, guid: ea37699812fd0ae41996b122ffab05d9, type: 2}
+    enemyCounts: 0c000000
+    rate: 4.5
+    timeBeforeWave: 60
+  - name: Wave 2
+    enemies:
+    - {fileID: 11400000, guid: ea37699812fd0ae41996b122ffab05d9, type: 2}
+    enemyCounts: 14000000
+    rate: 3
+    timeBeforeWave: 60
+  - name: Wave3
+    enemies:
+    - {fileID: 11400000, guid: ea37699812fd0ae41996b122ffab05d9, type: 2}
+    enemyCounts: 1e000000
+    rate: 2.5
+    timeBeforeWave: 60
+  - name: Wave 4
+    enemies:
+    - {fileID: 11400000, guid: ea37699812fd0ae41996b122ffab05d9, type: 2}
+    - {fileID: 11400000, guid: 4d917f49a6cf0d547b65e84be124de14, type: 2}
+    enemyCounts: 0d00000002000000
+    rate: 5
+    timeBeforeWave: 60
+  - name: Wave 5
+    enemies:
+    - {fileID: 11400000, guid: ea37699812fd0ae41996b122ffab05d9, type: 2}
+    - {fileID: 11400000, guid: 4d917f49a6cf0d547b65e84be124de14, type: 2}
+    enemyCounts: 1900000008000000
+    rate: 4
+    timeBeforeWave: 60
+  - name: Wave 6
+    enemies:
+    - {fileID: 11400000, guid: ea37699812fd0ae41996b122ffab05d9, type: 2}
+    - {fileID: 11400000, guid: 4d917f49a6cf0d547b65e84be124de14, type: 2}
+    enemyCounts: 1e0000000a000000
+    rate: 2
+    timeBeforeWave: 60
+  waveCountDown: 15
+  state: 2
+  countDownText: {fileID: 0}
+  level: {fileID: 0}
+  wave: {fileID: 0}

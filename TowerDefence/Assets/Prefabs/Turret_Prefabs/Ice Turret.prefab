@@ -403,8 +403,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5182595200410327052}
-  - component: {fileID: 9049895307105065773}
   - component: {fileID: 2227596884079305800}
+  - component: {fileID: 5590813823432789413}
   m_Layer: 0
   m_Name: TargetTrigger
   m_TagString: Turret Target
@@ -426,19 +426,6 @@ Transform:
   m_Father: {fileID: 2720109291678084979}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &9049895307105065773
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4625617214711551443}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 110
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &2227596884079305800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -452,6 +439,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemiesInRange: []
+--- !u!136 &5590813823432789413
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4625617214711551443}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 150
+  m_Height: 600
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4795639706397841264
 GameObject:
   m_ObjectHideFlags: 0

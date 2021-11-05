@@ -60,7 +60,7 @@ public class TurretProjectile : MonoBehaviour
                     
                     if(iceShot){
                         hit.collider.gameObject.GetComponentInParent<EnemyHealth>().TakeDamage(damage);
-                        hit.collider.gameObject.GetComponent<EnemyPathing>().SlowDownEnemy(GameManager.instance.EnemyIceDuration);
+                        hit.collider.gameObject.GetComponent<EnemyPathing>().SlowDownEnemy(GameManager.enemyIceDuration);
                         if(hit.collider.gameObject.GetComponent<EnemyHealth>().Health <= 0 && GetComponent<TurretAim>().Target.gameObject.GetComponent<EnemyHealth>().Health <=0){
                             GetComponent<TurretAim>().Target = null;
                             //GetComponentInChildren<TurretTargetTrigger>().RemoveDeadEnemy(hit.collider.gameObject.transform);

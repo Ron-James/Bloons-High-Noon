@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 7778569929062645602}
   - component: {fileID: 581795334724075223}
   - component: {fileID: 2921408854969875191}
-  - component: {fileID: 4695725247746697899}
-  m_Layer: 0
+  - component: {fileID: 3175134788473019215}
+  m_Layer: 7
   m_Name: Fence_LeftSlant_01
-  m_TagString: Untagged
+  m_TagString: Hookable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -82,8 +82,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &4695725247746697899
-MeshCollider:
+--- !u!65 &3175134788473019215
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -92,7 +92,6 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -6314423958910659617, guid: b16a55815151922419c625a462a7574a, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.63724023, y: 1.5613431, z: 2.3938394}
+  m_Center: {x: -0.11411507, y: 0.78067154, z: 0.99192303}

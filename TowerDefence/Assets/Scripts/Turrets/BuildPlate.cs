@@ -138,7 +138,7 @@ public class BuildPlate : MonoBehaviour
     public void TakeDamage(float damage){
         if(BuildIndex > 0){
             health -= damage;
-            if(health <= maxHealth * GameManager.instance.HelthIndicatorThrsh1){
+            if(health <= maxHealth * GameManager.HelthIndicatorThrsh){
                 EnableHealthIndicator();
             }
             UpdateHealthBar();

@@ -23,6 +23,12 @@ public class SceneController : Singleton<SceneController>
     public void LoadLevel1(){
         SceneManager.LoadScene("Level01");
     }
+    public void LoadLevel1Grapple(){
+        SceneManager.LoadScene("Level01(Grapple)");
+    }
+    public void LoadLevel2Grapple(){
+        SceneManager.LoadScene("Level02(Grapple)");
+    }
     public void LoadLevel2(){
         SceneManager.LoadScene("Level02");
     }

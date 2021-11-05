@@ -35,11 +35,11 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] Transform mainTower;
 
     [Header("Game Constants")]
-    [SerializeField] float repairCost = 50;
-    [Range(0, 1)][SerializeField] float sellPercentage = 0.8f;
-    [Range(0, 1)][SerializeField] float enemySlowSpeed = 0.5f;
-    [Range(0, 1)][SerializeField] float HelthIndicatorThrsh = 0.9f;
-    [SerializeField] float enemyIceDuration = 3f;
+    public static float repairCost = 50;
+    [Range(0, 1)]public static float sellPercentage = 0.8f;
+    [Range(0, 1)]public static float enemySlowSpeed = 0.5f;
+    [Range(0, 1)]public static float HelthIndicatorThrsh = 0.9f;
+    public static float enemyIceDuration = 5f;
     [SerializeField] float towerHealth = 10f;
     [SerializeField] int balance = 200;
     

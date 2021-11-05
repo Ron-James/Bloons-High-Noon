@@ -42,6 +42,7 @@ public class GrapplingHook : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        hook.gameObject.GetComponent<MeshRenderer>().enabled = false;
         player = GetComponentInParent<FirstPersonAIO>().gameObject;
         startPosition = hook.transform.localPosition;
         
@@ -53,6 +54,13 @@ public class GrapplingHook : MonoBehaviour
         if(Input.GetMouseButtonDown(0) && !fired){
             StartCoroutine(Extend(hookTravelSpd, maxDistance));
         }
+        if(fired){
+            LineRenderer rope = hook.GetComponent<LineRenderer>();
+            rope.positionCount = 2;
+            rope.SetPosition(0, firePoint.position);
+            rope.SetPosition(1, hook.transform.position);
+        }
+        
         /*
         if(Input.GetMouseButtonDown(0) && !fired){
             fired = true;
@@ -87,8 +95,11 @@ public class GrapplingHook : MonoBehaviour
         */
     }
     void ReturnHook(){
-        hook.gameObject.GetComponent<MeshRenderer>().enabled = false;
         ResetLine();
+        hook.gameObject.GetComponent<MeshRenderer>().enabled = false;
+        LineRenderer rope = hook.GetComponent<LineRenderer>();
+        rope.positionCount = 0;
+
         fired = false;
         Hooked = false;
         player.GetComponent<Rigidbody>().useGravity = true;
@@ -104,14 +115,14 @@ public class GrapplingHook : MonoBehaviour
         float time = 0;
         Vector3 point = Vector3.zero;
         float distance = 0;
-        if(time >= durationUp || Physics.Raycast(player.transform.position - (Vector3.up*(playerHeight*2)), Vector3.up, out platformHit, maxClimbHeight, platformLayer)){
+        if(Physics.Raycast(player.transform.position - (Vector3.up * playerHeight), Vector3.up, out platformHit, maxClimbHeight, platformLayer)){
             distance = Vector3.Distance(player.transform.position , platformHit.point) + (playerHeight*maxPlatformdist);
             point = distance * Vector3.up;
             float pointHeight = point.y;
             while(true){
                 time += Time.deltaTime;
                 float currentHeight = player.transform.position.y;
-                if(time >= durationUp){
+                if(time >= durationUp || player.transform.position.y > pointHeight){
                     StartCoroutine(ClimbForward(durationFor));
                     break;
                 }
@@ -154,7 +165,7 @@ IEnumerator ClimbUp(float durationUp){
         float time = 0;
         while(true){
             time += Time.deltaTime;
-            if(time >= duration || Physics.Raycast(player.transform.position, -Vector3.up, maxClimbHeight, grappleLayer) || player.GetComponent<FirstPersonAIO>().IsGrounded){
+            if(time >= duration){
                 ReturnHook();
                 GetComponentInParent<FirstPersonAIO>().playerCanMove = true;
                 break;
@@ -223,9 +234,13 @@ IEnumerator ClimbUp(float durationUp){
             if(distanceToHook < 1f){
                 if(!GetComponentInParent<FirstPersonAIO>().IsGrounded){
                     StartCoroutine(ClimbUpForward(climbForwardTime, climbUpTime));
+                    LineRenderer rope = hook.GetComponent<LineRenderer>();
+                    rope.positionCount = 0;
                 }
                 else{
                     ReturnHook();
+                    LineRenderer rope = hook.GetComponent<LineRenderer>();
+                    rope.positionCount = 0;
                     GetComponentInParent<FirstPersonAIO>().playerCanMove = true;
                 }
                 //GetComponentInParent<FirstPersonAIO>().EnableCamera();
@@ -242,13 +257,13 @@ IEnumerator ClimbUp(float durationUp){
     }
 
     void DrawLine(Vector3 from, Vector3 to){
-        GetComponent<LineRenderer>().SetPosition(0, from);
-        GetComponent<LineRenderer>().SetPosition(0, to);
+        hook.GetComponent<LineRenderer>().positionCount = 2;
+        hook.GetComponent<LineRenderer>().SetPosition(0, from);
+        hook.GetComponent<LineRenderer>().SetPosition(0, to);
 
     }
     void ResetLine(){
-        GetComponent<LineRenderer>().SetPosition(0, firePoint.position);
-        GetComponent<LineRenderer>().SetPosition(0, Vector3.zero);
+        hook.GetComponent<LineRenderer>().positionCount = 0;
     }
     IEnumerator Extend(float period, float amplitude){
         hook.gameObject.GetComponent<MeshRenderer>().enabled = true;
@@ -262,7 +277,7 @@ IEnumerator ClimbUp(float durationUp){
         while(true){
             time += Time.fixedDeltaTime;
             float d = Mathf.Abs(amplitude * Mathf.Sin(w * time));
-            velocity = Mathf.Cos(w * time);
+            velocity = amplitude * w * Mathf.Cos(w * time);
             
             if(time >= period/4 || Hooked || hookedObject != null){
                 if(!Hooked){
@@ -282,7 +297,7 @@ IEnumerator ClimbUp(float durationUp){
                 Vector3 newPos = transform.TransformPoint(localPos);
 
                 hook.transform.Translate(Vector3.forward * Time.fixedDeltaTime * speed);
-                DrawLine(hook.transform.position, firePoint.position);
+                
                 //hook.transform.localPosition = startPos + Vector3.forward * d;
                 yield return new WaitForFixedUpdate();
             }
