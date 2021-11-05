@@ -44,7 +44,7 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] int balance = 200;
     
     float totalHealth;
-    bool firstPerson;
+    public static bool firstPerson;
 
     [Header("Level number")]
     [SerializeField] int stage = 0;

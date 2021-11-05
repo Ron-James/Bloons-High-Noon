@@ -11,15 +11,17 @@ public class BuildMenu : MonoBehaviour
     [SerializeField] Button demolish;
     [SerializeField] Button repair;
     [SerializeField] BuildPlate currentPlate;
+    public static bool MenuIsOpen;
 
     public BuildPlate CurrentPlate { get => currentPlate; set => currentPlate = value; }
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        MenuIsOpen = false;
     }
     public void OpenMenu(BuildPlate buildPlate){
+        MenuIsOpen = true;
         currentPlate = buildPlate;
         meunu.SetActive(true);
         UpdateButtons();
@@ -28,6 +30,7 @@ public class BuildMenu : MonoBehaviour
     }
 
     public void CloseMenu(){
+        MenuIsOpen = false;
         meunu.SetActive(false);
         GameObject.Find("Player").GetComponent<FirstPersonAIO>().EnableCamera();
         GameObject.Find("Player").GetComponent<FirstPersonAIO>().playerCanMove = true;

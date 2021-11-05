@@ -51,7 +51,7 @@ public class GrapplingHook : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButtonDown(0) && !fired){
+        if(Input.GetMouseButtonDown(0) && !fired && !BuildMenu.MenuIsOpen && !PauseMenu.IsPaused){
             StartCoroutine(Extend(hookTravelSpd, maxDistance));
         }
         if(fired){
