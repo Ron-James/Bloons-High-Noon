@@ -24,6 +24,7 @@ public class EnemyDamage : MonoBehaviour
                 Debug.Log(other.gameObject.name + "killed by");
             break;
             case "Tower":
+                Debug.Log("entered the tower");
                 GameManager.instance.DamageTower(damage);
                 GetComponent<EnemyHealth>().Kill();
             break;

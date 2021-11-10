@@ -18,13 +18,16 @@ public class BuildPlate : MonoBehaviour
     [SerializeField] GameObject [] towerBuilds;
     [SerializeField] Transform buildPosition;
     [SerializeField] GameObject healthBar;
+    
     [SerializeField] Image healthIndicator;
     [SerializeField] float health;
     [SerializeField] float maxHealth;
     [SerializeField] int buildIndex;
+    [SerializeField] bool unlocked = true;
     public Build Build { get => build; set => build = value; }
     public int BuildIndex { get => (int) build; }
     public float Health { get => health; set => health = value; }
+    public bool Unlocked { get => unlocked; set => unlocked = value; }
 
     // Start is called before the first frame update
     void Start()
@@ -36,8 +39,14 @@ public class BuildPlate : MonoBehaviour
             health = towers[BuildIndex-1].health;
         }
     }
-    Tower CurrentTower(){
-        return towers[BuildIndex - 1];
+    public Tower CurrentTower(){
+        if(buildIndex > 0){
+            return towers[BuildIndex - 1];
+        }
+        else{
+            return null;
+        }
+        
     }
     // Update is called once per frame
     void Update()

@@ -18,7 +18,13 @@ public class EnemyTargetTrigger : MonoBehaviour
             case "Tower":
                 Debug.Log("entered the main tower");
                 GetComponentInParent<EnemyRanged>().Target = other.transform;
-                GetComponentInParent<NavMeshAgent>().isStopped = true;
+                if(GetComponentInParent<NavMeshAgent>() != null){
+                    GetComponentInParent<NavMeshAgent>().isStopped = true;
+                }
+                else if(GetComponentInParent<EnemyFollower>()!= null){
+                    GetComponentInParent<EnemyFollower>().IsStopped = true;
+                } 
+                
             break;
         }
     }

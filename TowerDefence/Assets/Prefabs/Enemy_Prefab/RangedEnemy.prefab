@@ -5212,6 +5212,7 @@ GameObject:
   - component: {fileID: 1386615299727231311}
   - component: {fileID: 8364081978726165601}
   - component: {fileID: 3889511942994750076}
+  - component: {fileID: 2197635010748573708}
   m_Layer: 10
   m_Name: RangedEnemy
   m_TagString: Enemy
@@ -5460,3 +5461,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2197635010748573708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8906136692200508112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 078e8e43b566fe842b44c07878404efb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathCreator: {fileID: 0}
+  speed: 2.5
+  isStopped: 0

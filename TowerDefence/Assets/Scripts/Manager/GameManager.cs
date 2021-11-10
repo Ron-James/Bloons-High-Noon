@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using PathCreation;
 
 public class GameManager : Singleton<GameManager>
 {
@@ -39,19 +40,22 @@ public class GameManager : Singleton<GameManager>
     [Range(0, 1)]public static float sellPercentage = 0.8f;
     [Range(0, 1)]public static float enemySlowSpeed = 0.5f;
     [Range(0, 1)]public static float HelthIndicatorThrsh = 0.9f;
+    public static float UnlockPrice;
     public static float enemyIceDuration = 5f;
     [SerializeField] float towerHealth = 10f;
-    [SerializeField] int balance = 200;
+    [SerializeField] float balance = 200;
     
     float totalHealth;
     public static bool firstPerson;
+    [Header("Level number")]
+    [SerializeField] PathCreator lane;
 
     [Header("Level number")]
     [SerializeField] int stage = 0;
 
     
 
-    public int Balance { get => balance; set => balance = value; }
+    public float Balance { get => balance; set => balance = value; }
     public float SellPercentage { get => sellPercentage; set => sellPercentage = value; }
     public GameObject BuildPrompt { get => buildPrompt; set => buildPrompt = value; }
     public bool FirstPerson { get => firstPerson; set => firstPerson = value; }
@@ -62,6 +66,7 @@ public class GameManager : Singleton<GameManager>
     public float HelthIndicatorThrsh1 { get => HelthIndicatorThrsh; set => HelthIndicatorThrsh = value; }
     public Transform MainTower { get => mainTower; set => mainTower = value; }
     public int Stage { get => stage; set => stage = value; }
+    public PathCreator Lane { get => lane; set => lane = value; }
 
 
     // Start is called before the first frame update
@@ -125,15 +130,13 @@ public class GameManager : Singleton<GameManager>
         }
     }
 
-    public void Purchase(int cost){
+    public void Purchase(float cost){
         balance -= cost;
-        PlayerPrefs.SetInt("Balance", balance);
         UpdateBalanceText();
     }
 
-    public void AddBalance(int amount){
+    public void AddBalance(float amount){
         balance += amount;
-        PlayerPrefs.SetInt("Balance", balance);
         UpdateBalanceText();
         buildMenu.UpdateButtons();
     }
