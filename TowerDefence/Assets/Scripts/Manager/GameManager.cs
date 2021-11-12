@@ -108,7 +108,7 @@ public class GameManager : Singleton<GameManager>
     }
 
     public void SpawnEnemy(Enemy enemy){
-        Vector3 position = lane.path.GetPoint(1);
+        Vector3 position = lane.path.GetPoint(0);
         EnemyHealth [] dead = deadEnemies.GetComponentsInChildren<EnemyHealth>();
         if(DeadEnemyOfType(enemy)){
             ReviveEnemyOfType(enemy, position);
