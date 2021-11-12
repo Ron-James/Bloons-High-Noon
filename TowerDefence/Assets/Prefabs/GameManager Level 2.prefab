@@ -74,13 +74,9 @@ MonoBehaviour:
   playerCamera: {fileID: 0}
   player: {fileID: 0}
   mainTower: {fileID: 0}
-  repairCost: 50
-  sellPercentage: 0.8
-  enemySlowSpeed: 0.505
-  HelthIndicatorThrsh: 0.9
-  enemyIceDuration: 1.6
   towerHealth: 10
   balance: 200
+  lane: {fileID: 0}
   stage: 1
 --- !u!114 &3297998238931359132
 MonoBehaviour:
@@ -99,43 +95,43 @@ MonoBehaviour:
     enemies:
     - {fileID: 11400000, guid: ea37699812fd0ae41996b122ffab05d9, type: 2}
     - {fileID: 11400000, guid: 4d917f49a6cf0d547b65e84be124de14, type: 2}
-    enemyCounts: 0800000007000000
-    rate: 4.5
+    enemyCounts: 1400000000000000
+    rate: 5.5
     timeBeforeWave: 60
   - name: Wave 2
     enemies:
     - {fileID: 11400000, guid: ea37699812fd0ae41996b122ffab05d9, type: 2}
     - {fileID: 11400000, guid: 4d917f49a6cf0d547b65e84be124de14, type: 2}
-    enemyCounts: 0c00000008000000
-    rate: 2.5
+    enemyCounts: 1600000002000000
+    rate: 5
     timeBeforeWave: 60
   - name: Wave 3
     enemies:
     - {fileID: 11400000, guid: ea37699812fd0ae41996b122ffab05d9, type: 2}
     - {fileID: 11400000, guid: 4d917f49a6cf0d547b65e84be124de14, type: 2}
-    enemyCounts: 1600000008000000
-    rate: 2.5
+    enemyCounts: 2000000003000000
+    rate: 5
     timeBeforeWave: 60
   - name: Wave 4
     enemies:
     - {fileID: 11400000, guid: ea37699812fd0ae41996b122ffab05d9, type: 2}
     - {fileID: 11400000, guid: 4d917f49a6cf0d547b65e84be124de14, type: 2}
-    enemyCounts: 190000000a000000
+    enemyCounts: 2000000006000000
     rate: 4.5
     timeBeforeWave: 60
   - name: Wave 5
     enemies:
     - {fileID: 11400000, guid: ea37699812fd0ae41996b122ffab05d9, type: 2}
     - {fileID: 11400000, guid: 4d917f49a6cf0d547b65e84be124de14, type: 2}
-    enemyCounts: 190000000c000000
-    rate: 2.5
+    enemyCounts: 2400000009000000
+    rate: 3
     timeBeforeWave: 60
   - name: Wave 6
     enemies:
     - {fileID: 11400000, guid: ea37699812fd0ae41996b122ffab05d9, type: 2}
     - {fileID: 11400000, guid: 4d917f49a6cf0d547b65e84be124de14, type: 2}
-    enemyCounts: 1e0000000a000000
-    rate: 1.5
+    enemyCounts: 280000000a000000
+    rate: 2.5
     timeBeforeWave: 60
   waveCountDown: 15
   state: 2

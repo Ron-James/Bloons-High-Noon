@@ -122,8 +122,8 @@ public class UpgradeManager : MonoBehaviour
                 //targetTrigger.UpgradeRange(targetTrigger.RangeUpgrades[3] * basicRange); // improved range
             break;
             case 2:
-                targetTrigger.UpgradeRange(targetTrigger.RangeUpgrades[0] * basicRange); //improved range
-                freezeDurationUpgrade = GetComponent<TurretFreezeAOE>().FreezeDurationUpgrades[0];//Improved freeze duration
+                targetTrigger.UpgradeRange(targetTrigger.RangeUpgrades[1] * basicRange); //improved range
+                //freezeDurationUpgrade = GetComponent<TurretFreezeAOE>().FreezeDurationUpgrades[0];//Improved freeze duration
                 damageUpgrade = GetComponent<TurretFreezeAOE>().DamageUpgrades[4]; // mild Damage Downgrade
             break;
         }

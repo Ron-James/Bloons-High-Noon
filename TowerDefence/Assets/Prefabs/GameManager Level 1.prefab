@@ -80,6 +80,7 @@ MonoBehaviour:
   mainTower: {fileID: 0}
   towerHealth: 10
   balance: 200
+  lane: {fileID: 0}
   stage: 0
 --- !u!114 &8728122781584199472
 MonoBehaviour:
@@ -97,41 +98,41 @@ MonoBehaviour:
   - name: Wave 1
     enemies:
     - {fileID: 11400000, guid: ea37699812fd0ae41996b122ffab05d9, type: 2}
-    enemyCounts: 0c000000
-    rate: 4.5
+    enemyCounts: 14000000
+    rate: 6
     timeBeforeWave: 60
   - name: Wave 2
     enemies:
     - {fileID: 11400000, guid: ea37699812fd0ae41996b122ffab05d9, type: 2}
-    enemyCounts: 14000000
-    rate: 3
+    enemyCounts: 23000000
+    rate: 4
     timeBeforeWave: 60
   - name: Wave3
     enemies:
     - {fileID: 11400000, guid: ea37699812fd0ae41996b122ffab05d9, type: 2}
-    enemyCounts: 1e000000
-    rate: 2.5
+    enemyCounts: 28000000
+    rate: 3
     timeBeforeWave: 60
   - name: Wave 4
     enemies:
     - {fileID: 11400000, guid: ea37699812fd0ae41996b122ffab05d9, type: 2}
     - {fileID: 11400000, guid: 4d917f49a6cf0d547b65e84be124de14, type: 2}
-    enemyCounts: 0d00000002000000
-    rate: 5
+    enemyCounts: 1900000006000000
+    rate: 7
     timeBeforeWave: 60
   - name: Wave 5
     enemies:
     - {fileID: 11400000, guid: ea37699812fd0ae41996b122ffab05d9, type: 2}
     - {fileID: 11400000, guid: 4d917f49a6cf0d547b65e84be124de14, type: 2}
-    enemyCounts: 1900000008000000
+    enemyCounts: 1e00000008000000
     rate: 4
     timeBeforeWave: 60
   - name: Wave 6
     enemies:
     - {fileID: 11400000, guid: ea37699812fd0ae41996b122ffab05d9, type: 2}
     - {fileID: 11400000, guid: 4d917f49a6cf0d547b65e84be124de14, type: 2}
-    enemyCounts: 1e0000000a000000
-    rate: 2
+    enemyCounts: 230000000a000000
+    rate: 3
     timeBeforeWave: 60
   waveCountDown: 15
   state: 2
