@@ -24,6 +24,8 @@ public class EnemyRanged : MonoBehaviour
     Quaternion defaultBarrelRotation;
 
     public Transform Target { get => target; set => target = value; }
+    public float TowerFireRate { get => towerFireRate; set => towerFireRate = value; }
+    public float FireRate { get => fireRate; set => fireRate = value; }
 
     // Start is called before the first frame update
     void Start()
@@ -37,10 +39,14 @@ public class EnemyRanged : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(!GetComponent<EnemyFollower>().IsFrozen){
+            fireCount += Time.deltaTime;
+        }
+        
         Aim();
         if(target != null){
-            if(target.gameObject.tag == "Build Plate" && target.gameObject.GetComponentInParent<BuildPlate>().BuildIndex > 0){
-                fireCount += Time.deltaTime;
+            if(target.gameObject.tag == "Build Plate" && target.gameObject.GetComponentInParent<BuildPlate>().BuildIndex > 0 && !GetComponent<EnemyFollower>().IsFrozen){
+                
                 if(fireCount >= fireRate){
                     Debug.Log("Fired enemy");
                     Fire();

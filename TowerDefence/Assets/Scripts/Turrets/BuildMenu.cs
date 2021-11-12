@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class BuildMenu : MonoBehaviour
 {
     [SerializeField] GameObject menu;
+    [SerializeField] GameObject towerInfo;
     [SerializeField] GameObject crossHair;
     [SerializeField] GameObject towerOptions;
     [SerializeField] Tower [] towers;
@@ -16,6 +17,7 @@ public class BuildMenu : MonoBehaviour
     [SerializeField] Text lockedText;
     [SerializeField] BuildPlate currentPlate;
     [SerializeField] bool unlocked = false;
+    [SerializeField] TowerMenu towerMenu;
 
     public static bool MenuIsOpen;
 
@@ -25,6 +27,7 @@ public class BuildMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //towerMenu = GetComponentInChildren<TowerMenu>();
         MenuIsOpen = false;
     }
     public void OpenMenu(BuildPlate buildPlate){
@@ -40,16 +43,38 @@ public class BuildMenu : MonoBehaviour
 
     public void CloseMenu(){
         crossHair.SetActive(true);
+        unlocked = false;
         MenuIsOpen = false;
         currentPlate = null;
         menu.SetActive(false);
+        //GetComponentInChildren<TowerMenu>().CloseTowerMenu();
         GameObject.Find("Player").GetComponent<FirstPersonAIO>().EnableCamera();
         GameObject.Find("Player").GetComponent<FirstPersonAIO>().playerCanMove = true;
     }
-
+    public void UpgradeCurrentPlate(int index){
+        if(currentPlate == null){
+            return;
+        }
+        else{
+            currentPlate.UpgradeCurrentBuild(index);
+            currentPlate.UpgradeHealth();
+            towerMenu.UpdateUpgradeButtons();
+        }
+    }
     public void Demolish(){
+        //UpgradeCurrentPlate(0);
+        towerMenu.UpdateUpgradeButtons();
         currentPlate.Demolish();
         UpdateButtons();
+    }
+    public void PreviewTower(Tower t){
+        towerMenu.OpenTowerMenuPreview(t);
+        towerOptions.SetActive(false);
+        demolish.gameObject.SetActive(false);
+    }
+    public void ClosePreview(){
+        towerOptions.SetActive(true);
+        towerMenu.CloseTowerMenuPreview();
     }
     public void Build(int index){
         currentPlate.BuildTower(index);
@@ -99,16 +124,18 @@ public class BuildMenu : MonoBehaviour
                 else{
                     repair.gameObject.SetActive(false);
                 }
-                GetComponentInChildren<TowerMenu>().OpenTowerMenu();
+                towerMenu.OpenTowerMenu();
+                towerMenu.UpdateUpgradeButtons();
 
             }
             else{
+                towerMenu.CloseTowerMenu();
                 lockedText.gameObject.SetActive(false);
                 unlock.gameObject.SetActive(false);
                 towerOptions.SetActive(true);
                 if(towers.Length != buttons.Length || currentPlate == null){
-                Debug.Log("not enough towers or buttons");
-                return;
+                    Debug.Log("not enough towers or buttons");
+                    return;
                 }
                 else{
                     for(int loop = 0; loop < buttons.Length; loop++){

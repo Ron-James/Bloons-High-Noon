@@ -86,7 +86,7 @@ public class GameManager : Singleton<GameManager>
     {
         
         if(Input.GetKeyDown(KeyCode.M)){
-            SpawnEnemy(enemies[2]);
+            SpawnEnemy(enemies[0]);
         }
         
 
@@ -108,7 +108,7 @@ public class GameManager : Singleton<GameManager>
     }
 
     public void SpawnEnemy(Enemy enemy){
-        Vector3 position = spawnPoint.position;
+        Vector3 position = lane.path.GetPoint(1);
         EnemyHealth [] dead = deadEnemies.GetComponentsInChildren<EnemyHealth>();
         if(DeadEnemyOfType(enemy)){
             ReviveEnemyOfType(enemy, position);

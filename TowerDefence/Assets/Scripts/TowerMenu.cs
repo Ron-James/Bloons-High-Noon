@@ -12,14 +12,19 @@ public class TowerMenu : MonoBehaviour
     [SerializeField] Text upgrade1Desc;
     [SerializeField] Text upgrade2Desc;
     [SerializeField] Text upgrade3Desc;
+    [SerializeField] Text sellPrice;
     [SerializeField] Image towerPic;
+    [SerializeField] BuildMenu buildMenu;
+    [SerializeField] Text [] costText = new Text[3];
+    [SerializeField] Button [] upgradeButtons = new Button [3];
+    [SerializeField] Button previewReturn;
 
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        buildMenu = GetComponentInParent<BuildMenu>();
     }
 
     // Update is called once per frame
@@ -34,18 +39,87 @@ public class TowerMenu : MonoBehaviour
         upgrade1Desc.text = currentTower.upgrade1Desc;
         upgrade2Desc.text = currentTower.upgrade2Desc;
         upgrade3Desc.text = currentTower.upgrade3Desc;
+        costText[0].text = "Cost: " + t.upgrade1Cost.ToString();
+        costText[1].text = "Cost: " + t.upgrade2Cost.ToString();
+        costText[2].text = "Cost: " + t.upgrade3Cost.ToString();
+        sellPrice.gameObject.SetActive(true);
+        sellPrice.text = "Sell Value: " + ((int) buildMenu.CurrentPlate.SellValue() * GameManager.sellPercentage).ToString();
+        UpdateUpgradeButtons();
+        previewReturn.gameObject.SetActive(false);
 
+    }
+    public void UpdatePreviewInfo(Tower t){
+        sellPrice.gameObject.SetActive(false);
+        currentTower = t;
+        towerName.text = currentTower.towerName;
+        towerDescription.text = currentTower.description;
+        upgrade1Desc.text = currentTower.upgrade1Desc;
+        upgrade2Desc.text = currentTower.upgrade2Desc;
+        upgrade3Desc.text = currentTower.upgrade3Desc;
+        costText[0].text = "Cost: " + t.upgrade1Cost.ToString();
+        costText[1].text = "Cost: " + t.upgrade2Cost.ToString();
+        costText[2].text = "Cost: " + t.upgrade3Cost.ToString();
+        //UpdateUpgradeButtons();
 
     }
     public void OpenTowerMenu(){
-        if(GetComponentInParent<BuildMenu>().CurrentPlate != null){
+        if(buildMenu.CurrentPlate != null){
             infoHolder.SetActive(true);
-            UpdateInfo(GetComponentInParent<BuildMenu>().CurrentPlate.CurrentTower());
+            UpdateInfo(buildMenu.CurrentPlate.CurrentTower());
         }
         else{
             return;
         }
         
+    }
+
+    public void OpenTowerMenuPreview(Tower t){
+        UpdatePreviewInfo(t);
+        infoHolder.SetActive(true);
+        previewReturn.gameObject.SetActive(true);
+        upgradeButtons[0].interactable = false;
+        upgradeButtons[1].interactable = false;
+        upgradeButtons[2].interactable = false;
+
+    }
+    public void CloseTowerMenuPreview(){
+        infoHolder.SetActive(false);
+        previewReturn.gameObject.SetActive(false);
+        upgradeButtons[0].interactable = true;
+        upgradeButtons[1].interactable = true;
+        upgradeButtons[2].interactable = true;
+
+    }
+    public void UpdateUpgradeButtons(){
+        if(buildMenu.CurrentPlate.CurrentUpgrade == 0){
+            if(GameManager.instance.Balance >= buildMenu.CurrentPlate.CurrentTower().upgrade1Cost){
+                upgradeButtons[0].interactable = true;
+                //upgradeButtons[0].interactable = true;
+            }
+            else{
+                upgradeButtons[0].interactable = false;
+            }
+            if(GameManager.instance.Balance >= buildMenu.CurrentPlate.CurrentTower().upgrade2Cost){
+                upgradeButtons[1].interactable = true;
+            }
+            else{
+                upgradeButtons[1].interactable = false;
+            }
+            if(GameManager.instance.Balance >= buildMenu.CurrentPlate.CurrentTower().upgrade3Cost){
+                upgradeButtons[2].interactable = true;
+            }
+            else{
+                upgradeButtons[2].interactable = false;
+            }
+        }
+        else if(buildMenu.CurrentPlate.CurrentUpgrade > 0){
+            upgradeButtons[0].gameObject.SetActive(false);
+            upgradeButtons[1].gameObject.SetActive(false);
+            upgradeButtons[2].gameObject.SetActive(false);
+        }
+    }
+    public void CloseTowerMenu(){
+        infoHolder.SetActive(false);
     }
     
 }

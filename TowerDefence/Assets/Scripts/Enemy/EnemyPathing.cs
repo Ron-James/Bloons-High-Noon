@@ -8,7 +8,6 @@ public class EnemyPathing : MonoBehaviour
     [SerializeField] Vector3 towerPosition;
     
     [SerializeField] bool attacksTowers = false;
-    [SerializeField] float floatHeight = 9;
     [SerializeField] float regularSpeed = 8;
     [SerializeField] float slowedSpeed = 4;
     GameObject Tower;

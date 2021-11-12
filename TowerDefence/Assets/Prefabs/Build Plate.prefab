@@ -134,6 +134,7 @@ MonoBehaviour:
   maxHealth: 0
   buildIndex: 0
   unlocked: 1
+  currentUpgrade: 0
 --- !u!136 &8651752138401029229
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -537,14 +538,6 @@ PrefabInstance:
     - target: {fileID: 6079905043342582264, guid: 6bbca5bb6941a5142b0e54a77d9fafa0, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7465641832192927198, guid: 6bbca5bb6941a5142b0e54a77d9fafa0, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 28
-      objectReference: {fileID: 0}
-    - target: {fileID: 7465641832192927198, guid: 6bbca5bb6941a5142b0e54a77d9fafa0, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 28
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6bbca5bb6941a5142b0e54a77d9fafa0, type: 3}

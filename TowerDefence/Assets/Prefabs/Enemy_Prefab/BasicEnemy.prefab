@@ -47,7 +47,7 @@ NavMeshAgent:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3844489620895014759}
-  m_Enabled: 1
+  m_Enabled: 0
   m_AgentTypeID: 0
   m_Radius: 1
   m_Speed: 10
@@ -76,7 +76,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!114 &2934534593124890313
 MonoBehaviour:
@@ -111,14 +111,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3844489620895014759}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f266befa128cbdb489d27b6ce0460125, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   towerPosition: {x: -72.09, y: 9.3, z: -5.85}
   attacksTowers: 0
-  floatHeight: 9.3
   regularSpeed: 10
   slowedSpeed: 5
 --- !u!65 &3529870401856988927
@@ -160,13 +159,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3844489620895014759}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 078e8e43b566fe842b44c07878404efb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pathCreator: {fileID: 0}
-  speed: 3
+  speed: 8.5
   isStopped: 0
 --- !u!1 &4225348094914627559
 GameObject:

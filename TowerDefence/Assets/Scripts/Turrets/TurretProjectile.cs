@@ -9,6 +9,8 @@ public class TurretProjectile : MonoBehaviour
     [SerializeField] float fireRate = 0.75f;
     [SerializeField] float damage = 1;
     [SerializeField] LayerMask enemyMask;
+    [SerializeField] float slowDuration = 3f;
+    [Range(0,1)][SerializeField] float slowPercentage = 0.5f;
 
 
     [SerializeField] LineRenderer lineRenderer;
@@ -17,11 +19,23 @@ public class TurretProjectile : MonoBehaviour
     Transform target;
     [SerializeField] float fireTime;
 
-    bool firstShot;
+    [Header("Upgrade Percentages")]
+    [SerializeField] float [] damageUpgrades = new float [5];
+    [SerializeField] float [] fireRateUpgrades = new float [5];
+
+
+    public float FireRate { get => fireRate; set => fireRate = value; }
+    public float Damage { get => damage; set => damage = value; }
+    public float[] DamageUpgrades { get => damageUpgrades; set => damageUpgrades = value; }
+    public float[] FireRateUpgrades { get => fireRateUpgrades; set => fireRateUpgrades = value; }
+    public bool IceShot { get => iceShot; set => iceShot = value; }
+
+    UpgradeManager upgradeManager;
+
     // Start is called before the first frame update
     void Start()
     {
-        firstShot = false;
+        upgradeManager = GetComponent<UpgradeManager>();
     }
 
     // Update is called once per frame
@@ -35,50 +49,34 @@ public class TurretProjectile : MonoBehaviour
         yield return new WaitForSeconds(time);
     }
     public void DamageTarget(){
+        fireTime += Time.deltaTime;
         if(target != null && !GetComponent<TurretAim>().Stunned && target.GetComponentInParent<EnemyHealth>() != null){
-            fireTime += Time.deltaTime;
+            //fireTime += Time.deltaTime;
             RaycastHit hit;
             float Range = Vector3.Distance(target.position, firePoint.position);
-            if(!firstShot && fireTime == 0){
-                firstShot = true;
-                target.GetComponentInParent<EnemyHealth>().TakeDamage(damage);
-                StartCoroutine(ShowProjectileDelayed(target.position, 0.2f));
-                if(target.gameObject.GetComponentInParent<EnemyHealth>().Health <= 0 && GetComponent<TurretAim>().Target.gameObject.GetComponent<EnemyHealth>().Health <=0){
-                    GetComponent<TurretAim>().Target = null;
-                    //GetComponentInChildren<TurretTargetTrigger>().RemoveDeadEnemy(hit.collider.gameObject.transform);
-                    GameManager.instance.AddBalance(target.gameObject.GetComponent<EnemyHealth>().Enemy.value);
-                    ResetTarget();
-                }
-
-            }
-            if((Physics.Raycast(firePoint.position, barrel.transform.forward, out hit, Range, enemyMask) && fireTime >= fireRate) || (fireTime == 0 &&  !firstShot)){
+            
+            if((Physics.Raycast(firePoint.position, barrel.transform.forward, out hit, Range, enemyMask) && fireTime >= (fireRate * (1/upgradeManager.FireRateUpgrade)))){
                 fireTime = 0;
-                
+                if(GetComponent<RepeaterSoundController>() != null){
+                    GetComponent<RepeaterSoundController>().PlayShotSound();
+                }
                 if(hit.collider.tag == "Enemy"){
                     StartCoroutine(ShowProjectileLine(hit.point));
                     //Debug.Log("Enemy Hit");
                     
                     if(iceShot){
-                        hit.collider.gameObject.GetComponentInParent<EnemyHealth>().TakeDamage(damage);
-                        hit.collider.gameObject.GetComponent<EnemyPathing>().SlowDownEnemy(GameManager.enemyIceDuration);
-                        if(hit.collider.gameObject.GetComponent<EnemyHealth>().Health <= 0 && GetComponent<TurretAim>().Target.gameObject.GetComponent<EnemyHealth>().Health <=0){
-                            GetComponent<TurretAim>().Target = null;
-                            //GetComponentInChildren<TurretTargetTrigger>().RemoveDeadEnemy(hit.collider.gameObject.transform);
-                            GameManager.instance.AddBalance(hit.collider.gameObject.GetComponent<EnemyHealth>().Enemy.value);
-                        }
+                        hit.collider.gameObject.GetComponent<EnemyFollower>().SlowEnemy(slowDuration, slowPercentage);
                     }
-                    else{
-                        hit.collider.gameObject.GetComponentInParent<EnemyHealth>().TakeDamage(damage);
-                        if(hit.collider.gameObject.GetComponent<EnemyHealth>().Health <= 0 && GetComponent<TurretAim>().Target.gameObject.GetComponent<EnemyHealth>().Health <=0){
-                            GetComponent<TurretAim>().Target = null;
-                            ResetTarget();
-                            //GetComponentInChildren<TurretTargetTrigger>().RemoveDeadEnemy(hit.collider.gameObject.transform);
-                            GameManager.instance.AddBalance(hit.collider.gameObject.GetComponent<EnemyHealth>().Enemy.value);
-                        }
-                    }
+                    hit.collider.gameObject.GetComponentInParent<EnemyHealth>().TakeDamage(damage * upgradeManager.DamageUpgrade);
                     if(alwaysSwitchToFurthestTarget){
                         GetComponentInChildren<TurretTargetTrigger>().SwitchToFurthestTarget();
                     }
+                    if(hit.collider.gameObject.GetComponent<EnemyHealth>().Health <= 0 && GetComponent<TurretAim>().Target.gameObject.GetComponent<EnemyHealth>().Health <=0){
+                        GetComponent<TurretAim>().Target = null;
+                        //GetComponentInChildren<TurretTargetTrigger>().RemoveDeadEnemy(hit.collider.gameObject.transform);
+                        GameManager.instance.AddBalance(hit.collider.gameObject.GetComponent<EnemyHealth>().Enemy.value);
+                    }
+                    
                     
                     
                 }
@@ -86,7 +84,6 @@ public class TurretProjectile : MonoBehaviour
              
         }
         else{
-            fireTime = 0;
             return;
         }
     }
@@ -131,9 +128,7 @@ public class TurretProjectile : MonoBehaviour
         yield break;
     }
 
-    public void ResetTarget(){
-        firstShot = false;
-    }
+    
 
     public void TakeFirstShot(){
         if(target == null){

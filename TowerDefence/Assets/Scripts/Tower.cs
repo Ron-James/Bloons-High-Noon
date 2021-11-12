@@ -14,6 +14,14 @@ public class Tower : ScriptableObject
     public string upgrade2Desc;
     public string upgrade3Desc;
     public Sprite picture;
+    public float upgrade1Cost;
+    public float upgrade2Cost;
+    public float upgrade3Cost;
+    public float upgrade1Health;
+    public float upgrade2Health;
+    public float upgrade3Health;
+
+
 
 
     

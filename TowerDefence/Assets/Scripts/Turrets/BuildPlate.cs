@@ -28,6 +28,9 @@ public class BuildPlate : MonoBehaviour
     public int BuildIndex { get => (int) build; }
     public float Health { get => health; set => health = value; }
     public bool Unlocked { get => unlocked; set => unlocked = value; }
+    public int CurrentUpgrade { get => currentUpgrade; set => currentUpgrade = value; }
+
+    [SerializeField] int currentUpgrade = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -54,6 +57,36 @@ public class BuildPlate : MonoBehaviour
         
     }
 
+    public void UpgradeCurrentBuild(int index){
+        if(index > 3 || index < 0 || BuildIndex == 0 || EnabledPrefab().GetComponent<UpgradeManager>().UpgradeIndex() > 0){
+            return;
+        }
+        else{
+            switch(index){
+                case 0:
+                    CurrentUpgrade = 0;
+                    EnabledPrefab().GetComponent<UpgradeManager>().ResestUpgrade();
+                    
+                break;
+                case 1:
+                    CurrentUpgrade = 1;
+                    EnabledPrefab().GetComponent<UpgradeManager>().Upgrade1();
+                    GameManager.instance.Purchase(towers[BuildIndex - 1].upgrade1Cost);
+                break;
+                case 2:
+                    CurrentUpgrade = 2;
+                    EnabledPrefab().GetComponent<UpgradeManager>().Upgrade2();
+                    GameManager.instance.Purchase(towers[BuildIndex - 1].upgrade2Cost);
+                break;
+                case 3:
+                    CurrentUpgrade = 3;
+                    EnabledPrefab().GetComponent<UpgradeManager>().Upgrade3();
+                    GameManager.instance.Purchase(towers[BuildIndex - 1].upgrade3Cost);
+                break;
+            }
+            
+        }
+    }
     void EnableCurrentBuild(){
         
         if((int) build == 0){
@@ -74,11 +107,16 @@ public class BuildPlate : MonoBehaviour
         }
     }
     public void Demolish(){
-        float refund = towers[(int) build - 1].cost * GameManager.instance.SellPercentage;
-        GameManager.instance.AddBalance((int) refund);
+        float refund = SellValue() * GameManager.instance.SellPercentage;
+        GameManager.instance.AddBalance(refund);
+        EnabledPrefab().GetComponent<UpgradeManager>().ResestUpgrade();
         build = Build.empty;
         health = 0;
+        maxHealth = 0;
         EnableCurrentBuild();
+        currentUpgrade = 0;
+        
+        
     }
 
     public void Repair(){
@@ -89,6 +127,8 @@ public class BuildPlate : MonoBehaviour
         else
         {
             health = maxHealth;
+            UpdateHealthBar();
+            
         }
     }
 
@@ -111,7 +151,7 @@ public class BuildPlate : MonoBehaviour
     }
 
     public void UpdateHealthBar(){
-        if(buildIndex == 0){
+        if(buildIndex == 0 || health == maxHealth){
             DisableHealthIndicator();
         }
         else{
@@ -137,8 +177,9 @@ public class BuildPlate : MonoBehaviour
     }
 
     public void DestroyTower(){
-        build = Build.empty;
         health = 0;
+        maxHealth = 0; 
+        build = Build.empty;
         EnableCurrentBuild();
         DisableHealthIndicator();
 
@@ -160,5 +201,89 @@ public class BuildPlate : MonoBehaviour
             return;
         }
     }
+    public void EnableRangeIndicator(){
+        if(BuildIndex == 0){
+            return;
+        }
+        else{
+            EnabledPrefab().GetComponentInChildren<TurretTargetTrigger>().EnableRangeIndicator();
+        }
+    }
+    public void DisableRangeIndicator(){
+        if(BuildIndex == 0){
+            return;
+        }
+        else{
+            EnabledPrefab().GetComponentInChildren<TurretTargetTrigger>().DisableRangeIndicator();
+        }
+    }
+
+    public GameObject EnabledPrefab(){
+        if(BuildIndex <= 0){
+            return null;
+        }
+        else{
+            return towerBuilds[BuildIndex - 1];
+        }
+        
+    }
+    public Tower EnabledTower(){
+        if(BuildIndex <= 0){
+            return null;
+        }
+        else{
+            return towers[BuildIndex - 1];
+        }
+    }
+    public float SellValue(){
+        int upgrade = 0;
+        if(BuildIndex > 0){
+            upgrade = EnabledPrefab().GetComponent<UpgradeManager>().UpgradeIndex();
+            switch(upgrade){
+                default:
+                return EnabledTower().cost;
+                case 1:
+                    return EnabledTower().cost + EnabledTower().upgrade1Cost;
+                case 2:
+                    return EnabledTower().cost + EnabledTower().upgrade2Cost;
+                case 3: 
+                    return EnabledTower().cost + EnabledTower().upgrade3Cost;
+
+            }
+        }
+        else{
+            return 0;
+        }
+        
+    }
+
+    public void UpgradeHealth(){
+        int upgrade = 0;
+        if(BuildIndex > 0){
+            upgrade = EnabledPrefab().GetComponent<UpgradeManager>().UpgradeIndex();
+            switch(upgrade){
+                default:
+                
+                break;
+                case 1:
+                    maxHealth = EnabledTower().upgrade1Health;
+                    health = maxHealth;
+                break;
+                case 2:
+                    maxHealth = EnabledTower().upgrade2Health;
+                    health = maxHealth;
+                break;
+                case 3: 
+                    maxHealth = EnabledTower().upgrade1Health;
+                    health = maxHealth;
+                break;    
+            }
+        }   
+        else{
+            return;
+        }
+    }
+    
     
 }
+
