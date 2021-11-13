@@ -8,6 +8,7 @@ public class TowerMenu : MonoBehaviour
     Tower currentTower;
     [SerializeField] GameObject infoHolder;
     [SerializeField] Text towerName;
+    [SerializeField] Button repairButton;
     [SerializeField] Text towerDescription;
     [SerializeField] Text upgrade1Desc;
     [SerializeField] Text upgrade2Desc;
@@ -46,6 +47,12 @@ public class TowerMenu : MonoBehaviour
         sellPrice.text = "Sell Value: " + ((int) buildMenu.CurrentPlate.SellValue() * GameManager.sellPercentage).ToString();
         UpdateUpgradeButtons();
         previewReturn.gameObject.SetActive(false);
+        if(CanRepair()){
+            repairButton.interactable = true;
+        }
+        else{
+            repairButton.interactable = false;
+        }
 
     }
     public void UpdatePreviewInfo(Tower t){
@@ -89,6 +96,17 @@ public class TowerMenu : MonoBehaviour
         upgradeButtons[1].interactable = true;
         upgradeButtons[2].interactable = true;
 
+    }
+    bool CanRepair(){
+        if(buildMenu.CurrentPlate == null){
+            return false;
+        }
+        if(buildMenu.CurrentPlate.BuildIndex > 0 && GameManager.instance.Balance >= GameManager.instance.RepairCost && buildMenu.CurrentPlate.Health < buildMenu.CurrentPlate.MaxHealth){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
     public void UpdateUpgradeButtons(){
         if(buildMenu.CurrentPlate.CurrentUpgrade == 0){

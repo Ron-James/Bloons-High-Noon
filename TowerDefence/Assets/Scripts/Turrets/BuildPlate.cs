@@ -29,6 +29,7 @@ public class BuildPlate : MonoBehaviour
     public float Health { get => health; set => health = value; }
     public bool Unlocked { get => unlocked; set => unlocked = value; }
     public int CurrentUpgrade { get => currentUpgrade; set => currentUpgrade = value; }
+    public float MaxHealth { get => maxHealth; set => maxHealth = value; }
 
     [SerializeField] int currentUpgrade = 0;
 
@@ -112,7 +113,7 @@ public class BuildPlate : MonoBehaviour
         EnabledPrefab().GetComponent<UpgradeManager>().ResestUpgrade();
         build = Build.empty;
         health = 0;
-        maxHealth = 0;
+        MaxHealth = 0;
         EnableCurrentBuild();
         currentUpgrade = 0;
         
@@ -126,14 +127,14 @@ public class BuildPlate : MonoBehaviour
         }
         else
         {
-            health = maxHealth;
+            health = MaxHealth;
             UpdateHealthBar();
             
         }
     }
 
     public bool HasFullHealth(){
-        if(health == maxHealth){
+        if(health == MaxHealth){
             return true;
         }
         else{
@@ -151,11 +152,11 @@ public class BuildPlate : MonoBehaviour
     }
 
     public void UpdateHealthBar(){
-        if(buildIndex == 0 || health == maxHealth){
+        if(buildIndex == 0 || health == MaxHealth){
             DisableHealthIndicator();
         }
         else{
-            healthIndicator.fillAmount = health/maxHealth;
+            healthIndicator.fillAmount = health/MaxHealth;
         }
     }
     public void BuildTower(int index){
@@ -168,7 +169,7 @@ public class BuildPlate : MonoBehaviour
             build = (Build) index;
             buildIndex = BuildIndex;
             health = towers[index-1].health;
-            maxHealth = health;
+            MaxHealth = health;
             EnableCurrentBuild();
             UpdateHealthBar();
             
@@ -178,7 +179,7 @@ public class BuildPlate : MonoBehaviour
 
     public void DestroyTower(){
         health = 0;
-        maxHealth = 0; 
+        MaxHealth = 0; 
         build = Build.empty;
         EnableCurrentBuild();
         DisableHealthIndicator();
@@ -188,7 +189,7 @@ public class BuildPlate : MonoBehaviour
     public void TakeDamage(float damage){
         if(BuildIndex > 0){
             health -= damage;
-            if(health <= maxHealth * GameManager.HelthIndicatorThrsh){
+            if(health <= MaxHealth * GameManager.HelthIndicatorThrsh){
                 EnableHealthIndicator();
             }
             UpdateHealthBar();
@@ -266,16 +267,16 @@ public class BuildPlate : MonoBehaviour
                 
                 break;
                 case 1:
-                    maxHealth = EnabledTower().upgrade1Health;
-                    health = maxHealth;
+                    MaxHealth = EnabledTower().upgrade1Health;
+                    health = MaxHealth;
                 break;
                 case 2:
-                    maxHealth = EnabledTower().upgrade2Health;
-                    health = maxHealth;
+                    MaxHealth = EnabledTower().upgrade2Health;
+                    health = MaxHealth;
                 break;
                 case 3: 
-                    maxHealth = EnabledTower().upgrade1Health;
-                    health = maxHealth;
+                    MaxHealth = EnabledTower().upgrade1Health;
+                    health = MaxHealth;
                 break;    
             }
         }   

@@ -32,6 +32,7 @@ public class BuildMenu : MonoBehaviour
     }
     public void OpenMenu(BuildPlate buildPlate){
         crossHair.SetActive(false);
+        
         unlocked = buildPlate.Unlocked;
         MenuIsOpen = true;
         currentPlate = buildPlate;
@@ -39,6 +40,7 @@ public class BuildMenu : MonoBehaviour
         UpdateButtons();
         GameObject.Find("Player").GetComponent<FirstPersonAIO>().DisableCamera();
         GameObject.Find("Player").GetComponent<FirstPersonAIO>().playerCanMove = false;
+        Debug.Log(CanRepair() + "Repair");
     }
 
     public void CloseMenu(){
@@ -92,7 +94,7 @@ public class BuildMenu : MonoBehaviour
         UpdateButtons();
     }
     bool CanRepair(){
-        if(currentPlate.BuildIndex != 0 && GameManager.instance.Balance >= GameManager.instance.RepairCost && !currentPlate.HasFullHealth()){
+        if(currentPlate.BuildIndex > 0 && GameManager.instance.Balance >= GameManager.instance.RepairCost && currentPlate.Health != currentPlate.MaxHealth){
             return true;
         }
         else{
@@ -118,12 +120,7 @@ public class BuildMenu : MonoBehaviour
                 unlock.gameObject.SetActive(false);
                 towerOptions.SetActive(false);
                 demolish.gameObject.SetActive(true);
-                if(CanRepair()){
-                    repair.gameObject.SetActive(true);
-                }
-                else{
-                    repair.gameObject.SetActive(false);
-                }
+                
                 towerMenu.OpenTowerMenu();
                 towerMenu.UpdateUpgradeButtons();
 
