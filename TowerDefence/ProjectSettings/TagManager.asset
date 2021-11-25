@@ -4,18 +4,13 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Lane
-  - Enemy
+  - Shootable
   - Tower
-  - Island
-  - Projectile
-  - Hookable
-  - MenuTrigger
-  - Build Plate
-  - Turret Target
-  - Obejctive
   - Objective
-  - Platform
+  - Build Plate
+  - MenuTrigger
+  - Enemy
+  - Hookable
   layers:
   - Default
   - TransparentFX
@@ -23,14 +18,14 @@ TagManager:
   - 
   - Water
   - UI
-  - Ground
+  - Lighting
   - Grapple
-  - Lane
-  - Walkway
+  - Postprocessing
   - Enemy
-  - Build Plate
-  - Main Tower
-  - PlatformMesh
+  - Environment
+  - 
+  - 
+  - 
   - 
   - 
   - 
@@ -50,6 +45,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Fire
+    uniqueID: 3804908061
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

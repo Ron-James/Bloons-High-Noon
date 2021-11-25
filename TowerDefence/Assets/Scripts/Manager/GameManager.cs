@@ -142,7 +142,7 @@ public class GameManager : Singleton<GameManager>
     }
 
     void UpdateBalanceText(){
-        balanceTxt.text = "Balance: " + Balance.ToString();
+        balanceTxt.text = ""+Balance.ToString();
     }
 
   

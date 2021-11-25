@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GrapplingHook : MonoBehaviour
 {
@@ -16,6 +17,10 @@ public class GrapplingHook : MonoBehaviour
     public static bool fired;
     [SerializeField] bool hooked;
     GameObject hookedObject;
+    bool canHook = false;
+    [SerializeField] Sprite crosshair01, crosshair02;
+    [SerializeField] Image crosshair;
+    [SerializeField] LayerMask hookLayer;
 
     [SerializeField] float maxDistance;
     float currentDistance;
@@ -45,22 +50,24 @@ public class GrapplingHook : MonoBehaviour
         hook.gameObject.GetComponent<MeshRenderer>().enabled = false;
         player = GetComponentInParent<FirstPersonAIO>().gameObject;
         startPosition = hook.transform.localPosition;
-        
+        crosshair.sprite = crosshair01;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButtonDown(0) && !fired && !BuildMenu.MenuIsOpen && !PauseMenu.IsPaused){
+        if (Input.GetMouseButtonDown(0) && !fired && !BuildMenu.MenuIsOpen && !PauseMenu.IsPaused)
+        {
             StartCoroutine(Extend(hookTravelSpd, maxDistance));
         }
-        if(fired){
+        if (fired)
+        {
             LineRenderer rope = hook.GetComponent<LineRenderer>();
             rope.positionCount = 2;
             rope.SetPosition(0, firePoint.position);
             rope.SetPosition(1, hook.transform.position);
         }
-        
+
         /*
         if(Input.GetMouseButtonDown(0) && !fired){
             fired = true;
@@ -93,7 +100,40 @@ public class GrapplingHook : MonoBehaviour
             this.GetComponent<Rigidbody>().useGravity = true;
         }
         */
+       
+        RaycastHit hit;
+        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.TransformDirection(Vector3.forward), out hit, 50f, hookLayer))
+        {
+            Debug.DrawRay(Camera.main.transform.position, Camera.main.transform.TransformDirection(Vector3.forward) * 50f, Color.red);
+            canHook = true;
+            {
+                if (hit.transform.gameObject.tag == "hookable")
+                {
+                    Debug.Log("Can Grapple");
+                    canHook = true;
+                    
+                }
+                
+            }
+           
+            
+        }
+        else
+        {
+            Debug.DrawRay(Camera.main.transform.position, Camera.main.transform.TransformDirection(Vector3.forward) * 50f, Color.green);
+            canHook = false;
+            
+        }
+        if (canHook)
+        {
+            crosshair.sprite = crosshair02;
+        }
+        else if(!canHook)
+        {
+            crosshair.sprite = crosshair01;
+        }
     }
+    
     void ReturnHook(){
         ResetLine();
         hook.gameObject.GetComponent<MeshRenderer>().enabled = false;
@@ -205,7 +245,7 @@ IEnumerator ClimbUp(float durationUp){
                 GetComponentInParent<FirstPersonAIO>().playerCanMove = true;
                 break;
             }
-            else if(Input.GetKeyDown(KeyCode.Space)){
+            else if(Input.GetKeyDown(KeyCode.Mouse1)){
                 ReturnHook();
                 GetComponentInParent<FirstPersonAIO>().playerCanMove = true;
                 break;
