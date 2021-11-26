@@ -102,9 +102,9 @@ public class GrapplingHook : MonoBehaviour
         */
        
         RaycastHit hit;
-        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.TransformDirection(Vector3.forward), out hit, 50f, hookLayer))
+        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.TransformDirection(Vector3.forward), out hit, 48f, hookLayer))
         {
-            Debug.DrawRay(Camera.main.transform.position, Camera.main.transform.TransformDirection(Vector3.forward) * 50f, Color.red);
+            Debug.DrawRay(Camera.main.transform.position, Camera.main.transform.TransformDirection(Vector3.forward) * 48f, Color.red);
             canHook = true;
             {
                 if (hit.transform.gameObject.tag == "hookable")
@@ -166,7 +166,7 @@ public class GrapplingHook : MonoBehaviour
                     StartCoroutine(ClimbForward(durationFor));
                     break;
                 }
-                else if(Input.GetKeyDown(KeyCode.Space)){
+                else if(Input.GetMouseButtonDown(1)){
                     ReturnHook();
                     GetComponentInParent<FirstPersonAIO>().playerCanMove = true;
                     break;
@@ -210,7 +210,8 @@ IEnumerator ClimbUp(float durationUp){
                 GetComponentInParent<FirstPersonAIO>().playerCanMove = true;
                 break;
             }
-            else if(Input.GetKeyDown(KeyCode.Space)){
+            else if(Input.GetMouseButtonDown(1))
+            {
                 ReturnHook();
                 GetComponentInParent<FirstPersonAIO>().playerCanMove = true;
                 break;
@@ -245,7 +246,7 @@ IEnumerator ClimbUp(float durationUp){
                 GetComponentInParent<FirstPersonAIO>().playerCanMove = true;
                 break;
             }
-            else if(Input.GetKeyDown(KeyCode.Mouse1)){
+            else if (Input.GetMouseButtonDown(1)) { 
                 ReturnHook();
                 GetComponentInParent<FirstPersonAIO>().playerCanMove = true;
                 break;
