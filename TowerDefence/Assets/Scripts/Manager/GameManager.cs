@@ -52,6 +52,10 @@ public class GameManager : Singleton<GameManager>
 
     [Header("Level number")]
     [SerializeField] int stage = 0;
+    [SerializeField] bool reversedPath = false;
+    [SerializeField] GameObject levelComplete;
+
+    public static bool gameOver = false;
 
     
 
@@ -67,6 +71,8 @@ public class GameManager : Singleton<GameManager>
     public Transform MainTower { get => mainTower; set => mainTower = value; }
     public int Stage { get => stage; set => stage = value; }
     public PathCreator Lane { get => lane; set => lane = value; }
+    public GameObject DeadEnemies { get => deadEnemies; set => deadEnemies = value; }
+    public GameObject AliveEnemies { get => aliveEnemies; set => aliveEnemies = value; }
 
 
     // Start is called before the first frame update
@@ -75,7 +81,7 @@ public class GameManager : Singleton<GameManager>
         firstPerson = true;
         totalHealth = towerHealth;
         UpdateBalanceText();
-        
+        gameOver = false;
         
         //Debug.Log("Dead enemies " + deadEnemies.GetComponentsInChildren<Transform>().Length + deadEnemies.GetComponentsInChildren<Transform>()[0].gameObject.name);
         
@@ -86,7 +92,7 @@ public class GameManager : Singleton<GameManager>
     {
         
         if(Input.GetKeyDown(KeyCode.M)){
-            SpawnEnemy(enemies[0]);
+            SpawnEnemy(enemies[2]);
         }
         
 
@@ -107,8 +113,17 @@ public class GameManager : Singleton<GameManager>
         */
     }
 
+    public void CompleteLevel(){
+        gameOver = true;
+        levelComplete.SetActive(true);
+        player.GetComponent<FirstPersonAIO>().playerCanMove = false;
+        player.GetComponent<FirstPersonAIO>().DisableCamera();
+    }
     public void SpawnEnemy(Enemy enemy){
         Vector3 position = lane.path.GetPoint(0);
+        if(reversedPath){
+            position = lane.path.GetPoint(1);
+        }
         EnemyHealth [] dead = deadEnemies.GetComponentsInChildren<EnemyHealth>();
         if(DeadEnemyOfType(enemy)){
             ReviveEnemyOfType(enemy, position);
@@ -148,19 +163,23 @@ public class GameManager : Singleton<GameManager>
   
 
     bool DeadEnemyOfType(Enemy enemy){
-        EnemyHealth [] enemies = deadEnemies.GetComponentsInChildren<EnemyHealth>(); 
-        for(int loop = 1; loop < enemies.Length; loop++){
-            if(enemies[loop].Enemy = enemy){
-                return true;
+        bool ret = false;
+        EnemyHealth [] enemies = deadEnemies.GetComponentsInChildren<EnemyHealth>();
+        Debug.Log("total enemies " + enemies.Length); 
+        for(int loop = 0; loop < enemies.Length; loop++){
+            Debug.Log(enemy.name);
+            if(enemies[loop].Enemy.name == enemy.name){
+                ret = true;
             }
         }
-        return false;
+        Debug.Log("Dead enemy of type:" + ret);
+        return ret;
     }
     
     void ReviveEnemyOfType(Enemy enemy, Vector3 position){
        EnemyHealth [] enemies = deadEnemies.GetComponentsInChildren<EnemyHealth>(); 
-        for(int loop = 1; loop < enemies.Length; loop++){
-            if(enemies[loop].Enemy = enemy){
+        for(int loop = 0; loop < enemies.Length; loop++){
+            if(enemies[loop].Enemy == enemy){
                 enemies[loop].Revive(position);
                 break;
             }

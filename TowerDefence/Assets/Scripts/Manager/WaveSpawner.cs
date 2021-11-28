@@ -27,10 +27,12 @@ public class WaveSpawner : MonoBehaviour
     [SerializeField] Text countDownText;
     [SerializeField] Text level;
     [SerializeField] Text wave;
+    [SerializeField] GameObject aliveEnemies;
 
     float searchCountDown = 1;
 
     private void Start() {
+        aliveEnemies = GameManager.instance.AliveEnemies;
         level.text = "Level " + (GameManager.instance.Stage + 1).ToString();
         if(waves.Length == 0){
             Debug.Log("No waves set in inspector");
@@ -86,14 +88,7 @@ public class WaveSpawner : MonoBehaviour
 		{
 			nextWave = 0;
             waveCountDown = waves[0].timeBeforeWave;
-            switch(GameManager.instance.Stage){
-                case 0:
-                    SceneController.instance.LoadLevel2();
-                break;
-                case 1:
-                    SceneController.instance.LoadWinScene();
-                break;
-            }
+            GameManager.instance.CompleteLevel();
 			Debug.Log("ALL WAVES COMPLETE! Looping...");
 		}
 		else
@@ -106,7 +101,7 @@ public class WaveSpawner : MonoBehaviour
         searchCountDown -= Time.deltaTime;
         if(searchCountDown <= 0){
             searchCountDown = 1f;
-            if(GameObject.FindGameObjectWithTag("Enemy") == null){
+            if(aliveEnemies.GetComponentsInChildren<EnemyHealth>().Length == 0){
                 Debug.Log("No more enemies");
                 return false;
             }

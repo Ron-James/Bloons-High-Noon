@@ -53,7 +53,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   barrel: {fileID: 4371721956103806416}
   firePoint: {fileID: 6677489961951614631}
-  fireRate: 0.6
+  fireRate: 0.86
   damage: 1
   enemyMask:
     serializedVersion: 2
@@ -63,6 +63,10 @@ MonoBehaviour:
   lineRenderer: {fileID: 4508656377367025084}
   iceShot: 0
   alwaysSwitchToFurthestTarget: 0
+  shotSound:
+    clip: {fileID: 8300000, guid: d81146d8cf5f58f42ad8d63fc66fffe2, type: 3}
+    src: {fileID: 5566679260371032655}
+    volume: 0.07
   fireTime: 0
   damageUpgrades:
   - 0.6
@@ -317,7 +321,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 497b630687578f64e9e1d39be0db34be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shotSound: {fileID: 8300000, guid: 8d0ae66db3375ea4cac87ef0d713f04b, type: 3}
+  shotSound: {fileID: 8300000, guid: d81146d8cf5f58f42ad8d63fc66fffe2, type: 3}
 --- !u!1 &2683888307622946637
 GameObject:
   m_ObjectHideFlags: 0
@@ -705,7 +709,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemiesInRange: []
-  areaTrigger: {fileID: 0}
   rangeUpgrades:
   - 0.8
   - 0.9
@@ -794,6 +797,36 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4371721956103806416}
     m_Modifications:
+    - target: {fileID: 558538241757502522, guid: c8dc1cb5a4b27284fb377ce3e41c6d42,
+        type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2182526243218731305, guid: c8dc1cb5a4b27284fb377ce3e41c6d42,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2182526243218731305, guid: c8dc1cb5a4b27284fb377ce3e41c6d42,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2182526243218731305, guid: c8dc1cb5a4b27284fb377ce3e41c6d42,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2182526243218731305, guid: c8dc1cb5a4b27284fb377ce3e41c6d42,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 33
+      objectReference: {fileID: 0}
+    - target: {fileID: 2182526243218731305, guid: c8dc1cb5a4b27284fb377ce3e41c6d42,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 3123038659885784860, guid: c8dc1cb5a4b27284fb377ce3e41c6d42,
         type: 3}
       propertyPath: m_Name

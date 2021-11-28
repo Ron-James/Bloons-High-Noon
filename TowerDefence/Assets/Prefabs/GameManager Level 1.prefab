@@ -79,9 +79,11 @@ MonoBehaviour:
   player: {fileID: 0}
   mainTower: {fileID: 0}
   towerHealth: 10
-  balance: 10000
+  balance: 200
   lane: {fileID: 0}
   stage: 0
+  reversedPath: 0
+  levelComplete: {fileID: 0}
 --- !u!114 &8728122781584199472
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,3 +141,4 @@ MonoBehaviour:
   countDownText: {fileID: 0}
   level: {fileID: 0}
   wave: {fileID: 0}
+  aliveEnemies: {fileID: 0}

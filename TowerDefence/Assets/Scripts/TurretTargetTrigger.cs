@@ -5,7 +5,7 @@ using UnityEngine;
 public class TurretTargetTrigger : MonoBehaviour
 {
     [SerializeField] List<Transform> enemiesInRange = new List<Transform>(0);
-    [SerializeField] GameObject areaTrigger;
+    GameObject areaTrigger;
     [SerializeField] float [] rangeUpgrades = new float [5];
     GameObject deadEnemies;
 
@@ -16,7 +16,7 @@ public class TurretTargetTrigger : MonoBehaviour
         
     }
     private void Start() {
-        deadEnemies = GameObject.Find("Dead Enemies");
+        deadEnemies = GameManager.instance.DeadEnemies;
         areaTrigger = this.gameObject;
     }
     private void Update() {
@@ -40,8 +40,12 @@ public class TurretTargetTrigger : MonoBehaviour
         }
     }
     private void OnTriggerExit(Collider other) {
-        if(GetComponentInParent<TurretAim>().Target = other.transform){
+        if(GetComponentInParent<TurretAim>().Target == other.transform && GetComponentInParent<TurretAim>() != null){
             GetComponentInParent<TurretAim>().Target = null;
+            
+        }
+        if(other.tag == "Enemy" && other.gameObject.GetComponent<EnemyFollower>().OnFire && GetComponentInParent<TurretExpoDamage>() != null){
+            other.gameObject.GetComponent<EnemyFollower>().OnFire = false;
         }
         if(other.tag == "Enemy"){
             RemoveEnemy(other.transform);
@@ -206,6 +210,19 @@ public class TurretTargetTrigger : MonoBehaviour
         else{
             return;
         }
+    }
+    public List<Transform> GetEnemiesInRange(){
+        List<Transform> inRange = new List<Transform>();
+        for(int loop = 0; loop < enemiesInRange.Count; loop++){
+            if(enemiesInRange[loop] != null){
+                inRange.Add(enemiesInRange[loop]);
+
+            }
+            else{
+                continue;
+            }
+        }
+        return inRange;
     }
 
     public void FreezeEnemiesInRange(float duration){

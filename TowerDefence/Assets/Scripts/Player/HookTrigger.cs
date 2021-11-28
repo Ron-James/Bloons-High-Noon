@@ -21,6 +21,10 @@ public class HookTrigger : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         switch(other.gameObject.layer){
             case 7:
+                if(other.gameObject.GetComponent<HookPoint>() != null){
+                    transform.position = other.gameObject.GetComponent<HookPoint>().hookPosition.position;
+                    Debug.Log("Hook position point");
+                }
                 Debug.Log("Hooked");
                 player.GetComponentInChildren<GrapplingHook>().HookedPosition = transform.position;
                 player.GetComponentInChildren<GrapplingHook>().Hooked = true;
@@ -33,6 +37,10 @@ public class HookTrigger : MonoBehaviour
     private void OnCollisionEnter(Collision other) {
         
         if(other.collider.gameObject.layer == 7 && GrapplingHook.fired){
+            if(other.gameObject.GetComponent<HookPoint>() != null){
+                transform.position = other.gameObject.GetComponent<HookPoint>().hookPosition.position;
+                Debug.Log("Hook position point");
+            }
             Debug.Log("Hooked");
             player.GetComponentInChildren<GrapplingHook>().HookedPosition = transform.position;
             player.GetComponentInChildren<GrapplingHook>().Hooked = true;

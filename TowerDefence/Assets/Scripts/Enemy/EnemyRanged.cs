@@ -83,31 +83,25 @@ public class EnemyRanged : MonoBehaviour
             return;
         }
         else{
-            RaycastHit hit;
             Vector3 direction = (target.position - transform.position).normalized;
             float range = (target.position - transform.position).magnitude;
             if(target.tag == "Build Plate"){
-                if(Physics.Raycast(transform.position, direction, out hit, range, layerMask) && hit.collider.tag == "Build Plate"){
+                
                 //deal damage top tower
-                Debug.Log(hit.collider.name + "shot this");
-                StartCoroutine(ShowProjectileLine(hit.point));
-                hit.collider.gameObject.GetComponentInParent<BuildPlate>().TakeDamage(damage);
+                Debug.Log(target.name + "shot this");
+                StartCoroutine(ShowProjectileLine(target.position));
+               target.gameObject.GetComponentInParent<BuildPlate>().TakeDamage(damage);
                 if(target.gameObject.GetComponentInParent<BuildPlate>().Health <= 0 ){
                     target = null;
                     //GetComponent<NavMeshAgent>().isStopped = false;
                 }
-            }
+            
             }
             
             else if(target.tag == "Tower"){
                 //Debug.Log("hit main tower");
-                
-                if(Physics.Raycast(transform.position, direction, out hit, range, layerMask) && hit.collider.tag == "Tower"){
-                    StartCoroutine(ShowProjectileLine(hit.point));
-                    GameManager.instance.DamageTower(damage);
-                }
-                
-            
+                StartCoroutine(ShowProjectileLine(target.position));
+                GameManager.instance.DamageTower(damage);
             }
         }
 

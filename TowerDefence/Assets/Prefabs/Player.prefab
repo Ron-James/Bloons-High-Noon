@@ -486,6 +486,11 @@ PrefabInstance:
       objectReference: {fileID: 4205764503174547987}
     - target: {fileID: 780092888506727037, guid: 7054e029c52bf8348a156d125848a903,
         type: 3}
+      propertyPath: crosshair
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 780092888506727037, guid: 7054e029c52bf8348a156d125848a903,
+        type: 3}
       propertyPath: climbSpeed
       value: 1
       objectReference: {fileID: 0}
@@ -501,11 +506,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: e8787d8faa5d6c94d9151f8aa08a80fe,
         type: 3}
-    - target: {fileID: 780092888506727037, guid: 7054e029c52bf8348a156d125848a903,
-        type: 3}
-      propertyPath: maxDistance
-      value: 250
-      objectReference: {fileID: 0}
     - target: {fileID: 780092888506727037, guid: 7054e029c52bf8348a156d125848a903,
         type: 3}
       propertyPath: maxClimbHeight
@@ -614,12 +614,12 @@ PrefabInstance:
     - target: {fileID: 6257211828232237700, guid: 7054e029c52bf8348a156d125848a903,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.50014496
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6257211828232237700, guid: 7054e029c52bf8348a156d125848a903,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.50014585
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6257211828232237700, guid: 7054e029c52bf8348a156d125848a903,
         type: 3}
@@ -664,12 +664,12 @@ PrefabInstance:
     - target: {fileID: 8338245842133770842, guid: 7054e029c52bf8348a156d125848a903,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.39
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8338245842133770842, guid: 7054e029c52bf8348a156d125848a903,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.079
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8338245842133770842, guid: 7054e029c52bf8348a156d125848a903,
         type: 3}
@@ -705,6 +705,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8878067806139647441, guid: 7054e029c52bf8348a156d125848a903,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7054e029c52bf8348a156d125848a903, type: 3}

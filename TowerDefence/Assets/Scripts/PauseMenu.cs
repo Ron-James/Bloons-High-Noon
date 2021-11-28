@@ -30,7 +30,7 @@ public class PauseMenu : MonoBehaviour
     public void Resume(){
         IsPaused = false;
         menuUI.SetActive(false);
-        if(!BuildMenu.MenuIsOpen && !GameManager.firstPerson){
+        if(!BuildMenu.MenuIsOpen && GameManager.firstPerson){
             player.GetComponent<FirstPersonAIO>().EnableCamera();
             player.GetComponent<FirstPersonAIO>().playerCanMove = true;
         }

@@ -9,13 +9,18 @@ public class SettingsMenu : MonoBehaviour
     [SerializeField] GameObject pauseMenuUI;
     [SerializeField] GameObject settingsMenu;
     [SerializeField] Slider sensitivitySlider;
+    [SerializeField] float sensMultiplier = 10f;
+    [SerializeField] Text sensTxt;
     GameObject player;
     float currentSliderValue;
     // Start is called before the first frame update
     void Start()
     {
+        
         OpenSettings = false;
+        
         player = GameObject.FindGameObjectWithTag("Player");
+        sensitivitySlider.value = player.GetComponent<FirstPersonAIO>().mouseSensitivity/sensMultiplier;
         currentSliderValue = sensitivitySlider.value;
     }
 
@@ -28,8 +33,9 @@ public class SettingsMenu : MonoBehaviour
     }
 
     public void ChangeSens(){
-        player.GetComponent<FirstPersonAIO>().mouseSensitivity = sensitivitySlider.value;
+        player.GetComponent<FirstPersonAIO>().mouseSensitivity = sensitivitySlider.value * sensMultiplier;
         currentSliderValue = sensitivitySlider.value;
+        sensTxt.text = sensitivitySlider.value.ToString("#.###");
     }
     public void CloseSettingsMenu(){
         OpenSettings = false;

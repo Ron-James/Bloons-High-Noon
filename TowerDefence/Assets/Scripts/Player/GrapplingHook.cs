@@ -24,6 +24,7 @@ public class GrapplingHook : MonoBehaviour
 
     [SerializeField] float maxDistance;
     float currentDistance;
+    Camera cam;
     float velocity;
     [SerializeField]Vector3 startPosition;
     [SerializeField] float climbUpTime = 0.5f;
@@ -35,7 +36,7 @@ public class GrapplingHook : MonoBehaviour
     [SerializeField] LayerMask grappleLayer;
     Transform grappleGun;
     Collision hookCollision;
-    
+    Quaternion defaultRot;
 
     public GameObject HookedObject { get => hookedObject; set => hookedObject = value; }
     public Vector3 HookedPosition { get => hookedPosition; set => hookedPosition = value; }
@@ -47,16 +48,21 @@ public class GrapplingHook : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        defaultRot = hook.transform.localRotation;
         hook.gameObject.GetComponent<MeshRenderer>().enabled = false;
         player = GetComponentInParent<FirstPersonAIO>().gameObject;
         startPosition = hook.transform.localPosition;
         crosshair.sprite = crosshair01;
+        cam = GetComponentInParent<Camera>();
+        fired = false;
+        BuildMenu.MenuIsOpen = false;
+        PauseMenu.IsPaused = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && !fired && !BuildMenu.MenuIsOpen && !PauseMenu.IsPaused)
+        if (Input.GetMouseButtonDown(0) && !fired && !BuildMenu.MenuIsOpen && !PauseMenu.IsPaused && !GameManager.gameOver)
         {
             StartCoroutine(Extend(hookTravelSpd, maxDistance));
         }
@@ -102,9 +108,9 @@ public class GrapplingHook : MonoBehaviour
         */
        
         RaycastHit hit;
-        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.TransformDirection(Vector3.forward), out hit, 48f, hookLayer))
+        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.TransformDirection(Vector3.forward), out hit, maxDistance, hookLayer))
         {
-            Debug.DrawRay(Camera.main.transform.position, Camera.main.transform.TransformDirection(Vector3.forward) * 48f, Color.red);
+            Debug.DrawRay(Camera.main.transform.position, Camera.main.transform.TransformDirection(Vector3.forward) * maxDistance, Color.red);
             canHook = true;
             {
                 if (hit.transform.gameObject.tag == "hookable")
@@ -147,7 +153,8 @@ public class GrapplingHook : MonoBehaviour
         hookedObject = null;
         player.GetComponent<Collider>().enabled = true;
         hook.transform.localPosition = startPosition;
-        hook.transform.rotation = firePoint.rotation;
+        hook.transform.localRotation = defaultRot;
+        GetComponentInParent<FirstPersonAIO>().EnableCamera();
         
     }
 
@@ -272,18 +279,12 @@ IEnumerator ClimbUp(float durationUp){
             //hook.transform.position = hookedPosition;
             player.transform.position = Vector3.MoveTowards(player.transform.position, hookedPosition, playerTravelSpd * Time.deltaTime);
             float distanceToHook = Vector3.Distance(player.transform.position, hookedPosition);
-            if(distanceToHook < 1f){
-                if(!GetComponentInParent<FirstPersonAIO>().IsGrounded){
-                    StartCoroutine(ClimbUpForward(climbForwardTime, climbUpTime));
-                    LineRenderer rope = hook.GetComponent<LineRenderer>();
-                    rope.positionCount = 0;
-                }
-                else{
-                    ReturnHook();
-                    LineRenderer rope = hook.GetComponent<LineRenderer>();
-                    rope.positionCount = 0;
-                    GetComponentInParent<FirstPersonAIO>().playerCanMove = true;
-                }
+            if(distanceToHook < 1f || Input.GetMouseButtonDown(1)){
+                
+                ReturnHook();
+                LineRenderer rope = hook.GetComponent<LineRenderer>();
+                rope.positionCount = 0;
+                GetComponentInParent<FirstPersonAIO>().playerCanMove = true;
                 //GetComponentInParent<FirstPersonAIO>().EnableCamera();
                 break;
             }
@@ -307,6 +308,7 @@ IEnumerator ClimbUp(float durationUp){
         hook.GetComponent<LineRenderer>().positionCount = 0;
     }
     IEnumerator Extend(float period, float amplitude){
+        GetComponentInParent<FirstPersonAIO>().DisableCamera();
         hook.gameObject.GetComponent<MeshRenderer>().enabled = true;
         fired = true;
         float w = (1/period) * 2 * Mathf.PI;
@@ -314,13 +316,15 @@ IEnumerator ClimbUp(float durationUp){
         float speed = amplitude / period;
         Vector3 startPos = hook.transform.localPosition;
         Hooked = false;
+        float distance = 0;
         velocity = 0;
         while(true){
             time += Time.fixedDeltaTime;
             float d = Mathf.Abs(amplitude * Mathf.Sin(w * time));
             velocity = amplitude * w * Mathf.Cos(w * time);
+            distance = Vector3.Distance(hook.transform.position, firePoint.transform.position);
             
-            if(time >= period/4 || Hooked || hookedObject != null){
+            if(distance >= amplitude|| Hooked || hookedObject != null || Input.GetMouseButtonDown(1)){
                 if(!Hooked){
                     ReturnHook();
                     
@@ -337,7 +341,7 @@ IEnumerator ClimbUp(float durationUp){
                 Vector3 localPos = startPos + Vector3.forward * d;
                 Vector3 newPos = transform.TransformPoint(localPos);
 
-                hook.transform.Translate(Vector3.forward * Time.fixedDeltaTime * speed);
+                hook.transform.Translate(Vector3.up * Time.fixedDeltaTime * speed);
                 
                 //hook.transform.localPosition = startPos + Vector3.forward * d;
                 yield return new WaitForFixedUpdate();

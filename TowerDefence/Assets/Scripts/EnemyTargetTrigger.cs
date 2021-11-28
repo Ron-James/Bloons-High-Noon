@@ -13,6 +13,7 @@ public class EnemyTargetTrigger : MonoBehaviour
             if(other.gameObject.GetComponentInParent<BuildPlate>().BuildIndex > 0 && GetComponentInParent<EnemyRanged>().Target == null){
                 GetComponentInParent<EnemyRanged>().Target = other.transform;
                 //GetComponentInParent<NavMeshAgent>().isStopped = true;
+                Debug.Log("Build Plate Targeted");
             }
             break;
             case "Tower":

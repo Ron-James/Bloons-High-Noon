@@ -24,6 +24,8 @@ public class BuildPlate : MonoBehaviour
     [SerializeField] float maxHealth;
     [SerializeField] int buildIndex;
     [SerializeField] bool unlocked = true;
+    [SerializeField] GameObject unlockedPlate;
+    [SerializeField] GameObject lockedPlate;
     public Build Build { get => build; set => build = value; }
     public int BuildIndex { get => (int) build; }
     public float Health { get => health; set => health = value; }
@@ -42,6 +44,8 @@ public class BuildPlate : MonoBehaviour
         if(BuildIndex > 0){
             health = towers[BuildIndex-1].health;
         }
+        UpdatePlateLock();
+        
     }
     public Tower CurrentTower(){
         if(buildIndex > 0){
@@ -56,6 +60,16 @@ public class BuildPlate : MonoBehaviour
     void Update()
     {
         
+    }
+    public void UpdatePlateLock(){
+        if(!unlocked){
+            lockedPlate.SetActive(true);
+            unlockedPlate.SetActive(false);
+        }
+        else{
+            lockedPlate.SetActive(false);
+            unlockedPlate.SetActive(true);
+        }
     }
 
     public void UpgradeCurrentBuild(int index){

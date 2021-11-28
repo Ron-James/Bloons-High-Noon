@@ -79,9 +79,9 @@ public class UpgradeManager : MonoBehaviour
                 targetTrigger.UpgradeRange(targetTrigger.RangeUpgrades[3] * basicRange); // improved range
             break;
             case 2:
-                targetTrigger.UpgradeRange(targetTrigger.RangeUpgrades[3] * basicRange); //improved range
+                targetTrigger.UpgradeRange(targetTrigger.RangeUpgrades[4] * basicRange); //improved range
                 fireRateUpgrade = GetComponent<TurretFreezeAOE>().FreezeDurationUpgrades[3];//Improved freeze duration
-                damageUpgrade = GetComponent<TurretFreezeAOE>().DamageUpgrades[1]; // mild Damage Downgrade
+                //damageUpgrade = GetComponent<TurretFreezeAOE>().DamageUpgrades[1]; // mild Damage Downgrade
             break;
         }
     }
@@ -99,8 +99,10 @@ public class UpgradeManager : MonoBehaviour
                 DamageUpgrade = GetComponent<TurretExpoDamage>().DamageUpgrades[3];
             break;
             case 2:
-                freezeDurationUpgrade = GetComponent<TurretFreezeAOE>().FreezeDurationUpgrades[3];
-                fireRateUpgrade = GetComponent<TurretFreezeAOE>().FireRateUpgrades[0];
+                freezeDurationUpgrade = GetComponent<TurretFreezeAOE>().FreezeDurationUpgrades[4];
+                //fireRateUpgrade = GetComponent<TurretFreezeAOE>().FireRateUpgrades[3];
+                //targetTrigger.UpgradeRange(targetTrigger.RangeUpgrades[3] * basicRange); //improved range
+                damageUpgrade = GetComponent<TurretFreezeAOE>().DamageUpgrades[0]; // sign Damage Downgrade
             break;
         }
     }
@@ -122,9 +124,11 @@ public class UpgradeManager : MonoBehaviour
                 //targetTrigger.UpgradeRange(targetTrigger.RangeUpgrades[3] * basicRange); // improved range
             break;
             case 2:
-                targetTrigger.UpgradeRange(targetTrigger.RangeUpgrades[1] * basicRange); //improved range
+                fireRateUpgrade = GetComponent<TurretFreezeAOE>().FireRateUpgrades[0];
+                //freezeDurationUpgrade = GetComponent<TurretFreezeAOE>().FreezeDurationUpgrades[1];
                 //freezeDurationUpgrade = GetComponent<TurretFreezeAOE>().FreezeDurationUpgrades[0];//Improved freeze duration
                 damageUpgrade = GetComponent<TurretFreezeAOE>().DamageUpgrades[4]; // mild Damage Downgrade
+                GetComponent<TurretFreezeAOE>().StunSlow = true;
             break;
         }
     }

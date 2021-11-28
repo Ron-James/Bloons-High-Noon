@@ -18,6 +18,8 @@ public class BuildMenu : MonoBehaviour
     [SerializeField] BuildPlate currentPlate;
     [SerializeField] bool unlocked = false;
     [SerializeField] TowerMenu towerMenu;
+    [SerializeField] Sound buildNoise;
+    [SerializeField] Sound upgradeNoise;
 
     public static bool MenuIsOpen;
 
@@ -58,6 +60,7 @@ public class BuildMenu : MonoBehaviour
             return;
         }
         else{
+            upgradeNoise.PlayOnce();
             currentPlate.UpgradeCurrentBuild(index);
             currentPlate.UpgradeHealth();
             towerMenu.UpdateUpgradeButtons();
@@ -80,6 +83,7 @@ public class BuildMenu : MonoBehaviour
     }
     public void Build(int index){
         currentPlate.BuildTower(index);
+        buildNoise.PlayOnce();
         UpdateButtons();
     }
 
@@ -109,6 +113,7 @@ public class BuildMenu : MonoBehaviour
         else{
             currentPlate.Unlocked = true;
             unlocked = true;
+            currentPlate.UpdatePlateLock();
             GameManager.instance.Purchase(GameManager.UnlockPrice);
             UpdateButtons();
         } 
@@ -137,10 +142,10 @@ public class BuildMenu : MonoBehaviour
                 else{
                     for(int loop = 0; loop < buttons.Length; loop++){
                         if(GameManager.instance.Balance < towers[loop].cost || currentPlate.BuildIndex > 0){
-                            buttons[loop].gameObject.SetActive(false);
+                            buttons[loop].interactable = false;
                         }
                         else{
-                            buttons[loop].gameObject.SetActive(true);
+                            buttons[loop].interactable = true;
                         }
                     }
                 

@@ -107,6 +107,7 @@ GameObject:
   - component: {fileID: 3493735534750735011}
   - component: {fileID: 3103068077413484649}
   - component: {fileID: 251129833632800184}
+  - component: {fileID: 2015751328853479910}
   m_Layer: 0
   m_Name: Exp Turret
   m_TagString: Untagged
@@ -258,10 +259,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7851d1abf28fac54bb307a88fc9cf3c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageConstant: 0.00001
+  damageConstant: 0.00008
   coolDownTime: 0.25
   firePoint: {fileID: 1428520888922904495}
-  secondTarget: {fileID: 0}
   lineRenderer: {fileID: 3493735534750735011}
   slowPercentage: 0.5
   cooldownUpgrades:
@@ -278,7 +278,12 @@ MonoBehaviour:
   - 10
   secondLine: {fileID: 8656263211213536179}
   damageSecondTarget: 0
-  slow: 1
+  slow: 0
+  flames: {fileID: 7403549465035154447}
+  flameThrower:
+    clip: {fileID: 8300000, guid: aadc5f8e73571994696bffd280b5b40b, type: 3}
+    src: {fileID: 2015751328853479910}
+    volume: 0.1
 --- !u!114 &251129833632800184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -297,6 +302,102 @@ MonoBehaviour:
   fireRateUpgrade: 1
   cooldownUpgrade: 1
   freezeDurationUpgrade: 1
+--- !u!82 &2015751328853479910
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2720109291678084977}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &3441937157185760666
 GameObject:
   m_ObjectHideFlags: 0
@@ -713,7 +814,7 @@ Transform:
   m_GameObject: {fileID: 8373458433413204605}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 48, y: 0.05, z: 48}
+  m_LocalScale: {x: 40, y: 0.05, z: 40}
   m_Children: []
   m_Father: {fileID: 2720109291678084979}
   m_RootOrder: 2
@@ -794,7 +895,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemiesInRange: []
-  areaTrigger: {fileID: 0}
   rangeUpgrades:
   - 0.85
   - 0.95
@@ -1136,6 +1236,12 @@ PrefabInstance:
 --- !u!4 &7237575959947593473 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4317874184272834, guid: bccc7a794e75b2a44a4b0dac69160b7b,
+    type: 3}
+  m_PrefabInstance: {fileID: 7241330702294547651}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &7403549465035154447 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 198421077076039884, guid: bccc7a794e75b2a44a4b0dac69160b7b,
     type: 3}
   m_PrefabInstance: {fileID: 7241330702294547651}
   m_PrefabAsset: {fileID: 0}

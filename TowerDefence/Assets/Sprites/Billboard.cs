@@ -8,7 +8,7 @@ public class Billboard : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        cam = GameManager.instance.PlayerCamera.GetComponent<Camera>();
+        cam = Camera.main;
     }
 
     // Update is called once per frame

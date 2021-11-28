@@ -7,7 +7,7 @@ public class TurretExpoDamage : MonoBehaviour
     [SerializeField] float damageConstant = 0.0000005f;
     [SerializeField] float coolDownTime = 0.2f;
     [SerializeField] Transform firePoint;
-    [SerializeField] Transform secondTarget;
+    Transform secondTarget;
     [SerializeField] LineRenderer lineRenderer;
     [Range(0, 1)] [SerializeField] float slowPercentage = 0.5f;
 
@@ -28,6 +28,8 @@ public class TurretExpoDamage : MonoBehaviour
     [SerializeField] LineRenderer secondLine;
     [SerializeField] bool damageSecondTarget;
     [SerializeField] bool slow;
+    [SerializeField] ParticleSystem flames;
+    [SerializeField] Sound flameThrower;
     TurretTargetTrigger targetTrigger;
     UpgradeManager upgradeManager;
     TurretAim aimScript;
@@ -57,6 +59,13 @@ public class TurretExpoDamage : MonoBehaviour
         }
         
     }
+    private void OnEnable() {
+        flames.Stop();
+    }
+    private void OnDisable() {
+        StopAllCoroutines();
+        flames.Stop();
+    }
     IEnumerator CoolDown(float period){
         coolingDown = true;
         float time = 0;
@@ -77,6 +86,7 @@ public class TurretExpoDamage : MonoBehaviour
             yield break;
         }
         else{
+            secondTarget.GetComponent<EnemyFollower>().OnFire = true;
             if(slow && !secondTarget.GetComponent<EnemyFollower>().IsSlowedExpo){
                 secondTarget.GetComponent<EnemyFollower>().SlowEnemyIndef(slowPercentage);
             }
@@ -89,6 +99,7 @@ public class TurretExpoDamage : MonoBehaviour
                     secondLine.SetPosition(0, Vector3.zero);
                     secondLine.SetPosition(1, Vector3.zero);
                     secondDamageCo = null;
+                    secondTarget.GetComponent<EnemyFollower>().OnFire = false;
                     //secondTarget.GetComponent<EnemyFollower>().IsSlowed = false;
                     break;
                 }
@@ -111,11 +122,18 @@ public class TurretExpoDamage : MonoBehaviour
             yield break;
         }
         else{
+            flameThrower.PlayLoop();
+            aimScript.Target.GetComponent<EnemyFollower>().OnFire = true;
             if(slow && !aimScript.Target.GetComponent<EnemyFollower>().IsSlowedExpo){
                 aimScript.Target.GetComponent<EnemyFollower>().SlowEnemyIndef(slowPercentage);
             }
             float time = 0;
+            if(aimScript.Target.GetComponent<EnemyFollower>() != null && aimScript.Target.GetComponent<EnemyFollower>().OnFire == false){
+                aimScript.Target.GetComponent<EnemyFollower>().OnFire = true;
+            }
+            flames.Play();
             while(true){
+                
                 float damage = damageConstant * upgradeManager.DamageUpgrade * Mathf.Exp(time);
                 time += Time.deltaTime;
                 if(aimScript.Target == null || aimScript.Stunned){
@@ -123,6 +141,8 @@ public class TurretExpoDamage : MonoBehaviour
                     lineRenderer.SetPosition(0, Vector3.zero);
                     lineRenderer.SetPosition(1, Vector3.zero);
                     damageCo = null;
+                    flames.Stop();
+                    flameThrower.StopSource();
                     //aimScript.Target.GetComponent<EnemyFollower>().IsSlowed = false;
                     break;
                 }

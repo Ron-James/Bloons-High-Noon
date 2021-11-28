@@ -16,6 +16,7 @@ public class TurretProjectile : MonoBehaviour
     [SerializeField] LineRenderer lineRenderer;
     [SerializeField] bool iceShot = false;
     [SerializeField] bool alwaysSwitchToFurthestTarget = false;
+    [SerializeField] Sound shotSound;
     Transform target;
     [SerializeField] float fireTime;
 
@@ -36,6 +37,7 @@ public class TurretProjectile : MonoBehaviour
     void Start()
     {
         upgradeManager = GetComponent<UpgradeManager>();
+        
     }
 
     // Update is called once per frame
@@ -43,6 +45,7 @@ public class TurretProjectile : MonoBehaviour
     {
         target = GetComponent<TurretAim>().Target;
         DamageTarget();
+        
     }
     IEnumerator ShowProjectileDelayed(Vector3 endPoint, float time){
         StartCoroutine(ShowProjectileLine(endPoint));
@@ -52,34 +55,31 @@ public class TurretProjectile : MonoBehaviour
         fireTime += Time.deltaTime;
         if(target != null && !GetComponent<TurretAim>().Stunned && target.GetComponentInParent<EnemyHealth>() != null){
             //fireTime += Time.deltaTime;
-            RaycastHit hit;
-            float Range = Vector3.Distance(target.position, firePoint.position);
-            
-            if((Physics.Raycast(firePoint.position, barrel.transform.forward, out hit, Range, enemyMask) && fireTime >= (fireRate * (1/upgradeManager.FireRateUpgrade)))){
+            if(fireTime >= (fireRate * (1/upgradeManager.FireRateUpgrade))){
                 fireTime = 0;
-                if(GetComponent<RepeaterSoundController>() != null){
-                    GetComponent<RepeaterSoundController>().PlayShotSound();
+                
+                shotSound.PlayOnce();
+                
+                //StartCoroutine(ShowProjectileLine(hit.point));
+                //Debug.Log("Enemy Hit");
+                firePoint.GetComponent<ParticleSystem>().Play();
+                if(iceShot){
+                    target.gameObject.GetComponent<EnemyFollower>().SlowEnemy(slowDuration, slowPercentage);
                 }
-                if(hit.collider.tag == "Enemy"){
-                    StartCoroutine(ShowProjectileLine(hit.point));
-                    //Debug.Log("Enemy Hit");
-                    
-                    if(iceShot){
-                        hit.collider.gameObject.GetComponent<EnemyFollower>().SlowEnemy(slowDuration, slowPercentage);
-                    }
-                    hit.collider.gameObject.GetComponentInParent<EnemyHealth>().TakeDamage(damage * upgradeManager.DamageUpgrade);
-                    if(alwaysSwitchToFurthestTarget){
-                        GetComponentInChildren<TurretTargetTrigger>().SwitchToFurthestTarget();
-                    }
-                    if(hit.collider.gameObject.GetComponent<EnemyHealth>().Health <= 0 && GetComponent<TurretAim>().Target.gameObject.GetComponent<EnemyHealth>().Health <=0){
-                        GetComponent<TurretAim>().Target = null;
-                        //GetComponentInChildren<TurretTargetTrigger>().RemoveDeadEnemy(hit.collider.gameObject.transform);
-                        GameManager.instance.AddBalance(hit.collider.gameObject.GetComponent<EnemyHealth>().Enemy.value);
-                    }
-                    
-                    
-                    
+                target.gameObject.GetComponentInParent<EnemyHealth>().TakeDamage(damage * upgradeManager.DamageUpgrade);
+                if(alwaysSwitchToFurthestTarget){
+                    GetComponentInChildren<TurretTargetTrigger>().SwitchToFurthestTarget();
                 }
+                if(target.gameObject.GetComponent<EnemyHealth>().Health <= 0 && GetComponent<TurretAim>().Target.gameObject.GetComponent<EnemyHealth>().Health <=0){
+                    
+                    //GetComponentInChildren<TurretTargetTrigger>().RemoveDeadEnemy(hit.collider.gameObject.transform);
+                    GameManager.instance.AddBalance(target.gameObject.GetComponent<EnemyHealth>().Enemy.value);
+                    GetComponent<TurretAim>().Target = null;
+                }
+                    
+                    
+                    
+                
             }
              
         }
