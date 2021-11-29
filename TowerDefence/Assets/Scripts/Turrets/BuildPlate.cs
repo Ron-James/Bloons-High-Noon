@@ -48,11 +48,13 @@ public class BuildPlate : MonoBehaviour
         
     }
     public Tower CurrentTower(){
-        if(buildIndex > 0){
-            return towers[BuildIndex - 1];
+        
+        if(buildIndex <= 0 || buildIndex >= towers.Length){
+            Debug.Log(buildIndex + " build index bad");
+            return null;
         }
         else{
-            return null;
+            return towers[buildIndex - 1];
         }
         
     }
@@ -122,14 +124,19 @@ public class BuildPlate : MonoBehaviour
         }
     }
     public void Demolish(){
+        
         float refund = SellValue() * GameManager.instance.SellPercentage;
         GameManager.instance.AddBalance(refund);
         EnabledPrefab().GetComponent<UpgradeManager>().ResestUpgrade();
-        build = Build.empty;
+        
         health = 0;
         MaxHealth = 0;
-        EnableCurrentBuild();
+        
         currentUpgrade = 0;
+        build = Build.empty;
+        EnableCurrentBuild();
+
+        
         
         
     }

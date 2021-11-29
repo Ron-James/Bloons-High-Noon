@@ -136,6 +136,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 11400000, guid: ea37699812fd0ae41996b122ffab05d9, type: 2}
   body: {fileID: 7825448059586208722}
+  health: 0
+  tutorialEnemy: 0
+  secondTutorialEnemy: 0
   isAlive: 1
 --- !u!114 &729411142328203173
 MonoBehaviour:
@@ -198,7 +201,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pathCreator: {fileID: 0}
-  speed: 8.5
+  speed: 8.8
   sparks: {fileID: 478674477959390698}
   flames: {fileID: 6211858092032480775}
   isStopped: 0

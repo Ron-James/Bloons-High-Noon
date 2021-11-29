@@ -143,8 +143,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dee87708b225af46a00f12dfb687d18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 500
-  restoreRotationSpeed: 300
+  rotationSpeed: 600
+  restoreRotationSpeed: 600
   target: {fileID: 0}
   upgradeManager: {fileID: 0}
 --- !u!120 &3493735534750735011
@@ -257,8 +257,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7851d1abf28fac54bb307a88fc9cf3c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageConstant: 0.00008
-  coolDownTime: 0.5
+  damageConstant: 0.000009
+  coolDownTime: 1.9
   lineRenderer: {fileID: 3493735534750735011}
   slowPercentage: 0.5
   cooldownUpgrades:
@@ -268,11 +268,11 @@ MonoBehaviour:
   - 1.3
   - 2.6
   damageUpgrades:
-  - 0.001
   - 0.01
+  - 0.1
   - 1
+  - 3
   - 5
-  - 10
   secondLine: {fileID: 8656263211213536179}
   damageSecondTarget: 0
   slow: 0
@@ -867,7 +867,7 @@ Transform:
   m_GameObject: {fileID: 8373458433413204605}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 36, y: 0.05, z: 36}
+  m_LocalScale: {x: 37, y: 0.05, z: 37}
   m_Children: []
   m_Father: {fileID: 2720109291678084979}
   m_RootOrder: 1

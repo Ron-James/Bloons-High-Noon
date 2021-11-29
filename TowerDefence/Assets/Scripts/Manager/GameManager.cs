@@ -99,6 +99,9 @@ public class GameManager : Singleton<GameManager>
         if(Input.GetKeyDown(KeyCode.E)){
             SwitchCamera();
         }
+        if(Input.GetKeyDown(KeyCode.Y)){
+            DamageTower(50000);
+        }
         
 
         /*
@@ -143,7 +146,8 @@ public class GameManager : Singleton<GameManager>
         healthBar.fillAmount = towerHealth/totalHealth;
         if(towerHealth <= 0){
             //GameOver
-            
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
             SceneController.instance.LoadGameOver();
         }
     }

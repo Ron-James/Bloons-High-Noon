@@ -24,6 +24,7 @@ public class TurretExpoDamage : MonoBehaviour
     public float[] DamageUpgrades { get => damageUpgrades; set => damageUpgrades = value; }
     public bool DamageSecondTarget { get => damageSecondTarget; set => damageSecondTarget = value; }
     public bool Slow { get => slow; set => slow = value; }
+    public bool CoolingDown { get => coolingDown; set => coolingDown = value; }
 
     [SerializeField] LineRenderer secondLine;
     [SerializeField] bool damageSecondTarget;
@@ -40,7 +41,7 @@ public class TurretExpoDamage : MonoBehaviour
     {
         damageCo = null;
         secondDamageCo = null;
-        coolingDown = false;
+        CoolingDown = false;
         damageSecondTarget = false;
         targetTrigger = GetComponentInChildren<TurretTargetTrigger>();
         upgradeManager = GetComponent<UpgradeManager>();
@@ -50,11 +51,11 @@ public class TurretExpoDamage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(aimScript.Target != null && !coolingDown && !aimScript.Stunned && damageCo == null){
-            damageCo = StartCoroutine(ExponentialDamage());
+        if(aimScript.Target != null && !CoolingDown && !aimScript.Stunned){
+            StartCoroutine(DamageDelay());
         }
         
-        if(damageSecondTarget && secondTarget != null && !coolingDown && !aimScript.Stunned && secondDamageCo == null){
+        if(damageSecondTarget && secondTarget != null && !CoolingDown && !aimScript.Stunned && secondDamageCo == null){
             StartCoroutine(ExponentialDamageSecond());
         }
         
@@ -67,12 +68,12 @@ public class TurretExpoDamage : MonoBehaviour
         flames.Stop();
     }
     IEnumerator CoolDown(float period){
-        coolingDown = true;
+        CoolingDown = true;
         float time = 0;
         while(true){
             time += Time.deltaTime;
             if(time >= period){
-                coolingDown = false;
+                CoolingDown = false;
                 break;
             }
             else{
@@ -82,7 +83,7 @@ public class TurretExpoDamage : MonoBehaviour
     }
     
     IEnumerator ExponentialDamageSecond(){
-        if(secondTarget == null || secondTarget.GetComponent<EnemyHealth>() == null || coolingDown || secondTarget.GetComponent<EnemyHealth>().Health <= 0){
+        if(secondTarget == null || secondTarget.GetComponent<EnemyHealth>() == null || CoolingDown || secondTarget.GetComponent<EnemyHealth>().Health <= 0){
             yield break;
         }
         else{
@@ -117,8 +118,12 @@ public class TurretExpoDamage : MonoBehaviour
             }
         }
     }
+    IEnumerator DamageDelay(){
+        yield return new WaitForSeconds(0.001f);
+        StartCoroutine(ExponentialDamage());
+    }
     IEnumerator ExponentialDamage(){
-        if(aimScript.Target == null || aimScript.Target.GetComponent<EnemyHealth>() == null || coolingDown){
+        if(aimScript.Target == null || aimScript.Target.GetComponent<EnemyHealth>() == null || CoolingDown){
             yield break;
         }
         else{

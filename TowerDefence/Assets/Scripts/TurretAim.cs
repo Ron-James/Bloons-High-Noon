@@ -34,7 +34,18 @@ public class TurretAim : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Aim(target);
+        if(GetComponent<TurretExpoDamage>() != null){
+            if(GetComponent<TurretExpoDamage>().CoolingDown){
+                Restore();
+            }
+            else{
+                Aim(target);
+            }
+        }
+        else{
+            Aim(target);
+        }
+        
     }
 
     public void Aim(Transform target){
@@ -59,6 +70,11 @@ public class TurretAim : MonoBehaviour
        
     }
 
+    public void Restore(){
+        upgradeManager.barrel.transform.rotation = Quaternion.RotateTowards(upgradeManager.barrel.transform.rotation, defaultRotation, restoreRotationSpeed * Time.deltaTime);
+        upgradeManager.basePiece.transform.rotation = Quaternion.RotateTowards(upgradeManager.basePiece.transform.rotation, defaultBaseRotation, rotationSpeed * Time.deltaTime);
+    }
+
 
     IEnumerator StunTurret(float duration){
         stunned = true;
@@ -80,6 +96,8 @@ public class TurretAim : MonoBehaviour
     public void Stun(float time){
         StartCoroutine(StunTurret(time));
     }
-
+    private void OnDisable() {
+        StopAllCoroutines();
+    }
 
 }

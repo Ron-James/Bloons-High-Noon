@@ -62,7 +62,40 @@ public class GrapplingHook : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && !fired && !BuildMenu.MenuIsOpen && !PauseMenu.IsPaused && !GameManager.gameOver)
+        RaycastHit hit;
+        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.TransformDirection(Vector3.forward), out hit, maxDistance, hookLayer))
+        {
+            Debug.DrawRay(Camera.main.transform.position, Camera.main.transform.TransformDirection(Vector3.forward) * maxDistance, Color.red);
+            canHook = true;
+            {
+                if (hit.transform.gameObject.tag == "hookable")
+                {
+                    Debug.Log("Can Grapple");
+                    canHook = true;
+                    
+                }
+                
+            }
+           
+            
+        }
+        else
+        {
+            Debug.DrawRay(Camera.main.transform.position, Camera.main.transform.TransformDirection(Vector3.forward) * 50f, Color.green);
+            canHook = false;
+            
+        }
+        if (canHook)
+        {
+            crosshair.sprite = crosshair02;
+        }
+        else if(!canHook)
+        {
+            crosshair.sprite = crosshair01;
+        }
+
+
+        if (Input.GetMouseButtonDown(0) && !fired && !BuildMenu.MenuIsOpen && !PauseMenu.IsPaused && !GameManager.gameOver && canHook)
         {
             StartCoroutine(Extend(hookTravelSpd, maxDistance));
         }
@@ -107,37 +140,7 @@ public class GrapplingHook : MonoBehaviour
         }
         */
        
-        RaycastHit hit;
-        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.TransformDirection(Vector3.forward), out hit, maxDistance, hookLayer))
-        {
-            Debug.DrawRay(Camera.main.transform.position, Camera.main.transform.TransformDirection(Vector3.forward) * maxDistance, Color.red);
-            canHook = true;
-            {
-                if (hit.transform.gameObject.tag == "hookable")
-                {
-                    Debug.Log("Can Grapple");
-                    canHook = true;
-                    
-                }
-                
-            }
-           
-            
-        }
-        else
-        {
-            Debug.DrawRay(Camera.main.transform.position, Camera.main.transform.TransformDirection(Vector3.forward) * 50f, Color.green);
-            canHook = false;
-            
-        }
-        if (canHook)
-        {
-            crosshair.sprite = crosshair02;
-        }
-        else if(!canHook)
-        {
-            crosshair.sprite = crosshair01;
-        }
+        
     }
     
     void ReturnHook(){
@@ -271,7 +274,7 @@ IEnumerator ClimbUp(float durationUp){
 
     IEnumerator Reel(){
         //GetComponentInParent<FirstPersonAIO>().DisableCamera();
-        GetComponentInParent<FirstPersonAIO>().playerCanMove = false;
+        
         player.GetComponent<Rigidbody>().useGravity = false;
         hook.transform.SetParent(hookedObject.transform);
         player.GetComponent<Collider>().enabled = false;
@@ -308,6 +311,7 @@ IEnumerator ClimbUp(float durationUp){
         hook.GetComponent<LineRenderer>().positionCount = 0;
     }
     IEnumerator Extend(float period, float amplitude){
+        GetComponentInParent<FirstPersonAIO>().playerCanMove = false;
         GetComponentInParent<FirstPersonAIO>().DisableCamera();
         hook.gameObject.GetComponent<MeshRenderer>().enabled = true;
         fired = true;

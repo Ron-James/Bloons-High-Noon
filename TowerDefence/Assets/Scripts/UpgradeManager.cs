@@ -110,7 +110,15 @@ public class UpgradeManager : MonoBehaviour
 
                 }
                 else{
-                    upgradeModels[loop].prefab.SetActive(false);
+                    if(upgradeModels[loop].IsNull()){
+                        continue;
+                    }
+                    else{
+                        upgradeModels[loop].prefab.SetActive(false);
+                    }
+                    
+                    
+                    
                 }
             }
         }
@@ -203,7 +211,11 @@ public class UpgradeManager : MonoBehaviour
         else if(GetComponent<TurretProjectile>()!= null){
             GetComponent<TurretProjectile>().IceShot = false;
         }
-        UpdateUpgradeModel((int) upgrade);
+        firePoint = upgradeModels[0].firePoint;
+        basePiece = upgradeModels[0].basePiece;
+        barrel = upgradeModels[0].barrel;
+        UpdateUpgradeModel(0);
+        
 
     }
 }
