@@ -150,7 +150,7 @@ public class UpgradeManager : MonoBehaviour
             case 1:
                 CooldownUpgrade = GetComponent<TurretExpoDamage>().CooldownUpgrades[0]; //significantly slower cooldown time
                 //targetTrigger.UpgradeRange(targetTrigger.RangeUpgrades[3] * basicRange); // improved range
-                DamageUpgrade = GetComponent<TurretExpoDamage>().DamageUpgrades[3];
+                DamageUpgrade = GetComponent<TurretExpoDamage>().DamageUpgrades[4];
             break;
             case 2:
                 freezeDurationUpgrade = GetComponent<TurretFreezeAOE>().FreezeDurationUpgrades[4];
@@ -174,6 +174,7 @@ public class UpgradeManager : MonoBehaviour
                 GetComponent<TurretExpoDamage>().Slow = true;
                 GetComponent<TurretExpoDamage>().DamageSecondTarget = true;
                 damageUpgrade  = GetComponent<TurretExpoDamage>().DamageUpgrades[0];
+                targetTrigger.UpgradeRange(targetTrigger.RangeUpgrades[4] * basicRange);
 
                 //CooldownUpgrade = GetComponent<TurretExpoDamage>().CooldownUpgrades[4]; //significantly improved cooldown time
                 //targetTrigger.UpgradeRange(targetTrigger.RangeUpgrades[3] * basicRange); // improved range
