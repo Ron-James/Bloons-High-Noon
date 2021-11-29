@@ -15,8 +15,6 @@ public class EnemyRanged : MonoBehaviour
     [SerializeField] float towerFireRate = 1f;
     [SerializeField] float damage = 1;
     [SerializeField] LineRenderer lineRenderer;
-    [SerializeField] LayerMask layerMask;
-    
 
 
     [SerializeField] float fireCount;

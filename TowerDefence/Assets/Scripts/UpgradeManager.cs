@@ -123,6 +123,7 @@ public class UpgradeManager : MonoBehaviour
             case 0:
                 fireRateUpgrade = GetComponent<TurretProjectile>().FireRateUpgrades[4]; //significantly improved fire rate
                 targetTrigger.UpgradeRange(targetTrigger.RangeUpgrades[3] * basicRange);
+                damageUpgrade = GetComponent<TurretProjectile>().DamageUpgrades[1];
 
             break;
             case 1:
