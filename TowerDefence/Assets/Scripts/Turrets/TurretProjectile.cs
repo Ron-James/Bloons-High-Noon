@@ -5,7 +5,6 @@ using UnityEngine;
 public class TurretProjectile : MonoBehaviour
 {
     [SerializeField] Transform barrel;
-    [SerializeField] Transform firePoint;
     [SerializeField] float fireRate = 0.75f;
     [SerializeField] float damage = 1;
     [SerializeField] LayerMask enemyMask;
@@ -62,7 +61,7 @@ public class TurretProjectile : MonoBehaviour
                 
                 //StartCoroutine(ShowProjectileLine(hit.point));
                 //Debug.Log("Enemy Hit");
-                firePoint.GetComponent<ParticleSystem>().Play();
+                upgradeManager.firePoint.GetComponent<ParticleSystem>().Play();
                 if(iceShot){
                     target.gameObject.GetComponent<EnemyFollower>().SlowEnemy(slowDuration, slowPercentage);
                 }
@@ -111,7 +110,7 @@ public class TurretProjectile : MonoBehaviour
     }
 
     IEnumerator ShowProjectileLine(Vector3 hitPoint){
-        lineRenderer.SetPosition(0, firePoint.position);
+        lineRenderer.SetPosition(0, upgradeManager.firePoint.position);
         lineRenderer.SetPosition(1, hitPoint);
 
         float time = 0;

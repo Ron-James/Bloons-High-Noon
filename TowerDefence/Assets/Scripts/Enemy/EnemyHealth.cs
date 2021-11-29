@@ -12,6 +12,7 @@ public class EnemyHealth : MonoBehaviour
     float maxHealth;
     [SerializeField] float health;
     [SerializeField] bool tutorialEnemy = false;
+    [SerializeField] bool secondTutorialEnemy = false;
     GameObject deadEnemies;
     GameObject aliveEnemies;
     public bool isAlive = true;
@@ -42,8 +43,11 @@ public class EnemyHealth : MonoBehaviour
         health -= damage;
         if(health <= 0){
             Kill();
-            if(tutorialEnemy){
+            if(tutorialEnemy && secondTutorialEnemy){
                 GameManager.instance.CompleteLevel();
+            }
+            else if(tutorialEnemy && !secondTutorialEnemy){
+                GameManager.instance.SpawnRangedEnemy();
             }
         }
     }

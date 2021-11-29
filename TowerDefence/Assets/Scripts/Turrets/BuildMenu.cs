@@ -68,9 +68,10 @@ public class BuildMenu : MonoBehaviour
     }
     public void Demolish(){
         //UpgradeCurrentPlate(0);
-        towerMenu.UpdateUpgradeButtons();
+        
         currentPlate.Demolish();
         UpdateButtons();
+        towerMenu.UpdateUpgradeButtons();
     }
     public void PreviewTower(Tower t){
         towerMenu.OpenTowerMenuPreview(t);

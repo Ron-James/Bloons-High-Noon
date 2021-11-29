@@ -2,11 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
+
 
 
 public class UpgradeManager : MonoBehaviour
 {
+    [System.Serializable]
+    public class UpgradeModel{
+        public GameObject prefab;
+        public Transform firePoint;
+        public GameObject basePiece;
+        public GameObject barrel;
+        public Upgrade upgrade;
+
+        public bool IsNull(){
+            if(prefab == null || firePoint == null){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+    }
     public enum Upgrade{
         none = 0,
         upgrade1 = 1,
@@ -19,6 +36,7 @@ public class UpgradeManager : MonoBehaviour
         ice = 2
     }
 
+    
     [SerializeField] TurretType turretType = TurretType.repeater;
     [SerializeField] Upgrade upgrade = Upgrade.none;
 
@@ -33,6 +51,14 @@ public class UpgradeManager : MonoBehaviour
     [Header("Freeze AOE Upgrades")]
     [SerializeField] float freezeDurationUpgrade = 1;
 
+    [Header("Upgrade Models")]
+    
+    [SerializeField] UpgradeModel [] upgradeModels = new UpgradeModel[4];
+    public Transform firePoint;
+    public GameObject basePiece;
+    public GameObject barrel;
+
+
 
     float basicRange;
     TurretTargetTrigger targetTrigger;
@@ -42,6 +68,7 @@ public class UpgradeManager : MonoBehaviour
     
     public float FreezeDurationUpgrade { get => freezeDurationUpgrade; set => freezeDurationUpgrade = value; }
     public float CooldownUpgrade { get => cooldownUpgrade; set => cooldownUpgrade = value; }
+    public UpgradeModel[] UpgradeModels { get => upgradeModels; set => upgradeModels = value; }
 
 
 
@@ -49,6 +76,7 @@ public class UpgradeManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //UpdateUpgradeModel(0);
         targetTrigger = GetComponentInChildren<TurretTargetTrigger>();
         basicRange = targetTrigger.GetRange();
         switch((int) turretType){
@@ -56,6 +84,7 @@ public class UpgradeManager : MonoBehaviour
                 
             break;
         } 
+        
     }
 
     // Update is called once per frame
@@ -66,8 +95,30 @@ public class UpgradeManager : MonoBehaviour
     public int UpgradeIndex(){
         return (int) upgrade;
     }
+
+    public void UpdateUpgradeModel(int upgrade){
+        if(upgrade >= upgradeModels.Length || upgrade < 0 || upgradeModels[upgrade].IsNull()){
+            return;
+        }
+        else{
+            for(int loop = 0; loop < upgradeModels.Length; loop++){
+                if(loop == upgrade){
+                    upgradeModels[loop].prefab.SetActive(true);
+                    firePoint = upgradeModels[loop].firePoint;
+                    basePiece = upgradeModels[loop].basePiece;
+                    barrel = upgradeModels[loop].barrel;
+
+                }
+                else{
+                    upgradeModels[loop].prefab.SetActive(false);
+                }
+            }
+        }
+        
+    }
     public void Upgrade1(){
         upgrade = Upgrade.upgrade1;
+        UpdateUpgradeModel((int) upgrade);
         switch((int)turretType){
             case 0:
                 fireRateUpgrade = GetComponent<TurretProjectile>().FireRateUpgrades[4]; //significantly improved fire rate
@@ -87,11 +138,13 @@ public class UpgradeManager : MonoBehaviour
     }
     public void Upgrade2(){
         upgrade = Upgrade.upgrade2;
+        UpdateUpgradeModel((int) upgrade);
         switch((int)turretType){
             case 0:
                 damageUpgrade = GetComponent<TurretProjectile>().DamageUpgrades[4]; //significantly improved fire rate
                 //targetTrigger.UpgradeRange(targetTrigger.RangeUpgrades[3] * basicRange);
-                fireRateUpgrade = GetComponent<TurretProjectile>().FireRateUpgrades[1];
+                fireRateUpgrade = GetComponent<TurretProjectile>().FireRateUpgrades[0];
+                targetTrigger.UpgradeRange(targetTrigger.RangeUpgrades[4] * basicRange);
             break;
             case 1:
                 CooldownUpgrade = GetComponent<TurretExpoDamage>().CooldownUpgrades[0]; //significantly slower cooldown time
@@ -109,6 +162,7 @@ public class UpgradeManager : MonoBehaviour
 
     public void Upgrade3(){
         upgrade = Upgrade.upgrade3;
+        UpdateUpgradeModel((int) upgrade);
         switch((int)turretType){
             case 0:
                 damageUpgrade = GetComponent<TurretProjectile>().DamageUpgrades[0]; //significantly improved fire rate
@@ -147,6 +201,7 @@ public class UpgradeManager : MonoBehaviour
         else if(GetComponent<TurretProjectile>()!= null){
             GetComponent<TurretProjectile>().IceShot = false;
         }
+        UpdateUpgradeModel((int) upgrade);
 
     }
 }

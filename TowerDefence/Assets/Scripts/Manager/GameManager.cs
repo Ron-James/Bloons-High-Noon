@@ -92,7 +92,7 @@ public class GameManager : Singleton<GameManager>
     {
         
         if(Input.GetKeyDown(KeyCode.M)){
-            SpawnEnemy(enemies[2]);
+            SpawnEnemy(enemies[1]);
         }
         
 
@@ -113,6 +113,9 @@ public class GameManager : Singleton<GameManager>
         */
     }
 
+    public void SpawnRangedEnemy(){
+        SpawnEnemy(enemies[1]);
+    }
     public void CompleteLevel(){
         gameOver = true;
         levelComplete.SetActive(true);

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class TurretFreezeAOE : MonoBehaviour
 {
-    [SerializeField] Transform firePoint;
     [SerializeField] float fireRate = 0.9f;
     [SerializeField] float freezeDuration = 0.45f;
     [SerializeField] float damage = 0.4f;
@@ -26,7 +25,6 @@ public class TurretFreezeAOE : MonoBehaviour
     public float[] FireRateUpgrades { get => fireRateUpgrades; set => fireRateUpgrades = value; }
     public float[] DamageUpgrades { get => damageUpgrades; set => damageUpgrades = value; }
     public float[] FreezeDurationUpgrades { get => freezeDurationUpgrades; set => freezeDurationUpgrades = value; }
-    public Transform FirePoint { get => firePoint; set => firePoint = value; }
     public bool StunSlow { get => stunSlow; set => stunSlow = value; }
 
     TurretTargetTrigger targetTrigger;
@@ -61,14 +59,14 @@ public class TurretFreezeAOE : MonoBehaviour
     IEnumerator DrawElectricLine(Transform enemy, Electric line, float duration){
         line.isPlaying = true;
         Debug.Log("zapped");
-        line.transformPointA = firePoint;
+        line.transformPointA = upgradeManager.firePoint;
         line.transformPointB = enemy;
         line.gameObject.GetComponent<LineRenderer>().enabled = true;
         float time = 0;
         while(true){
             time += Time.deltaTime;   
             if(time >= duration){
-                line.transformPointB = firePoint;
+                line.transformPointB = upgradeManager.firePoint;
                 line.gameObject.GetComponent<LineRenderer>().enabled = false;
                 line.isPlaying = false;
                 break;
@@ -102,7 +100,7 @@ public class TurretFreezeAOE : MonoBehaviour
             Electric [] electricLines = lines.GetComponentsInChildren<Electric>();
             if(electricLines.Length < num){
                 for(int k = 0; k < num - electricLines.Length; k++){
-                    GameObject newLine = Instantiate(electricLinePrefab, firePoint.position, Quaternion.identity);
+                    GameObject newLine = Instantiate(electricLinePrefab, upgradeManager.firePoint.position, Quaternion.identity);
                     newLine.transform.SetParent(lines.transform);
                     newLine.SetActive(false);
                 }

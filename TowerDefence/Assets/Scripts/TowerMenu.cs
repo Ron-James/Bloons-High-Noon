@@ -109,6 +109,7 @@ public class TowerMenu : MonoBehaviour
         }
     }
     public void UpdateUpgradeButtons(){
+        Debug.Log("Updated Upgrade buttons");
         if(buildMenu.CurrentPlate.CurrentUpgrade == 0){
             if(GameManager.instance.Balance >= buildMenu.CurrentPlate.CurrentTower().upgrade1Cost){
                 upgradeButtons[0].interactable = true;
@@ -131,9 +132,9 @@ public class TowerMenu : MonoBehaviour
             }
         }
         else if(buildMenu.CurrentPlate.CurrentUpgrade > 0){
-            upgradeButtons[0].gameObject.SetActive(false);
-            upgradeButtons[1].gameObject.SetActive(false);
-            upgradeButtons[2].gameObject.SetActive(false);
+            upgradeButtons[0].interactable = false;
+            upgradeButtons[1].interactable = false;
+            upgradeButtons[2].interactable = false;
         }
     }
     public void CloseTowerMenu(){

@@ -6,7 +6,7 @@ public class TurretExpoDamage : MonoBehaviour
 {
     [SerializeField] float damageConstant = 0.0000005f;
     [SerializeField] float coolDownTime = 0.2f;
-    [SerializeField] Transform firePoint;
+
     Transform secondTarget;
     [SerializeField] LineRenderer lineRenderer;
     [Range(0, 1)] [SerializeField] float slowPercentage = 0.5f;
@@ -104,7 +104,7 @@ public class TurretExpoDamage : MonoBehaviour
                     break;
                 }
                 else{
-                    secondLine.SetPosition(0, firePoint.position);
+                    secondLine.SetPosition(0, upgradeManager.firePoint.position);
                     secondLine.SetPosition(1, secondTarget.position);
                     secondTarget.GetComponent<EnemyHealth>().TakeDamage(damage);
                     if(secondTarget.GetComponent<EnemyHealth>().Health <= 0){
@@ -147,7 +147,7 @@ public class TurretExpoDamage : MonoBehaviour
                     break;
                 }
                 else{
-                    lineRenderer.SetPosition(0, firePoint.position);
+                    lineRenderer.SetPosition(0, upgradeManager.firePoint.position);
                     lineRenderer.SetPosition(1, aimScript.Target.position);
                     aimScript.Target.GetComponent<EnemyHealth>().TakeDamage(damage);
                     if(aimScript.Target.GetComponent<EnemyHealth>().Health <= 0){
