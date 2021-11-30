@@ -97,15 +97,18 @@ public class GameManager : Singleton<GameManager>
     {
         
         if(Input.GetKeyDown(KeyCode.M)){
-            SpawnEnemy(enemies[1]);
+            balance = 10000;
         }
         
 
         if(Input.GetKeyDown(KeyCode.E)){
             SwitchCamera();
+            if(RangeIndicators){
+                DisableRangeIndicators();
+            }
         }
         
-        if(Input.GetKeyDown(KeyCode.Q) && !RangeIndicators){
+        if(Input.GetKeyDown(KeyCode.Q) && !RangeIndicators && firstPerson){
             EnableRangeIndicators();
         }
         else if(Input.GetKeyDown(KeyCode.Q) && RangeIndicators){
@@ -145,6 +148,7 @@ public class GameManager : Singleton<GameManager>
         }
         else{
             GameObject newEnemy = Instantiate(enemy.prefab, position, Quaternion.identity, aliveEnemies.transform);
+            newEnemy.GetComponent<EnemyFollower>().StopAllParticles();
             if(fullTopDown){
                 newEnemy.GetComponent<EnemyHealth>().Invisible();
             }
@@ -203,6 +207,7 @@ public class GameManager : Singleton<GameManager>
         for(int loop = 0; loop < enemies.Length; loop++){
             if(enemies[loop].Enemy == enemy){
                 enemies[loop].Revive(position);
+                enemies[loop].GetComponent<EnemyFollower>().StopAllParticles();
                 if(fullTopDown){
                     enemies[loop].Invisible();
                 }

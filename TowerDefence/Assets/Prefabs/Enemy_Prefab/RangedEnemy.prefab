@@ -24736,8 +24736,8 @@ MonoBehaviour:
   target: {fileID: 0}
   firePoint: {fileID: 4042450361076334828}
   barrel: {fileID: 855333979953071098}
-  rotationSpeed: 25
-  fireRate: 1
+  rotationSpeed: 500
+  fireRate: 0.9
   towerFireRate: 3
   damage: 1
   lineRenderer: {fileID: 1386615299727231311}
@@ -24759,6 +24759,7 @@ MonoBehaviour:
   health: 0
   tutorialEnemy: 0
   secondTutorialEnemy: 0
+  invisible: 0
   isAlive: 1
 --- !u!120 &1386615299727231311
 LineRenderer:
@@ -24887,7 +24888,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pathCreator: {fileID: 0}
-  speed: 7
+  speed: 6.75
   sparks: {fileID: 2253863919192216832}
   flames: {fileID: 4929417146538860856}
   isStopped: 0

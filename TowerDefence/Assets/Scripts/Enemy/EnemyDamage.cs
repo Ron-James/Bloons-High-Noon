@@ -18,15 +18,16 @@ public class EnemyDamage : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other) {
         switch(other.tag){
-            case "Build Plate":
-                other.gameObject.GetComponent<BuildPlate>().TakeDamage(damage);
-                GetComponent<EnemyHealth>().Kill();
-                Debug.Log(other.gameObject.name + "killed by");
-            break;
             case "Tower":
                 Debug.Log("entered the tower");
                 GameManager.instance.DamageTower(damage);
-                GetComponent<EnemyHealth>().Kill();
+                if(GetComponent<EnemyHealth>().tutorialEnemy){
+                    GetComponent<EnemyHealth>().TakeDamage(5000);
+                }
+                else{
+                    GetComponent<EnemyHealth>().Kill();
+                }
+                
             break;
         }
     }

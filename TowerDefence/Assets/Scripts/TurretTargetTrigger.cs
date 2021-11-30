@@ -132,21 +132,24 @@ public class TurretTargetTrigger : MonoBehaviour
         
     }
     Transform FurthestEnemy(){
-        if(FirstEnemy() == null){
+        List<Transform> enemies = GetEnemiesInRange();
+        if(enemies.Count == 0){
             //Debug.Log("No enemies in range");
             return null;
         }
         else
         {
-            float large = (FirstEnemy().position - transform.position).magnitude;
-            Transform largest = FirstEnemy();
-            for(int loop = 1; loop < enemiesInRange.Count; loop++){
-                if(enemiesInRange[loop] != null){
-                    if((enemiesInRange[loop].position - transform.position).magnitude > large){
-                        largest = enemiesInRange[loop];
-                        large = (enemiesInRange[loop].position - transform.position).magnitude;
+            float large = enemies[0].GetComponent<EnemyFollower>().CurrentDistance;
+            Transform largest = enemies[0];
+            for(int loop = 0; loop < enemies.Count; loop++){
+                if(enemies[loop] != null){
+                    if(enemies[loop].GetComponent<EnemyFollower>().CurrentDistance < large){
+                        largest = enemies[loop];
+                        large = enemies[loop].GetComponent<EnemyFollower>().CurrentDistance;
                     }
                 }
+                
+                
                 
             }
             return largest;
@@ -159,7 +162,7 @@ public class TurretTargetTrigger : MonoBehaviour
     void RemoveDeadEnemies(){
         for(int loop = 0; loop < enemiesInRange.Count; loop++){
             if(enemiesInRange[loop] != null){
-                if(enemiesInRange[loop].parent == deadEnemies.transform){
+                if(!enemiesInRange[loop].GetComponent<EnemyHealth>().isAlive){
                     enemiesInRange[loop] = null;
                 }
             }

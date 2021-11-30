@@ -23,7 +23,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2600447269280975662}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 123.98845, y: 3.499998, z: -27.449654}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -31,7 +31,7 @@ Transform:
   - {fileID: 4178747406925594453}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &5344414713400346478
 GameObject:
   m_ObjectHideFlags: 0
@@ -57,7 +57,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5344414713400346478}
-  m_LocalRotation: {x: -6.123234e-17, y: 1, z: 6.123234e-17, w: -3.7493994e-33}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.000000014901161, y: 1.9093004, z: -0.00043662032}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -139,7 +139,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6559506030639029748}
-  m_LocalRotation: {x: -6.123234e-17, y: 1, z: 6.123234e-17, w: -3.7493994e-33}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.000000014901161, y: 0.00000035762787, z: -0.00000011920929}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -206,17 +206,22 @@ PrefabInstance:
     - target: {fileID: 2182526243218731305, guid: c8dc1cb5a4b27284fb377ce3e41c6d42,
         type: 3}
       propertyPath: m_BoundingSphereOverride.w
-      value: 0
+      value: -2.6150025e-18
       objectReference: {fileID: 0}
     - target: {fileID: 2182526243218731305, guid: c8dc1cb5a4b27284fb377ce3e41c6d42,
         type: 3}
       propertyPath: m_BoundingSphereOverride.x
-      value: 0
+      value: 1.765741e+22
       objectReference: {fileID: 0}
     - target: {fileID: 2182526243218731305, guid: c8dc1cb5a4b27284fb377ce3e41c6d42,
         type: 3}
       propertyPath: m_BoundingSphereOverride.y
-      value: 2.3510647e-38
+      value: 5.21649e-11
+      objectReference: {fileID: 0}
+    - target: {fileID: 2182526243218731305, guid: c8dc1cb5a4b27284fb377ce3e41c6d42,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: 1.1482605e+27
       objectReference: {fileID: 0}
     - target: {fileID: 3123038659885784860, guid: c8dc1cb5a4b27284fb377ce3e41c6d42,
         type: 3}

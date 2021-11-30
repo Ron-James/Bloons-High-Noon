@@ -49,7 +49,7 @@ public class BuildPlate : MonoBehaviour
     }
     public Tower CurrentTower(){
         
-        if(buildIndex <= 0 || buildIndex >= towers.Length){
+        if(buildIndex <= 0 || buildIndex > towers.Length){
             Debug.Log(buildIndex + " build index bad");
             return null;
         }

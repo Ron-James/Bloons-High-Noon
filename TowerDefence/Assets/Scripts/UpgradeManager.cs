@@ -174,21 +174,21 @@ public class UpgradeManager : MonoBehaviour
         UpdateUpgradeModel((int) upgrade);
         switch((int)turretType){
             case 0:
-                damageUpgrade = GetComponent<TurretProjectile>().DamageUpgrades[0]; //significantly improved fire rate
+                damageUpgrade = GetComponent<TurretProjectile>().DamageUpgrades[1]; //significantly improved fire rate
                 targetTrigger.UpgradeRange(targetTrigger.RangeUpgrades[4] * basicRange);
                 GetComponent<TurretProjectile>().IceShot = true;
             break;
             case 1:
                 GetComponent<TurretExpoDamage>().Slow = true;
-                GetComponent<TurretExpoDamage>().DamageSecondTarget = true;
+                //GetComponent<TurretExpoDamage>().DamageSecondTarget = true;
                 damageUpgrade  = GetComponent<TurretExpoDamage>().DamageUpgrades[0];
-                targetTrigger.UpgradeRange(targetTrigger.RangeUpgrades[4] * basicRange);
+                //targetTrigger.UpgradeRange(targetTrigger.RangeUpgrades[4] * basicRange);
 
                 //CooldownUpgrade = GetComponent<TurretExpoDamage>().CooldownUpgrades[4]; //significantly improved cooldown time
                 //targetTrigger.UpgradeRange(targetTrigger.RangeUpgrades[3] * basicRange); // improved range
             break;
             case 2:
-                fireRateUpgrade = GetComponent<TurretFreezeAOE>().FireRateUpgrades[0];
+                fireRateUpgrade = GetComponent<TurretFreezeAOE>().FireRateUpgrades[1];
                 //freezeDurationUpgrade = GetComponent<TurretFreezeAOE>().FreezeDurationUpgrades[1];
                 //freezeDurationUpgrade = GetComponent<TurretFreezeAOE>().FreezeDurationUpgrades[0];//Improved freeze duration
                 damageUpgrade = GetComponent<TurretFreezeAOE>().DamageUpgrades[4]; // mild Damage Downgrade
@@ -210,6 +210,9 @@ public class UpgradeManager : MonoBehaviour
         }
         else if(GetComponent<TurretProjectile>()!= null){
             GetComponent<TurretProjectile>().IceShot = false;
+        }
+        else if(GetComponent<TurretFreezeAOE>() != null){
+            GetComponent<TurretFreezeAOE>().StunSlow = false;
         }
         firePoint = upgradeModels[0].firePoint;
         basePiece = upgradeModels[0].basePiece;

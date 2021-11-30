@@ -5,10 +5,11 @@ using UnityEngine;
 public class ScenarioStartTrigger : MonoBehaviour
 {
     [SerializeField] Enemy basicEnemy;
+    bool started;
     // Start is called before the first frame update
     void Start()
     {
-        
+        started = false;
     }
 
     // Update is called once per frame
@@ -18,8 +19,10 @@ public class ScenarioStartTrigger : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other) {
-        if(other.tag == "Player"){
+        if(other.tag == "Player" && !started){
             GameManager.instance.SpawnEnemy(basicEnemy);
+            
+            started = true;
         }
         
     }

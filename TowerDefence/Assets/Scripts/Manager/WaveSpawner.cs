@@ -16,7 +16,9 @@ public class WaveSpawner : MonoBehaviour
         public Enemy [] enemies;
         public int [] enemyCounts;
         public float rate;
-        public float timeBeforeWave;
+        float timeBeforeWave = 300f;
+
+        public float TimeBeforeWave { get => timeBeforeWave; set => timeBeforeWave = value; }
     }
     [SerializeField] Wave [] waves;
     int nextWave = 0;
@@ -38,7 +40,7 @@ public class WaveSpawner : MonoBehaviour
             Debug.Log("No waves set in inspector");
         }
         else{
-            waveCountDown = waves[0].timeBeforeWave; 
+            waveCountDown = waves[0].TimeBeforeWave; 
         }
            
     }
@@ -87,14 +89,14 @@ public class WaveSpawner : MonoBehaviour
 		if (nextWave + 1 > waves.Length - 1)
 		{
 			nextWave = 0;
-            waveCountDown = waves[0].timeBeforeWave;
+            waveCountDown = waves[0].TimeBeforeWave;
             GameManager.instance.CompleteLevel();
 			Debug.Log("ALL WAVES COMPLETE! Looping...");
 		}
 		else
 		{
 			nextWave++;
-            waveCountDown = waves[nextWave].timeBeforeWave;
+            waveCountDown = waves[nextWave].TimeBeforeWave;
 		}
 	}
     bool EnemyIsAlive(){

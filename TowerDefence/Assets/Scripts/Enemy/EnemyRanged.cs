@@ -40,6 +40,9 @@ public class EnemyRanged : MonoBehaviour
         if(!GetComponent<EnemyFollower>().IsFrozen){
             fireCount += Time.deltaTime;
         }
+        else{
+            fireCount = 0;
+        }
         
         Aim();
         if(target != null){

@@ -27,13 +27,7 @@ public class SettingsMenu : MonoBehaviour
             sensitivitySlider.value = PlayerPrefs.GetFloat("Sens")/sensMultiplier;
             currentSliderValue = sensitivitySlider.value;
         }
-        else{
-            sensitivitySlider.value = 0.5f;
-            currentSliderValue = sensitivitySlider.value;
-            player.GetComponent<FirstPersonAIO>().mouseSensitivity = sensitivitySlider.value * sensMultiplier;
-            sensTxt.text = sensitivitySlider.value.ToString("#.###");
-            
-        }
+        
     }
 
     // Update is called once per frame

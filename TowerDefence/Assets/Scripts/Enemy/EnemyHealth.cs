@@ -11,8 +11,8 @@ public class EnemyHealth : MonoBehaviour
 
     float maxHealth;
     [SerializeField] float health;
-    [SerializeField] bool tutorialEnemy = false;
-    [SerializeField] bool secondTutorialEnemy = false;
+    public bool tutorialEnemy = false;
+    public bool secondTutorialEnemy = false;
     GameObject deadEnemies;
     GameObject aliveEnemies;
     [SerializeField] bool invisible = false;
@@ -44,18 +44,22 @@ public class EnemyHealth : MonoBehaviour
     public void TakeDamage(float damage){
         health -= damage;
         if(health <= 0){
-            Kill();
+            GameManager.instance.AddBalance(enemy.value);
             if(tutorialEnemy && secondTutorialEnemy){
                 GameManager.instance.CompleteLevel();
             }
             else if(tutorialEnemy && !secondTutorialEnemy){
                 GameManager.instance.SpawnRangedEnemy();
+                Debug.Log("Tut enemy dead");
             }
+            Kill();
+            
         }
     }
 
     public void Kill(){
         health = 0;
+        GetComponent<EnemyFollower>().StopAllParticles();
         isAlive = false;
         this.transform.SetParent(deadEnemies.transform);
         this.transform.position = deadEnemies.transform.position;
@@ -65,6 +69,7 @@ public class EnemyHealth : MonoBehaviour
     
     public void Deactivate(){
         body.SetActive(false);
+        GetComponent<EnemyFollower>().StopAllParticles();
         GetComponent<EnemyFollower>().enabled = false;
         //GetComponent<MeshRenderer>().enabled = false;
         if(GetComponent<EnemyRanged>() != null){
@@ -82,6 +87,7 @@ public class EnemyHealth : MonoBehaviour
         
     }
     public void Activate(){
+        GetComponent<EnemyFollower>().StopAllParticles();
         body.SetActive(true);
         GetComponent<EnemyFollower>().enabled = true;
         if(GetComponent<EnemyRanged>() != null){

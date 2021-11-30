@@ -13,18 +13,19 @@ MonoBehaviour:
   m_Name: Ice Turret
   m_EditorClassIdentifier: 
   towerName: Arc Tower
-  cost: 175
+  cost: 125
   tower: {fileID: 2720109291678084977, guid: 0a150cd8ae9d58d4d9c1a8f9cd11fd8f, type: 3}
-  health: 8
-  description: Temporarily stuns all enemies in range
+  health: 18
+  description: Temporarily stuns all enemies in range for a brief amount of time
+    and deals a little bit of damage. Resets range enemies' fire rate.
   upgrade1Desc: Stuns significantly larger area, Slightly improved fire rate
   upgrade2Desc: Stuns for significantly longer, Significantly less damage dealt
   upgrade3Desc: Significantly Increased damage, Enemies are slowed after being stunned,
-    Significantly slower fire rate
+    Slightly slower fire rate
   picture: {fileID: 0}
-  upgrade1Cost: 175
-  upgrade2Cost: 250
-  upgrade3Cost: 325
-  upgrade1Health: 15
-  upgrade2Health: 15
-  upgrade3Health: 15
+  upgrade1Cost: 125
+  upgrade2Cost: 150
+  upgrade3Cost: 225
+  upgrade1Health: 22
+  upgrade2Health: 22
+  upgrade3Health: 22

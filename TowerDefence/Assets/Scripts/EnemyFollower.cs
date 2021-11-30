@@ -15,7 +15,7 @@ public class EnemyFollower : MonoBehaviour
     [SerializeField] bool isStopped;
 
 
-    Vector3 currentPositionOnPath;
+    [SerializeField] float currentDistance = 0;
     bool isFrozen;
     bool isSlowed;
     bool isSlowedExpo;
@@ -24,11 +24,12 @@ public class EnemyFollower : MonoBehaviour
 
     
     public bool IsStopped { get => isStopped; set => isStopped = value; }
-    public Vector3 CurrentPositionOnPath { get => currentPositionOnPath; set => currentPositionOnPath = value; }
+    
     public bool IsFrozen { get => isFrozen; set => isFrozen = value; }
     public bool IsSlowed { get => isSlowed; set => isSlowed = value; }
     public bool IsSlowedExpo { get => isSlowedExpo; set => isSlowedExpo = value; }
     public bool OnFire { get => onFire; set => onFire = value; }
+    public float CurrentDistance { get => currentDistance; set => currentDistance = value; }
 
 
     // Start is called before the first frame update
@@ -56,21 +57,17 @@ public class EnemyFollower : MonoBehaviour
         sparks.Stop();
         onFire = false;
     }
-
+    public void StopAllParticles(){
+        sparks.Stop();
+        flames.Stop();
+    }
     // Update is called once per frame
     void Update()
     {
         if(!isStopped){
             distanceTravelled += (speed * Time.deltaTime);
+            currentDistance = distanceTravelled;
             transform.position = pathCreator.path.GetPointAtDistance(distanceTravelled, end);
-            if(distanceTravelled > pathCreator.path.length){
-                currentPositionOnPath = pathCreator.path.GetPoint(1);
-            }
-            else{
-                currentPositionOnPath = pathCreator.path.GetPointAtDistance(distanceTravelled, end);
-            }
-            
-
             transform.rotation = pathCreator.path.GetRotationAtDistance(distanceTravelled, end);
 
         }

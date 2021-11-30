@@ -12,20 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06d93a4f8a488d9469506a9737cc863c, type: 3}
   m_Name: Expo Turret
   m_EditorClassIdentifier: 
-  towerName: Exponential Tower
-  cost: 200
+  towerName: Exponential Flamethrower
+  cost: 175
   tower: {fileID: 2720109291678084977, guid: 6bbca5bb6941a5142b0e54a77d9fafa0, type: 3}
-  health: 8
-  description: Deals continuous damage to nearby enemies. Damage dealt to target
-    increases over time
+  health: 20
+  description: 'Deals continuous damage to nearby enemies. Damage dealt to target
+    increases over time. Needs to cool down before switching target '
   upgrade1Desc: 'Slightly Increased Range, Significantly Faster Cool down '
   upgrade2Desc: 'Significantly improved damage, Significantly Slower cooldown '
-  upgrade3Desc: 'Can fire at 2 enemies at a time, Significantly Decreased damage,
-    Slows targeted enemies '
+  upgrade3Desc: 'Significantly Reduced damage rate, Slows targeted enemies '
   picture: {fileID: 0}
-  upgrade1Cost: 210
-  upgrade2Cost: 350
-  upgrade3Cost: 450
-  upgrade1Health: 15
-  upgrade2Health: 15
-  upgrade3Health: 15
+  upgrade1Cost: 225
+  upgrade2Cost: 250
+  upgrade3Cost: 300
+  upgrade1Health: 25
+  upgrade2Health: 25
+  upgrade3Health: 25

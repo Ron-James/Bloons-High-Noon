@@ -55,10 +55,6 @@ public class TurretExpoDamage : MonoBehaviour
             damageCo = StartCoroutine(DamageDelay());
         }
         
-        if(damageSecondTarget && secondTarget != null && !coolingDown && !aimScript.Stunned && secondDamageCo == null){
-            secondDamageCo = StartCoroutine(ExponentialDamageSecond());
-        }
-        
     }
     private void OnEnable() {
         flames.Stop();

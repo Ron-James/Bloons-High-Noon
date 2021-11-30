@@ -80,7 +80,7 @@ MonoBehaviour:
   player: {fileID: 0}
   mainTower: {fileID: 0}
   towerHealth: 10
-  balance: 200
+  balance: 300
   lane: {fileID: 0}
   stage: 0
   reversedPath: 0
@@ -101,71 +101,62 @@ MonoBehaviour:
   - name: Wave 1
     enemies:
     - {fileID: 11400000, guid: ea37699812fd0ae41996b122ffab05d9, type: 2}
-    enemyCounts: 19000000
-    rate: 3.5
-    timeBeforeWave: 60
+    enemyCounts: 0f000000
+    rate: 4
   - name: Wave 2
     enemies:
     - {fileID: 11400000, guid: ea37699812fd0ae41996b122ffab05d9, type: 2}
-    enemyCounts: 17000000
+    enemyCounts: 19000000
     rate: 3
-    timeBeforeWave: 60
   - name: Wave3
     enemies:
     - {fileID: 11400000, guid: ea37699812fd0ae41996b122ffab05d9, type: 2}
     - {fileID: 11400000, guid: 4d917f49a6cf0d547b65e84be124de14, type: 2}
-    enemyCounts: 1c00000003000000
-    rate: 5
-    timeBeforeWave: 60
+    enemyCounts: 1600000002000000
+    rate: 3
   - name: Wave 4
     enemies:
     - {fileID: 11400000, guid: ea37699812fd0ae41996b122ffab05d9, type: 2}
     - {fileID: 11400000, guid: 4d917f49a6cf0d547b65e84be124de14, type: 2}
-    enemyCounts: 1700000006000000
-    rate: 4
-    timeBeforeWave: 60
+    enemyCounts: 1400000003000000
+    rate: 2.95
   - name: Wave 5
     enemies:
     - {fileID: 11400000, guid: ea37699812fd0ae41996b122ffab05d9, type: 2}
     - {fileID: 11400000, guid: 4d917f49a6cf0d547b65e84be124de14, type: 2}
     - {fileID: 11400000, guid: accc43a106dd1ce4080085f892e67ce6, type: 2}
-    enemyCounts: 170000000800000001000000
-    rate: 4
-    timeBeforeWave: 60
+    enemyCounts: 120000000500000001000000
+    rate: 3.2
   - name: Wave 6
     enemies:
     - {fileID: 11400000, guid: ea37699812fd0ae41996b122ffab05d9, type: 2}
     - {fileID: 11400000, guid: 4d917f49a6cf0d547b65e84be124de14, type: 2}
     - {fileID: 11400000, guid: accc43a106dd1ce4080085f892e67ce6, type: 2}
-    enemyCounts: 160000000600000002000000
-    rate: 3.7
-    timeBeforeWave: 60
+    enemyCounts: 0f0000000600000002000000
+    rate: 2.9
   - name: Wave 7
     enemies:
     - {fileID: 11400000, guid: ea37699812fd0ae41996b122ffab05d9, type: 2}
     - {fileID: 11400000, guid: 4d917f49a6cf0d547b65e84be124de14, type: 2}
     - {fileID: 11400000, guid: accc43a106dd1ce4080085f892e67ce6, type: 2}
-    enemyCounts: 140000000600000004000000
-    rate: 3.5
-    timeBeforeWave: 60
+    enemyCounts: 0f0000000600000005000000
+    rate: 2.8
   - name: Wave 8
     enemies:
     - {fileID: 11400000, guid: ea37699812fd0ae41996b122ffab05d9, type: 2}
     - {fileID: 11400000, guid: 4d917f49a6cf0d547b65e84be124de14, type: 2}
     - {fileID: 11400000, guid: accc43a106dd1ce4080085f892e67ce6, type: 2}
     - {fileID: 11400000, guid: 78af8d65074105841b3235a50b377f41, type: 2}
-    enemyCounts: 0f000000090000000600000001000000
-    rate: 4
-    timeBeforeWave: 60
+    enemyCounts: 0f000000050000000600000001000000
+    rate: 2.8
   - name: Wave 9
     enemies:
     - {fileID: 11400000, guid: ea37699812fd0ae41996b122ffab05d9, type: 2}
     - {fileID: 11400000, guid: 4d917f49a6cf0d547b65e84be124de14, type: 2}
     - {fileID: 11400000, guid: accc43a106dd1ce4080085f892e67ce6, type: 2}
     - {fileID: 11400000, guid: accc43a106dd1ce4080085f892e67ce6, type: 2}
-    enemyCounts: 0f000000090000000600000003000000
-    rate: 3.2
-    timeBeforeWave: 60
+    enemyCounts: 0a000000050000000600000003000000
+    rate: 2.65
   waveCountDown: 15
   state: 2
   countDownText: {fileID: 0}
