@@ -51,12 +51,12 @@ public class TurretExpoDamage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(aimScript.Target != null && !CoolingDown && !aimScript.Stunned){
-            StartCoroutine(DamageDelay());
+        if(aimScript.Target != null && !coolingDown && !aimScript.Stunned && damageCo == null){
+            damageCo = StartCoroutine(DamageDelay());
         }
         
-        if(damageSecondTarget && secondTarget != null && !CoolingDown && !aimScript.Stunned && secondDamageCo == null){
-            StartCoroutine(ExponentialDamageSecond());
+        if(damageSecondTarget && secondTarget != null && !coolingDown && !aimScript.Stunned && secondDamageCo == null){
+            secondDamageCo = StartCoroutine(ExponentialDamageSecond());
         }
         
     }
@@ -68,12 +68,12 @@ public class TurretExpoDamage : MonoBehaviour
         flames.Stop();
     }
     IEnumerator CoolDown(float period){
-        CoolingDown = true;
+        coolingDown = true;
         float time = 0;
         while(true){
             time += Time.deltaTime;
             if(time >= period){
-                CoolingDown = false;
+                coolingDown = false;
                 break;
             }
             else{
@@ -108,8 +108,16 @@ public class TurretExpoDamage : MonoBehaviour
                     secondLine.SetPosition(0, upgradeManager.firePoint.position);
                     secondLine.SetPosition(1, secondTarget.position);
                     secondTarget.GetComponent<EnemyHealth>().TakeDamage(damage);
-                    if(secondTarget.GetComponent<EnemyHealth>().Health <= 0){
-                        secondTarget = null;
+                    if(aimScript.Target.GetComponent<EnemyHealth>().Health <= 0){
+                        aimScript.Target = null;
+                        StartCoroutine(CoolDown(coolDownTime * (1/upgradeManager.CooldownUpgrade)));
+                        secondLine.SetPosition(0, Vector3.zero);
+                        secondLine.SetPosition(1, Vector3.zero);
+                        secondDamageCo = null;
+                        flames.Stop();
+                        flameThrower.StopSource();
+                        //aimScript.Target.GetComponent<EnemyFollower>().IsSlowed = false;
+                        break;
                     }
                     yield return null;
                 }
@@ -127,7 +135,7 @@ public class TurretExpoDamage : MonoBehaviour
             yield break;
         }
         else{
-            flameThrower.PlayLoop();
+            flameThrower.PlayOnce();
             aimScript.Target.GetComponent<EnemyFollower>().OnFire = true;
             if(slow && !aimScript.Target.GetComponent<EnemyFollower>().IsSlowedExpo){
                 aimScript.Target.GetComponent<EnemyFollower>().SlowEnemyIndef(slowPercentage);
@@ -152,12 +160,21 @@ public class TurretExpoDamage : MonoBehaviour
                     break;
                 }
                 else{
+                    if(aimScript.Target.GetComponent<EnemyHealth>().Health <= 0){
+                        aimScript.Target = null;
+                        StartCoroutine(CoolDown(coolDownTime * (1/upgradeManager.CooldownUpgrade)));
+                        lineRenderer.SetPosition(0, Vector3.zero);
+                        lineRenderer.SetPosition(1, Vector3.zero);
+                        damageCo = null;
+                        flames.Stop();
+                        flameThrower.StopSource();
+                        //aimScript.Target.GetComponent<EnemyFollower>().IsSlowed = false;
+                        break;
+                    }
                     lineRenderer.SetPosition(0, upgradeManager.firePoint.position);
                     lineRenderer.SetPosition(1, aimScript.Target.position);
                     aimScript.Target.GetComponent<EnemyHealth>().TakeDamage(damage);
-                    if(aimScript.Target.GetComponent<EnemyHealth>().Health <= 0){
-                        aimScript.Target = null;
-                    }
+                    
                     yield return null;
                 }
 

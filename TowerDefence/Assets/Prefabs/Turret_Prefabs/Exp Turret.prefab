@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 3493735534750735011}
   - component: {fileID: 3103068077413484649}
   - component: {fileID: 251129833632800184}
-  - component: {fileID: 2015751328853479910}
+  - component: {fileID: 7371455619531544070}
   m_Layer: 0
   m_Name: Exp Turret
   m_TagString: Untagged
@@ -258,7 +258,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageConstant: 0.000009
-  coolDownTime: 1.9
+  coolDownTime: 1
   lineRenderer: {fileID: 3493735534750735011}
   slowPercentage: 0.5
   cooldownUpgrades:
@@ -273,13 +273,13 @@ MonoBehaviour:
   - 1
   - 3
   - 5
-  secondLine: {fileID: 8656263211213536179}
+  secondLine: {fileID: 8670124424323296740}
   damageSecondTarget: 0
   slow: 0
   flames: {fileID: 7403549465035154447}
   flameThrower:
     clip: {fileID: 8300000, guid: aadc5f8e73571994696bffd280b5b40b, type: 3}
-    src: {fileID: 2015751328853479910}
+    src: {fileID: 7371455619531544070}
     volume: 0.1
 --- !u!114 &251129833632800184
 MonoBehaviour:
@@ -323,7 +323,7 @@ MonoBehaviour:
   firePoint: {fileID: 1428520888922904495}
   basePiece: {fileID: 5229936773638984055}
   barrel: {fileID: 3441937157185760666}
---- !u!82 &2015751328853479910
+--- !u!82 &7371455619531544070
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -542,7 +542,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1428520888922904495}
-  - component: {fileID: 8656263211213536179}
+  - component: {fileID: 8670124424323296740}
   m_Layer: 0
   m_Name: FirePoint
   m_TagString: Untagged
@@ -565,7 +565,7 @@ Transform:
   m_Father: {fileID: 4727583677264812657}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!120 &8656263211213536179
+--- !u!120 &8670124424323296740
 LineRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -628,23 +628,23 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 0, b: 0, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 1}
-      key2: {r: 0, g: 0, b: 0, a: 0}
-      key3: {r: 0, g: 0, b: 0, a: 0}
-      key4: {r: 0, g: 0, b: 0, a: 0}
+      key0: {r: 1, g: 0.79884464, b: 0, a: 1}
+      key1: {r: 1, g: 0.55629194, b: 0, a: 0}
+      key2: {r: 1, g: 0.5442527, b: 0, a: 0}
+      key3: {r: 0.20754719, g: 0.20754719, b: 0.20754719, a: 0}
+      key4: {r: 1, g: 0, b: 0.042179585, a: 0}
       key5: {r: 0, g: 0, b: 0, a: 0}
       key6: {r: 0, g: 0, b: 0, a: 0}
       key7: {r: 0, g: 0, b: 0, a: 0}
-      ctime0: 65535
-      ctime1: 65535
-      ctime2: 0
-      ctime3: 0
-      ctime4: 0
+      ctime0: 9830
+      ctime1: 15613
+      ctime2: 38357
+      ctime3: 46453
+      ctime4: 65535
       ctime5: 0
       ctime6: 0
       ctime7: 0
-      atime0: 0
+      atime0: 39514
       atime1: 65535
       atime2: 0
       atime3: 0
@@ -653,7 +653,7 @@ LineRenderer:
       atime6: 0
       atime7: 0
       m_Mode: 0
-      m_NumColorKeys: 2
+      m_NumColorKeys: 5
       m_NumAlphaKeys: 2
     numCornerVertices: 0
     numCapVertices: 0
@@ -866,8 +866,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8373458433413204605}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 37, y: 0.05, z: 37}
+  m_LocalPosition: {x: 0, y: 8, z: 0}
+  m_LocalScale: {x: 36.5, y: 0.05, z: 36.5}
   m_Children: []
   m_Father: {fileID: 2720109291678084979}
   m_RootOrder: 1
@@ -899,7 +899,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 095bc4ecbdd9c054eabb2bf12ca4c0f0, type: 2}
+  - {fileID: 2100000, guid: cdc56f3fb342ca9439a6ade6bc905fe1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -952,7 +952,7 @@ MonoBehaviour:
   - 0.85
   - 0.95
   - 1
-  - 1.1
+  - 1.3
   - 1.6
 --- !u!1001 &1750170767846528388
 PrefabInstance:

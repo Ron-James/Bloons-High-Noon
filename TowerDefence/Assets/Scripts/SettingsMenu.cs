@@ -22,6 +22,18 @@ public class SettingsMenu : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         sensitivitySlider.value = player.GetComponent<FirstPersonAIO>().mouseSensitivity/sensMultiplier;
         currentSliderValue = sensitivitySlider.value;
+        if(PlayerPrefs.HasKey("Sens")){
+            player.GetComponent<FirstPersonAIO>().mouseSensitivity = PlayerPrefs.GetFloat("Sens");
+            sensitivitySlider.value = PlayerPrefs.GetFloat("Sens")/sensMultiplier;
+            currentSliderValue = sensitivitySlider.value;
+        }
+        else{
+            sensitivitySlider.value = 0.5f;
+            currentSliderValue = sensitivitySlider.value;
+            player.GetComponent<FirstPersonAIO>().mouseSensitivity = sensitivitySlider.value * sensMultiplier;
+            sensTxt.text = sensitivitySlider.value.ToString("#.###");
+            
+        }
     }
 
     // Update is called once per frame
@@ -36,6 +48,7 @@ public class SettingsMenu : MonoBehaviour
         player.GetComponent<FirstPersonAIO>().mouseSensitivity = sensitivitySlider.value * sensMultiplier;
         currentSliderValue = sensitivitySlider.value;
         sensTxt.text = sensitivitySlider.value.ToString("#.###");
+        PlayerPrefs.SetFloat("Sens", player.GetComponent<FirstPersonAIO>().mouseSensitivity);
     }
     public void CloseSettingsMenu(){
         OpenSettings = false;

@@ -30,6 +30,7 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] Transform topDownCamPosition;
     [SerializeField] Transform firstPersonCamPosition;
     [SerializeField] Transform playerCamera;
+    [SerializeField] Transform FullTopDownCamera;
 
     [Header("Player Reference")]
     [SerializeField] Transform player;
@@ -56,6 +57,8 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] GameObject levelComplete;
 
     public static bool gameOver = false;
+    bool rangeIndicators;
+    bool fullTopDown;
 
     
 
@@ -73,6 +76,7 @@ public class GameManager : Singleton<GameManager>
     public PathCreator Lane { get => lane; set => lane = value; }
     public GameObject DeadEnemies { get => deadEnemies; set => deadEnemies = value; }
     public GameObject AliveEnemies { get => aliveEnemies; set => aliveEnemies = value; }
+    public bool RangeIndicators { get => rangeIndicators; set => rangeIndicators = value; }
 
 
     // Start is called before the first frame update
@@ -82,6 +86,7 @@ public class GameManager : Singleton<GameManager>
         totalHealth = towerHealth;
         UpdateBalanceText();
         gameOver = false;
+        RangeIndicators = false;
         
         //Debug.Log("Dead enemies " + deadEnemies.GetComponentsInChildren<Transform>().Length + deadEnemies.GetComponentsInChildren<Transform>()[0].gameObject.name);
         
@@ -99,8 +104,12 @@ public class GameManager : Singleton<GameManager>
         if(Input.GetKeyDown(KeyCode.E)){
             SwitchCamera();
         }
-        if(Input.GetKeyDown(KeyCode.Y)){
-            DamageTower(50000);
+        
+        if(Input.GetKeyDown(KeyCode.Q) && !RangeIndicators){
+            EnableRangeIndicators();
+        }
+        else if(Input.GetKeyDown(KeyCode.Q) && RangeIndicators){
+            DisableRangeIndicators();
         }
         
 
@@ -135,7 +144,13 @@ public class GameManager : Singleton<GameManager>
             ReviveEnemyOfType(enemy, position);
         }
         else{
-            Instantiate(enemy.prefab, position, Quaternion.identity, aliveEnemies.transform);
+            GameObject newEnemy = Instantiate(enemy.prefab, position, Quaternion.identity, aliveEnemies.transform);
+            if(fullTopDown){
+                newEnemy.GetComponent<EnemyHealth>().Invisible();
+            }
+            else{
+                newEnemy.GetComponent<EnemyHealth>().Visible();
+            }
         }
         
 
@@ -188,6 +203,12 @@ public class GameManager : Singleton<GameManager>
         for(int loop = 0; loop < enemies.Length; loop++){
             if(enemies[loop].Enemy == enemy){
                 enemies[loop].Revive(position);
+                if(fullTopDown){
+                    enemies[loop].Invisible();
+                }
+                else{
+                    enemies[loop].Visible();
+                }
                 break;
             }
         } 
@@ -213,6 +234,81 @@ public class GameManager : Singleton<GameManager>
 
         }
         
+    }
+
+    public void MakeEnemiesInvisible(){
+        EnemyHealth [] enemies;
+        enemies = aliveEnemies.GetComponentsInChildren<EnemyHealth>();
+        if(enemies.Length == 0){
+            return;
+        }
+        else{
+            for(int loop = 0; loop < enemies.Length; loop++){
+                enemies[loop].Invisible();
+            }
+        }
+    }
+    public void MakeEnemiesVisible(){
+        EnemyHealth [] enemies;
+        enemies = aliveEnemies.GetComponentsInChildren<EnemyHealth>();
+        if(enemies.Length == 0){
+            return;
+        }
+        else{
+            for(int loop = 0; loop < enemies.Length; loop++){
+                enemies[loop].Visible();
+            }
+        }
+    }
+    public void SwitchFullTopDown(){
+        if(!fullTopDown){
+            playerCamera.SetParent(FullTopDownCamera);
+            playerCamera.localPosition = Vector3.zero;
+            playerCamera.localRotation = Quaternion.Euler(0,0,0);
+            player.gameObject.GetComponent<FirstPersonAIO>().DisableCamera();
+            player.gameObject.GetComponent<FirstPersonAIO>().playerCanMove = false;
+            firstPerson = false;
+            fullTopDown = true;
+            MakeEnemiesInvisible();
+
+        }
+        else{
+            firstPerson = true;
+            fullTopDown = false;
+            playerCamera.SetParent(firstPersonCamPosition);
+            playerCamera.localPosition = Vector3.zero;
+            playerCamera.localRotation = Quaternion.Euler(0,0,0);
+            player.gameObject.GetComponent<FirstPersonAIO>().EnableCamera();
+            player.gameObject.GetComponent<FirstPersonAIO>().playerCanMove = true;
+            MakeEnemiesVisible();
+
+        }
+        
+    }
+    public void EnableRangeIndicators(){
+        SwitchFullTopDown();
+        RangeIndicators = true;
+        for(int loop = 0; loop < buildPlates.Length; loop++){
+            if(buildPlates[loop].BuildIndex > 0){
+                buildPlates[loop].GetComponentInChildren<TurretTargetTrigger>().EnableRangeIndicator();
+            }
+            else{
+                continue;
+            }
+        }
+    }
+
+    public void DisableRangeIndicators(){
+        SwitchFullTopDown();
+        RangeIndicators = false;
+        for(int loop = 0; loop < buildPlates.Length; loop++){
+            if(buildPlates[loop].BuildIndex > 0){
+                buildPlates[loop].GetComponentInChildren<TurretTargetTrigger>().DisableRangeIndicator();
+            }
+            else{
+                continue;
+            }
+        }
     }
 
 

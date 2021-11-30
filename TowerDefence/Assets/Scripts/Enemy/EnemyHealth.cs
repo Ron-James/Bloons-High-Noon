@@ -15,10 +15,12 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] bool secondTutorialEnemy = false;
     GameObject deadEnemies;
     GameObject aliveEnemies;
+    [SerializeField] bool invisible = false;
     public bool isAlive = true;
 
     public float Health { get => health; set => health = value; }
     public Enemy Enemy { get => enemy; set => enemy = value; }
+    public bool Invisible1 { get => invisible; set => invisible = value; }
 
     // Start is called before the first frame update
     void Start()
@@ -73,6 +75,10 @@ public class EnemyHealth : MonoBehaviour
         }
         GetComponent<Collider>().enabled = false;
         GetComponent<Animator>().enabled = false;
+        if(GetComponentInChildren<EnemyTargetTrigger>() != null){
+            GetComponentInChildren<EnemyTargetTrigger>().enabled = false;
+        }
+        
         
     }
     public void Activate(){
@@ -83,6 +89,9 @@ public class EnemyHealth : MonoBehaviour
         }
         if(GetComponent<EnemyDamage>() != null){
             GetComponent<EnemyDamage>().enabled = true;
+        }
+        if(GetComponentInChildren<EnemyTargetTrigger>() != null){
+            GetComponentInChildren<EnemyTargetTrigger>().enabled = true;
         }
         //GetComponent<MeshRenderer>().enabled = true;
         GetComponent<Collider>().enabled = true;
@@ -100,5 +109,13 @@ public class EnemyHealth : MonoBehaviour
             this.transform.position = position;
             Activate();
         }
+    }
+    public void Invisible(){
+        invisible = true;
+        body.SetActive(false);
+    }
+    public void Visible(){
+        invisible = false;
+        body.SetActive(true);
     }
 }

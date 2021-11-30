@@ -19,10 +19,21 @@ public class TurretTargetTrigger : MonoBehaviour
         deadEnemies = GameManager.instance.DeadEnemies;
         areaTrigger = this.gameObject;
     }
+
+    IEnumerator TargetDelay(float time){
+        yield return new WaitForSeconds(time);
+        GetComponentInParent<TurretAim>().Target = FurthestEnemy();
+    }
     private void Update() {
         if(GetComponentInParent<TurretAim>().Target == null || GetComponentInParent<TurretAim>().Target.gameObject.GetComponent<EnemyHealth>().Health <= 0 || GetComponentInParent<TurretAim>().Target.parent == deadEnemies.transform){
             RemoveDeadEnemies();
-            GetComponentInParent<TurretAim>().Target = FurthestEnemy();
+            if(GetComponentInParent<TurretExpoDamage>() != null){
+                StartCoroutine(TargetDelay(0.0001f));
+            }
+            else{
+                GetComponentInParent<TurretAim>().Target = FurthestEnemy();
+            }
+            
         }
         if((GetComponentInParent<TurretExpoDamage>() != null && SecondFurthestEnemy() != null)){
             if(GetComponentInParent<TurretExpoDamage>().SecondTarget == null || GetComponentInParent<TurretExpoDamage>().SecondTarget.gameObject.GetComponent<EnemyHealth>().Health <= 0 || GetComponentInParent<TurretExpoDamage>().SecondTarget.parent == deadEnemies.transform){

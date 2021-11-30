@@ -76,6 +76,7 @@ MonoBehaviour:
   topDownCamPosition: {fileID: 0}
   firstPersonCamPosition: {fileID: 0}
   playerCamera: {fileID: 0}
+  FullTopDownCamera: {fileID: 0}
   player: {fileID: 0}
   mainTower: {fileID: 0}
   towerHealth: 10
@@ -100,28 +101,28 @@ MonoBehaviour:
   - name: Wave 1
     enemies:
     - {fileID: 11400000, guid: ea37699812fd0ae41996b122ffab05d9, type: 2}
-    enemyCounts: 11000000
-    rate: 6
+    enemyCounts: 19000000
+    rate: 3.5
     timeBeforeWave: 60
   - name: Wave 2
     enemies:
     - {fileID: 11400000, guid: ea37699812fd0ae41996b122ffab05d9, type: 2}
     enemyCounts: 17000000
-    rate: 4
+    rate: 3
     timeBeforeWave: 60
   - name: Wave3
     enemies:
     - {fileID: 11400000, guid: ea37699812fd0ae41996b122ffab05d9, type: 2}
     - {fileID: 11400000, guid: 4d917f49a6cf0d547b65e84be124de14, type: 2}
     enemyCounts: 1c00000003000000
-    rate: 6
+    rate: 5
     timeBeforeWave: 60
   - name: Wave 4
     enemies:
     - {fileID: 11400000, guid: ea37699812fd0ae41996b122ffab05d9, type: 2}
     - {fileID: 11400000, guid: 4d917f49a6cf0d547b65e84be124de14, type: 2}
-    enemyCounts: 1900000005000000
-    rate: 6
+    enemyCounts: 1700000006000000
+    rate: 4
     timeBeforeWave: 60
   - name: Wave 5
     enemies:
@@ -137,7 +138,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 4d917f49a6cf0d547b65e84be124de14, type: 2}
     - {fileID: 11400000, guid: accc43a106dd1ce4080085f892e67ce6, type: 2}
     enemyCounts: 160000000600000002000000
-    rate: 4
+    rate: 3.7
     timeBeforeWave: 60
   - name: Wave 7
     enemies:
@@ -154,7 +155,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: accc43a106dd1ce4080085f892e67ce6, type: 2}
     - {fileID: 11400000, guid: 78af8d65074105841b3235a50b377f41, type: 2}
     enemyCounts: 0f000000090000000600000001000000
-    rate: 6
+    rate: 4
     timeBeforeWave: 60
   - name: Wave 9
     enemies:
@@ -163,7 +164,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: accc43a106dd1ce4080085f892e67ce6, type: 2}
     - {fileID: 11400000, guid: accc43a106dd1ce4080085f892e67ce6, type: 2}
     enemyCounts: 0f000000090000000600000003000000
-    rate: 4
+    rate: 3.2
     timeBeforeWave: 60
   waveCountDown: 15
   state: 2

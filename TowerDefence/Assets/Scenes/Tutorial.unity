@@ -414,6 +414,7 @@ Transform:
   - {fileID: 1818044615}
   - {fileID: 2093934727}
   - {fileID: 1589196061}
+  - {fileID: 1993403390}
   m_Father: {fileID: 263787816709934370}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5473,6 +5474,7 @@ MonoBehaviour:
   topDownCamPosition: {fileID: 0}
   firstPersonCamPosition: {fileID: 0}
   playerCamera: {fileID: 0}
+  FullTopDownCamera: {fileID: 0}
   player: {fileID: 4203019419019984326}
   mainTower: {fileID: 0}
   towerHealth: 10
@@ -5495,6 +5497,114 @@ Transform:
   m_Father: {fileID: 1395150737}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1993403389
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 118352606}
+    m_Modifications:
+    - target: {fileID: 1709865109292101693, guid: c2856bea23263c54fb99ead63bc9bb36,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1709865109292101693, guid: c2856bea23263c54fb99ead63bc9bb36,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.9675894
+      objectReference: {fileID: 0}
+    - target: {fileID: 1709865109292101693, guid: c2856bea23263c54fb99ead63bc9bb36,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.23000002
+      objectReference: {fileID: 0}
+    - target: {fileID: 1709865109292101693, guid: c2856bea23263c54fb99ead63bc9bb36,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.9385562
+      objectReference: {fileID: 0}
+    - target: {fileID: 1709865109292101693, guid: c2856bea23263c54fb99ead63bc9bb36,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.24032323
+      objectReference: {fileID: 0}
+    - target: {fileID: 1709865109292101693, guid: c2856bea23263c54fb99ead63bc9bb36,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -4.4722264e-17
+      objectReference: {fileID: 0}
+    - target: {fileID: 1709865109292101693, guid: c2856bea23263c54fb99ead63bc9bb36,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.97069293
+      objectReference: {fileID: 0}
+    - target: {fileID: 1709865109292101693, guid: c2856bea23263c54fb99ead63bc9bb36,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 7.4153393e-17
+      objectReference: {fileID: 0}
+    - target: {fileID: 1709865109292101693, guid: c2856bea23263c54fb99ead63bc9bb36,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1709865109292101693, guid: c2856bea23263c54fb99ead63bc9bb36,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 207.811
+      objectReference: {fileID: 0}
+    - target: {fileID: 1709865109292101693, guid: c2856bea23263c54fb99ead63bc9bb36,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6827180254368348532, guid: c2856bea23263c54fb99ead63bc9bb36,
+        type: 3}
+      propertyPath: m_Name
+      value: InfoBoard (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8551433652662026705, guid: c2856bea23263c54fb99ead63bc9bb36,
+        type: 3}
+      propertyPath: m_text
+      value: Press 'Q' to view the turrets' range indicators from a full top down
+        view. Beware, enemies cannot be seen from the view.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8551433652662026705, guid: c2856bea23263c54fb99ead63bc9bb36,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: ebe1d7965005d5f429b2eb2a76e0c4af,
+        type: 2}
+    - target: {fileID: 8551433652662026705, guid: c2856bea23263c54fb99ead63bc9bb36,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 3983930605983146194, guid: ebe1d7965005d5f429b2eb2a76e0c4af,
+        type: 2}
+    - target: {fileID: 8551433652662026705, guid: c2856bea23263c54fb99ead63bc9bb36,
+        type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 8551433652662026705, guid: c2856bea23263c54fb99ead63bc9bb36,
+        type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8580245667805690119, guid: c2856bea23263c54fb99ead63bc9bb36,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c2856bea23263c54fb99ead63bc9bb36, type: 3}
+--- !u!4 &1993403390 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1709865109292101693, guid: c2856bea23263c54fb99ead63bc9bb36,
+    type: 3}
+  m_PrefabInstance: {fileID: 1993403389}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1999653006 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1709865109292101693, guid: c2856bea23263c54fb99ead63bc9bb36,
