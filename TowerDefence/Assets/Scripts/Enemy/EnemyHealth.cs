@@ -21,13 +21,14 @@ public class EnemyHealth : MonoBehaviour
     public float Health { get => health; set => health = value; }
     public Enemy Enemy { get => enemy; set => enemy = value; }
     public bool Invisible1 { get => invisible; set => invisible = value; }
+    public float MaxHealth { get => maxHealth; set => maxHealth = value; }
 
     // Start is called before the first frame update
     void Start()
     {
         
         health = enemy.health;
-        maxHealth = health;
+        MaxHealth = health;
         deadEnemies = GameManager.instance.DeadEnemies;
         aliveEnemies = GameManager.instance.AliveEnemies;
 
@@ -109,7 +110,7 @@ public class EnemyHealth : MonoBehaviour
             return;
         }
         else{
-            health = maxHealth;
+            health = MaxHealth;
             isAlive = true;
             this.transform.SetParent(aliveEnemies.transform);
             this.transform.position = position;

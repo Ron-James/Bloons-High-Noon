@@ -97,7 +97,10 @@ public class GameManager : Singleton<GameManager>
     {
         
         if(Input.GetKeyDown(KeyCode.M)){
-            balance = 10000;
+            AddBalance(10000);
+        }
+        if(Input.GetKeyDown(KeyCode.B)){
+            SpawnEnemy(enemies[2]);
         }
         
 

@@ -23,6 +23,8 @@ public class TurretTargetTrigger : MonoBehaviour
     IEnumerator TargetDelay(float time){
         yield return new WaitForSeconds(time);
         GetComponentInParent<TurretAim>().Target = FurthestEnemy();
+        
+        
     }
     private void Update() {
         if(GetComponentInParent<TurretAim>().Target == null || GetComponentInParent<TurretAim>().Target.gameObject.GetComponent<EnemyHealth>().Health <= 0 || GetComponentInParent<TurretAim>().Target.parent == deadEnemies.transform){
@@ -158,7 +160,37 @@ public class TurretTargetTrigger : MonoBehaviour
     }
 
     
+    public Transform StrongestEnemyInRange(){
+        List<Transform> enemies = GetEnemiesInRange();
+        float highestMaxHealth = enemies[0].GetComponent<EnemyHealth>().MaxHealth;
+        Transform highestMaxHealthEnemy = enemies[0];
+        for(int loop = 0; loop < enemies.Count; loop++){
+            if(enemies[loop] != null){
+                if(enemies[loop].GetComponent<EnemyHealth>().MaxHealth >= highestMaxHealth){
+                    if(enemies[loop].GetComponent<EnemyHealth>().MaxHealth == highestMaxHealth){
+                        if(enemies[loop].GetComponent<EnemyFollower>().CurrentDistance < highestMaxHealthEnemy.GetComponent<EnemyFollower>().CurrentDistance){
+                            highestMaxHealth = enemies[loop].GetComponent<EnemyHealth>().MaxHealth;
+                            highestMaxHealthEnemy = enemies[loop];
+                        }
+                        else if(enemies[loop].GetComponent<EnemyHealth>().Health > highestMaxHealthEnemy.GetComponent<EnemyHealth>().Health){
+                            highestMaxHealth = enemies[loop].GetComponent<EnemyHealth>().MaxHealth;
+                            highestMaxHealthEnemy = enemies[loop];
+                        }
+                        else{
+                            continue;
+                        }
+                    }
+                    else{
+                        highestMaxHealth = enemies[loop].GetComponent<EnemyHealth>().MaxHealth;
+                        highestMaxHealthEnemy = enemies[loop];
+                    }
+                    
+                }
+            }
+        }
+        return highestMaxHealthEnemy;
 
+    }
     void RemoveDeadEnemies(){
         for(int loop = 0; loop < enemiesInRange.Count; loop++){
             if(enemiesInRange[loop] != null){
