@@ -14,6 +14,7 @@ public class TowerMenu : MonoBehaviour
     [SerializeField] Text upgrade2Desc;
     [SerializeField] Text upgrade3Desc;
     [SerializeField] Text sellPrice;
+    [SerializeField] Text rangeTxt;
     [SerializeField] Image towerPic;
     [SerializeField] BuildMenu buildMenu;
     [SerializeField] Text [] costText = new Text[3];
@@ -33,8 +34,12 @@ public class TowerMenu : MonoBehaviour
     {
         
     }
+    public void UpdateRange(){
+        rangeTxt.text = "Range:" +  buildMenu.CurrentPlate.EnabledPrefab().GetComponentInChildren<TurretTargetTrigger>().GetRange().ToString("#.#") + "m";
+    }
     public void UpdateInfo(Tower t){
         currentTower = t;
+        UpdateRange();
         towerName.text = currentTower.towerName;
         towerDescription.text = currentTower.description;
         upgrade1Desc.text = currentTower.upgrade1Desc;
@@ -57,6 +62,8 @@ public class TowerMenu : MonoBehaviour
     }
     public void UpdatePreviewInfo(Tower t){
         sellPrice.gameObject.SetActive(false);
+        rangeTxt.text = "Range: " + t.tower.GetComponentInChildren<TurretTargetTrigger>().GetRange().ToString("#.#") + "m";
+        //rangeTxt.text = "Range:" +  buildMenu.CurrentPlate.EnabledPrefab().GetComponentInChildren<TurretTargetTrigger>().GetRange().ToString() + "m";
         currentTower = t;
         towerName.text = currentTower.towerName;
         towerDescription.text = currentTower.description;

@@ -14,6 +14,7 @@ public class BuildMenu : MonoBehaviour
     [SerializeField] Button demolish;
     [SerializeField] Button repair;
     [SerializeField] Button unlock;
+    [SerializeField] Button Return;
     [SerializeField] Text lockedText;
     [SerializeField] BuildPlate currentPlate;
     [SerializeField] bool unlocked = false;
@@ -51,6 +52,7 @@ public class BuildMenu : MonoBehaviour
         MenuIsOpen = false;
         currentPlate = null;
         menu.SetActive(false);
+        repair.gameObject.SetActive(false);
         //GetComponentInChildren<TowerMenu>().CloseTowerMenu();
         GameObject.Find("Player").GetComponent<FirstPersonAIO>().EnableCamera();
         GameObject.Find("Player").GetComponent<FirstPersonAIO>().playerCanMove = true;
@@ -63,6 +65,7 @@ public class BuildMenu : MonoBehaviour
             upgradeNoise.PlayOnce();
             currentPlate.UpgradeCurrentBuild(index);
             currentPlate.UpgradeHealth();
+            towerMenu.UpdateRange();
             towerMenu.UpdateUpgradeButtons();
         }
     }
@@ -75,6 +78,7 @@ public class BuildMenu : MonoBehaviour
     }
     public void PreviewTower(Tower t){
         towerMenu.OpenTowerMenuPreview(t);
+        repair.gameObject.SetActive(false);
         towerOptions.SetActive(false);
         demolish.gameObject.SetActive(false);
     }
@@ -126,12 +130,20 @@ public class BuildMenu : MonoBehaviour
                 unlock.gameObject.SetActive(false);
                 towerOptions.SetActive(false);
                 demolish.gameObject.SetActive(true);
-                
+                repair.gameObject.SetActive(true);
                 towerMenu.OpenTowerMenu();
                 towerMenu.UpdateUpgradeButtons();
+                Return.interactable = false;
+                if(CanRepair()){
+                    repair.interactable = true;
+                }
+                else{
+                    repair.interactable = false;
+                }
 
             }
             else{
+                Return.interactable = true;
                 towerMenu.CloseTowerMenu();
                 lockedText.gameObject.SetActive(false);
                 unlock.gameObject.SetActive(false);

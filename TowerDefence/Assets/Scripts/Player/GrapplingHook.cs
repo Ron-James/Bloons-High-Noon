@@ -107,39 +107,7 @@ public class GrapplingHook : MonoBehaviour
             rope.SetPosition(1, hook.transform.position);
         }
 
-        /*
-        if(Input.GetMouseButtonDown(0) && !fired){
-            fired = true;
-        }
-        if(fired && !hooked){
-            hook.transform.Translate(Vector3.forward * Time.deltaTime * hookTravelSpd);
-            currentDistance = Vector3.Distance(transform.position, hook.transform.position);
-            if(currentDistance >= maxDistance){
-                ReturnHook();
-            }
-        }
-        if(hooked && fired){
-            hook.transform.SetParent(hookedObject.transform);
-            transform.position = Vector3.MoveTowards(transform.position, hook.transform.position, playerTravelSpd * Time.deltaTime);
-            float distanceToHook = Vector3.Distance(transform.position, hook.transform.position);
-            
-            this.GetComponent<Rigidbody>().useGravity = false;
-            
-            if(distanceToHook < 2){
-                if(!this.GetComponent<PlayerController>().IsGrounded){
-                    this.transform.Translate(Vector3.forward * Time.fixedDeltaTime * 7f);
-                    this.transform.Translate(Vector3.up *Time.deltaTime * 10f);
-                    StartCoroutine(Climb());
-                }
-            }
-            
-        }
-        else{
-            hook.transform.SetParent(hookHolder.transform);
-            this.GetComponent<Rigidbody>().useGravity = true;
-        }
-        */
-       
+        
         
     }
     
@@ -158,118 +126,15 @@ public class GrapplingHook : MonoBehaviour
         hook.transform.localPosition = startPosition;
         hook.transform.localRotation = defaultRot;
         GetComponentInParent<FirstPersonAIO>().EnableCamera();
+        GetComponentInParent<FirstPersonAIO>().playerCanMove = true;
         
     }
 
-    IEnumerator ClimbUpForward(float durationFor, float durationUp){
-        float time = 0;
-        Vector3 point = Vector3.zero;
-        float distance = 0;
-        if(Physics.Raycast(player.transform.position - (Vector3.up * playerHeight), Vector3.up, out platformHit, maxClimbHeight, platformLayer)){
-            distance = Vector3.Distance(player.transform.position , platformHit.point) + (playerHeight*maxPlatformdist);
-            point = distance * Vector3.up;
-            float pointHeight = point.y;
-            while(true){
-                time += Time.deltaTime;
-                float currentHeight = player.transform.position.y;
-                if(time >= durationUp || player.transform.position.y > pointHeight){
-                    StartCoroutine(ClimbForward(durationFor));
-                    break;
-                }
-                else if(Input.GetMouseButtonDown(1)){
-                    ReturnHook();
-                    GetComponentInParent<FirstPersonAIO>().playerCanMove = true;
-                    break;
-                } 
-                else{
-                    player.transform.Translate(Vector3.up * Time.deltaTime * climbSpeed);
-                    yield return null;
-                }
-        }
-        }
-        else{
-            ReturnHook();
-            GetComponentInParent<FirstPersonAIO>().playerCanMove = true;
-            Debug.Log("Falling");
-            yield break;
-        }
-        
-    }
+    
 
-IEnumerator ClimbUp(float durationUp){
-        float time = 0;
-        while(true){
-            time += Time.deltaTime;
-            if(time >= durationUp || player.GetComponent<FirstPersonAIO>().IsGrounded){
-                ReturnHook();
-                GetComponentInParent<FirstPersonAIO>().playerCanMove = true;
-                break;
-            }
-            else{
-                player.transform.Translate(Vector3.up * Time.fixedDeltaTime);
-                yield return null;
-            }
-        }
-    }
-    IEnumerator ClimbForward(float duration){
-        float time = 0;
-        while(true){
-            time += Time.deltaTime;
-            if(time >= duration){
-                ReturnHook();
-                GetComponentInParent<FirstPersonAIO>().playerCanMove = true;
-                break;
-            }
-            else if(Input.GetMouseButtonDown(1))
-            {
-                ReturnHook();
-                GetComponentInParent<FirstPersonAIO>().playerCanMove = true;
-                break;
-            } 
-            else{
-                player.transform.Translate(Vector3.forward * Time.fixedDeltaTime);
-                yield return null;
-            }
-        }
-    }
-    IEnumerator ClimbForwardUp(float durationFor, float durationUp){
-        float time = 0;
-        while(true){
-            time += Time.deltaTime;
-            if(time >= durationFor || player.GetComponent<FirstPersonAIO>().IsGrounded){
-                //StartCoroutine(ClimbUp(durationUp));
-                GetComponentInParent<FirstPersonAIO>().playerCanMove = true;
-                break;
-            }
-            else{
-                player.transform.Translate(Vector3.forward * Time.fixedDeltaTime);
-                yield return null;
-            }
-        }
-    }
-    IEnumerator Climb(float duration){
-        float time = 0;
-        while(true){
-            time += Time.deltaTime;
-            if(time >= duration || player.GetComponent<FirstPersonAIO>().IsGrounded){
-                ReturnHook();
-                GetComponentInParent<FirstPersonAIO>().playerCanMove = true;
-                break;
-            }
-            else if (Input.GetMouseButtonDown(1)) { 
-                ReturnHook();
-                GetComponentInParent<FirstPersonAIO>().playerCanMove = true;
-                break;
-            } 
-            else{
-                player.transform.Translate(Vector3.forward * Time.fixedDeltaTime * 10f);
-                player.transform.Translate(Vector3.up * Time.deltaTime * 1f);
-                yield return null;
-            }
-        }
-        
-        
-    }
+    
+    
+    
     
 
     IEnumerator Reel(){

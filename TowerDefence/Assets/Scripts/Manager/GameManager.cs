@@ -87,6 +87,7 @@ public class GameManager : Singleton<GameManager>
         UpdateBalanceText();
         gameOver = false;
         RangeIndicators = false;
+        Time.timeScale = 1;
         
         //Debug.Log("Dead enemies " + deadEnemies.GetComponentsInChildren<Transform>().Length + deadEnemies.GetComponentsInChildren<Transform>()[0].gameObject.name);
         
@@ -99,9 +100,7 @@ public class GameManager : Singleton<GameManager>
         if(Input.GetKeyDown(KeyCode.M)){
             AddBalance(10000);
         }
-        if(Input.GetKeyDown(KeyCode.B)){
-            SpawnEnemy(enemies[2]);
-        }
+        
         
 
         if(Input.GetKeyDown(KeyCode.E)){

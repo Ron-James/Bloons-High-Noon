@@ -26,6 +26,7 @@ public class BuildPlate : MonoBehaviour
     [SerializeField] bool unlocked = true;
     [SerializeField] GameObject unlockedPlate;
     [SerializeField] GameObject lockedPlate;
+    [SerializeField] GameObject damageTarget;
     public Build Build { get => build; set => build = value; }
     public int BuildIndex { get => (int) build; }
     public float Health { get => health; set => health = value; }
@@ -38,6 +39,7 @@ public class BuildPlate : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        damageTarget.SetActive(false);
         DisableHealthIndicator();
         buildIndex = BuildIndex;
         EnableCurrentBuild();
@@ -61,7 +63,9 @@ public class BuildPlate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetKeyDown(KeyCode.J)){
+            TakeDamage(MaxHealth * 0.4f);
+        }
     }
     public void UpdatePlateLock(){
         if(!unlocked){
@@ -148,6 +152,7 @@ public class BuildPlate : MonoBehaviour
         }
         else
         {
+            damageTarget.SetActive(false);
             health = MaxHealth;
             UpdateHealthBar();
             
@@ -213,8 +218,12 @@ public class BuildPlate : MonoBehaviour
             if(health <= MaxHealth * GameManager.HelthIndicatorThrsh){
                 EnableHealthIndicator();
             }
+            if(health < maxHealth * 0.5f){
+                damageTarget.SetActive(true);
+            }
             UpdateHealthBar();
             if(health <= 0){
+                damageTarget.SetActive(false);
                 DestroyTower();
                 DisableHealthIndicator();
             }
