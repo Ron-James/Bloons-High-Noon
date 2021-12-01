@@ -63,9 +63,7 @@ public class BuildPlate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.J)){
-            TakeDamage(MaxHealth * 0.4f);
-        }
+        
     }
     public void UpdatePlateLock(){
         if(!unlocked){
