@@ -157,14 +157,7 @@ public class BuildPlate : MonoBehaviour
         }
     }
 
-    public bool HasFullHealth(){
-        if(health == MaxHealth){
-            return true;
-        }
-        else{
-            return false;
-        }
-    }
+
     public void EnableHealthIndicator(){
         if(buildIndex > 0){
             healthBar.SetActive(true);

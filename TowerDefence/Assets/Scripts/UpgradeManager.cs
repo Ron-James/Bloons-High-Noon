@@ -160,6 +160,7 @@ public class UpgradeManager : MonoBehaviour
                 fireRateUpgrade = GetComponent<TurretProjectile>().FireRateUpgrades[0];
                 targetTrigger.UpgradeRange(targetTrigger.RangeUpgrades[4] * basicRange);
                 rangeUpgrade = targetTrigger.RangeUpgrades[4];
+                GetComponent<TurretProjectile>().AlwaysSwitchToFurthestTarget = true;
             break;
             case 1:
                 CooldownUpgrade = GetComponent<TurretExpoDamage>().CooldownUpgrades[0]; //significantly slower cooldown time
@@ -217,6 +218,7 @@ public class UpgradeManager : MonoBehaviour
         }
         else if(GetComponent<TurretProjectile>()!= null){
             GetComponent<TurretProjectile>().IceShot = false;
+            GetComponent<TurretProjectile>().AlwaysSwitchToFurthestTarget = false;
         }
         else if(GetComponent<TurretFreezeAOE>() != null){
             GetComponent<TurretFreezeAOE>().StunSlow = false;
