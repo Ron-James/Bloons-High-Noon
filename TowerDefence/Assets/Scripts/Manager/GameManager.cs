@@ -21,6 +21,7 @@ public class GameManager : Singleton<GameManager>
     [Header("UI Elements")]
     [SerializeField] Image healthBar;
     [SerializeField] Text balanceTxt;
+   
     [SerializeField] GameObject buildPrompt;
 
     [Header("Build Plate Objects and Menu")]
@@ -227,6 +228,9 @@ public class GameManager : Singleton<GameManager>
 
     public void SwitchCamera(){
         if(firstPerson){
+            
+            Camera.main.GetComponent<AudioListener>().enabled = false;
+            player.GetComponent<FirstPersonAIO>().baseCamFOV = 90;
             playerCamera.SetParent(topDownCamPosition);
             playerCamera.localPosition = Vector3.zero;
             playerCamera.localRotation = Quaternion.Euler(0,0,0);
@@ -236,13 +240,15 @@ public class GameManager : Singleton<GameManager>
 
         }
         else{
+            
+            player.GetComponent<FirstPersonAIO>().baseCamFOV = 60;
             firstPerson = true;
             playerCamera.SetParent(firstPersonCamPosition);
             playerCamera.localPosition = Vector3.zero;
             playerCamera.localRotation = Quaternion.Euler(0,0,0);
             player.gameObject.GetComponent<FirstPersonAIO>().EnableCamera();
             player.gameObject.GetComponent<FirstPersonAIO>().playerCanMove = true;
-
+            Camera.main.GetComponent<AudioListener>().enabled = true;
         }
         
     }
@@ -273,6 +279,10 @@ public class GameManager : Singleton<GameManager>
     }
     public void SwitchFullTopDown(){
         if(!fullTopDown){
+            
+            Camera.main.orthographic = true;
+            Camera.main.GetComponent<AudioListener>().enabled = false;
+            Camera.main.orthographicSize = 125;
             playerCamera.SetParent(FullTopDownCamera);
             playerCamera.localPosition = Vector3.zero;
             playerCamera.localRotation = Quaternion.Euler(0,0,0);
@@ -284,12 +294,16 @@ public class GameManager : Singleton<GameManager>
 
         }
         else{
+            
+            Camera.main.orthographic = false;
+            Camera.main.orthographicSize = 5;
             firstPerson = true;
             fullTopDown = false;
             playerCamera.SetParent(firstPersonCamPosition);
             playerCamera.localPosition = Vector3.zero;
             playerCamera.localRotation = Quaternion.Euler(0,0,0);
             player.gameObject.GetComponent<FirstPersonAIO>().EnableCamera();
+            Camera.main.GetComponent<AudioListener>().enabled = true;
             player.gameObject.GetComponent<FirstPersonAIO>().playerCanMove = true;
             MakeEnemiesVisible();
 

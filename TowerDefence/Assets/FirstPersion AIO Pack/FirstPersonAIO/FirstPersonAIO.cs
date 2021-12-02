@@ -90,7 +90,7 @@ public class FirstPersonAIO : MonoBehaviour {
     public Camera playerCamera;
     public bool enableCameraShake=false;
     internal Vector3 cameraStartingPosition;
-    float baseCamFOV;
+    public float baseCamFOV;
     public BuildMenu buildMenu;
     bool isHitIsland = false;
     public GameObject buildPrompt;

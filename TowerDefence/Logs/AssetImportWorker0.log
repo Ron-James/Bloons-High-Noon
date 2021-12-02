@@ -1,1227 +1,235 @@
 Using pre-set license
 Built from '2020.2/staging' branch; Version is '2020.2.7f1 (c53830e277f1) revision 12924976'; Using compiler version '192528614'; Build Type 'Release'
-OS: 'Windows 10 Home; OS build 19042.1348; Version 2009; 64bit' Language: 'en' Physical Memory: 16177 MB
+OS: 'Windows 10 Home; OS build 19043.1348; Version 2009; 64bit' Language: 'en' Physical Memory: 12229 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
 
  COMMAND LINE ARGUMENTS:
-D:\Unity Editors\2020.2.7f1\Editor\Unity.exe
+C:\Program Files\Unity\Hub\Editor\2020.2.7f1\Editor\Unity.exe
 -adb2
 -batchMode
 -noUpm
 -name
 AssetImportWorker0
 -projectPath
-D:/Unity Projects/Final ASs/Final-Assignment-Group-2/TowerDefence
+C:/Users/myfut/Documents/Final-Assignment-Group-2-Github/Final-Assignment-Group-2/TowerDefence
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-1185
-Successfully changed project path to: D:/Unity Projects/Final ASs/Final-Assignment-Group-2/TowerDefence
-D:/Unity Projects/Final ASs/Final-Assignment-Group-2/TowerDefence
+54509
+Successfully changed project path to: C:/Users/myfut/Documents/Final-Assignment-Group-2-Github/Final-Assignment-Group-2/TowerDefence
+C:/Users/myfut/Documents/Final-Assignment-Group-2-Github/Final-Assignment-Group-2/TowerDefence
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 69.68 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 71.62 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.2.7f1 (c53830e277f1)
-[Subsystems] Discovering subsystems at path D:/Unity Editors/2020.2.7f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path D:/Unity Projects/Final ASs/Final-Assignment-Group-2/TowerDefence/Assets
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.2.7f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/myfut/Documents/Final-Assignment-Group-2-Github/Final-Assignment-Group-2/TowerDefence/Assets
 GfxDevice: creating device client; threaded=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
-    Renderer: NVIDIA GeForce GTX 1050 Ti (ID=0x1c8c)
+    Renderer: NVIDIA GeForce GTX 1060 6GB (ID=0x1c03)
     Vendor:   
-    VRAM:     4018 MB
-    Driver:   30.0.14.9613
+    VRAM:     6052 MB
+    Driver:   30.0.14.9676
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
 Initialize mono
-Mono path[0] = 'D:/Unity Editors/2020.2.7f1/Editor/Data/Managed'
-Mono path[1] = 'D:/Unity Editors/2020.2.7f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
-Mono config path = 'D:/Unity Editors/2020.2.7f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56112
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.2.7f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.2.7f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.2.7f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56900
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
-Register platform support module: D:/Unity Editors/2020.2.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001239 seconds.
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.2.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.001842 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 65.85 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 65.78 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.178 seconds
+- Completed reload, in  0.980 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.001640 seconds.
+Registered in 0.001530 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 64.29 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 58.86 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.041 seconds
+- Completed reload, in  0.962 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
-Refreshing native plugins compatible for Editor in 0.63 ms, found 0 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.08 seconds
+Refreshing native plugins compatible for Editor in 0.60 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3095 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 219.3 MB.
-System memory in use after: 219.3 MB.
+Unloading 3097 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 225.4 MB.
+System memory in use after: 225.4 MB.
 
-Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 3550.
-Total: 2.440800 ms (FindLiveObjects: 0.267700 ms CreateObjectMapping: 0.134300 ms MarkObjects: 1.905100 ms  DeleteObjects: 0.132900 ms)
-
-========================================================================
-Received Import Request.
-  path: Assets/Prefabs/Turret_Prefabs/Repeater_Turret.prefab
-  artifactKey: Guid(3d078ce9e3a7f534e9b8e4d18fdbabc2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Repeater_Turret.prefab using Guid(3d078ce9e3a7f534e9b8e4d18fdbabc2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '285978c53800144195d5ac910092b0f0') in 0.343328 seconds
-  Import took 0.349299 seconds .
+Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 3557.
+Total: 2.329400 ms (FindLiveObjects: 0.239000 ms CreateObjectMapping: 0.133300 ms MarkObjects: 1.806600 ms  DeleteObjects: 0.149300 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000327 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Stun Turret_Upgrade_03.prefab
-  artifactKey: Guid(b68debd891582da44b186956c4146e6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Stun Turret_Upgrade_03.prefab using Guid(b68debd891582da44b186956c4146e6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5d566b00b23bf98ccc700e341c741937') in 0.080445 seconds
-  Import took 0.088015 seconds .
+  path: Assets/Prefabs/Turret_Prefabs/Build_Plate.prefab
+  artifactKey: Guid(d7df45960fd7e0f4092195da272105f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Turret_Prefabs/Build_Plate.prefab using Guid(d7df45960fd7e0f4092195da272105f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6678230fdeca4a79c929bacabfc7cce5') in 0.048280 seconds
+  Import took 0.052724 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000329 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Sharps_Turret.prefab
-  artifactKey: Guid(2685014da2558f249b9da516e8f24395) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Sharps_Turret.prefab using Guid(2685014da2558f249b9da516e8f24395) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e396935b734abe542c9915bdc0b804f9') in 0.034159 seconds
-  Import took 0.042159 seconds .
+  Time since last request: 0.000175 seconds.
+  path: Assets/Prefabs/Turret_Prefabs/BaseTurret.prefab
+  artifactKey: Guid(a0cc0217860d1ca44b25c86b9e790588) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Turret_Prefabs/BaseTurret.prefab using Guid(a0cc0217860d1ca44b25c86b9e790588) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '59e61fae48ab05d3dbd5fda383153b7d') in 0.240378 seconds
+  Import took 0.247519 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000329 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Exp Turret_Upgrade_02.prefab
-  artifactKey: Guid(57573383306f2b5489ef1176e26f9270) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Exp Turret_Upgrade_02.prefab using Guid(57573383306f2b5489ef1176e26f9270) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9024174892ac242a5edeffd75a8cfc34') in 0.773411 seconds
-  Import took 0.782176 seconds .
+  Time since last request: 0.000166 seconds.
+  path: Assets/Prefabs/Turret_Prefabs/Stun Turret.prefab
+  artifactKey: Guid(0a150cd8ae9d58d4d9c1a8f9cd11fd8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Turret_Prefabs/Stun Turret.prefab using Guid(0a150cd8ae9d58d4d9c1a8f9cd11fd8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b5a9d9df0e57fa0c0b167a92c2b0fd67') in 0.061470 seconds
+  Import took 0.068289 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000300 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Arc_Upgrade_01.prefab
-  artifactKey: Guid(d999784cf37039144bfec89673504ead) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Arc_Upgrade_01.prefab using Guid(d999784cf37039144bfec89673504ead) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '80c3195f828d71c1cf40cec5023d3e02') in 0.023036 seconds
-  Import took 0.029164 seconds .
+  Time since last request: 0.000179 seconds.
+  path: Assets/Prefabs/Turret_Prefabs/Exp Turret.prefab
+  artifactKey: Guid(6bbca5bb6941a5142b0e54a77d9fafa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Turret_Prefabs/Exp Turret.prefab using Guid(6bbca5bb6941a5142b0e54a77d9fafa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '71a0f4d0e86cd5a1b3e110d983f1d061') in 0.055026 seconds
+  Import took 0.062052 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000311 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Stun Turret_Upgrade_02.prefab
-  artifactKey: Guid(9985de90265db8545ba67194b9adf8da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Stun Turret_Upgrade_02.prefab using Guid(9985de90265db8545ba67194b9adf8da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5b89841aa587af8b47535dc05c80f83f') in 0.069081 seconds
-  Import took 0.076879 seconds .
+  Time since last request: 0.000201 seconds.
+  path: Assets/Prefabs/Turret_Prefabs/Turret.prefab
+  artifactKey: Guid(ac675cc045ca6d141a2533e2bf78a01a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Turret_Prefabs/Turret.prefab using Guid(ac675cc045ca6d141a2533e2bf78a01a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cbed488d188abbbffd70b681c962b997') in 0.023348 seconds
+  Import took 0.030284 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000300 seconds.
+  Time since last request: 25.766966 seconds.
+  path: Assets/Prefabs/Build Plate.prefab
+  artifactKey: Guid(012beba0df57bae44839883bb08ca0f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Build Plate.prefab using Guid(012beba0df57bae44839883bb08ca0f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '20b77c098c2d7374c877287c4dccd463') in 0.076990 seconds
+  Import took 0.086595 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000225 seconds.
+  path: Assets/Prefabs/Camera Holder.prefab
+  artifactKey: Guid(4e47f58927bdde44a8fd41f65a49f454) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Camera Holder.prefab using Guid(4e47f58927bdde44a8fd41f65a49f454) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f46c9b3f05546d6a5cca79bccd7dd87e') in 0.009910 seconds
+  Import took 0.014458 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000225 seconds.
+  path: Assets/Prefabs/Island.prefab
+  artifactKey: Guid(d16bb50cb2044fc4db92072b5c816282) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Island.prefab using Guid(d16bb50cb2044fc4db92072b5c816282) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '93c6e200e2478f4ef415444a0449f4f5') in 0.027231 seconds
+  Import took 0.032666 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000255 seconds.
+  path: Assets/Prefabs/Grid Piece 2.5.prefab
+  artifactKey: Guid(0bbddb31c6f935b40927851aa6f90392) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Grid Piece 2.5.prefab using Guid(0bbddb31c6f935b40927851aa6f90392) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '13b1ee9a5415d623299badb0eca13164') in 0.017200 seconds
+  Import took 0.023285 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000250 seconds.
   path: Assets/Prefabs/Player.prefab
   artifactKey: Guid(7cf5de6e4a25d4f45b4d89acc520a0e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Player.prefab using Guid(7cf5de6e4a25d4f45b4d89acc520a0e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cbe1933159df66c43540d4251ed71cd8') in 0.033864 seconds
-  Import took 0.039485 seconds .
+Start importing Assets/Prefabs/Player.prefab using Guid(7cf5de6e4a25d4f45b4d89acc520a0e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd1cf54e8824c67be34372a648562fe46') in 0.018058 seconds
+  Import took 0.022880 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000396 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/BaseTurret.prefab
-  artifactKey: Guid(a0cc0217860d1ca44b25c86b9e790588) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/BaseTurret.prefab using Guid(a0cc0217860d1ca44b25c86b9e790588) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8e2d0a1d4e048f7d8130e6c86f88cf9a') in 0.060990 seconds
-  Import took 0.070919 seconds .
+  Time since last request: 0.000220 seconds.
+  path: Assets/Prefabs/Tower Attack Enemy.prefab
+  artifactKey: Guid(f3bc30ef718105047909086e90c2b09c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Tower Attack Enemy.prefab using Guid(f3bc30ef718105047909086e90c2b09c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '729776013724822d011bbde598fdf017') in 0.036111 seconds
+  Import took 0.041115 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000286 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Arc_Upgrade_02.prefab
-  artifactKey: Guid(f0eaf5bad0e562245944767e1d9b5624) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Arc_Upgrade_02.prefab using Guid(f0eaf5bad0e562245944767e1d9b5624) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9a91bea6e20aa2a4034f69a2d3717f89') in 0.026538 seconds
-  Import took 0.032477 seconds .
+  Time since last request: 0.000257 seconds.
+  path: Assets/Prefabs/Hook.prefab
+  artifactKey: Guid(082c467b0ab350d4a867807951051e08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Hook.prefab using Guid(082c467b0ab350d4a867807951051e08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '91491c85c48f0ac3a4b91761647065a5') in 0.022661 seconds
+  Import took 0.028811 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000226 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Flame-Upgrade_03.prefab
-  artifactKey: Guid(1ac9f9f2a89e239478c83998669368b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Flame-Upgrade_03.prefab using Guid(1ac9f9f2a89e239478c83998669368b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '45910f157548eac3b3fcce8c93c33f87') in 0.021906 seconds
-  Import took 0.027403 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000221 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Stun Turret.prefab
-  artifactKey: Guid(0a150cd8ae9d58d4d9c1a8f9cd11fd8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Stun Turret.prefab using Guid(0a150cd8ae9d58d4d9c1a8f9cd11fd8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '05e54699a321633b215078e2ca6973c8') in 0.045388 seconds
-  Import took 0.052890 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000234 seconds.
-  path: Assets/Prefabs/Build Plate.prefab
-  artifactKey: Guid(012beba0df57bae44839883bb08ca0f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Build Plate.prefab using Guid(012beba0df57bae44839883bb08ca0f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '486990a5a51c95fcac5660791bd65735') in 0.068825 seconds
-  Import took 0.288550 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000311 seconds.
+  Time since last request: 0.000281 seconds.
   path: Assets/Prefabs/Main Game UI.prefab
   artifactKey: Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Main Game UI.prefab using Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cce21ced974899dc7f9e3ff402004095') in 0.058539 seconds
-  Import took 0.067122 seconds .
+Start importing Assets/Prefabs/Main Game UI.prefab using Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1e1b10e513b21792db4abaecd34104e4') in 0.020932 seconds
+  Import took 0.027030 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000310 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Exp Turret_Upgrade_03.prefab
-  artifactKey: Guid(619416def072128448c87a5f95f89945) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Exp Turret_Upgrade_03.prefab using Guid(619416def072128448c87a5f95f89945) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '93d0b6f9eda0a77b06ca55df9951a631') in 0.050985 seconds
-  Import took 0.058314 seconds .
+  Time since last request: 0.000185 seconds.
+  path: Assets/Prefabs/Ranged Enemy.prefab
+  artifactKey: Guid(29ba67b84caf67d4cb440eec1f143bf4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Ranged Enemy.prefab using Guid(29ba67b84caf67d4cb440eec1f143bf4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'af3ed333366d864eb86fd48b97c2aaaf') in 0.016861 seconds
+  Import took 0.022143 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000285 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Flame_Upgrade_02.prefab
-  artifactKey: Guid(b487747bbae87264ab09c7d9471530ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Flame_Upgrade_02.prefab using Guid(b487747bbae87264ab09c7d9471530ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0f831ceae3b5c96771b0c335468fbd1e') in 0.036817 seconds
-  Import took 0.044264 seconds .
+  Time since last request: 0.000185 seconds.
+  path: Assets/Prefabs/Frame+Hook.prefab
+  artifactKey: Guid(b5099e165bfdc104394b25bb2c9562b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Frame+Hook.prefab using Guid(b5099e165bfdc104394b25bb2c9562b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '71f8c51a2b44be757dd4e2c52faf3a3a') in 0.019956 seconds
+  Import took 0.025796 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000267 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Exp Turret.prefab
-  artifactKey: Guid(6bbca5bb6941a5142b0e54a77d9fafa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Exp Turret.prefab using Guid(6bbca5bb6941a5142b0e54a77d9fafa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '56c80e5b5630c187a2cac388bde682c3') in 0.040144 seconds
-  Import took 0.047176 seconds .
+  Time since last request: 0.000197 seconds.
+  path: Assets/Prefabs/ElectricLine.prefab
+  artifactKey: Guid(432f6557a0b46de4a9ec2a41ea60fd4e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/ElectricLine.prefab using Guid(432f6557a0b46de4a9ec2a41ea60fd4e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '42fb8a2e068b77a2f4e05457aba01416') in 0.006217 seconds
+  Import took 0.011447 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000311 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Exp Turret_Upgrade_01.prefab
-  artifactKey: Guid(1681fe4e172bb7c4f8ed367745579ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Exp Turret_Upgrade_01.prefab using Guid(1681fe4e172bb7c4f8ed367745579ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cea6f51b79683bca9bcec25c58b349a6') in 0.052694 seconds
-  Import took 0.062330 seconds .
+  Time since last request: 0.000191 seconds.
+  path: Assets/Prefabs/HeadJoint.prefab
+  artifactKey: Guid(3b8309f965910cc4b9b3fa2faeac91ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/HeadJoint.prefab using Guid(3b8309f965910cc4b9b3fa2faeac91ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ae075d1eb76d48b2b20ffc60f29ee45b') in 0.012779 seconds
+  Import took 0.018559 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000263 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Gatling_Turret.prefab
-  artifactKey: Guid(d0256dcb5fb4e754b8e6666e6bfe926e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Gatling_Turret.prefab using Guid(d0256dcb5fb4e754b8e6666e6bfe926e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c58a736adf6d5804a845324812b8bc1b') in 0.046438 seconds
-  Import took 0.053597 seconds .
+  Time since last request: 0.000185 seconds.
+  path: Assets/Prefabs/Lane.prefab
+  artifactKey: Guid(b2e36dca9a69bd14fb13a406dfa43052) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Lane.prefab using Guid(b2e36dca9a69bd14fb13a406dfa43052) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f4a2c33451aa3f19df12a6698cfdd1d1') in 0.031530 seconds
+  Import took 0.037780 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000266 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Arc_Upgrade_03.prefab
-  artifactKey: Guid(045257f28c7008545ab2336a02485859) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Arc_Upgrade_03.prefab using Guid(045257f28c7008545ab2336a02485859) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b28d74281f102054ac31c8e44150bfa7') in 0.046188 seconds
-  Import took 0.054660 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000294 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Stun Turret_Upgrade_01.prefab
-  artifactKey: Guid(900d36c64d9fd2e4884efd3e79771121) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Stun Turret_Upgrade_01.prefab using Guid(900d36c64d9fd2e4884efd3e79771121) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f7d751c87b1c6d0424446f4d7680fa90') in 0.070384 seconds
-  Import took 0.079143 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 24.332533 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Exp Turret_Upgrade_02.prefab
-  artifactKey: Guid(57573383306f2b5489ef1176e26f9270) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Exp Turret_Upgrade_02.prefab using Guid(57573383306f2b5489ef1176e26f9270) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7e4f3c47d0d279d6bdd16bb1b2915ded') in 0.039681 seconds
-  Import took 0.047251 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.935312 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Exp Turret_Upgrade_02.prefab
-  artifactKey: Guid(57573383306f2b5489ef1176e26f9270) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Exp Turret_Upgrade_02.prefab using Guid(57573383306f2b5489ef1176e26f9270) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3affde48662c18917ff9f34ad54a7080') in 0.047933 seconds
-  Import took 0.055345 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 16.652140 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Exp Turret_Upgrade_02.prefab
-  artifactKey: Guid(57573383306f2b5489ef1176e26f9270) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Exp Turret_Upgrade_02.prefab using Guid(57573383306f2b5489ef1176e26f9270) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c06eb410eef8f5811cf3565ad0e9dca6') in 0.043642 seconds
-  Import took 0.051473 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.445155 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Exp Turret_Upgrade_02.prefab
-  artifactKey: Guid(57573383306f2b5489ef1176e26f9270) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Exp Turret_Upgrade_02.prefab using Guid(57573383306f2b5489ef1176e26f9270) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bf26b8c6d1e3d45f3568b8506d2e374b') in 0.050477 seconds
-  Import took 0.059122 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 4.867623 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Exp Turret_Upgrade_02.prefab
-  artifactKey: Guid(57573383306f2b5489ef1176e26f9270) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Exp Turret_Upgrade_02.prefab using Guid(57573383306f2b5489ef1176e26f9270) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '71f370f3c47067ba0fad8cc88983b7fa') in 0.043944 seconds
-  Import took 0.052152 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.421026 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Exp Turret_Upgrade_02.prefab
-  artifactKey: Guid(57573383306f2b5489ef1176e26f9270) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Exp Turret_Upgrade_02.prefab using Guid(57573383306f2b5489ef1176e26f9270) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '024ba00edd70ff358eef7757335dc7ab') in 0.046776 seconds
-  Import took 0.055094 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.427847 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Exp Turret_Upgrade_02.prefab
-  artifactKey: Guid(57573383306f2b5489ef1176e26f9270) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Exp Turret_Upgrade_02.prefab using Guid(57573383306f2b5489ef1176e26f9270) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '35aedf38846039be43d43466d5f4430b') in 0.042230 seconds
-  Import took 0.050151 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.077278 seconds.
-  path: Assets/EffectExamples/Smoke & Steam Effects/Materials/SmokeLight.mat
-  artifactKey: Guid(f06455b167e1b0b428c9af62d7aa6832) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/EffectExamples/Smoke & Steam Effects/Materials/SmokeLight.mat using Guid(f06455b167e1b0b428c9af62d7aa6832) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0f32cb34dd894ed00633bec4f9cd4f81') in 0.090745 seconds
-  Import took 0.098098 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 4.528370 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Exp Turret_Upgrade_02.prefab
-  artifactKey: Guid(57573383306f2b5489ef1176e26f9270) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Exp Turret_Upgrade_02.prefab using Guid(57573383306f2b5489ef1176e26f9270) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6c598a8ead45c2c491e52ecc895ec6dc') in 0.044516 seconds
-  Import took 0.053590 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 10.297447 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Exp Turret_Upgrade_01.prefab
-  artifactKey: Guid(1681fe4e172bb7c4f8ed367745579ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Exp Turret_Upgrade_01.prefab using Guid(1681fe4e172bb7c4f8ed367745579ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '29499040e9aa2730f6a4c05675dff821') in 0.047366 seconds
-  Import took 0.056275 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 8.252971 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Exp Turret_Upgrade_01.prefab
-  artifactKey: Guid(1681fe4e172bb7c4f8ed367745579ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Exp Turret_Upgrade_01.prefab using Guid(1681fe4e172bb7c4f8ed367745579ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5ec0575979f07d00ff8720800018460c') in 0.042748 seconds
-  Import took 0.049826 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.789519 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Exp Turret_Upgrade_01.prefab
-  artifactKey: Guid(1681fe4e172bb7c4f8ed367745579ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Exp Turret_Upgrade_01.prefab using Guid(1681fe4e172bb7c4f8ed367745579ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4886b39bac2d6e9aa00f359652a3dde3') in 0.042413 seconds
-  Import took 0.051648 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.646232 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Exp Turret_Upgrade_01.prefab
-  artifactKey: Guid(1681fe4e172bb7c4f8ed367745579ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Exp Turret_Upgrade_01.prefab using Guid(1681fe4e172bb7c4f8ed367745579ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5f6d2f4e57bc014787a8f65c75af4c92') in 0.040595 seconds
-  Import took 0.049775 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.256167 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Exp Turret_Upgrade_01.prefab
-  artifactKey: Guid(1681fe4e172bb7c4f8ed367745579ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Exp Turret_Upgrade_01.prefab using Guid(1681fe4e172bb7c4f8ed367745579ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4a7825300f6f377a80e9d370dacbad82') in 0.043156 seconds
-  Import took 0.050967 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.138153 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Exp Turret_Upgrade_01.prefab
-  artifactKey: Guid(1681fe4e172bb7c4f8ed367745579ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Exp Turret_Upgrade_01.prefab using Guid(1681fe4e172bb7c4f8ed367745579ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f331eaedb6123efe0ea3c3ae6caa95f8') in 0.042344 seconds
-  Import took 0.050148 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 70.305651 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Stun Turret_Upgrade_01.prefab
-  artifactKey: Guid(900d36c64d9fd2e4884efd3e79771121) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Stun Turret_Upgrade_01.prefab using Guid(900d36c64d9fd2e4884efd3e79771121) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '50dffa5559e06f51fdeea003db2923ef') in 0.048500 seconds
-  Import took 0.066352 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.658070 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Stun Turret_Upgrade_01.prefab
-  artifactKey: Guid(900d36c64d9fd2e4884efd3e79771121) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Stun Turret_Upgrade_01.prefab using Guid(900d36c64d9fd2e4884efd3e79771121) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '425f6e4bb8d181bc548c26cdfd9f99ce') in 0.054276 seconds
-  Import took 0.062133 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.815429 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Stun Turret_Upgrade_01.prefab
-  artifactKey: Guid(900d36c64d9fd2e4884efd3e79771121) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Stun Turret_Upgrade_01.prefab using Guid(900d36c64d9fd2e4884efd3e79771121) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9e9ba0b9bd2ca014db1f98f60c5e38da') in 0.287338 seconds
-  Import took 0.295175 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.381502 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Stun Turret_Upgrade_01.prefab
-  artifactKey: Guid(900d36c64d9fd2e4884efd3e79771121) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Stun Turret_Upgrade_01.prefab using Guid(900d36c64d9fd2e4884efd3e79771121) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c93efd4de9ced0d576c509aadf412d64') in 0.052042 seconds
-  Import took 0.063772 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 8.544116 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Stun Turret_Upgrade_01.prefab
-  artifactKey: Guid(900d36c64d9fd2e4884efd3e79771121) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Stun Turret_Upgrade_01.prefab using Guid(900d36c64d9fd2e4884efd3e79771121) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'faee0452cdbbad7c7714a7742ffd64dd') in 0.052359 seconds
-  Import took 0.060393 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 12.955065 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Stun Turret_Upgrade_02.prefab
-  artifactKey: Guid(9985de90265db8545ba67194b9adf8da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Stun Turret_Upgrade_02.prefab using Guid(9985de90265db8545ba67194b9adf8da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cad70f24f6aa39c0c03fc18a076c9fb0') in 0.143768 seconds
-  Import took 0.151094 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.854389 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Stun Turret_Upgrade_02.prefab
-  artifactKey: Guid(9985de90265db8545ba67194b9adf8da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Stun Turret_Upgrade_02.prefab using Guid(9985de90265db8545ba67194b9adf8da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fc470e886ca03546d1d21967dffc27df') in 0.051971 seconds
-  Import took 0.060943 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.536071 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Stun Turret_Upgrade_02.prefab
-  artifactKey: Guid(9985de90265db8545ba67194b9adf8da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Stun Turret_Upgrade_02.prefab using Guid(9985de90265db8545ba67194b9adf8da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6b96dda53b25238031c08b6f79ab01ae') in 0.048172 seconds
-  Import took 0.056354 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.630230 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Stun Turret_Upgrade_02.prefab
-  artifactKey: Guid(9985de90265db8545ba67194b9adf8da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Stun Turret_Upgrade_02.prefab using Guid(9985de90265db8545ba67194b9adf8da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '84720caa3d0f9b3d4142fc8b741b27bf') in 0.049892 seconds
-  Import took 0.058249 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.001011 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Stun Turret_Upgrade_02.prefab
-  artifactKey: Guid(9985de90265db8545ba67194b9adf8da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Stun Turret_Upgrade_02.prefab using Guid(9985de90265db8545ba67194b9adf8da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '84720caa3d0f9b3d4142fc8b741b27bf') in 0.056288 seconds
-  Import took 0.065116 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.393947 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Stun Turret_Upgrade_02.prefab
-  artifactKey: Guid(9985de90265db8545ba67194b9adf8da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Stun Turret_Upgrade_02.prefab using Guid(9985de90265db8545ba67194b9adf8da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c337907f7ebf578f84c8ec19a0b27f72') in 0.053826 seconds
-  Import took 0.062058 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 21.838643 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Stun Turret_Upgrade_03.prefab
-  artifactKey: Guid(b68debd891582da44b186956c4146e6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Stun Turret_Upgrade_03.prefab using Guid(b68debd891582da44b186956c4146e6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'beabc395b482ff691f8ca09a5e93d2bf') in 0.049865 seconds
-  Import took 0.058584 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 7.993363 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Stun Turret_Upgrade_03.prefab
-  artifactKey: Guid(b68debd891582da44b186956c4146e6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Stun Turret_Upgrade_03.prefab using Guid(b68debd891582da44b186956c4146e6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8549f9c4c3e26054885cf07e01fb65f6') in 0.051823 seconds
-  Import took 0.525694 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 5.420858 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Stun Turret_Upgrade_03.prefab
-  artifactKey: Guid(b68debd891582da44b186956c4146e6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Stun Turret_Upgrade_03.prefab using Guid(b68debd891582da44b186956c4146e6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dc73acf8d700820c06449b8578386202') in 0.056941 seconds
-  Import took 0.065382 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 4.185067 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Stun Turret_Upgrade_03.prefab
-  artifactKey: Guid(b68debd891582da44b186956c4146e6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Stun Turret_Upgrade_03.prefab using Guid(b68debd891582da44b186956c4146e6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5df72aba39845587c092a9b6272ae0eb') in 0.059454 seconds
-  Import took 0.068319 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.504953 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Stun Turret_Upgrade_03.prefab
-  artifactKey: Guid(b68debd891582da44b186956c4146e6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Stun Turret_Upgrade_03.prefab using Guid(b68debd891582da44b186956c4146e6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0f6031609f9e283da59e2d2ab0ce5a7a') in 0.047107 seconds
-  Import took 0.055212 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.103535 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Stun Turret_Upgrade_03.prefab
-  artifactKey: Guid(b68debd891582da44b186956c4146e6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Stun Turret_Upgrade_03.prefab using Guid(b68debd891582da44b186956c4146e6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6459c337dcdf8931702e47be5700f351') in 0.048513 seconds
-  Import took 0.056742 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.625356 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Stun Turret_Upgrade_03.prefab
-  artifactKey: Guid(b68debd891582da44b186956c4146e6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Stun Turret_Upgrade_03.prefab using Guid(b68debd891582da44b186956c4146e6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4f2f49e88b6fe7e57a213ebc5d8bb8a1') in 0.047848 seconds
-  Import took 0.289752 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 5.129241 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Stun Turret_Upgrade_03.prefab
-  artifactKey: Guid(b68debd891582da44b186956c4146e6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Stun Turret_Upgrade_03.prefab using Guid(b68debd891582da44b186956c4146e6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '331fb98c1cffd2c68508fac75e90d130') in 0.047490 seconds
-  Import took 0.055572 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 4.757482 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Stun Turret_Upgrade_02.prefab
-  artifactKey: Guid(9985de90265db8545ba67194b9adf8da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Stun Turret_Upgrade_02.prefab using Guid(9985de90265db8545ba67194b9adf8da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1fe24b21db5ed2796285c14c31ae2da3') in 0.048953 seconds
-  Import took 0.057750 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.942927 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Stun Turret_Upgrade_02.prefab
-  artifactKey: Guid(9985de90265db8545ba67194b9adf8da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Stun Turret_Upgrade_02.prefab using Guid(9985de90265db8545ba67194b9adf8da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '48b4cf3c60fb12d2524fb36d43e4190f') in 0.043810 seconds
-  Import took 0.052006 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.604831 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Stun Turret_Upgrade_02.prefab
-  artifactKey: Guid(9985de90265db8545ba67194b9adf8da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Stun Turret_Upgrade_02.prefab using Guid(9985de90265db8545ba67194b9adf8da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'de6461d12af3d1e10bc5d0c8cb216e8a') in 0.044916 seconds
-  Import took 0.055381 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.063996 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Stun Turret_Upgrade_02.prefab
-  artifactKey: Guid(9985de90265db8545ba67194b9adf8da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Stun Turret_Upgrade_02.prefab using Guid(9985de90265db8545ba67194b9adf8da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '79abba7aa10f0b4be9e25c8fe9905f9d') in 0.048136 seconds
-  Import took 0.056619 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.201102 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Stun Turret_Upgrade_02.prefab
-  artifactKey: Guid(9985de90265db8545ba67194b9adf8da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Stun Turret_Upgrade_02.prefab using Guid(9985de90265db8545ba67194b9adf8da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0b5260128492f31763dc5212df56275e') in 0.042141 seconds
-  Import took 0.050215 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 4.168288 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Stun Turret_Upgrade_01.prefab
-  artifactKey: Guid(900d36c64d9fd2e4884efd3e79771121) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Stun Turret_Upgrade_01.prefab using Guid(900d36c64d9fd2e4884efd3e79771121) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b806ed900fc6f74ba80ba5e4ff871d08') in 0.048086 seconds
-  Import took 0.056604 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.330905 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Stun Turret_Upgrade_01.prefab
-  artifactKey: Guid(900d36c64d9fd2e4884efd3e79771121) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Stun Turret_Upgrade_01.prefab using Guid(900d36c64d9fd2e4884efd3e79771121) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '321249eaa5553ad527d535ad74a0f309') in 0.047016 seconds
-  Import took 0.056130 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.568690 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Stun Turret_Upgrade_01.prefab
-  artifactKey: Guid(900d36c64d9fd2e4884efd3e79771121) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Stun Turret_Upgrade_01.prefab using Guid(900d36c64d9fd2e4884efd3e79771121) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3284e73199dd6384d6a1f2b9a90bf18d') in 0.048208 seconds
-  Import took 0.056735 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.746199 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Stun Turret_Upgrade_01.prefab
-  artifactKey: Guid(900d36c64d9fd2e4884efd3e79771121) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Stun Turret_Upgrade_01.prefab using Guid(900d36c64d9fd2e4884efd3e79771121) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '30704e2c45c37b2e3ee2757a50583e31') in 0.054927 seconds
-  Import took 0.063714 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.019042 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Stun Turret_Upgrade_01.prefab
-  artifactKey: Guid(900d36c64d9fd2e4884efd3e79771121) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Stun Turret_Upgrade_01.prefab using Guid(900d36c64d9fd2e4884efd3e79771121) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd122d2a53dddca5531b1a807b937a344') in 0.046511 seconds
-  Import took 0.054584 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 51.358454 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Stun Turret.prefab
-  artifactKey: Guid(0a150cd8ae9d58d4d9c1a8f9cd11fd8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Stun Turret.prefab using Guid(0a150cd8ae9d58d4d9c1a8f9cd11fd8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '83b6aed7b5034e0a84469a91c1d4d075') in 0.026763 seconds
-  Import took 0.032950 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.494194 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Stun Turret.prefab
-  artifactKey: Guid(0a150cd8ae9d58d4d9c1a8f9cd11fd8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Stun Turret.prefab using Guid(0a150cd8ae9d58d4d9c1a8f9cd11fd8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '375c71119a6a2588d39ec77a57d6fc1c') in 0.037025 seconds
-  Import took 0.044242 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 4.332941 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Stun Turret.prefab
-  artifactKey: Guid(0a150cd8ae9d58d4d9c1a8f9cd11fd8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Stun Turret.prefab using Guid(0a150cd8ae9d58d4d9c1a8f9cd11fd8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7f39a32bf69639d80af1907737cb9c0a') in 0.049627 seconds
-  Import took 0.057924 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 4.038654 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Stun Turret.prefab
-  artifactKey: Guid(0a150cd8ae9d58d4d9c1a8f9cd11fd8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Stun Turret.prefab using Guid(0a150cd8ae9d58d4d9c1a8f9cd11fd8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ce75a59d849c7f91639e01db516879db') in 0.055020 seconds
-  Import took 0.073416 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.629418 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Stun Turret.prefab
-  artifactKey: Guid(0a150cd8ae9d58d4d9c1a8f9cd11fd8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Stun Turret.prefab using Guid(0a150cd8ae9d58d4d9c1a8f9cd11fd8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1600b00f32734a24b8e69ff70e5dddc1') in 0.054301 seconds
-  Import took 0.063473 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.733839 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Stun Turret.prefab
-  artifactKey: Guid(0a150cd8ae9d58d4d9c1a8f9cd11fd8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Stun Turret.prefab using Guid(0a150cd8ae9d58d4d9c1a8f9cd11fd8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e32b9fd8af13f849dff4e4f126304be2') in 0.055628 seconds
-  Import took 0.064774 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.196158 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Stun Turret.prefab
-  artifactKey: Guid(0a150cd8ae9d58d4d9c1a8f9cd11fd8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Stun Turret.prefab using Guid(0a150cd8ae9d58d4d9c1a8f9cd11fd8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '84ed093a5a4f07d8a038e7bbf80003b8') in 0.058007 seconds
-  Import took 0.068565 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.992333 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Stun Turret.prefab
-  artifactKey: Guid(0a150cd8ae9d58d4d9c1a8f9cd11fd8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Stun Turret.prefab using Guid(0a150cd8ae9d58d4d9c1a8f9cd11fd8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd02ae2ab514d6028757592e989a33b8c') in 0.046138 seconds
-  Import took 0.057490 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 7.282296 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Stun Turret.prefab
-  artifactKey: Guid(0a150cd8ae9d58d4d9c1a8f9cd11fd8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Stun Turret.prefab using Guid(0a150cd8ae9d58d4d9c1a8f9cd11fd8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd5312c4e7c49711b7018566decef92fc') in 0.046549 seconds
-  Import took 0.055066 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.235821 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Stun Turret.prefab
-  artifactKey: Guid(0a150cd8ae9d58d4d9c1a8f9cd11fd8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Stun Turret.prefab using Guid(0a150cd8ae9d58d4d9c1a8f9cd11fd8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a39a9ceb036c17bedf1de2fe3483db6d') in 0.044247 seconds
-  Import took 0.052786 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.406185 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Stun Turret.prefab
-  artifactKey: Guid(0a150cd8ae9d58d4d9c1a8f9cd11fd8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Stun Turret.prefab using Guid(0a150cd8ae9d58d4d9c1a8f9cd11fd8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1e912ae892fd364fd52f912310737814') in 0.023036 seconds
-  Import took 0.029891 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.226274 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Stun Turret.prefab
-  artifactKey: Guid(0a150cd8ae9d58d4d9c1a8f9cd11fd8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Stun Turret.prefab using Guid(0a150cd8ae9d58d4d9c1a8f9cd11fd8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '182de61c9e549eee94c082af707c9830') in 0.077464 seconds
-  Import took 0.088754 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 17.923822 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Stun Turret.prefab
-  artifactKey: Guid(0a150cd8ae9d58d4d9c1a8f9cd11fd8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Stun Turret.prefab using Guid(0a150cd8ae9d58d4d9c1a8f9cd11fd8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd29c5519b6dc613156163577d10b7b78') in 0.049861 seconds
-  Import took 0.061487 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.540290 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Stun Turret.prefab
-  artifactKey: Guid(0a150cd8ae9d58d4d9c1a8f9cd11fd8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Stun Turret.prefab using Guid(0a150cd8ae9d58d4d9c1a8f9cd11fd8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0b7a20bc306a874c9ce375b3c41608e0') in 0.046636 seconds
-  Import took 0.054639 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.581188 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Stun Turret.prefab
-  artifactKey: Guid(0a150cd8ae9d58d4d9c1a8f9cd11fd8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Stun Turret.prefab using Guid(0a150cd8ae9d58d4d9c1a8f9cd11fd8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ec0d61bdec99defdb2564d86557f9fde') in 0.047579 seconds
-  Import took 0.056133 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 8.779107 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Stun Turret.prefab
-  artifactKey: Guid(0a150cd8ae9d58d4d9c1a8f9cd11fd8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Stun Turret.prefab using Guid(0a150cd8ae9d58d4d9c1a8f9cd11fd8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5408a762df430fd6704269da16e65b93') in 0.047540 seconds
-  Import took 0.057686 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 5.537233 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Stun Turret.prefab
-  artifactKey: Guid(0a150cd8ae9d58d4d9c1a8f9cd11fd8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Stun Turret.prefab using Guid(0a150cd8ae9d58d4d9c1a8f9cd11fd8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1f19171c073fdd12f767e7426cf45a1d') in 0.045432 seconds
-  Import took 0.398277 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 5.001541 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Stun Turret.prefab
-  artifactKey: Guid(0a150cd8ae9d58d4d9c1a8f9cd11fd8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Stun Turret.prefab using Guid(0a150cd8ae9d58d4d9c1a8f9cd11fd8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2e94d3102bc1473b22c46e47ccbd1bf2') in 0.044869 seconds
-  Import took 0.052498 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 52.497942 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Stun Turret.prefab
-  artifactKey: Guid(0a150cd8ae9d58d4d9c1a8f9cd11fd8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Stun Turret.prefab using Guid(0a150cd8ae9d58d4d9c1a8f9cd11fd8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9abf0f4463a21321bcffa512dca600ac') in 0.051420 seconds
-  Import took 0.062326 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 13.542006 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Stun Turret.prefab
-  artifactKey: Guid(0a150cd8ae9d58d4d9c1a8f9cd11fd8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Stun Turret.prefab using Guid(0a150cd8ae9d58d4d9c1a8f9cd11fd8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f75ed494b74f215f15a7efb369f5b617') in 0.049891 seconds
-  Import took 0.061901 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.788629 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Stun Turret.prefab
-  artifactKey: Guid(0a150cd8ae9d58d4d9c1a8f9cd11fd8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Stun Turret.prefab using Guid(0a150cd8ae9d58d4d9c1a8f9cd11fd8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3daaa82ac1e49ff8a602603b53dbe9e4') in 0.053838 seconds
-  Import took 0.063270 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.784935 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Stun Turret.prefab
-  artifactKey: Guid(0a150cd8ae9d58d4d9c1a8f9cd11fd8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Stun Turret.prefab using Guid(0a150cd8ae9d58d4d9c1a8f9cd11fd8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f00afb056f52401b17a422d016eec655') in 0.043192 seconds
-  Import took 0.051284 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 4.166523 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Stun Turret.prefab
-  artifactKey: Guid(0a150cd8ae9d58d4d9c1a8f9cd11fd8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Stun Turret.prefab using Guid(0a150cd8ae9d58d4d9c1a8f9cd11fd8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'afacc74b64a6d67d41270e4de03b0d97') in 0.044892 seconds
-  Import took 0.053562 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 11.617942 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Stun Turret.prefab
-  artifactKey: Guid(0a150cd8ae9d58d4d9c1a8f9cd11fd8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Stun Turret.prefab using Guid(0a150cd8ae9d58d4d9c1a8f9cd11fd8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd7a01850be8ad3a95adeda792dc29f19') in 0.050422 seconds
-  Import took 0.060105 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 5.734220 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Stun Turret.prefab
-  artifactKey: Guid(0a150cd8ae9d58d4d9c1a8f9cd11fd8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Stun Turret.prefab using Guid(0a150cd8ae9d58d4d9c1a8f9cd11fd8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0a372d360664908cbff56f57ea08ee1f') in 0.048413 seconds
-  Import took 0.058552 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.728429 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Stun Turret.prefab
-  artifactKey: Guid(0a150cd8ae9d58d4d9c1a8f9cd11fd8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Stun Turret.prefab using Guid(0a150cd8ae9d58d4d9c1a8f9cd11fd8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e18f99b09ade5ff4e4a2bdfc94d23cd4') in 0.051470 seconds
-  Import took 0.059899 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.635583 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Stun Turret.prefab
-  artifactKey: Guid(0a150cd8ae9d58d4d9c1a8f9cd11fd8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Stun Turret.prefab using Guid(0a150cd8ae9d58d4d9c1a8f9cd11fd8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0e9b8260f1e6fb35d0a7feb606eb1c75') in 0.048438 seconds
-  Import took 0.056559 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 19.361418 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Exp Turret.prefab
-  artifactKey: Guid(6bbca5bb6941a5142b0e54a77d9fafa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Exp Turret.prefab using Guid(6bbca5bb6941a5142b0e54a77d9fafa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'af7e3264381c8318fe32ac8e97a9c406') in 0.052401 seconds
-  Import took 0.061736 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 12.028149 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Exp Turret.prefab
-  artifactKey: Guid(6bbca5bb6941a5142b0e54a77d9fafa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Exp Turret.prefab using Guid(6bbca5bb6941a5142b0e54a77d9fafa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '86579d49db5a7bbce335bb903a6373ff') in 0.056229 seconds
-  Import took 0.066783 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 9.587207 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Exp Turret_Upgrade_03.prefab
-  artifactKey: Guid(619416def072128448c87a5f95f89945) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Exp Turret_Upgrade_03.prefab using Guid(619416def072128448c87a5f95f89945) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '65fac0b8554bfd40ffdd78530e83d386') in 0.048492 seconds
-  Import took 0.149223 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 14.254036 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Exp Turret_Upgrade_03.prefab
-  artifactKey: Guid(619416def072128448c87a5f95f89945) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Exp Turret_Upgrade_03.prefab using Guid(619416def072128448c87a5f95f89945) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5fd5fd3a9e19d68a0a70ed593b992656') in 0.043080 seconds
-  Import took 0.051817 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.481121 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Exp Turret_Upgrade_03.prefab
-  artifactKey: Guid(619416def072128448c87a5f95f89945) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Exp Turret_Upgrade_03.prefab using Guid(619416def072128448c87a5f95f89945) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eecad478c0188e2b62056c3870b5efab') in 0.046878 seconds
-  Import took 0.056450 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.793449 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Exp Turret_Upgrade_03.prefab
-  artifactKey: Guid(619416def072128448c87a5f95f89945) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Exp Turret_Upgrade_03.prefab using Guid(619416def072128448c87a5f95f89945) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd3d1e64641f04196891a862b4b994062') in 0.042690 seconds
-  Import took 0.051129 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.763661 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Exp Turret_Upgrade_03.prefab
-  artifactKey: Guid(619416def072128448c87a5f95f89945) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Exp Turret_Upgrade_03.prefab using Guid(619416def072128448c87a5f95f89945) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1044af93f51d5b0d20de1c33a030d1ce') in 0.044527 seconds
-  Import took 0.051834 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.399240 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Exp Turret_Upgrade_03.prefab
-  artifactKey: Guid(619416def072128448c87a5f95f89945) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Exp Turret_Upgrade_03.prefab using Guid(619416def072128448c87a5f95f89945) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b52538f7f6267c6110280e8460933e0d') in 0.045395 seconds
-  Import took 0.054262 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 6.171902 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Exp Turret_Upgrade_03.prefab
-  artifactKey: Guid(619416def072128448c87a5f95f89945) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Exp Turret_Upgrade_03.prefab using Guid(619416def072128448c87a5f95f89945) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '09a25d220742c97e715e1550505fcb91') in 0.048444 seconds
-  Import took 0.056269 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.164261 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Exp Turret_Upgrade_03.prefab
-  artifactKey: Guid(619416def072128448c87a5f95f89945) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Exp Turret_Upgrade_03.prefab using Guid(619416def072128448c87a5f95f89945) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e4b25fda5ec90e7750dc6a1d2efc61b0') in 0.039473 seconds
-  Import took 0.075255 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.545444 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Exp Turret_Upgrade_03.prefab
-  artifactKey: Guid(619416def072128448c87a5f95f89945) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Exp Turret_Upgrade_03.prefab using Guid(619416def072128448c87a5f95f89945) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4e80cf7d76bd5af19e3be3b55a78e841') in 0.042788 seconds
-  Import took 0.052962 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 14.906783 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Exp Turret.prefab
-  artifactKey: Guid(6bbca5bb6941a5142b0e54a77d9fafa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Exp Turret.prefab using Guid(6bbca5bb6941a5142b0e54a77d9fafa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e5ff95ffffda54f9ff01fc7428ecac2c') in 0.060821 seconds
-  Import took 0.070345 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 6.334525 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Exp Turret.prefab
-  artifactKey: Guid(6bbca5bb6941a5142b0e54a77d9fafa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Exp Turret.prefab using Guid(6bbca5bb6941a5142b0e54a77d9fafa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f928fef9bb6ec30220ef8b8f7252da48') in 0.039969 seconds
-  Import took 0.048354 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.430535 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Exp Turret.prefab
-  artifactKey: Guid(6bbca5bb6941a5142b0e54a77d9fafa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Exp Turret.prefab using Guid(6bbca5bb6941a5142b0e54a77d9fafa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dd9e3fe0ef7d5c699bd32545593787b5') in 0.017561 seconds
-  Import took 0.024312 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.855529 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Exp Turret.prefab
-  artifactKey: Guid(6bbca5bb6941a5142b0e54a77d9fafa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Exp Turret.prefab using Guid(6bbca5bb6941a5142b0e54a77d9fafa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8f8b1b6a1e64088b936842ebfda3edbd') in 0.048244 seconds
-  Import took 0.057286 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.466896 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Exp Turret.prefab
-  artifactKey: Guid(6bbca5bb6941a5142b0e54a77d9fafa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Exp Turret.prefab using Guid(6bbca5bb6941a5142b0e54a77d9fafa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a451491e7dc7482f7c3266dc84f7a7a7') in 0.053441 seconds
-  Import took 0.079970 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.818968 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Exp Turret.prefab
-  artifactKey: Guid(6bbca5bb6941a5142b0e54a77d9fafa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Exp Turret.prefab using Guid(6bbca5bb6941a5142b0e54a77d9fafa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6936f1815028299b3b7a20430875b0ad') in 0.052815 seconds
-  Import took 0.061561 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 4.693825 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Exp Turret.prefab
-  artifactKey: Guid(6bbca5bb6941a5142b0e54a77d9fafa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Exp Turret.prefab using Guid(6bbca5bb6941a5142b0e54a77d9fafa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4e7241b0937ee7fb3abb3b92a2ec8d7c') in 0.017754 seconds
-  Import took 0.025453 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.072420 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Exp Turret.prefab
-  artifactKey: Guid(6bbca5bb6941a5142b0e54a77d9fafa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Exp Turret.prefab using Guid(6bbca5bb6941a5142b0e54a77d9fafa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e78c0d3fd18981d8c88aeda032efba40') in 0.051867 seconds
-  Import took 0.061293 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.030611 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Exp Turret.prefab
-  artifactKey: Guid(6bbca5bb6941a5142b0e54a77d9fafa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Exp Turret.prefab using Guid(6bbca5bb6941a5142b0e54a77d9fafa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9bb70b1c3d49eb30a515202f324219ab') in 0.051764 seconds
-  Import took 0.060836 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 6.456850 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Exp Turret.prefab
-  artifactKey: Guid(6bbca5bb6941a5142b0e54a77d9fafa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Exp Turret.prefab using Guid(6bbca5bb6941a5142b0e54a77d9fafa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4a4c52eed67f12217e010d850794d6ef') in 0.038604 seconds
-  Import took 0.046401 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 8.696868 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Exp Turret.prefab
-  artifactKey: Guid(6bbca5bb6941a5142b0e54a77d9fafa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Exp Turret.prefab using Guid(6bbca5bb6941a5142b0e54a77d9fafa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2f62c993ce0543f5e7c5cf9b593d7ea3') in 0.040273 seconds
-  Import took 0.047862 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 9.521032 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Exp Turret.prefab
-  artifactKey: Guid(6bbca5bb6941a5142b0e54a77d9fafa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Exp Turret.prefab using Guid(6bbca5bb6941a5142b0e54a77d9fafa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '63dfb330bc64d3446b47097ffbbd4460') in 0.041705 seconds
-  Import took 0.049885 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 7.769696 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Exp Turret.prefab
-  artifactKey: Guid(6bbca5bb6941a5142b0e54a77d9fafa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Exp Turret.prefab using Guid(6bbca5bb6941a5142b0e54a77d9fafa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '783800883c59d850ce748b6fe6bf2f76') in 0.038459 seconds
-  Import took 0.047133 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.357038 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Exp Turret.prefab
-  artifactKey: Guid(6bbca5bb6941a5142b0e54a77d9fafa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Exp Turret.prefab using Guid(6bbca5bb6941a5142b0e54a77d9fafa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '204da8b40dd9309f973b295a5e92a369') in 0.038754 seconds
-  Import took 0.045779 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.673073 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Exp Turret.prefab
-  artifactKey: Guid(6bbca5bb6941a5142b0e54a77d9fafa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Exp Turret.prefab using Guid(6bbca5bb6941a5142b0e54a77d9fafa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd8c5c6773f1a7f0a6a3887ca1c2a7866') in 0.041212 seconds
-  Import took 0.048831 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 7.449199 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Exp Turret.prefab
-  artifactKey: Guid(6bbca5bb6941a5142b0e54a77d9fafa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Exp Turret.prefab using Guid(6bbca5bb6941a5142b0e54a77d9fafa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '65b635850985ab4835942c7e890a97f6') in 0.041921 seconds
-  Import took 0.050346 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 11.403851 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Exp Turret.prefab
-  artifactKey: Guid(6bbca5bb6941a5142b0e54a77d9fafa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Exp Turret.prefab using Guid(6bbca5bb6941a5142b0e54a77d9fafa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b16c66e9344a4c92042a40bc5ec3ab59') in 0.039752 seconds
-  Import took 0.048286 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 10.149241 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Exp Turret.prefab
-  artifactKey: Guid(6bbca5bb6941a5142b0e54a77d9fafa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Exp Turret.prefab using Guid(6bbca5bb6941a5142b0e54a77d9fafa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a14aafd3a353264623d190a46c2fba61') in 0.040109 seconds
-  Import took 0.049542 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 26.260310 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Exp Turret.prefab
-  artifactKey: Guid(6bbca5bb6941a5142b0e54a77d9fafa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Exp Turret.prefab using Guid(6bbca5bb6941a5142b0e54a77d9fafa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '26db7cc3f06634908cff4cb47f86b451') in 0.046150 seconds
-  Import took 0.053699 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 7.599735 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Exp Turret.prefab
-  artifactKey: Guid(6bbca5bb6941a5142b0e54a77d9fafa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Exp Turret.prefab using Guid(6bbca5bb6941a5142b0e54a77d9fafa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd493c5222445b610540dc24673ec0307') in 0.039579 seconds
-  Import took 0.046607 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.050183 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Exp Turret.prefab
-  artifactKey: Guid(6bbca5bb6941a5142b0e54a77d9fafa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Exp Turret.prefab using Guid(6bbca5bb6941a5142b0e54a77d9fafa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '46170e89929a57a54a12581cb2b522ec') in 0.040656 seconds
-  Import took 0.048124 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 15.402612 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Exp Turret.prefab
-  artifactKey: Guid(6bbca5bb6941a5142b0e54a77d9fafa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Exp Turret.prefab using Guid(6bbca5bb6941a5142b0e54a77d9fafa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '625d567fd73addad26f649e990767893') in 0.039832 seconds
-  Import took 0.047741 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 9.950416 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Exp Turret.prefab
-  artifactKey: Guid(6bbca5bb6941a5142b0e54a77d9fafa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Exp Turret.prefab using Guid(6bbca5bb6941a5142b0e54a77d9fafa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5ab3d0fa65995209bffcf435e2908bfb') in 0.045296 seconds
-  Import took 0.054079 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 6.534879 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Exp Turret.prefab
-  artifactKey: Guid(6bbca5bb6941a5142b0e54a77d9fafa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Exp Turret.prefab using Guid(6bbca5bb6941a5142b0e54a77d9fafa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1663f0f33ef6f77261713b670f8128dc') in 0.042198 seconds
-  Import took 0.050054 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 6.632010 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Exp Turret.prefab
-  artifactKey: Guid(6bbca5bb6941a5142b0e54a77d9fafa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Exp Turret.prefab using Guid(6bbca5bb6941a5142b0e54a77d9fafa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b52c7955eb89872388105386125b5e9a') in 0.042281 seconds
-  Import took 0.049918 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 13.775311 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Exp Turret.prefab
-  artifactKey: Guid(6bbca5bb6941a5142b0e54a77d9fafa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Exp Turret.prefab using Guid(6bbca5bb6941a5142b0e54a77d9fafa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e6411d7981db07b58ddc1049be0c2ab8') in 0.057131 seconds
-  Import took 0.067271 seconds .
+  Time since last request: 0.000214 seconds.
+  path: Assets/Prefabs/Grapple Gun.prefab
+  artifactKey: Guid(7054e029c52bf8348a156d125848a903) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Grapple Gun.prefab using Guid(7054e029c52bf8348a156d125848a903) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f519e80ebd3ec5a8a0f0b80c5a48b06b') in 0.011694 seconds
+  Import took 0.016650 seconds .
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.001581 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.56 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.955 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.58 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2921 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 215.3 MB.
-System memory in use after: 215.3 MB.
-
-Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 3636.
-Total: 2.535200 ms (FindLiveObjects: 0.367600 ms CreateObjectMapping: 0.165000 ms MarkObjects: 1.873800 ms  DeleteObjects: 0.127700 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 163.596328 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Stun Turret.prefab
-  artifactKey: Guid(0a150cd8ae9d58d4d9c1a8f9cd11fd8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Stun Turret.prefab using Guid(0a150cd8ae9d58d4d9c1a8f9cd11fd8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a0d2c1aa37e63720deb91f1d69037f87') in 0.211554 seconds
-  Import took 0.219563 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 12.727075 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Stun Turret.prefab
-  artifactKey: Guid(0a150cd8ae9d58d4d9c1a8f9cd11fd8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Stun Turret.prefab using Guid(0a150cd8ae9d58d4d9c1a8f9cd11fd8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6a8c6c6b91e87e4e134c1b98d1371ef0') in 0.047744 seconds
-  Import took 0.058097 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 6.737171 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Stun Turret.prefab
-  artifactKey: Guid(0a150cd8ae9d58d4d9c1a8f9cd11fd8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Stun Turret.prefab using Guid(0a150cd8ae9d58d4d9c1a8f9cd11fd8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '59b9a1e2e7f0af0b9702b332472a5561') in 0.045275 seconds
-  Import took 0.055144 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.001816 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.20 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.929 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.58 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2921 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 215.4 MB.
-System memory in use after: 215.4 MB.
-
-Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 3675.
-Total: 2.824600 ms (FindLiveObjects: 0.355400 ms CreateObjectMapping: 0.154600 ms MarkObjects: 2.176400 ms  DeleteObjects: 0.136900 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.001804 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.15 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.917 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.57 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2921 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 215.5 MB.
-System memory in use after: 215.4 MB.
-
-Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 3678.
-Total: 2.465600 ms (FindLiveObjects: 0.301600 ms CreateObjectMapping: 0.138400 ms MarkObjects: 1.892000 ms  DeleteObjects: 0.132700 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.001868 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.58 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.921 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.57 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2921 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 215.5 MB.
-System memory in use after: 215.4 MB.
-
-Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 3681.
-Total: 3.217700 ms (FindLiveObjects: 0.410700 ms CreateObjectMapping: 0.209100 ms MarkObjects: 2.465700 ms  DeleteObjects: 0.130200 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.001549 seconds.
+Registered in 0.001369 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Refreshing native plugins compatible for Editor in 0.57 ms, found 0 plugins.
@@ -1230,839 +238,432 @@ Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.916 seconds
+- Completed reload, in  0.843 seconds
 Platform modules already initialized, skipping
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.57 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 0.60 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 2921 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 215.5 MB.
-System memory in use after: 215.5 MB.
+System memory in use before: 220.6 MB.
+System memory in use after: 220.6 MB.
 
-Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 3684.
-Total: 2.596100 ms (FindLiveObjects: 0.315200 ms CreateObjectMapping: 0.132400 ms MarkObjects: 2.017300 ms  DeleteObjects: 0.129800 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.001730 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.78 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.947 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.59 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2921 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 215.5 MB.
-System memory in use after: 215.5 MB.
-
-Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 3687.
-Total: 3.456900 ms (FindLiveObjects: 0.446800 ms CreateObjectMapping: 0.256300 ms MarkObjects: 2.608600 ms  DeleteObjects: 0.143800 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.001718 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.57 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.911 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.57 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2921 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 215.5 MB.
-System memory in use after: 215.5 MB.
-
-Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 3690.
-Total: 5.503300 ms (FindLiveObjects: 0.667300 ms CreateObjectMapping: 0.371500 ms MarkObjects: 4.215100 ms  DeleteObjects: 0.247400 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.001631 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.58 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.887 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.58 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2921 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 215.5 MB.
-System memory in use after: 215.5 MB.
-
-Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 3693.
-Total: 3.653300 ms (FindLiveObjects: 0.578700 ms CreateObjectMapping: 0.337200 ms MarkObjects: 2.570900 ms  DeleteObjects: 0.164900 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.001974 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.64 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.434 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.80 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2921 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 215.5 MB.
-System memory in use after: 215.5 MB.
-
-Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 3696.
-Total: 4.763200 ms (FindLiveObjects: 1.189100 ms CreateObjectMapping: 0.238200 ms MarkObjects: 3.022600 ms  DeleteObjects: 0.305400 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.001699 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.73 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.887 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.59 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2921 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 215.5 MB.
-System memory in use after: 215.5 MB.
-
-Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 3699.
-Total: 3.049700 ms (FindLiveObjects: 0.315700 ms CreateObjectMapping: 0.159100 ms MarkObjects: 2.436300 ms  DeleteObjects: 0.137000 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.001554 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.58 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.884 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.57 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2921 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 215.5 MB.
-System memory in use after: 215.5 MB.
-
-Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 3702.
-Total: 5.001600 ms (FindLiveObjects: 0.637000 ms CreateObjectMapping: 0.530300 ms MarkObjects: 3.667200 ms  DeleteObjects: 0.165600 ms)
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 3611.
+Total: 2.413500 ms (FindLiveObjects: 0.282100 ms CreateObjectMapping: 0.138500 ms MarkObjects: 1.844100 ms  DeleteObjects: 0.147600 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 1271.526023 seconds.
+  Time since last request: 75.186453 seconds.
   path: Assets/Prefabs/Build Plate.prefab
   artifactKey: Guid(012beba0df57bae44839883bb08ca0f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Build Plate.prefab using Guid(012beba0df57bae44839883bb08ca0f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '209fd823a5cd8c420a2fd4cf25ae533a') in 0.231898 seconds
-  Import took 0.243922 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.001554 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.58 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.897 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.62 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2921 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 215.7 MB.
-System memory in use after: 215.6 MB.
-
-Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 3741.
-Total: 4.125600 ms (FindLiveObjects: 0.492400 ms CreateObjectMapping: 0.204600 ms MarkObjects: 3.172900 ms  DeleteObjects: 0.253100 ms)
+Start importing Assets/Prefabs/Build Plate.prefab using Guid(012beba0df57bae44839883bb08ca0f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cac028f635f747eeaa1abdc708ef76b9') in 0.228034 seconds
+  Import took 0.241695 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 8.995187 seconds.
-  path: Assets/Prefabs/Particles/FirePoint.prefab
-  artifactKey: Guid(c8dc1cb5a4b27284fb377ce3e41c6d42) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Particles/FirePoint.prefab using Guid(c8dc1cb5a4b27284fb377ce3e41c6d42) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '17e075b84260e31888459d58651ee707') in 0.034371 seconds
-  Import took 0.040345 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.089059 seconds.
-  path: Assets/Prefabs/Particles/FirePoint.prefab
-  artifactKey: Guid(c8dc1cb5a4b27284fb377ce3e41c6d42) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Particles/FirePoint.prefab using Guid(c8dc1cb5a4b27284fb377ce3e41c6d42) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '17e075b84260e31888459d58651ee707') in 0.003821 seconds
-  Import took 0.009652 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.001560 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.89 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.485 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.63 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2921 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 215.7 MB.
-System memory in use after: 215.7 MB.
-
-Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 3744.
-Total: 2.815300 ms (FindLiveObjects: 0.371900 ms CreateObjectMapping: 0.186400 ms MarkObjects: 2.101200 ms  DeleteObjects: 0.154600 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.001991 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.65 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.888 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.62 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2921 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 215.7 MB.
-System memory in use after: 215.7 MB.
-
-Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 3747.
-Total: 2.690500 ms (FindLiveObjects: 0.438500 ms CreateObjectMapping: 0.153300 ms MarkObjects: 1.958900 ms  DeleteObjects: 0.138000 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 461.993376 seconds.
-  path: Assets/Prefabs/Build Plate.prefab
-  artifactKey: Guid(012beba0df57bae44839883bb08ca0f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Build Plate.prefab using Guid(012beba0df57bae44839883bb08ca0f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0fd56ca18ee71f97ac2e759cf9ef8443') in 0.222282 seconds
-  Import took 0.234710 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 4.224436 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/BaseTurret.prefab
-  artifactKey: Guid(a0cc0217860d1ca44b25c86b9e790588) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/BaseTurret.prefab using Guid(a0cc0217860d1ca44b25c86b9e790588) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bcf2040dd82dd38f7fe3075f4c55cd84') in 0.049126 seconds
-  Import took 0.056694 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000361 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Repeater_Turret.prefab
-  artifactKey: Guid(3d078ce9e3a7f534e9b8e4d18fdbabc2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Repeater_Turret.prefab using Guid(3d078ce9e3a7f534e9b8e4d18fdbabc2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '491afcac8a9ffd80615436588f01a57e') in 0.038501 seconds
-  Import took 0.045686 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000443 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Sharps_Turret.prefab
-  artifactKey: Guid(2685014da2558f249b9da516e8f24395) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Sharps_Turret.prefab using Guid(2685014da2558f249b9da516e8f24395) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '570c5600ed21a7dae26d60eb1899658a') in 0.043320 seconds
-  Import took 0.050130 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000298 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/Gatling_Turret.prefab
-  artifactKey: Guid(d0256dcb5fb4e754b8e6666e6bfe926e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/Gatling_Turret.prefab using Guid(d0256dcb5fb4e754b8e6666e6bfe926e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '990fc76f4175cb45689bbf2ba5ef4076') in 0.037412 seconds
-  Import took 0.045881 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.001529 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.71 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.130 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.86 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2921 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 215.8 MB.
-System memory in use after: 215.8 MB.
-
-Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 3786.
-Total: 3.025800 ms (FindLiveObjects: 0.434000 ms CreateObjectMapping: 0.161600 ms MarkObjects: 2.303100 ms  DeleteObjects: 0.125400 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 20.194647 seconds.
-  path: Assets/Prefabs/Turret_Prefabs/BaseTurret.prefab
-  artifactKey: Guid(a0cc0217860d1ca44b25c86b9e790588) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Turret_Prefabs/BaseTurret.prefab using Guid(a0cc0217860d1ca44b25c86b9e790588) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '46256d8812217bf9076603587ca909ef') in 0.225059 seconds
-  Import took 0.233780 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.001535 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.58 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.944 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.55 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2921 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 215.9 MB.
-System memory in use after: 215.9 MB.
-
-Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 3825.
-Total: 2.885200 ms (FindLiveObjects: 0.359500 ms CreateObjectMapping: 0.164600 ms MarkObjects: 2.228900 ms  DeleteObjects: 0.131000 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.001559 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.59 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.910 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.59 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2921 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 216.0 MB.
-System memory in use after: 215.9 MB.
-
-Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 3828.
-Total: 3.256700 ms (FindLiveObjects: 0.663400 ms CreateObjectMapping: 0.164600 ms MarkObjects: 2.306200 ms  DeleteObjects: 0.121000 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.001562 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.57 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.921 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.70 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2921 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 216.0 MB.
-System memory in use after: 215.9 MB.
-
-Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 3831.
-Total: 3.523300 ms (FindLiveObjects: 0.567800 ms CreateObjectMapping: 0.345800 ms MarkObjects: 2.460600 ms  DeleteObjects: 0.146800 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.001665 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.36 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.946 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.58 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2921 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 216.0 MB.
-System memory in use after: 216.0 MB.
-
-Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 3834.
-Total: 3.475300 ms (FindLiveObjects: 0.442100 ms CreateObjectMapping: 0.264900 ms MarkObjects: 2.631100 ms  DeleteObjects: 0.135700 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.001869 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.57 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.875 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.57 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2921 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 216.0 MB.
-System memory in use after: 215.9 MB.
-
-Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 3837.
-Total: 3.269100 ms (FindLiveObjects: 0.498700 ms CreateObjectMapping: 0.236100 ms MarkObjects: 2.407500 ms  DeleteObjects: 0.124900 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 688.655643 seconds.
-  path: Assets/Prefabs/Build Plate.prefab
-  artifactKey: Guid(012beba0df57bae44839883bb08ca0f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Build Plate.prefab using Guid(012beba0df57bae44839883bb08ca0f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ef41c856ce8bd632e991d653aa9763db') in 0.226954 seconds
-  Import took 0.238058 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 5.713231 seconds.
-  path: ProjectSettings/TagManager.asset
-  artifactKey: Guid(00000000000000003000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing ProjectSettings/TagManager.asset using Guid(00000000000000003000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c563ef6acb82e0c727c8874a6c3321a7') in 0.009789 seconds
-  Import took 0.015875 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 13.147581 seconds.
+  Time since last request: 15.605866 seconds.
   path: Assets/Prefabs/Main Game UI.prefab
   artifactKey: Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Main Game UI.prefab using Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f6b633b7191d0827469394279ab4c504') in 0.059755 seconds
-  Import took 0.070172 seconds .
+Start importing Assets/Prefabs/Main Game UI.prefab using Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2140a3bcdfcc5b93b6d9e97c0bf9a02d') in 0.049578 seconds
+  Import took 0.058001 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 14.614941 seconds.
+  Time since last request: 10.898269 seconds.
   path: Assets/Prefabs/Main Game UI.prefab
   artifactKey: Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Main Game UI.prefab using Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2e3269c51ebad14a9999115c63ff897e') in 0.035916 seconds
-  Import took 0.044849 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.001568 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.59 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.914 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.56 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2921 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 216.5 MB.
-System memory in use after: 216.5 MB.
-
-Unloading 11 unused Assets to reduce memory usage. Loaded Objects now: 3876.
-Total: 3.058600 ms (FindLiveObjects: 0.417900 ms CreateObjectMapping: 0.231200 ms MarkObjects: 2.248600 ms  DeleteObjects: 0.159300 ms)
+Start importing Assets/Prefabs/Main Game UI.prefab using Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '798ee86fb04564be1d97a0d07d586688') in 0.032985 seconds
+  Import took 0.041721 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 151.500194 seconds.
-  path: Assets/Prefabs/Build Plate.prefab
-  artifactKey: Guid(012beba0df57bae44839883bb08ca0f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Build Plate.prefab using Guid(012beba0df57bae44839883bb08ca0f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b59304ee224a42eac1ac8eb074de8d02') in 0.222364 seconds
-  Import took 0.233308 seconds .
+  Time since last request: 5.296455 seconds.
+  path: Assets/Prefabs/Main Game UI.prefab
+  artifactKey: Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Main Game UI.prefab using Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cb81cbbf9ed30c05439ca7a6454c5052') in 0.031569 seconds
+  Import took 0.039509 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 10.779938 seconds.
-  path: Assets/Sounds/330822__vendarro__old-big-engine-sound.mp3
-  artifactKey: Guid(a9f810d37d76cf249908a55143c0e07e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sounds/330822__vendarro__old-big-engine-sound.mp3 using Guid(a9f810d37d76cf249908a55143c0e07e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cebe1071e35570abf6c8a94c49f7e635') in 0.209602 seconds
-  Import took 0.215170 seconds .
+  Time since last request: 9.791031 seconds.
+  path: Assets/Prefabs/Main Game UI.prefab
+  artifactKey: Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Main Game UI.prefab using Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e2508ac19b3336e3804e214462ddd281') in 0.031424 seconds
+  Import took 0.040843 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000319 seconds.
-  path: Assets/Sounds/362470__jalastram__shooting-sounds-027.wav
-  artifactKey: Guid(b3a297949fd6d72409d68bbe02f1a8cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sounds/362470__jalastram__shooting-sounds-027.wav using Guid(b3a297949fd6d72409d68bbe02f1a8cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1cb4ff107a363de6e59ca262d0c9e546') in 0.013121 seconds
-  Import took 0.018267 seconds .
+  Time since last request: 5.574181 seconds.
+  path: Assets/Prefabs/Main Game UI.prefab
+  artifactKey: Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Main Game UI.prefab using Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '96d794278c8c06e1b0171b14a4228ef2') in 0.033168 seconds
+  Import took 0.042612 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000253 seconds.
-  path: Assets/Sounds/330822__vendarro__old-big-engine-sound.mp3
-  artifactKey: Guid(a9f810d37d76cf249908a55143c0e07e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sounds/330822__vendarro__old-big-engine-sound.mp3 using Guid(a9f810d37d76cf249908a55143c0e07e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cebe1071e35570abf6c8a94c49f7e635') in 0.060686 seconds
-  Import took 0.067097 seconds .
+  Time since last request: 15.775860 seconds.
+  path: Assets/Prefabs/Main Game UI.prefab
+  artifactKey: Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Main Game UI.prefab using Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '85154663f90d8609d49cd0d5df494ad9') in 0.030750 seconds
+  Import took 0.039413 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000402 seconds.
-  path: Assets/Sounds/car-engine-exterior-a.wav
-  artifactKey: Guid(9111d2608eb305547b6b3a0379904534) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sounds/car-engine-exterior-a.wav using Guid(9111d2608eb305547b6b3a0379904534) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1b34fd7eaef358e7d7f9b1f2cad08d0b') in 0.015987 seconds
-  Import took 0.022564 seconds .
+  Time since last request: 2.596382 seconds.
+  path: Assets/Prefabs/Main Game UI.prefab
+  artifactKey: Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Main Game UI.prefab using Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '071afb313988c7368aa261ee8068e0a7') in 0.032555 seconds
+  Import took 0.040754 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000271 seconds.
-  path: Assets/Sounds/362470__jalastram__shooting-sounds-027.wav
-  artifactKey: Guid(b3a297949fd6d72409d68bbe02f1a8cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sounds/362470__jalastram__shooting-sounds-027.wav using Guid(b3a297949fd6d72409d68bbe02f1a8cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1cb4ff107a363de6e59ca262d0c9e546') in 0.025645 seconds
-  Import took 0.032277 seconds .
+  Time since last request: 1.648187 seconds.
+  path: Assets/Prefabs/Main Game UI.prefab
+  artifactKey: Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Main Game UI.prefab using Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8ae32a5d1f2ec02dc83f6d1af4faff23') in 0.030382 seconds
+  Import took 0.039077 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000327 seconds.
-  path: Assets/Sounds/explosion-8-bit-01.wav
-  artifactKey: Guid(7267cd803d048934ea6a54297ebc6e5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sounds/explosion-8-bit-01.wav using Guid(7267cd803d048934ea6a54297ebc6e5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6229a2276404ae473c48df2761b8cf06') in 0.014042 seconds
-  Import took 0.020445 seconds .
+  Time since last request: 2.661983 seconds.
+  path: Assets/Prefabs/Main Game UI.prefab
+  artifactKey: Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Main Game UI.prefab using Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fb3cc447d3393dddf4b797ab73671443') in 0.030851 seconds
+  Import took 0.039029 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000240 seconds.
-  path: Assets/Sounds/car-engine-exterior-a.wav
-  artifactKey: Guid(9111d2608eb305547b6b3a0379904534) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sounds/car-engine-exterior-a.wav using Guid(9111d2608eb305547b6b3a0379904534) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1b34fd7eaef358e7d7f9b1f2cad08d0b') in 0.028694 seconds
-  Import took 0.034957 seconds .
+  Time since last request: 2.976986 seconds.
+  path: Assets/Prefabs/Main Game UI.prefab
+  artifactKey: Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Main Game UI.prefab using Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '784d54573046a7aa50d54e3a8adcbbdf') in 0.031776 seconds
+  Import took 0.039707 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.001754 seconds.
-  path: Assets/Sounds/explosion-8-bit-01.wav
-  artifactKey: Guid(7267cd803d048934ea6a54297ebc6e5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sounds/explosion-8-bit-01.wav using Guid(7267cd803d048934ea6a54297ebc6e5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6229a2276404ae473c48df2761b8cf06') in 0.008389 seconds
-  Import took 0.014081 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.001698 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.89 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.899 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.59 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2921 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 216.7 MB.
-System memory in use after: 216.7 MB.
-
-Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 3917.
-Total: 3.184500 ms (FindLiveObjects: 0.433000 ms CreateObjectMapping: 0.190300 ms MarkObjects: 2.428800 ms  DeleteObjects: 0.130700 ms)
+  Time since last request: 2.564475 seconds.
+  path: Assets/Prefabs/Main Game UI.prefab
+  artifactKey: Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Main Game UI.prefab using Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c6e334fbc6a9d650ca5bcb912e92c121') in 0.030693 seconds
+  Import took 0.039313 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 239.526745 seconds.
-  path: Assets/Prefabs/Enemy_Prefab/BasicEnemy (Buffed).prefab
-  artifactKey: Guid(b959d3a4f097fc84a83286308cd3332a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Enemy_Prefab/BasicEnemy (Buffed).prefab using Guid(b959d3a4f097fc84a83286308cd3332a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3f5854b5ede1f746f3f50ed5af5095ce') in 0.403560 seconds
-  Import took 0.413477 seconds .
+  Time since last request: 4.776142 seconds.
+  path: Assets/Prefabs/Main Game UI.prefab
+  artifactKey: Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Main Game UI.prefab using Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '42659411d8ddcfae8433f558f428a7e2') in 0.030671 seconds
+  Import took 0.039531 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000226 seconds.
-  path: Assets/Prefabs/Enemy_Prefab/RangedEnemy.prefab
-  artifactKey: Guid(0bfabf16eccdc3246b27f4d398cb89c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Enemy_Prefab/RangedEnemy.prefab using Guid(0bfabf16eccdc3246b27f4d398cb89c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '137aff66ee393d18c303a57d046f6123') in 0.564567 seconds
-  Import took 0.572275 seconds .
+  Time since last request: 1.243502 seconds.
+  path: Assets/Prefabs/Main Game UI.prefab
+  artifactKey: Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Main Game UI.prefab using Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1ef56eed6807b8113728393b1c6098a4') in 0.032245 seconds
+  Import took 0.040917 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000308 seconds.
-  path: Assets/Prefabs/Enemy_Prefab/BasicEnemy.prefab
-  artifactKey: Guid(2d4404f19b4852b4ab301b9f8ac527f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Enemy_Prefab/BasicEnemy.prefab using Guid(2d4404f19b4852b4ab301b9f8ac527f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eb135ea3b92f6f796a690b077efc1eab') in 0.062456 seconds
-  Import took 0.070474 seconds .
+  Time since last request: 14.061498 seconds.
+  path: Assets/Prefabs/Main Game UI.prefab
+  artifactKey: Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Main Game UI.prefab using Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4d1975076c894171c6429f967937f64d') in 0.030436 seconds
+  Import took 0.040066 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000294 seconds.
-  path: Assets/Prefabs/Enemy_Prefab/Enemy_Buffed.prefab
-  artifactKey: Guid(36dc0e636e3c1e04c8527a0f8b2817ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Enemy_Prefab/Enemy_Buffed.prefab using Guid(36dc0e636e3c1e04c8527a0f8b2817ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '29f48111a1930640692c07a23368a89a') in 0.010267 seconds
-  Import took 0.016322 seconds .
+  Time since last request: 3.229397 seconds.
+  path: Assets/Prefabs/Main Game UI.prefab
+  artifactKey: Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Main Game UI.prefab using Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c1a8c7e3312338d08c1a037bfa4e2d5e') in 0.031250 seconds
+  Import took 0.040078 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000327 seconds.
-  path: Assets/Prefabs/Enemy_Prefab/RangedEnemy (Buffed).prefab
-  artifactKey: Guid(dbb5da9d8ecc6a648b25a8b725ef9d11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Enemy_Prefab/RangedEnemy (Buffed).prefab using Guid(dbb5da9d8ecc6a648b25a8b725ef9d11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a9eda9b623bf9239202d90db1a686c0e') in 0.065651 seconds
-  Import took 0.073101 seconds .
+  Time since last request: 3.178507 seconds.
+  path: Assets/Prefabs/Main Game UI.prefab
+  artifactKey: Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Main Game UI.prefab using Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4a5460a9d3d22c972605dcf4d554400f') in 0.033812 seconds
+  Import took 0.043127 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 25.260368 seconds.
-  path: Assets/Prefabs/Enemy_Prefab/BasicEnemy (Buffed).prefab
-  artifactKey: Guid(b959d3a4f097fc84a83286308cd3332a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Enemy_Prefab/BasicEnemy (Buffed).prefab using Guid(b959d3a4f097fc84a83286308cd3332a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9add94c7e08c629037cf9f9b17b58bf7') in 0.048338 seconds
-  Import took 0.056855 seconds .
+  Time since last request: 27.110865 seconds.
+  path: Assets/Prefabs/Main Game UI.prefab
+  artifactKey: Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Main Game UI.prefab using Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '580048bb3b7da6e674c5eff4bb2a1667') in 0.032199 seconds
+  Import took 0.040162 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 1.952149 seconds.
-  path: Assets/Prefabs/Enemy_Prefab/BasicEnemy (Buffed).prefab
-  artifactKey: Guid(b959d3a4f097fc84a83286308cd3332a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Enemy_Prefab/BasicEnemy (Buffed).prefab using Guid(b959d3a4f097fc84a83286308cd3332a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ed6585cb33e3f7a4db2a69294f6a8f6a') in 0.043444 seconds
-  Import took 0.051942 seconds .
+  Time since last request: 18.484216 seconds.
+  path: Assets/Prefabs/Main Game UI.prefab
+  artifactKey: Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Main Game UI.prefab using Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '07ed5cf8c1e32f651c2a4cdc35611730') in 0.030810 seconds
+  Import took 0.040032 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 7.432159 seconds.
-  path: Assets/Prefabs/Enemy_Prefab/BasicEnemy (Buffed).prefab
-  artifactKey: Guid(b959d3a4f097fc84a83286308cd3332a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Enemy_Prefab/BasicEnemy (Buffed).prefab using Guid(b959d3a4f097fc84a83286308cd3332a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5d6b7cd5bafe72549dec05db13e793a8') in 0.047211 seconds
-  Import took 0.056121 seconds .
+  Time since last request: 8.887460 seconds.
+  path: Assets/Prefabs/Main Game UI.prefab
+  artifactKey: Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Main Game UI.prefab using Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '981f52c59860843ce7f9ca8351cb3a27') in 0.030139 seconds
+  Import took 0.038051 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 11.065100 seconds.
-  path: Assets/Prefabs/Enemy_Prefab/BasicEnemy (Buffed).prefab
-  artifactKey: Guid(b959d3a4f097fc84a83286308cd3332a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Enemy_Prefab/BasicEnemy (Buffed).prefab using Guid(b959d3a4f097fc84a83286308cd3332a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9e5c9d3a377a3614f59c60befb9a5b28') in 0.051374 seconds
-  Import took 0.060913 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.001752 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.00 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.917 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.56 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2921 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 216.9 MB.
-System memory in use after: 216.9 MB.
-
-Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 3956.
-Total: 3.586600 ms (FindLiveObjects: 0.372100 ms CreateObjectMapping: 0.260200 ms MarkObjects: 2.754600 ms  DeleteObjects: 0.198800 ms)
+  Time since last request: 4.063377 seconds.
+  path: Assets/Prefabs/Main Game UI.prefab
+  artifactKey: Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Main Game UI.prefab using Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fdcee7ffc3bfec783677fc3bc81eec2e') in 0.031154 seconds
+  Import took 0.039351 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 211.441388 seconds.
-  path: Assets/Prefabs/Enemy_Prefab/RangedEnemy (Buffed).prefab
-  artifactKey: Guid(dbb5da9d8ecc6a648b25a8b725ef9d11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Enemy_Prefab/RangedEnemy (Buffed).prefab using Guid(dbb5da9d8ecc6a648b25a8b725ef9d11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f785fa553bc534eebc43fb6a2f9b50dc') in 0.200833 seconds
-  Import took 0.209286 seconds .
+  Time since last request: 7.214305 seconds.
+  path: Assets/Prefabs/Main Game UI.prefab
+  artifactKey: Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Main Game UI.prefab using Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '225930438b5235702da1b67021b62699') in 0.030250 seconds
+  Import took 0.038569 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 19.747383 seconds.
-  path: Assets/Prefabs/Enemy_Prefab/RangedEnemy (Buffed).prefab
-  artifactKey: Guid(dbb5da9d8ecc6a648b25a8b725ef9d11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Enemy_Prefab/RangedEnemy (Buffed).prefab using Guid(dbb5da9d8ecc6a648b25a8b725ef9d11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6d4257e29c77b207e21d067a6234aea1') in 0.047040 seconds
-  Import took 0.055558 seconds .
+  Time since last request: 7.214852 seconds.
+  path: Assets/Prefabs/Main Game UI.prefab
+  artifactKey: Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Main Game UI.prefab using Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5c35c96ece71c7500fdf3befea0a1f65') in 0.032421 seconds
+  Import took 0.041711 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 3.713324 seconds.
-  path: Assets/Prefabs/Enemy_Prefab/RangedEnemy (Buffed).prefab
-  artifactKey: Guid(dbb5da9d8ecc6a648b25a8b725ef9d11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Enemy_Prefab/RangedEnemy (Buffed).prefab using Guid(dbb5da9d8ecc6a648b25a8b725ef9d11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd8b8f173ffd4717f103aeb69bab654ba') in 0.050403 seconds
-  Import took 0.058022 seconds .
+  Time since last request: 1.978131 seconds.
+  path: Assets/Prefabs/Main Game UI.prefab
+  artifactKey: Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Main Game UI.prefab using Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c83c3aa7b69830d8fa2860f456c66d80') in 0.030672 seconds
+  Import took 0.038709 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 13.628996 seconds.
-  path: Assets/Prefabs/Enemy_Prefab/RangedEnemy.prefab
-  artifactKey: Guid(0bfabf16eccdc3246b27f4d398cb89c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Enemy_Prefab/RangedEnemy.prefab using Guid(0bfabf16eccdc3246b27f4d398cb89c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '347276e38cac2c7bdc3c3db02f0308af') in 0.038643 seconds
-  Import took 0.046526 seconds .
+  Time since last request: 1.776180 seconds.
+  path: Assets/Prefabs/Main Game UI.prefab
+  artifactKey: Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Main Game UI.prefab using Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7580c7350eb1cbc6f5923de72126eb79') in 0.030905 seconds
+  Import took 0.039158 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 9.518172 seconds.
-  path: Assets/Prefabs/Enemy_Prefab/RangedEnemy.prefab
-  artifactKey: Guid(0bfabf16eccdc3246b27f4d398cb89c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Enemy_Prefab/RangedEnemy.prefab using Guid(0bfabf16eccdc3246b27f4d398cb89c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2dbcf9a249949fcca6fd3f47e5db5066') in 0.042026 seconds
-  Import took 0.049826 seconds .
+  Time since last request: 10.063505 seconds.
+  path: Assets/Prefabs/Main Game UI.prefab
+  artifactKey: Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Main Game UI.prefab using Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '30021c1a902c890c07a0df18e3287744') in 0.031613 seconds
+  Import took 0.039837 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 1.574752 seconds.
-  path: Assets/Prefabs/Enemy_Prefab/RangedEnemy.prefab
-  artifactKey: Guid(0bfabf16eccdc3246b27f4d398cb89c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Enemy_Prefab/RangedEnemy.prefab using Guid(0bfabf16eccdc3246b27f4d398cb89c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3136c78bd748a40841c26c4a6882ae2b') in 0.042960 seconds
-  Import took 0.050930 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.001538 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.59 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.886 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.58 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2921 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 217.0 MB.
-System memory in use after: 217.0 MB.
-
-Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 3995.
-Total: 3.203800 ms (FindLiveObjects: 0.393700 ms CreateObjectMapping: 0.175400 ms MarkObjects: 2.478800 ms  DeleteObjects: 0.154900 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.001546 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.58 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.892 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.56 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2921 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 217.0 MB.
-System memory in use after: 217.0 MB.
-
-Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 3998.
-Total: 3.712800 ms (FindLiveObjects: 0.553900 ms CreateObjectMapping: 0.340100 ms MarkObjects: 2.674500 ms  DeleteObjects: 0.141800 ms)
+  Time since last request: 20.093488 seconds.
+  path: Assets/Prefabs/Main Game UI.prefab
+  artifactKey: Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Main Game UI.prefab using Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5626167ac43a7be31c7f75eefc408fd3') in 0.031019 seconds
+  Import took 0.039656 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 111.782149 seconds.
-  path: Assets/Prefabs/Enemy_Prefab/BasicEnemy.prefab
-  artifactKey: Guid(2d4404f19b4852b4ab301b9f8ac527f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Enemy_Prefab/BasicEnemy.prefab using Guid(2d4404f19b4852b4ab301b9f8ac527f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2007fb5447d6f04161e7e26dd403b0de') in 0.198953 seconds
-  Import took 0.206686 seconds .
+  Time since last request: 3.805129 seconds.
+  path: Assets/Prefabs/Main Game UI.prefab
+  artifactKey: Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Main Game UI.prefab using Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c3a9f42669c6e6cda6ec8dc375daded8') in 0.030697 seconds
+  Import took 0.038752 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.668922 seconds.
-  path: Assets/Prefabs/Enemy_Prefab/BasicEnemy.prefab
-  artifactKey: Guid(2d4404f19b4852b4ab301b9f8ac527f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Enemy_Prefab/BasicEnemy.prefab using Guid(2d4404f19b4852b4ab301b9f8ac527f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3a8c9c17acdbe438c7c02f743741ad48') in 0.046618 seconds
-  Import took 0.063088 seconds .
+  Time since last request: 0.970777 seconds.
+  path: Assets/Prefabs/Main Game UI.prefab
+  artifactKey: Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Main Game UI.prefab using Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0527af8118ed0c16d09c149cef252113') in 0.033653 seconds
+  Import took 0.042254 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 2.392615 seconds.
-  path: Assets/Prefabs/Enemy_Prefab/BasicEnemy.prefab
-  artifactKey: Guid(2d4404f19b4852b4ab301b9f8ac527f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Enemy_Prefab/BasicEnemy.prefab using Guid(2d4404f19b4852b4ab301b9f8ac527f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8c84c9a41f29429da2808aeea6a32af2') in 0.039197 seconds
-  Import took 0.046942 seconds .
+  Time since last request: 7.813089 seconds.
+  path: Assets/Prefabs/Main Game UI.prefab
+  artifactKey: Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Main Game UI.prefab using Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd45c83c5a7cb177219ca85e3c7c9db8c') in 0.032123 seconds
+  Import took 0.040224 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 5.449264 seconds.
-  path: Assets/Prefabs/Enemy_Prefab/BasicEnemy.prefab
-  artifactKey: Guid(2d4404f19b4852b4ab301b9f8ac527f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Enemy_Prefab/BasicEnemy.prefab using Guid(2d4404f19b4852b4ab301b9f8ac527f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c93841066f3852018467665b74317e44') in 0.042081 seconds
-  Import took 0.049654 seconds .
+  Time since last request: 1.579104 seconds.
+  path: Assets/Prefabs/Main Game UI.prefab
+  artifactKey: Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Main Game UI.prefab using Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '409652a70810de483ad24c569b345ca1') in 0.032268 seconds
+  Import took 0.040488 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 18.658534 seconds.
-  path: Assets/Prefabs/Enemy_Prefab/RangedEnemy (Buffed).prefab
-  artifactKey: Guid(dbb5da9d8ecc6a648b25a8b725ef9d11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Enemy_Prefab/RangedEnemy (Buffed).prefab using Guid(dbb5da9d8ecc6a648b25a8b725ef9d11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f1695c41a61556e435acbe80022e198b') in 0.067025 seconds
-  Import took 0.078507 seconds .
+  Time since last request: 3.003939 seconds.
+  path: Assets/Prefabs/Main Game UI.prefab
+  artifactKey: Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Main Game UI.prefab using Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0059de15d6a0ad2719d275b4e7de0a59') in 0.030984 seconds
+  Import took 0.039317 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 6.691919 seconds.
-  path: Assets/Prefabs/Enemy_Prefab/RangedEnemy.prefab
-  artifactKey: Guid(0bfabf16eccdc3246b27f4d398cb89c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Enemy_Prefab/RangedEnemy.prefab using Guid(0bfabf16eccdc3246b27f4d398cb89c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9d5aa3c88722f322b025bb0535591c16') in 0.039132 seconds
-  Import took 0.046405 seconds .
+  Time since last request: 0.966854 seconds.
+  path: Assets/Prefabs/Main Game UI.prefab
+  artifactKey: Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Main Game UI.prefab using Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9e98074647c8b11b3c30a2900b6f13b7') in 0.030955 seconds
+  Import took 0.039547 seconds .
 
+========================================================================
+Received Import Request.
+  Time since last request: 7.413867 seconds.
+  path: Assets/Prefabs/Main Game UI.prefab
+  artifactKey: Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Main Game UI.prefab using Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c0e294f9d0a70dd2b8b91ddb833b3adb') in 0.032301 seconds
+  Import took 0.041100 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.610962 seconds.
+  path: Assets/Prefabs/Main Game UI.prefab
+  artifactKey: Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Main Game UI.prefab using Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '14337869fcac83ec0dccefd66fe9c035') in 0.031943 seconds
+  Import took 0.039902 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.819353 seconds.
+  path: Assets/Prefabs/Main Game UI.prefab
+  artifactKey: Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Main Game UI.prefab using Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '044faa978a78a19b08b14b2f1981ba26') in 0.032858 seconds
+  Import took 0.041218 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.987106 seconds.
+  path: Assets/Prefabs/Main Game UI.prefab
+  artifactKey: Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Main Game UI.prefab using Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '206e55d33c8629c0993dd23910834060') in 0.036323 seconds
+  Import took 0.046302 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.754151 seconds.
+  path: Assets/Prefabs/Main Game UI.prefab
+  artifactKey: Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Main Game UI.prefab using Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2cce7870df08bfdea168ffb5aedf3940') in 0.032244 seconds
+  Import took 0.041241 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 14.105731 seconds.
+  path: Assets/Prefabs/Main Game UI.prefab
+  artifactKey: Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Main Game UI.prefab using Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '88d38b2df336836fed846525d96266e2') in 0.031594 seconds
+  Import took 0.040412 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.790987 seconds.
+  path: Assets/Prefabs/Main Game UI.prefab
+  artifactKey: Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Main Game UI.prefab using Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '134d43d7970d194f11c1102956884e2d') in 0.033069 seconds
+  Import took 0.041921 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.865622 seconds.
+  path: Assets/Prefabs/Main Game UI.prefab
+  artifactKey: Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Main Game UI.prefab using Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a403fb6443bacaeb5a3fe1a99d0c74de') in 0.032274 seconds
+  Import took 0.041641 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.299156 seconds.
+  path: Assets/Prefabs/Main Game UI.prefab
+  artifactKey: Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Main Game UI.prefab using Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8d266832f43717051c27f3177b4ab378') in 0.033829 seconds
+  Import took 0.044530 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.994095 seconds.
+  path: Assets/Prefabs/Main Game UI.prefab
+  artifactKey: Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Main Game UI.prefab using Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b1562c727ac0628908aacac1331015f1') in 0.032130 seconds
+  Import took 0.041350 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.593355 seconds.
+  path: Assets/Prefabs/Main Game UI.prefab
+  artifactKey: Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Main Game UI.prefab using Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fe6c009e0340175a667c0236b17ed8ca') in 0.031204 seconds
+  Import took 0.039646 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.973077 seconds.
+  path: Assets/Prefabs/Main Game UI.prefab
+  artifactKey: Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Main Game UI.prefab using Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd485afc8cd481bb83bbb9283c735f77b') in 0.029860 seconds
+  Import took 0.038028 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.006676 seconds.
+  path: Assets/Prefabs/Main Game UI.prefab
+  artifactKey: Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Main Game UI.prefab using Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9cc122a68988d4b277a73483945d15f1') in 0.033786 seconds
+  Import took 0.042691 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.388944 seconds.
+  path: Assets/Prefabs/Main Game UI.prefab
+  artifactKey: Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Main Game UI.prefab using Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bb5c5d0e98ffd7b9b4d5dcf2bbf81e1f') in 0.034444 seconds
+  Import took 0.043108 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.788584 seconds.
+  path: Assets/Prefabs/Main Game UI.prefab
+  artifactKey: Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Main Game UI.prefab using Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ad9b8a463a5579f18045af403c5491e5') in 0.031433 seconds
+  Import took 0.040064 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.574685 seconds.
+  path: Assets/Prefabs/Main Game UI.prefab
+  artifactKey: Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Main Game UI.prefab using Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '432f9efb97c6ee68f795a1b75dfc555b') in 0.033173 seconds
+  Import took 0.041908 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.256711 seconds.
+  path: Assets/Prefabs/Main Game UI.prefab
+  artifactKey: Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Main Game UI.prefab using Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c6b6f2fdc904f33687eb38adb302a420') in 0.031214 seconds
+  Import took 0.039583 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.557098 seconds.
+  path: Assets/Prefabs/Main Game UI.prefab
+  artifactKey: Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Main Game UI.prefab using Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c46af43f91843f43eabcc66fbd174903') in 0.030259 seconds
+  Import took 0.038803 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.778107 seconds.
+  path: Assets/Prefabs/Main Game UI.prefab
+  artifactKey: Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Main Game UI.prefab using Guid(6d6ec4225c2203d4c948831df643eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1eb6160a71142700866bfa1ec04a5d52') in 0.032224 seconds
+  Import took 0.041245 seconds .
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
