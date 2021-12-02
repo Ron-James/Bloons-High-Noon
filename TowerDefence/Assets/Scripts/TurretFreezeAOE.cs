@@ -16,7 +16,7 @@ public class TurretFreezeAOE : MonoBehaviour
     [SerializeField] float [] damageUpgrades = new float [5];
     [SerializeField] float [] freezeDurationUpgrades = new float [5];
     [SerializeField] float stunSlowTime = 0.5f;
-    [SerializeField] float stunSlowPercent= 0.5f;
+    [SerializeField] [Range(0,1)] float stunSlowPercent= 0.5f;
     [SerializeField] bool stunSlow = false;
     [SerializeField] Sound zapSound;
     

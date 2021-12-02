@@ -146,6 +146,7 @@ public class TurretExpoDamage : MonoBehaviour
                 }
                 else
                 {
+                    aimScript.Target.GetComponent<EnemyHealth>().TakeDamage(damage);
                     if (aimScript.Target.GetComponent<EnemyHealth>().Health <= 0)
                     {
                         aimScript.Target = null;
@@ -168,7 +169,7 @@ public class TurretExpoDamage : MonoBehaviour
                     }
                     lineRenderer.SetPosition(0, upgradeManager.firePoint.position);
                     lineRenderer.SetPosition(1, aimScript.Target.position);
-                    aimScript.Target.GetComponent<EnemyHealth>().TakeDamage(damage);
+                    
 
                     yield return null;
                 }
