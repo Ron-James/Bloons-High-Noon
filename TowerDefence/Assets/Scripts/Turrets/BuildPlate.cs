@@ -27,6 +27,7 @@ public class BuildPlate : MonoBehaviour
     [SerializeField] GameObject unlockedPlate;
     [SerializeField] GameObject lockedPlate;
     [SerializeField] GameObject damageTarget;
+    [SerializeField] Sound damageAlert;
     public Build Build { get => build; set => build = value; }
     public int BuildIndex { get => (int) build; }
     public float Health { get => health; set => health = value; }
@@ -47,6 +48,7 @@ public class BuildPlate : MonoBehaviour
             health = towers[BuildIndex-1].health;
         }
         UpdatePlateLock();
+        damageAlert.src = GameObject.FindGameObjectWithTag("MainUI").GetComponent<AudioSource>();
         
     }
     public Tower CurrentTower(){
@@ -208,6 +210,7 @@ public class BuildPlate : MonoBehaviour
             health -= damage;
             if(health <= MaxHealth * GameManager.HelthIndicatorThrsh){
                 EnableHealthIndicator();
+                damageAlert.PlayOnce();
             }
             if(health < maxHealth * 0.5f){
                 damageTarget.SetActive(true);

@@ -69,6 +69,9 @@ MonoBehaviour:
     src: {fileID: 5566679260371032655}
     volume: 0.07
   fireTime: 0
+  radius: 25
+  blastDamage: 1.4
+  doesAreaDamage: 0
   damageUpgrades:
   - 0.7
   - 0.85
@@ -211,6 +214,7 @@ MonoBehaviour:
   upgrade: 0
   damageUpgrade: 1
   fireRateUpgrade: 1
+  rangeUpgrade: 1
   cooldownUpgrade: 1
   freezeDurationUpgrade: 1
   upgradeModels:

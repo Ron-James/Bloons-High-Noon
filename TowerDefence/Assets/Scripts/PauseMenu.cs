@@ -13,6 +13,7 @@ public class PauseMenu : MonoBehaviour
     {
         IsPaused = false;
         player = GameObject.FindGameObjectWithTag("Player");
+        Resume();
     }
 
     // Update is called once per frame
@@ -28,10 +29,13 @@ public class PauseMenu : MonoBehaviour
         }
     }
     public void Resume(){
-        Time.timeScale = 1f;
         IsPaused = false;
+        Time.timeScale = 1f;
         menuUI.SetActive(false);
-        player.GetComponent<FirstPersonAIO>().EnableCamera();
+        if(GameManager.instance.FirstPerson && !BuildMenu.MenuIsOpen){
+            player.GetComponent<FirstPersonAIO>().EnableCamera();
+        }
+        
         //player.GetComponent<FirstPersonAIO>().playerCanMove = true;
         
         
@@ -40,10 +44,11 @@ public class PauseMenu : MonoBehaviour
 
     public void Pause(){
         IsPaused = true;
+        Time.timeScale = 0f;
         player.GetComponent<FirstPersonAIO>().DisableCamera();
         //player.GetComponent<FirstPersonAIO>().playerCanMove = false;
         menuUI.SetActive(true);
-        Time.timeScale = 0f;
+        
 
     }
     public void LoadMenu(){

@@ -20,8 +20,8 @@ public class TurretProjectile : MonoBehaviour
     [SerializeField] float fireTime;
 
     [Header("Area Damage Things")]
-    [SerializeField] float radius = 14f;
-    [SerializeField] float blastDamage = 1.4f;
+    [SerializeField] float radius = 18f;
+    [SerializeField] float blastDamage = 1f;
     [SerializeField] bool doesAreaDamage = false;
 
     [Header("Upgrade Percentages")]
@@ -39,6 +39,7 @@ public class TurretProjectile : MonoBehaviour
 
     UpgradeManager upgradeManager;
     TurretAim turretAim;
+    Coroutine damageCo;
     // Start is called before the first frame update
     void Start()
     {
@@ -51,11 +52,11 @@ public class TurretProjectile : MonoBehaviour
     {
         turretAim = GetComponent<TurretAim>();
         target = turretAim.Target;
-        DamageTarget();
         fireTime += Time.deltaTime;
         if (fireTime >= (fireRate * (1 / upgradeManager.FireRateUpgrade)))
         {
-            StartCoroutine(DamageDelay(Time.deltaTime));
+            //Debug.Log(fireTime + "fire Time");
+            DamageTarget();
         }
 
     }
@@ -63,14 +64,18 @@ public class TurretProjectile : MonoBehaviour
     {
         StartCoroutine(ShowProjectileLine(endPoint));
         yield return new WaitForSeconds(time);
+        
     }
     IEnumerator DamageDelay(float time)
     {
         yield return new WaitForSeconds(time);
         DamageTarget();
+        fireTime = 0;
+        damageCo = null;
     }
     public void DamageTarget()
     {
+
         //fireTime += Time.deltaTime;
         if (target != null && target.GetComponentInParent<EnemyHealth>() != null)
         {
@@ -101,9 +106,9 @@ public class TurretProjectile : MonoBehaviour
                 turretAim.Target = null;
             }
 
-
-
-
+        }
+        else{
+            return;
         }
 
 
@@ -165,7 +170,7 @@ public class TurretProjectile : MonoBehaviour
         }
         else{
             for(int loop = 0; loop < enemies.Length; loop++){
-                if(enemies[loop].gameObject.GetComponent<EnemyHealth>() != null){
+                if(enemies[loop].gameObject.GetComponent<EnemyHealth>() != null && enemies[loop].transform != enemy){
                     enemies[loop].GetComponent<EnemyHealth>().TakeDamage(blastDamage);
                 }
                 else{
