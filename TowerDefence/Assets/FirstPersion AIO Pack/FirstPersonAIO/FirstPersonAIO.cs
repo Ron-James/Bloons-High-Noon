@@ -381,7 +381,7 @@ public class FirstPersonAIO : MonoBehaviour {
             }
 
         if(Input.GetButtonDown("Cancel")){
-            ControllerPause();
+            //ControllerPause();
         }
         #endregion
 

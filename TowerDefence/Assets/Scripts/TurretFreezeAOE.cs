@@ -44,13 +44,14 @@ public class TurretFreezeAOE : MonoBehaviour
     {
         fireCount += Time.deltaTime; 
         if(targetTrigger.EnemiesInRangeCount() > 0 && fireCount >= (fireRate * (1/upgradeManager.FireRateUpgrade))){
+            fireCount = 0;
             if(stunSlow){
                 StunSlowEnemies(freezeDuration * upgradeManager.FreezeDurationUpgrade, stunSlowTime, stunSlowPercent);
             }
             else{
                 targetTrigger.FreezeEnemiesInRange(freezeDuration * upgradeManager.FreezeDurationUpgrade);
             }
-            fireCount = 0;
+            
             targetTrigger.DamageAllEnemies(damage * upgradeManager.DamageUpgrade);
             ZapEnemies();
             

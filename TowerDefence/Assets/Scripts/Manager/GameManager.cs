@@ -100,7 +100,9 @@ public class GameManager : Singleton<GameManager>
         if(Input.GetKeyDown(KeyCode.M)){
             AddBalance(10000);
         }
-        
+        if(Input.GetKeyDown(KeyCode.X)){
+            SpawnEnemy(enemies[1]);
+        }
         
 
         if(Input.GetKeyDown(KeyCode.E)){
@@ -109,7 +111,9 @@ public class GameManager : Singleton<GameManager>
                 DisableRangeIndicators();
             }
         }
-        
+        if(Input.GetKeyDown(KeyCode.I)){
+            MakeEnemiesVisible();
+        }
         if(Input.GetKeyDown(KeyCode.Q) && !RangeIndicators && firstPerson){
             EnableRangeIndicators();
         }

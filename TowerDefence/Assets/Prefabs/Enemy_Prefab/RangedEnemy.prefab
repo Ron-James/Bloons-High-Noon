@@ -9894,7 +9894,7 @@ Transform:
   m_GameObject: {fileID: 4513408381286851542}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 21, y: 0.1, z: 21}
+  m_LocalScale: {x: 39, y: 0.1, z: 39}
   m_Children: []
   m_Father: {fileID: 8129881945059315818}
   m_RootOrder: 2
@@ -24814,6 +24814,7 @@ MonoBehaviour:
   tutorialEnemy: 0
   secondTutorialEnemy: 0
   invisible: 0
+  enemySound: {fileID: 924058561319319019}
   isAlive: 1
 --- !u!120 &1386615299727231311
 LineRenderer:
@@ -25188,6 +25189,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da5cbb1348ecd77479f597f68041eed5, type: 3}
+--- !u!114 &924058561319319019 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5283464873198951936, guid: da5cbb1348ecd77479f597f68041eed5,
+    type: 3}
+  m_PrefabInstance: {fileID: 5008083130471394283}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c92cc19438f2cb4784625a62b2add3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &7431542136344758958 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2495677129055985989, guid: da5cbb1348ecd77479f597f68041eed5,

@@ -142,6 +142,7 @@ MonoBehaviour:
   tutorialEnemy: 0
   secondTutorialEnemy: 0
   invisible: 0
+  enemySound: {fileID: 6916674626488725490}
   isAlive: 1
 --- !u!114 &729411142328203173
 MonoBehaviour:
@@ -413,6 +414,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1634337869534753266}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6916674626488725490 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5283464873198951936, guid: da5cbb1348ecd77479f597f68041eed5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1634337869534753266}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c92cc19438f2cb4784625a62b2add3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3007838409874086335
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -484,6 +497,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 3393861434285931605, guid: e6de4a6081ea4e848ba3771fc018d365,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6de4a6081ea4e848ba3771fc018d365, type: 3}
@@ -734,6 +752,11 @@ PrefabInstance:
     - target: {fileID: 1039227699449778131, guid: 29eeb8ebe2a065444a84760cc92c6da7,
         type: 3}
       propertyPath: prewarm
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1039227699449778131, guid: 29eeb8ebe2a065444a84760cc92c6da7,
+        type: 3}
+      propertyPath: playOnAwake
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3298255749402282999, guid: 29eeb8ebe2a065444a84760cc92c6da7,

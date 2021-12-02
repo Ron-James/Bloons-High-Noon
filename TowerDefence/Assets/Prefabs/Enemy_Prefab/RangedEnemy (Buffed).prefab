@@ -48,7 +48,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -4842,7 +4842,7 @@ Transform:
   m_GameObject: {fileID: 727959018711678277}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
+  m_LocalScale: {x: 1.8, y: 1.8, z: 1.8}
   m_Children:
   - {fileID: 8110289214064702631}
   - {fileID: 855333979953071098}
@@ -4883,7 +4883,7 @@ Transform:
   m_Children:
   - {fileID: 8016089561536343679}
   m_Father: {fileID: 3839789282626958712}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: -360, z: 0}
 --- !u!198 &2253863919192216832
 ParticleSystem:
@@ -4901,7 +4901,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 0
   useRigidbodyForVelocity: 1
@@ -9800,6 +9800,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 104859270071243895}
   - {fileID: 2158929842683652034}
   - {fileID: 7476284276201956636}
   m_Father: {fileID: 5395020548474266250}
@@ -9894,7 +9895,7 @@ Transform:
   m_GameObject: {fileID: 4513408381286851542}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 25, y: 0.1, z: 25}
+  m_LocalScale: {x: 45, y: 0.1, z: 45}
   m_Children: []
   m_Father: {fileID: 8129881945059315818}
   m_RootOrder: 2
@@ -10022,7 +10023,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 0
   useRigidbodyForVelocity: 1
@@ -15010,7 +15011,7 @@ Transform:
   m_Children:
   - {fileID: 3031066632414556828}
   m_Father: {fileID: 3839789282626958712}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: -360, z: 0}
 --- !u!198 &4929417146538860856
 ParticleSystem:
@@ -15028,7 +15029,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -24815,6 +24816,7 @@ MonoBehaviour:
   tutorialEnemy: 0
   secondTutorialEnemy: 0
   invisible: 0
+  enemySound: {fileID: 1915176439485658902}
   isAlive: 1
 --- !u!120 &1386615299727231311
 LineRenderer:
@@ -25216,6 +25218,81 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1227825582197114352}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1346011558587730105
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 3839789282626958712}
+    m_Modifications:
+    - target: {fileID: 1428994503865688744, guid: 36dc0e636e3c1e04c8527a0f8b2817ea,
+        type: 3}
+      propertyPath: m_Name
+      value: Enemy_Buffed
+      objectReference: {fileID: 0}
+    - target: {fileID: 1430304729680960718, guid: 36dc0e636e3c1e04c8527a0f8b2817ea,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1430304729680960718, guid: 36dc0e636e3c1e04c8527a0f8b2817ea,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.2495426
+      objectReference: {fileID: 0}
+    - target: {fileID: 1430304729680960718, guid: 36dc0e636e3c1e04c8527a0f8b2817ea,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1430304729680960718, guid: 36dc0e636e3c1e04c8527a0f8b2817ea,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1430304729680960718, guid: 36dc0e636e3c1e04c8527a0f8b2817ea,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.49999946
+      objectReference: {fileID: 0}
+    - target: {fileID: 1430304729680960718, guid: 36dc0e636e3c1e04c8527a0f8b2817ea,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.5000005
+      objectReference: {fileID: 0}
+    - target: {fileID: 1430304729680960718, guid: 36dc0e636e3c1e04c8527a0f8b2817ea,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.5000021
+      objectReference: {fileID: 0}
+    - target: {fileID: 1430304729680960718, guid: 36dc0e636e3c1e04c8527a0f8b2817ea,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.4999979
+      objectReference: {fileID: 0}
+    - target: {fileID: 1430304729680960718, guid: 36dc0e636e3c1e04c8527a0f8b2817ea,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1430304729680960718, guid: 36dc0e636e3c1e04c8527a0f8b2817ea,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -180
+      objectReference: {fileID: 0}
+    - target: {fileID: 1430304729680960718, guid: 36dc0e636e3c1e04c8527a0f8b2817ea,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -90
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 36dc0e636e3c1e04c8527a0f8b2817ea, type: 3}
+--- !u!4 &104859270071243895 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1430304729680960718, guid: 36dc0e636e3c1e04c8527a0f8b2817ea,
+    type: 3}
+  m_PrefabInstance: {fileID: 1346011558587730105}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6036707635116009750
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25285,6 +25362,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da5cbb1348ecd77479f597f68041eed5, type: 3}
+--- !u!114 &1915176439485658902 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5283464873198951936, guid: da5cbb1348ecd77479f597f68041eed5,
+    type: 3}
+  m_PrefabInstance: {fileID: 6036707635116009750}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c92cc19438f2cb4784625a62b2add3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &8170898325923989587 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2495677129055985989, guid: da5cbb1348ecd77479f597f68041eed5,

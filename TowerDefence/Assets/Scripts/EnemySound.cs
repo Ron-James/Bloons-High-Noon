@@ -23,6 +23,7 @@ public class EnemySound : MonoBehaviour
     public void ProjectileHitSound(){
         int rand = Random.Range(0, projectileHit.Length - 1);
         projectileHit[rand].PlayOnce();
+        return;
     }
 
 

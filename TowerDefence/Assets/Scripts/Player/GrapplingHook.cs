@@ -34,6 +34,10 @@ public class GrapplingHook : MonoBehaviour
     [SerializeField] float playerHeight = 1f;
     [SerializeField] LayerMask platformLayer;
     [SerializeField] LayerMask grappleLayer;
+    [Header("Sounds")]
+    [SerializeField] Sound hookedSound;
+    [SerializeField] Sound reelSound;
+    [SerializeField] Sound ropeExtendSound;
     Transform grappleGun;
     Collision hookCollision;
     Quaternion defaultRot;
@@ -139,7 +143,7 @@ public class GrapplingHook : MonoBehaviour
 
     IEnumerator Reel(){
         //GetComponentInParent<FirstPersonAIO>().DisableCamera();
-        
+        reelSound.PlayOnce();
         player.GetComponent<Rigidbody>().useGravity = false;
         hook.transform.SetParent(hookedObject.transform);
         player.GetComponent<Collider>().enabled = false;
@@ -176,6 +180,7 @@ public class GrapplingHook : MonoBehaviour
         hook.GetComponent<LineRenderer>().positionCount = 0;
     }
     IEnumerator Extend(float period, float amplitude){
+        ropeExtendSound.PlayOnce();
         GetComponentInParent<FirstPersonAIO>().playerCanMove = false;
         GetComponentInParent<FirstPersonAIO>().DisableCamera();
         hook.gameObject.GetComponent<MeshRenderer>().enabled = true;
@@ -201,6 +206,7 @@ public class GrapplingHook : MonoBehaviour
                     break;
                 }
                 else{
+                    hookedSound.PlayOnce();
                     StartCoroutine(Reel());
                     break;
                 }

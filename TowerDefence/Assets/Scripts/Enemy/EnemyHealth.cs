@@ -16,7 +16,7 @@ public class EnemyHealth : MonoBehaviour
     GameObject deadEnemies;
     GameObject aliveEnemies;
     [SerializeField] bool invisible = false;
-    EnemySound enemySound;
+    [SerializeField] EnemySound enemySound;
     public bool isAlive = true;
 
     public float Health { get => health; set => health = value; }

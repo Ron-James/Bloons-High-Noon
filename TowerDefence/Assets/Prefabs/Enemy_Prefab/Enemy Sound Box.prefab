@@ -58,6 +58,9 @@ MonoBehaviour:
   - clip: {fileID: 8300000, guid: 271ba0e31ffdef24982901263c16d68f, type: 3}
     src: {fileID: 0}
     volume: 0.005
+  - clip: {fileID: 8300000, guid: 27c3a924719a33b42942c46f2a1bfcdf, type: 3}
+    src: {fileID: 4046228897360418869}
+    volume: 0.005
 --- !u!1 &6752508475880085923
 GameObject:
   m_ObjectHideFlags: 0
@@ -100,14 +103,14 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 100
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -227,14 +230,14 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 79
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
