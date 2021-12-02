@@ -19,6 +19,11 @@ public class TurretProjectile : MonoBehaviour
     Transform target;
     [SerializeField] float fireTime;
 
+    [Header("Area Damage Things")]
+    [SerializeField] float radius = 14f;
+    [SerializeField] float blastDamage = 1.4f;
+    [SerializeField] bool doesAreaDamage = false;
+
     [Header("Upgrade Percentages")]
     [SerializeField] float[] damageUpgrades = new float[5];
     [SerializeField] float[] fireRateUpgrades = new float[5];
@@ -30,6 +35,7 @@ public class TurretProjectile : MonoBehaviour
     public float[] FireRateUpgrades { get => fireRateUpgrades; set => fireRateUpgrades = value; }
     public bool IceShot { get => iceShot; set => iceShot = value; }
     public bool AlwaysSwitchToFurthestTarget { get => alwaysSwitchToFurthestTarget; set => alwaysSwitchToFurthestTarget = value; }
+    public bool DoesAreaDamage { get => doesAreaDamage; set => doesAreaDamage = value; }
 
     UpgradeManager upgradeManager;
     TurretAim turretAim;
@@ -73,10 +79,14 @@ public class TurretProjectile : MonoBehaviour
             shotSound.PlayOnce();
             //StartCoroutine(ShowProjectileLine(hit.point));
             //Debug.Log("Enemy Hit");
+            StartCoroutine(FlashNozzle(fireRate * 0.4f));
             upgradeManager.firePoint.GetComponent<ParticleSystem>().Play();
             if (iceShot)
             {
                 target.gameObject.GetComponent<EnemyFollower>().SlowEnemy(slowDuration, slowPercentage);
+            }
+            if(doesAreaDamage){
+                AreaDamage(radius, target);
             }
             target.gameObject.GetComponentInParent<EnemyHealth>().TakeDamage(damage * upgradeManager.DamageUpgrade);
             if (AlwaysSwitchToFurthestTarget)
@@ -148,7 +158,24 @@ public class TurretProjectile : MonoBehaviour
         yield break;
     }
 
-
+    public void AreaDamage(float raduis, Transform enemy){
+        Collider [] enemies = Physics.OverlapSphere(enemy.position, raduis);
+        if(enemies.Length == 0){
+            return;
+        }
+        else{
+            for(int loop = 0; loop < enemies.Length; loop++){
+                if(enemies[loop].gameObject.GetComponent<EnemyHealth>() != null){
+                    enemies[loop].GetComponent<EnemyHealth>().TakeDamage(blastDamage);
+                }
+                else{
+                    continue;
+                }
+            }
+        }
+        
+          
+    }
 
     public void TakeFirstShot()
     {
@@ -164,6 +191,28 @@ public class TurretProjectile : MonoBehaviour
     private void OnDisable() {
         StopAllCoroutines();
     }
+    IEnumerator FlashNozzle(float duration){
+        if(upgradeManager.firePoint.GetComponentInChildren<Light>() == null){
+            Debug.Log("Can't find light");
+            yield break;
+        }
+        else{
+            Light nozzleLight = upgradeManager.firePoint.GetComponentInChildren<Light>();
+            float time = 0;
+            nozzleLight.enabled = true;
+            while(true){
+                time += Time.deltaTime;
+                if(time >= duration){
+                    nozzleLight.enabled = false;
+                    break;
+                }
+                else{
+                    yield return null;
+                }
+            }
 
+        }
+        
+    }
 
 }

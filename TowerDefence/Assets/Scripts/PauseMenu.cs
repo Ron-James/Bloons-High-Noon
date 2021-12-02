@@ -18,7 +18,7 @@ public class PauseMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.P)){
+        if(Input.GetKeyDown(KeyCode.Escape)){
             if(IsPaused){
                 Resume();
             }
@@ -28,20 +28,20 @@ public class PauseMenu : MonoBehaviour
         }
     }
     public void Resume(){
+        Time.timeScale = 1f;
         IsPaused = false;
         menuUI.SetActive(false);
-        if(!BuildMenu.MenuIsOpen && GameManager.firstPerson){
-            player.GetComponent<FirstPersonAIO>().EnableCamera();
-            player.GetComponent<FirstPersonAIO>().playerCanMove = true;
-        }
+        player.GetComponent<FirstPersonAIO>().EnableCamera();
+        //player.GetComponent<FirstPersonAIO>().playerCanMove = true;
         
-        Time.timeScale = 1f;
+        
+        
     }
 
     public void Pause(){
         IsPaused = true;
         player.GetComponent<FirstPersonAIO>().DisableCamera();
-        player.GetComponent<FirstPersonAIO>().playerCanMove = false;
+        //player.GetComponent<FirstPersonAIO>().playerCanMove = false;
         menuUI.SetActive(true);
         Time.timeScale = 0f;
 

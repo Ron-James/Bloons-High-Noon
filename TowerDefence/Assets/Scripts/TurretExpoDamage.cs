@@ -13,8 +13,8 @@ public class TurretExpoDamage : MonoBehaviour
 
 
     [Header("Upgrades")]
-    [SerializeField] float [] cooldownUpgrades = new float [5];
-    [SerializeField] float [] damageUpgrades = new float [5];
+    [SerializeField] float[] cooldownUpgrades = new float[5];
+    [SerializeField] float[] damageUpgrades = new float[5];
 
 
     bool coolingDown;
@@ -51,126 +51,125 @@ public class TurretExpoDamage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(aimScript.Target != null && !coolingDown && !aimScript.Stunned && damageCo == null){
+        if (aimScript.Target != null && !coolingDown && !aimScript.Stunned && damageCo == null)
+        {
             damageCo = StartCoroutine(DamageDelay());
         }
-        
+
     }
-    private void OnEnable() {
+    private void OnEnable()
+    {
         flames.Stop();
     }
-    private void OnDisable() {
+    private void OnDisable()
+    {
         StopAllCoroutines();
         flames.Stop();
     }
-    IEnumerator CoolDown(float period){
+    IEnumerator CoolDown(float period)
+    {
         coolingDown = true;
         float time = 0;
-        while(true){
+        while (true)
+        {
             time += Time.deltaTime;
-            if(time >= period){
+            if (time >= period)
+            {
                 coolingDown = false;
+
                 break;
             }
-            else{
+            else
+            {
                 yield return null;
             }
         }
     }
-    
-    IEnumerator ExponentialDamageSecond(){
-        if(secondTarget == null || secondTarget.GetComponent<EnemyHealth>() == null || CoolingDown || secondTarget.GetComponent<EnemyHealth>().Health <= 0){
-            yield break;
-        }
-        else{
-            secondTarget.GetComponent<EnemyFollower>().OnFire = true;
-            if(slow && !secondTarget.GetComponent<EnemyFollower>().IsSlowedExpo){
-                secondTarget.GetComponent<EnemyFollower>().SlowEnemyIndef(slowPercentage);
-            }
-            float time = 0;
-            while(true){
-                float damage = damageConstant * upgradeManager.DamageUpgrade * Mathf.Exp(time);
-                time += Time.deltaTime;
-                if(secondTarget == null || aimScript.Stunned){
-                    StartCoroutine(CoolDown(coolDownTime * (1/upgradeManager.CooldownUpgrade)));
-                    secondLine.SetPosition(0, Vector3.zero);
-                    secondLine.SetPosition(1, Vector3.zero);
-                    secondDamageCo = null;
-                    secondTarget.GetComponent<EnemyFollower>().OnFire = false;
-                    //secondTarget.GetComponent<EnemyFollower>().IsSlowed = false;
-                    break;
-                }
-                else{
-                    secondLine.SetPosition(0, upgradeManager.firePoint.position);
-                    secondLine.SetPosition(1, secondTarget.position);
-                    secondTarget.GetComponent<EnemyHealth>().TakeDamage(damage);
-                    if(aimScript.Target.GetComponent<EnemyHealth>().Health <= 0){
-                        aimScript.Target = null;
-                        StartCoroutine(CoolDown(coolDownTime * (1/upgradeManager.CooldownUpgrade)));
-                        secondLine.SetPosition(0, Vector3.zero);
-                        secondLine.SetPosition(1, Vector3.zero);
-                        secondDamageCo = null;
-                        flames.Stop();
-                        flameThrower.StopSource();
-                        //aimScript.Target.GetComponent<EnemyFollower>().IsSlowed = false;
-                        break;
-                    }
-                    yield return null;
-                }
 
 
-            }
-        }
-    }
-    IEnumerator DamageDelay(){
+    IEnumerator DamageDelay()
+    {
         yield return new WaitForSeconds(0.001f);
         StartCoroutine(ExponentialDamage());
     }
-    IEnumerator ExponentialDamage(){
-        if(aimScript.Target == null || aimScript.Target.GetComponent<EnemyHealth>() == null || CoolingDown){
+    IEnumerator ExponentialDamage()
+    {
+        if (aimScript.Target == null || aimScript.Target.GetComponent<EnemyHealth>() == null || CoolingDown)
+        {
             yield break;
         }
-        else{
+        else
+        {
+            if (upgradeManager.firePoint.GetComponentInChildren<Light>() == null)
+            {
+                Debug.Log("Can't find light");
+            }
+            else
+            {
+                upgradeManager.firePoint.GetComponentInChildren<Light>().enabled = true;
+            }
             flameThrower.PlayOnce();
             aimScript.Target.GetComponent<EnemyFollower>().OnFire = true;
-            if(slow && !aimScript.Target.GetComponent<EnemyFollower>().IsSlowedExpo){
+            if (slow && !aimScript.Target.GetComponent<EnemyFollower>().IsSlowedExpo)
+            {
                 aimScript.Target.GetComponent<EnemyFollower>().SlowEnemyIndef(slowPercentage);
             }
             float time = 0;
-            if(aimScript.Target.GetComponent<EnemyFollower>() != null && aimScript.Target.GetComponent<EnemyFollower>().OnFire == false){
+            if (aimScript.Target.GetComponent<EnemyFollower>() != null && aimScript.Target.GetComponent<EnemyFollower>().OnFire == false)
+            {
                 aimScript.Target.GetComponent<EnemyFollower>().OnFire = true;
             }
             flames.Play();
-            while(true){
-                
+            while (true)
+            {
+
                 float damage = damageConstant * upgradeManager.DamageUpgrade * Mathf.Exp(time);
                 time += Time.deltaTime;
-                if(aimScript.Target == null || aimScript.Stunned){
-                    StartCoroutine(CoolDown(coolDownTime * (1/upgradeManager.CooldownUpgrade)));
+                if (aimScript.Target == null || aimScript.Stunned)
+                {
+                    StartCoroutine(CoolDown(coolDownTime * (1 / upgradeManager.CooldownUpgrade)));
                     lineRenderer.SetPosition(0, Vector3.zero);
                     lineRenderer.SetPosition(1, Vector3.zero);
                     damageCo = null;
                     flames.Stop();
                     flameThrower.StopSource();
+                    if (upgradeManager.firePoint.GetComponentInChildren<Light>() == null)
+                    {
+                        Debug.Log("Can't find light");
+                    }
+                    else
+                    {
+                        upgradeManager.firePoint.GetComponentInChildren<Light>().enabled = false;
+                    }
                     //aimScript.Target.GetComponent<EnemyFollower>().IsSlowed = false;
                     break;
                 }
-                else{
-                    if(aimScript.Target.GetComponent<EnemyHealth>().Health <= 0){
+                else
+                {
+                    if (aimScript.Target.GetComponent<EnemyHealth>().Health <= 0)
+                    {
                         aimScript.Target = null;
-                        StartCoroutine(CoolDown(coolDownTime * (1/upgradeManager.CooldownUpgrade)));
+                        StartCoroutine(CoolDown(coolDownTime * (1 / upgradeManager.CooldownUpgrade)));
                         lineRenderer.SetPosition(0, Vector3.zero);
                         lineRenderer.SetPosition(1, Vector3.zero);
                         damageCo = null;
                         flames.Stop();
                         flameThrower.StopSource();
+                        if (upgradeManager.firePoint.GetComponentInChildren<Light>() == null)
+                        {
+                            Debug.Log("Can't find light");
+                        }
+                        else
+                        {
+                            upgradeManager.firePoint.GetComponentInChildren<Light>().enabled = false;
+                        }
                         //aimScript.Target.GetComponent<EnemyFollower>().IsSlowed = false;
                         break;
                     }
                     lineRenderer.SetPosition(0, upgradeManager.firePoint.position);
                     lineRenderer.SetPosition(1, aimScript.Target.position);
                     aimScript.Target.GetComponent<EnemyHealth>().TakeDamage(damage);
-                    
+
                     yield return null;
                 }
 

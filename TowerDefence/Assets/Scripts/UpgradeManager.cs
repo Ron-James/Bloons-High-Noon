@@ -181,10 +181,10 @@ public class UpgradeManager : MonoBehaviour
         UpdateUpgradeModel((int) upgrade);
         switch((int)turretType){
             case 0:
-                damageUpgrade = GetComponent<TurretProjectile>().DamageUpgrades[1]; //significantly improved fire rate
-                targetTrigger.UpgradeRange(targetTrigger.RangeUpgrades[4] * basicRange);
-                GetComponent<TurretProjectile>().IceShot = true;
-                rangeUpgrade = targetTrigger.RangeUpgrades[4];
+                damageUpgrade = GetComponent<TurretProjectile>().DamageUpgrades[3]; //significantly improved fire rate
+                targetTrigger.UpgradeRange(targetTrigger.RangeUpgrades[3] * basicRange);
+                GetComponent<TurretProjectile>().DoesAreaDamage = true;
+                //rangeUpgrade = targetTrigger.RangeUpgrades[4];
             break;
             case 1:
                 GetComponent<TurretExpoDamage>().Slow = true;
@@ -217,7 +217,7 @@ public class UpgradeManager : MonoBehaviour
             GetComponent<TurretExpoDamage>().DamageSecondTarget = false;
         }
         else if(GetComponent<TurretProjectile>()!= null){
-            GetComponent<TurretProjectile>().IceShot = false;
+            GetComponent<TurretProjectile>().DoesAreaDamage = false;
             GetComponent<TurretProjectile>().AlwaysSwitchToFurthestTarget = false;
         }
         else if(GetComponent<TurretFreezeAOE>() != null){
