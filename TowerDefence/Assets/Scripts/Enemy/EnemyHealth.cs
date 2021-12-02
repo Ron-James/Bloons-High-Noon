@@ -16,7 +16,7 @@ public class EnemyHealth : MonoBehaviour
     GameObject deadEnemies;
     GameObject aliveEnemies;
     [SerializeField] bool invisible = false;
-    [SerializeField] Sound engineNoise;
+    EnemySound enemySound;
     public bool isAlive = true;
 
     public float Health { get => health; set => health = value; }
@@ -27,7 +27,7 @@ public class EnemyHealth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        enemySound = GetComponentInChildren<EnemySound>();
         health = enemy.health;
         MaxHealth = health;
         deadEnemies = GameManager.instance.DeadEnemies;
@@ -60,15 +60,15 @@ public class EnemyHealth : MonoBehaviour
             
         }
         if(GetComponent<EnemyFollower>().IsStopped){
-            engineNoise.StopSource();
+            enemySound.engineNoise.StopSource();
         }
-        else if(!GetComponent<EnemyFollower>().IsStopped && isAlive && !engineNoise.src.isPlaying){
-            engineNoise.PlayLoop();
+        else if(!GetComponent<EnemyFollower>().IsStopped && isAlive && !enemySound.engineNoise.src.isPlaying){
+            enemySound.engineNoise.PlayLoop();
         }
     }
     private void OnEnable() {
         if(isAlive){
-            engineNoise.PlayLoop();
+            enemySound.engineNoise.PlayLoop();
         }
     }
     public void Kill(){
@@ -84,7 +84,7 @@ public class EnemyHealth : MonoBehaviour
     public void Deactivate(){
         body.SetActive(false);
         GetComponent<EnemyFollower>().StopAllParticles();
-        engineNoise.StopSource();
+        enemySound.engineNoise.StopSource();
         GetComponent<EnemyFollower>().enabled = false;
         //GetComponent<MeshRenderer>().enabled = false;
         if(GetComponent<EnemyRanged>() != null){
@@ -104,7 +104,8 @@ public class EnemyHealth : MonoBehaviour
     public void Activate(){
         GetComponent<EnemyFollower>().StopAllParticles();
         body.SetActive(true);
-        engineNoise.PlayLoop();
+        //engineNoise.PlayLoop();
+        enemySound.engineNoise.PlayLoop();
         GetComponent<EnemyFollower>().enabled = true;
         if(GetComponent<EnemyRanged>() != null){
             GetComponent<EnemyRanged>().enabled = true;

@@ -82,6 +82,13 @@ public class TurretProjectile : MonoBehaviour
             //fireTime += Time.deltaTime;
             fireTime = 0;
             shotSound.PlayOnce();
+            if(target.GetComponentInChildren<EnemySound>() != null){
+                target.GetComponentInChildren<EnemySound>().ProjectileHitSound();
+            }
+            else{
+                Debug.Log("cant find enemy sound");
+            }
+            
             //StartCoroutine(ShowProjectileLine(hit.point));
             //Debug.Log("Enemy Hit");
             StartCoroutine(FlashNozzle(fireRate * 0.4f));
