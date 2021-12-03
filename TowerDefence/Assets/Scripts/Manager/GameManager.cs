@@ -44,6 +44,7 @@ public class GameManager : Singleton<GameManager>
     [Header("Player Reference")]
     [SerializeField] Transform player;
     [SerializeField] Transform mainTower;
+    [SerializeField] GameObject playerPin;
 
     [Header("Game Constants")]
     public static float repairCost = 50;
@@ -96,6 +97,8 @@ public class GameManager : Singleton<GameManager>
     // Start is called before the first frame update
     void Start()
     {
+        playerPin = GameObject.Find("PlayerPin");
+        playerPin.SetActive(false);
         totalHealth = towerHealth;
         UpdateBalanceText();
         gameOver = false;
@@ -262,6 +265,7 @@ public class GameManager : Singleton<GameManager>
     public void FullTopDownView()
     {
         topDownLane.SetActive(true);
+        playerPin.SetActive(true);
         view = View.topDown;
         playerCamera.SetParent(FullTopDownCamera);
         playerCamera.localPosition = Vector3.zero;
@@ -273,6 +277,7 @@ public class GameManager : Singleton<GameManager>
     }
     public void ObjectiveView()
     {
+        playerPin.SetActive(true);
         topDownLane.SetActive(false);
         view = View.objective;
         playerCamera.SetParent(topDownCamPosition);
@@ -287,6 +292,7 @@ public class GameManager : Singleton<GameManager>
 
     public void FirstPersonView()
     {
+        playerPin.SetActive(false);
         topDownLane.SetActive(false);
         view = View.firstPerson;
         playerCamera.SetParent(firstPersonCamPosition);
