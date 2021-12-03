@@ -39,6 +39,7 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] Transform firstPersonCamPosition;
     [SerializeField] Transform playerCamera;
     [SerializeField] Transform FullTopDownCamera;
+    [SerializeField] GameObject topDownLane;
 
     [Header("Player Reference")]
     [SerializeField] Transform player;
@@ -110,34 +111,12 @@ public class GameManager : Singleton<GameManager>
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.M))
-        {
-            AddBalance(10000);
-        }
-
-
         if (Input.GetKeyDown(KeyCode.E) && !tutorial)
         {
             CycleViews();
 
         }
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            MakeEnemiesVisible();
-        }
 
-
-
-        /*
-        if(Input.GetKeyDown(KeyCode.L)){
-            for(int i = 0; i < buildPlates.Length; i++){
-                if(buildPlates[i].BuildIndex > 0){
-                    buildPlates[i].TakeDamage(1);
-                    Debug.Log("damage taken");
-                }
-            }
-        }
-        */
     }
 
     public void SpawnRangedEnemy()
@@ -279,6 +258,7 @@ public class GameManager : Singleton<GameManager>
 
     public void FullTopDownView()
     {
+        topDownLane.SetActive(true);
         view = View.topDown;
         playerCamera.SetParent(FullTopDownCamera);
         playerCamera.localPosition = Vector3.zero;
@@ -290,6 +270,7 @@ public class GameManager : Singleton<GameManager>
     }
     public void ObjectiveView()
     {
+        topDownLane.SetActive(false);
         view = View.objective;
         playerCamera.SetParent(topDownCamPosition);
         playerCamera.localPosition = Vector3.zero;
@@ -303,6 +284,7 @@ public class GameManager : Singleton<GameManager>
 
     public void FirstPersonView()
     {
+        topDownLane.SetActive(false);
         view = View.firstPerson;
         playerCamera.SetParent(firstPersonCamPosition);
         playerCamera.localPosition = Vector3.zero;

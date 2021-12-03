@@ -197,7 +197,7 @@ MonoBehaviour:
   zapSound:
     clip: {fileID: 8300000, guid: f0a25f8f3a3ff2840bbbb9c9d4187f49, type: 3}
     src: {fileID: 44963018662800851}
-    volume: 0.07
+    volume: 0.11
 --- !u!114 &8717239464962037914
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -262,9 +262,9 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 0
-  MaxDistance: 35
+  MaxDistance: 30
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -428,7 +428,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: cdc56f3fb342ca9439a6ade6bc905fe1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

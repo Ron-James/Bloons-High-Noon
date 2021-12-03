@@ -67,7 +67,7 @@ MonoBehaviour:
   shotSound:
     clip: {fileID: 8300000, guid: d81146d8cf5f58f42ad8d63fc66fffe2, type: 3}
     src: {fileID: 5566679260371032655}
-    volume: 0.07
+    volume: 0.2
   fireTime: 0
   radius: 25
   blastDamage: 1.4
@@ -259,12 +259,12 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 140
+  Priority: 168
   DopplerLevel: 1
   MinDistance: 0
-  MaxDistance: 45
+  MaxDistance: 150
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -720,7 +720,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: cdc56f3fb342ca9439a6ade6bc905fe1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
