@@ -104,7 +104,10 @@ public class GameManager : Singleton<GameManager>
         DisableTowerEffects();
 
         //Debug.Log("Dead enemies " + deadEnemies.GetComponentsInChildren<Transform>().Length + deadEnemies.GetComponentsInChildren<Transform>()[0].gameObject.name);
+        if(stage == 0)
+        {
 
+        }
     }
 
     // Update is called once per frame
