@@ -64,7 +64,7 @@ public class TurretProjectile : MonoBehaviour
     {
         StartCoroutine(ShowProjectileLine(endPoint));
         yield return new WaitForSeconds(time);
-        
+
     }
     IEnumerator DamageDelay(float time)
     {
@@ -82,13 +82,15 @@ public class TurretProjectile : MonoBehaviour
             //fireTime += Time.deltaTime;
             fireTime = 0;
             shotSound.PlayOnce();
-            if(target.GetComponentInChildren<EnemySound>() != null){
+            if (target.GetComponentInChildren<EnemySound>() != null)
+            {
                 target.GetComponentInChildren<EnemySound>().ProjectileHitSound();
             }
-            else{
+            else
+            {
                 Debug.Log("cant find enemy sound");
             }
-            
+
             //StartCoroutine(ShowProjectileLine(hit.point));
             //Debug.Log("Enemy Hit");
             StartCoroutine(FlashNozzle(fireRate * 0.4f));
@@ -97,7 +99,8 @@ public class TurretProjectile : MonoBehaviour
             {
                 target.gameObject.GetComponent<EnemyFollower>().SlowEnemy(slowDuration, slowPercentage);
             }
-            if(doesAreaDamage){
+            if (doesAreaDamage)
+            {
                 AreaDamage(radius, target);
             }
             target.gameObject.GetComponentInParent<EnemyHealth>().TakeDamage(damage * upgradeManager.DamageUpgrade);
@@ -114,7 +117,8 @@ public class TurretProjectile : MonoBehaviour
             }
 
         }
-        else{
+        else
+        {
             return;
         }
 
@@ -170,61 +174,81 @@ public class TurretProjectile : MonoBehaviour
         yield break;
     }
 
-    public void AreaDamage(float raduis, Transform enemy){
-        Collider [] enemies = Physics.OverlapSphere(enemy.position, raduis);
-        if(enemies.Length == 0){
-            return;
-        }
-        else{
-            for(int loop = 0; loop < enemies.Length; loop++){
-                if(enemies[loop].gameObject.GetComponent<EnemyHealth>() != null && enemies[loop].transform != enemy){
-                    enemies[loop].GetComponent<EnemyHealth>().TakeDamage(blastDamage);
-                }
-                else{
-                    continue;
-                }
-            }
-        }
-        
-          
-    }
-
-    public void TakeFirstShot()
+    public void AreaDamage(float raduis, Transform enemy)
     {
-        if (target == null)
+        Collider[] enemies = Physics.OverlapSphere(enemy.position, raduis);
+        if (enemies.Length == 0)
         {
             return;
         }
         else
         {
-
-        }
-    }
-    private void OnDisable() {
-        StopAllCoroutines();
-    }
-    IEnumerator FlashNozzle(float duration){
-        if(upgradeManager.firePoint.GetComponentInChildren<Light>() == null){
-            Debug.Log("Can't find light");
-            yield break;
-        }
-        else{
-            Light nozzleLight = upgradeManager.firePoint.GetComponentInChildren<Light>();
-            float time = 0;
-            nozzleLight.enabled = true;
-            while(true){
-                time += Time.deltaTime;
-                if(time >= duration){
-                    nozzleLight.enabled = false;
-                    break;
+            if (enemy.GetComponent<EnemyFollower>() != null)
+            {
+                enemy.GetComponent<EnemyFollower>().ExplosionEffect();
+                for (int loop = 0; loop < enemies.Length; loop++)
+                {
+                    if (enemies[loop].gameObject.GetComponent<EnemyHealth>() != null && enemies[loop].transform != enemy)
+                    {
+                        enemies[loop].GetComponent<EnemyHealth>().TakeDamage(blastDamage);
+                    }
+                    else
+                    {
+                        continue;
+                    }
                 }
-                else{
-                    yield return null;
-                }
+            }
+            else
+            {
+                return;
             }
 
         }
-        
     }
 
-}
+        public void TakeFirstShot()
+        {
+            if (target == null)
+            {
+                return;
+            }
+            else
+            {
+
+            }
+        }
+        private void OnDisable()
+        {
+            StopAllCoroutines();
+        }
+        IEnumerator FlashNozzle(float duration)
+        {
+            if (upgradeManager.firePoint.GetComponentInChildren<Light>() == null)
+            {
+                Debug.Log("Can't find light");
+                yield break;
+            }
+            else
+            {
+                Light nozzleLight = upgradeManager.firePoint.GetComponentInChildren<Light>();
+                float time = 0;
+                nozzleLight.enabled = true;
+                while (true)
+                {
+                    time += Time.deltaTime;
+                    if (time >= duration)
+                    {
+                        nozzleLight.enabled = false;
+                        break;
+                    }
+                    else
+                    {
+                        yield return null;
+                    }
+                }
+
+            }
+
+        }
+
+    }

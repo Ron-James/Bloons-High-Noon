@@ -10,6 +10,7 @@ public class EnemyFollower : MonoBehaviour
     [SerializeField] float speed = 10f;
     [SerializeField] ParticleSystem sparks;
     [SerializeField] ParticleSystem flames;
+    [SerializeField] ParticleSystem explosion;
 
     float distanceTravelled;
     [SerializeField] bool isStopped;
@@ -60,6 +61,11 @@ public class EnemyFollower : MonoBehaviour
     public void StopAllParticles(){
         sparks.Stop();
         flames.Stop();
+        explosion.Stop();
+    }
+
+    public void ExplosionEffect(){
+        explosion.Play();
     }
     // Update is called once per frame
     void Update()
