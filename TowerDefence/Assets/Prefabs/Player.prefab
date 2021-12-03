@@ -185,6 +185,7 @@ MonoBehaviour:
   lockAndHideCursor: 1
   playerCamera: {fileID: 1807778445102660955}
   enableCameraShake: 1
+  baseCamFOV: 0
   buildMenu: {fileID: 0}
   buildPrompt: {fileID: 0}
   autoCrosshair: 0
@@ -381,6 +382,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: HeadJoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 4678247451211879221, guid: 3b8309f965910cc4b9b3fa2faeac91ac,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b8309f965910cc4b9b3fa2faeac91ac, type: 3}

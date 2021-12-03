@@ -48,19 +48,19 @@ MonoBehaviour:
   engine: {fileID: 3859439478212640425}
   body: {fileID: 4046228897360418869}
   engineNoise:
-    clip: {fileID: 8300000, guid: a9f810d37d76cf249908a55143c0e07e, type: 3}
+    clip: {fileID: 8300000, guid: 9111d2608eb305547b6b3a0379904534, type: 3}
     src: {fileID: 3859439478212640425}
-    volume: 0.1
+    volume: 0.05
   projectileHit:
   - clip: {fileID: 8300000, guid: b62dd096e17f4c44bb10b59efc7cec17, type: 3}
     src: {fileID: 0}
-    volume: 0.005
+    volume: 0.05
   - clip: {fileID: 8300000, guid: 271ba0e31ffdef24982901263c16d68f, type: 3}
     src: {fileID: 0}
-    volume: 0.005
+    volume: 0.05
   - clip: {fileID: 8300000, guid: 27c3a924719a33b42942c46f2a1bfcdf, type: 3}
     src: {fileID: 4046228897360418869}
-    volume: 0.005
+    volume: 0.05
 --- !u!1 &6752508475880085923
 GameObject:
   m_ObjectHideFlags: 0
@@ -110,7 +110,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 100
+  Priority: 83
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -237,7 +237,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 79
+  Priority: 125
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500

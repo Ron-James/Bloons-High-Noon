@@ -16,7 +16,7 @@ public class WaveSpawner : MonoBehaviour
         public Enemy [] enemies;
         public int [] enemyCounts;
         public float rate;
-        float timeBeforeWave = 300f;
+        float timeBeforeWave = 180f;
 
         public float TimeBeforeWave { get => timeBeforeWave; set => timeBeforeWave = value; }
     }
@@ -30,6 +30,7 @@ public class WaveSpawner : MonoBehaviour
     [SerializeField] Text level;
     [SerializeField] Text wave;
     [SerializeField] GameObject aliveEnemies;
+    [SerializeField] GameObject skipPrompt;
 
     float searchCountDown = 1;
 
@@ -70,6 +71,7 @@ public class WaveSpawner : MonoBehaviour
         else{
             if(waveCountDown > 5 && Input.GetKeyDown(KeyCode.G)){
                 waveCountDown = 5f;
+                skipPrompt.SetActive(false);
             }
             countDownText.gameObject.SetActive(true);
             wave.gameObject.SetActive(false);

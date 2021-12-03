@@ -26,7 +26,7 @@ public class MenuTrigger : MonoBehaviour
     void Update()
     {
         
-        if(buildPlate != null && GameManager.instance.FirstPerson){
+        if(buildPlate != null && GameManager.instance.ViewIndex == 0){
             buildPrompt.SetActive(true);
             if(Input.GetKeyDown(KeyCode.B)){
                 buildMenu.OpenMenu(buildPlate);

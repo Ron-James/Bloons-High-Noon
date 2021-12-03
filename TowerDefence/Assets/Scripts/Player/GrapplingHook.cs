@@ -8,6 +8,7 @@ public class GrapplingHook : MonoBehaviour
     [SerializeField] GameObject hook;
     GameObject player;
     [SerializeField] Transform firePoint;
+    [SerializeField] Transform ropePoint;
     [SerializeField] float hookTravelSpd = 2f;
     [SerializeField] float playerTravelSpd = 5f;
     [SerializeField] Vector3 hookedPosition;
@@ -99,7 +100,7 @@ public class GrapplingHook : MonoBehaviour
         }
 
 
-        if (Input.GetMouseButtonDown(0) && !fired && !BuildMenu.MenuIsOpen && !PauseMenu.IsPaused && !GameManager.gameOver && canHook)
+        if (Input.GetMouseButtonDown(0) && !fired && !BuildMenu.MenuIsOpen && !PauseMenu.IsPaused && GameManager.instance.ViewIndex == 0 && canHook)
         {
             StartCoroutine(Extend(hookTravelSpd, maxDistance));
         }
@@ -107,7 +108,7 @@ public class GrapplingHook : MonoBehaviour
         {
             LineRenderer rope = hook.GetComponent<LineRenderer>();
             rope.positionCount = 2;
-            rope.SetPosition(0, firePoint.position);
+            rope.SetPosition(0, ropePoint.position);
             rope.SetPosition(1, hook.transform.position);
         }
 

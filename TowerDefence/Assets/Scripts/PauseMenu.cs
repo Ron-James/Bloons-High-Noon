@@ -32,7 +32,7 @@ public class PauseMenu : MonoBehaviour
         IsPaused = false;
         Time.timeScale = 1f;
         menuUI.SetActive(false);
-        if(GameManager.instance.FirstPerson && !BuildMenu.MenuIsOpen){
+        if(GameManager.instance.ViewIndex == 0 && !BuildMenu.MenuIsOpen){
             player.GetComponent<FirstPersonAIO>().EnableCamera();
         }
         
