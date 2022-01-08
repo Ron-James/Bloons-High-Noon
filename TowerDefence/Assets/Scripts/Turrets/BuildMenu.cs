@@ -53,9 +53,11 @@ public class BuildMenu : MonoBehaviour
         currentPlate = null;
         menu.SetActive(false);
         repair.gameObject.SetActive(false);
+        towerMenu.CloseTowerMenu();
         //GetComponentInChildren<TowerMenu>().CloseTowerMenu();
         GameObject.Find("Player").GetComponent<FirstPersonAIO>().EnableCamera();
         GameObject.Find("Player").GetComponent<FirstPersonAIO>().playerCanMove = true;
+        towerOptions.SetActive(false);
     }
     public void UpgradeCurrentPlate(int index){
         if(currentPlate == null){
